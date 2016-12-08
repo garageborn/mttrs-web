@@ -15,16 +15,16 @@ namespace :deploy do
       mkdir -p ~/docker/repo
       if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
       git clone -b #{ branch } #{ repo } ~/docker/repo
-      docker build --tag mttrs-frontend ~/docker/repo
-      docker save mttrs-frontend > ~/docker/image.tar
+      docker build --tag mttrs-web ~/docker/repo
+      docker save mttrs-web > ~/docker/image.tar
     CMD
   end
 
   desc 'Push docker image to amazon'
   task :push do
     system <<-CMD
-      docker tag mttrs-frontend:latest 845270614438.dkr.ecr.us-east-1.amazonaws.com/mttrs-frontend:latest
-      docker push 845270614438.dkr.ecr.us-east-1.amazonaws.com/mttrs-frontend:latest
+      docker tag mttrs-web:latest 845270614438.dkr.ecr.us-east-1.amazonaws.com/mttrs-web:latest
+      docker push 845270614438.dkr.ecr.us-east-1.amazonaws.com/mttrs-web:latest
     CMD
   end
 

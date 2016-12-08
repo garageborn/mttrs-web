@@ -13,10 +13,10 @@ ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US:en
 ENV LC_ALL=en_US.UTF-8
 
-# build mttrs-frontend
-ENV MTTRS_FRONTEND /mttrs-frontend
-RUN mkdir $MTTRS_FRONTEND
-COPY . $MTTRS_FRONTEND
-WORKDIR $MTTRS_FRONTEND
+# build mttrs-web
+ENV MTTRS_WEB /mttrs-web
+RUN mkdir $MTTRS_WEB
+COPY . $MTTRS_WEB
+WORKDIR $MTTRS_WEB
 
 RUN npm install --production --silent --no-progress
