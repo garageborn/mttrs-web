@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import * as CategoryActions from '../../actions/CategoryActions'
-import * as CurrentCategoryActions from '../../actions/CurrentCategoryActions'
-import * as PublishersActions from '../../actions/PublishersActions'
+import * as CategoryActions from '../actions/CategoryActions'
+import * as CurrentCategoryActions from '../actions/CurrentCategoryActions'
+import * as PublishersActions from '../actions/PublishersActions'
 import HeaderContainer from './HeaderContainer'
 import TimelineContainer from './TimelineContainer'
 

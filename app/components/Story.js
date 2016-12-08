@@ -1,10 +1,10 @@
 import React, {Component, PropTypes} from 'react'
-import moment from '../../common/utils/Moment'
+import moment from '../common/utils/Moment'
 import ComponentsJoiner from '../utils/ComponentsJoiner'
 import PublisherTag from './PublisherTag'
-import * as cloudinary from '../../common/utils/Cloudinary'
+import * as cloudinary from '../common/utils/Cloudinary'
 import {publisherPath} from '../utils/RoutesHelper'
-import ParseDate from '../../common/utils/ParseDate'
+import ParseDate from '../common/utils/ParseDate'
 
 class Story extends Component {
   render() {

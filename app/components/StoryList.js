@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 import Story from './Story'
-import moment from '../../common/utils/Moment'
-import ParseDate from '../../common/utils/ParseDate'
+import moment from '../common/utils/Moment'
+import ParseDate from '../common/utils/ParseDate'
 
 class StoryList extends Component {
   render() {

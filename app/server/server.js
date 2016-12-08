@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(webpackHotMiddleware(compiler))
 }
 
-app.use(favicon(path.resolve('app/web/assets/favicon.ico')))
+app.use(favicon(path.resolve('app//assets/favicon.ico')))
 app.use(requestHandler)
 
 app.listen(port, '0.0.0.0', (err, result) => {
