@@ -1,39 +1,34 @@
-var path = require('path');
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var cssnext = require('postcss-cssnext');
+require('babel-register')
+
+var path = require('path')
+var webpack = require('webpack')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var cssnext = require('postcss-cssnext')
 
 var devFlagPlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
-});
+})
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: 'cheap-module-eval-source-map',
   entry: [
-    path.resolve('index.web.production.js'),
-    path.resolve('app/web/styles/app.sass')
+    'eventsource-polyfill',
+    'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+    path.resolve('index.web.js'),
+    path.resolve('app//styles/app.sass')
   ],
   output: {
-    path: path.join(__dirname, '../../../web', 'public', 'static'),
+    path: path.join(__dirname, 'public', 'static'),
     publicPath: '/static/',
     filename: 'app.js',
+    hot: true
   },
   plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     devFlagPlugin,
-    new ExtractTextPlugin('app.css'),
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-      compress: { warnings: false }
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-        'MTTRS_API_URL': JSON.stringify(process.env.MTTRS_API_URL),
-        'CLOUDINARY_CLOUD_NAME': JSON.stringify(process.env.CLOUDINARY_CLOUD_NAME),
-        'MTTRS_FRONTEND_SENTRY_PUBLIC_DSN': JSON.stringify(process.env.MTTRS_FRONTEND_SENTRY_PUBLIC_DSN)
-      }
-    })
+    new ExtractTextPlugin('app.css', { allChunks: true })
   ],
   module: {
     loaders: [
@@ -54,7 +49,6 @@ module.exports = {
   },
   resolve: {
     alias: {
-      assets: path.resolve('app/web/assets'),
       mttrs: path.resolve('./')
     },
     extensions: ['', '.js', '.json']
@@ -67,4 +61,4 @@ module.exports = {
       cssnext({ browsers: ['last 2 versions'] })
     ]
   }
-};
+}

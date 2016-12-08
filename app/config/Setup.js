@@ -1,4 +1,4 @@
-import Tenant from '../../common/utils/Tenant'
+import Tenant from '../common/utils/Tenant'
 
 export default class Setup {
   static fromRequest(request) {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import * as TimelineActions from '../../actions/TimelineActions'
+import * as TimelineActions from '../actions/TimelineActions'
 import Timeline from '../components/Timeline'
 
 class TimelineContainer extends Component {

@@ -2,8 +2,8 @@
   "name": "mttrs",
   "version": "0.1.0",
   "scripts": {
-    "start": "DEBUG=true ./node_modules/nodemon/bin/nodemon.js --exec ./node_modules/babel-cli/bin/babel-node.js ./app/web/server/server.js -w ./app",
-    "build-webpack": "./node_modules/webpack/bin/webpack.js -p --config ./app/web/server/webpack.production.js --progress --colors",
+    "start": "DEBUG=true ./node_modules/nodemon/bin/nodemon.js --exec ./node_modules/babel-cli/bin/babel-node.js ./app/server/server.js -w ./app",
+    "build-webpack": "./node_modules/webpack/bin/webpack.js -p --config ./app/server/webpack.production.js --progress --colors",
     "build-babel": "./node_modules/babel-cli/bin/babel.js ./app --out-dir ./build --source-maps --copy-files",
     "build": "npm run build-webpack && npm run build-babel"
   },
