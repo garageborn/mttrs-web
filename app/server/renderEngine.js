@@ -1,10 +1,11 @@
 import React from 'react'
-import {Provider} from 'react-redux'
+import { ApolloProvider } from 'react-apollo'
 import _flattenDeep from 'lodash/flattenDeep'
-import {renderToString} from 'react-dom/server'
-import {Router, RouterContext} from 'react-router'
+import { renderToString } from 'react-dom/server'
+import { Router, RouterContext } from 'react-router'
 import path from 'path'
 import pug from 'pug'
+import apolloClient from '../config/apolloClient'
 
 const templatePath = path.resolve(__dirname, 'templates/index.pug')
 
@@ -31,9 +32,9 @@ let mapPromises = (store, renderProps) => {
 let render = (store, renderProps) => {
   const finalState = store.getState()
   const html = renderToString(
-    <Provider store={store}>
+    <ApolloProvider store={store} client={apolloClient}>
       <RouterContext {...renderProps} />
-    </Provider>
+    </ApolloProvider>
   )
   return renderFullPage(html, finalState)
 }

@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import {connect} from 'react-redux'
-import NavItem from '../components/NavItem'
+import { graphql } from 'react-apollo'
+import gql from 'graphql-tag'
 import {push} from 'react-router-redux'
+import NavItem from '../components/NavItem'
 import {categoryPath, storiesPath} from '../utils/RoutesHelper'
 
 class HeaderContainer extends Component {
@@ -35,7 +37,9 @@ class HeaderContainer extends Component {
   }
 
   get categoriesItems () {
-    return this.props.categories.map((category) => {
+    const { loading, categories } = this.props.data
+    if (loading) return
+    return categories.map((category) => {
       return this.categoryItem(category)
     })
   }
@@ -69,10 +73,11 @@ class HeaderContainer extends Component {
 
 let mapStateToProps = (state) => {
   return {
-    categories: state.CategoriesReducers.categories,
     currentCategory: state.CurrentCategoryReducer.category,
     currentFilter: state.FilterReducers.filter
   }
 }
 
-export default connect(mapStateToProps)(HeaderContainer)
+const Query = gql`query { categories(ordered: true) { id name slug color icon_id } }`
+const HeaderContainerWithData = graphql(Query)(HeaderContainer)
+export default connect(mapStateToProps)(HeaderContainerWithData)
