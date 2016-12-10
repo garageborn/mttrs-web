@@ -1,8 +1,9 @@
 import React, {Component, PropTypes} from 'react'
-import {Provider} from 'react-redux'
+import { ApolloProvider } from 'react-apollo'
 import {Router, browserHistory} from 'react-router'
 import {syncHistoryWithStore} from 'react-router-redux'
 import Routes from '../config/Routes'
+import apolloClient from '../config/apolloClient'
 
 class App extends Component {
   render() {
@@ -10,9 +11,9 @@ class App extends Component {
     const history = syncHistoryWithStore(browserHistory, store)
 
     return (
-      <Provider store={store}>
+      <ApolloProvider store={store} client={apolloClient}>
         <Router history={history} routes={Routes.all(store)}/>
-      </Provider>
+      </ApolloProvider>
     )
   }
 }
