@@ -1,0 +1,32 @@
+inherit_from:
+  - .rubocop.hound.yml
+
+AllCops:
+  TargetRubyVersion: 2.3
+
+Style/Documentation:
+  Enabled: false
+
+Rails/ActionFilter:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 100
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/TrailingBlankLines:
+  Enabled: false
+
+Style/SpaceInsideStringInterpolation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/IndentArray:
+  EnforcedStyle: consistent
+
+Rails/HasAndBelongsToMany:
+  Enabled: false

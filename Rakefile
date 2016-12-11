@@ -1,2 +1,2 @@
 Rake.add_rakelib 'lib/deploy'
-Rake.add_rakelib 'lib/release'
+Dir.glob('lib/*.rake').each { |r| import r }

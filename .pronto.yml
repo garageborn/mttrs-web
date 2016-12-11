@@ -1,0 +1,9 @@
+all:
+  exclude:
+    - 'spec/**/*'
+eslint:
+  exclude:
+    - 'app/assets/**/*'
+    - 'lib/**/*'
+max_warnings: 150
+verbose: true
