@@ -1,15 +1,9 @@
 import { CURRENT_CATEGORY_RECEIVED, CLEAR_CURRENT_CATEGORY } from '../constants/ActionTypes'
 import * as API from '../api/index'
-AAAAAAAAAAAAAA
 
 export const receiveCategory = (category) => ({
   type: CURRENT_CATEGORY_RECEIVED,
   category
-
-
-
-
-
 })
 
 export const clearCategory = () => ({
