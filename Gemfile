@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'pronto', '0.7.1'
+gem 'pronto-brakeman', '0.7.0', require: false
+gem 'pronto-eslint', '0.7.0', require: false
 gem 'pronto-flay', '0.7.0', require: false
 gem 'pronto-rubocop', '0.7.0', require: false
 
