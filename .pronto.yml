@@ -2,8 +2,6 @@ all:
   exclude:
     - 'spec/**/*'
 eslint:
-  include:
-    - 'app/**/*.js'
   exclude:
     - 'app/assets/**/*'
     - 'lib/**/*'
