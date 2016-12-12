@@ -1,5 +1,3 @@
-@import "global";
-@import "header";
-@import "nav";
-@import "stories";
-@import "media-queries";
+body {
+  background: #08C;
+}
