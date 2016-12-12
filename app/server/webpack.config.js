@@ -41,7 +41,7 @@ module.exports = {
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css-loader?modules&localIdentName=[name]__[local]!postcss-loader')
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader')
       },
       { test: /\.png$/, loader: 'file-loader' },
       { test: /\.svg$/, loader: 'file-loader' },
@@ -59,7 +59,7 @@ module.exports = {
   },
   postcss: function (webpack) {
     return [
-      atImport({ addDependencyTo: webpack }),
+      atImport,
       precss,
       fontMagician,
       cssnext({ browsers: ['last 2 versions'] }),

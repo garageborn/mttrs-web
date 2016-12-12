@@ -65,7 +65,7 @@ module.exports = {
   },
   postcss: function (webpack) {
     return [
-      atImport({ addDependencyTo: webpack }),
+      atImport,
       precss,
       fontMagician,
       cssnext({ browsers: ['last 2 versions'] }),

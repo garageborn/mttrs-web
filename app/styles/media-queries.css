@@ -21,7 +21,7 @@
 
   main {
     .story {
-      > a, img {
+      >a, img {
         width: 130px;
         height: 98px;
       }
