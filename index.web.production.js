@@ -8,6 +8,6 @@ const apolloClient = configureApollo()
 const store = configureStore(window.__INITIAL_STATE__, apolloClient)
 
 ReactDOM.render(
-  <App store={store} apolloClient={apolloClient}/>,
+  <App store={store} apolloClient={apolloClient} />,
   document.getElementById('mttrs')
 )
