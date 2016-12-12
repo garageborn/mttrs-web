@@ -7,6 +7,7 @@ const precss = require('precss')
 const mqpacker = require('css-mqpacker')
 const nested = require('postcss-nested')
 const atImport = require('postcss-import')
+const fontMagician = require('postcss-font-magician')
 
 var devFlagPlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
@@ -16,7 +17,7 @@ module.exports = {
   devtool: 'source-map',
   entry: [
     path.resolve('index.web.production.js'),
-    path.resolve('app//styles/app.sass')
+    path.resolve('app//styles/app.css')
   ],
   output: {
     path: path.join(__dirname, '../../web', 'public', 'static'),
@@ -45,7 +46,7 @@ module.exports = {
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css-loader?modules&localIdentName=[hash:base64:4]!postcss-loader') 
+        loader: ExtractTextPlugin.extract('style', 'css-loader?modules&localIdentName=[hash:base64:4]!postcss-loader')
       },
       { test: /\.png$/, loader: 'file-loader' },
       { test: /\.svg$/, loader: 'file-loader' },
@@ -57,7 +58,7 @@ module.exports = {
       assets: path.resolve('app//assets'),
       mttrs: path.resolve('./')
     },
-    extensions: ['', '.js', '.json']
+    extensions: ['', '.js', '.json', '.css']
   },
   node: {
     fs: 'empty'
@@ -66,6 +67,7 @@ module.exports = {
     return [
       atImport({ addDependencyTo: webpack }),
       precss,
+      fontMagician,
       cssnext({ browsers: ['last 2 versions'] }),
       lost,
       nested,

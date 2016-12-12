@@ -9,6 +9,7 @@ const precss = require('precss')
 const mqpacker = require('css-mqpacker')
 const nested = require('postcss-nested')
 const atImport = require('postcss-import')
+const fontMagician = require('postcss-font-magician')
 
 var devFlagPlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
@@ -20,7 +21,7 @@ module.exports = {
     'eventsource-polyfill',
     'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
     path.resolve('index.web.js'),
-    path.resolve('app//styles/app.sass')
+    path.resolve('app//styles/app.css')
   ],
   output: {
     path: path.join(__dirname, 'public', 'static'),
@@ -60,6 +61,7 @@ module.exports = {
     return [
       atImport({ addDependencyTo: webpack }),
       precss,
+      fontMagician,
       cssnext({ browsers: ['last 2 versions'] }),
       lost,
       nested,

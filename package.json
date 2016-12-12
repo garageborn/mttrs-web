@@ -38,6 +38,7 @@
     "moment": "^2.17.1",
     "moment-timezone": "^0.5.10",
     "postcss-cssnext": "^2.9.0",
+    "postcss-font-magician": "^1.5.0",
     "postcss-import": "^9.0.0",
     "postcss-loader": "^1.2.0",
     "postcss-nested": "^1.0.0",
