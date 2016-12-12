@@ -21,7 +21,7 @@
     "react/jsx-boolean-value": 2,
     "react/wrap-multilines": 2,
     "react/self-closing-comp": 2,
-    "react/jsx-no-bind": 2,
+    "react/jsx-no-bind": 1,
     "react/require-render-return": 2,
     "jsx-a11y/img-redundant-alt": 2,
     "jsx-a11y/img-has-alt": 2,
