@@ -1,4 +1,4 @@
-require('babel-register')
+require('babel-core/register')
 
 const path = require('path')
 const webpack = require('webpack')
@@ -41,7 +41,8 @@ module.exports = {
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&localIdentName=[name]__[local]!postcss-loader')
+        loader: ExtractTextPlugin.extract('style',
+        'css?modules&localIdentName=[name]_[local]__[hash:base64:5]!postcss')
       },
       { test: /\.png$/, loader: 'file-loader' },
       { test: /\.svg$/, loader: 'file-loader' },

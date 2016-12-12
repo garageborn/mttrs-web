@@ -7,6 +7,8 @@ import path from 'path'
 import pug from 'pug'
 import apolloClient from '../config/apolloClient'
 
+require('css-modules-require-hook/preset')
+
 const templatePath = path.resolve(__dirname, 'templates/index.pug')
 
 let handleRender = (renderProps, store) => {
