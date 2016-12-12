@@ -38,6 +38,7 @@
     "lost": "^7.1.1",
     "moment": "^2.17.1",
     "moment-timezone": "^0.5.10",
+    "normalize.css": "^5.0.0",
     "postcss-cssnext": "^2.9.0",
     "postcss-font-magician": "^1.5.0",
     "postcss-import": "^9.0.0",
