@@ -27,7 +27,7 @@ module.exports = {
   plugins: [
     new webpack.NoErrorsPlugin(),
     devFlagPlugin,
-    new ExtractTextPlugin('app.css'),
+    new ExtractTextPlugin('app.css', { allChunks: true }),
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
       compress: { warnings: false }
