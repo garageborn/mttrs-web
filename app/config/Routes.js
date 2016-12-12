@@ -5,20 +5,20 @@ import * as CategoryActions from '../actions/CategoryActions'
 import * as PublishersActions from '../actions/PublishersActions'
 
 class Routes {
-  static fetchData({ dispatch }) {
-    return [
-      dispatch(CategoryActions.getCategories()),
-      dispatch(PublishersActions.getPublishers())
-    ]
-  }
+  // static fetchData({ dispatch }) {
+  //   return [
+  //     dispatch(CategoryActions.getCategories()),
+  //     dispatch(PublishersActions.getPublishers())
+  //   ]
+  // }
 
   static all(store) {
-    let categories = store.getState().CategoriesReducers.categories
-    let publishers = store.getState().PublishersReducers.publishers
+    // let categories = store.getState().CategoriesReducers.categories
+    // let publishers = store.getState().PublishersReducers.publishers
     return [
       ...Routes.defaultRoutes(),
-      ...Routes.categoriesRoutes(categories),
-      ...Routes.publishersRoutes(publishers)
+    //   ...Routes.categoriesRoutes(categories),
+    //   ...Routes.publishersRoutes(publishers)
     ]
   }
 
