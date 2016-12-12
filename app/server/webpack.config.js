@@ -1,9 +1,14 @@
 require('babel-register')
 
-var path = require('path')
-var webpack = require('webpack')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var cssnext = require('postcss-cssnext')
+const path = require('path')
+const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const cssnext = require('postcss-cssnext')
+const lost = require('lost')
+const precss = require('precss')
+const mqpacker = require('css-mqpacker')
+const nested = require('postcss-nested')
+const atImport = require('postcss-import')
 
 var devFlagPlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
@@ -32,16 +37,11 @@ module.exports = {
   ],
   module: {
     loaders: [
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          presets: ['es2015', 'react', 'stage-0']
-        }
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style', 'css-loader?modules&localIdentName=[name]__[local]!postcss-loader')
       },
-      { test: /\.css$/, loader: ExtractTextPlugin.extract('css-loader?module!postcss-loader') },
-      { test: /\.sass$/, loader: ExtractTextPlugin.extract('css!sass') },
       { test: /\.png$/, loader: 'file-loader' },
       { test: /\.svg$/, loader: 'file-loader' },
       { test: /\.json$/, loader: 'json-loader' }
@@ -51,14 +51,19 @@ module.exports = {
     alias: {
       mttrs: path.resolve('./')
     },
-    extensions: ['', '.js', '.json']
+    extensions: ['', '.js', '.json', '.css']
   },
   node: {
     fs: 'empty'
   },
   postcss: function (webpack) {
     return [
-      cssnext({ browsers: ['last 2 versions'] })
+      atImport({ addDependencyTo: webpack }),
+      precss,
+      cssnext({ browsers: ['last 2 versions'] }),
+      lost,
+      nested,
+      mqpacker
     ]
   }
 }
