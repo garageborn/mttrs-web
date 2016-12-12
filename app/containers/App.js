@@ -3,13 +3,11 @@ import { ApolloProvider } from 'react-apollo'
 import {Router, browserHistory} from 'react-router'
 import {syncHistoryWithStore} from 'react-router-redux'
 import Routes from '../config/Routes'
-import configureApollo from '../config/configureApollo'
 
 class App extends Component {
   render() {
-    const {store} = this.props
+    const { store, apolloClient } = this.props
     const history = syncHistoryWithStore(browserHistory, store)
-    const apolloClient = configureApollo()
 
     return (
       <ApolloProvider store={store} client={apolloClient}>
@@ -20,7 +18,8 @@ class App extends Component {
 }
 
 App.propTypes = {
-  store: PropTypes.object.isRequired
+  store: PropTypes.object.isRequired,
+  apolloClient: PropTypes.object.isRequired
 }
 
 export default App

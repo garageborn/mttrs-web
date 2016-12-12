@@ -12,7 +12,7 @@ const templatePath = path.resolve(__dirname, 'templates/index.pug')
 let handleRender = (renderProps, request) => {
   const apolloClient = configureApollo({
     ssrMode: true,
-    opts: { headers: request.headers }
+    // opts: { headers: request.headers }
   })
   const store = configureStore({}, apolloClient)
 
