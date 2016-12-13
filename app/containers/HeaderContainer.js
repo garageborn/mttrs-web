@@ -1,19 +1,30 @@
 import React, { Component, PropTypes } from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import { push } from 'react-router-redux'
 import NavItem from '../components/NavItem'
 import { categoryPath, storiesPath } from '../utils/RoutesHelper'
 import styles from '../styles/app.css'
+import { injectIntl, defineMessages } from 'react-intl'
+
+const messages = defineMessages({
+  headerTagline: {
+    id: 'header.tagline',
+    defaultMessage: 'Read What Matters'
+  }
+})
 
 class HeaderContainer extends Component {
   render () {
+    const { formatMessage } = this.props.intl
+    let headerTagline = formatMessage(messages.headerTagline)
+
     return (
       <header>
         <div className={styles.container}>
           <h1>
-            <a onClick={this.openHome.bind(this)}>Mttrs - Read What Matters</a>
+            <a onClick={() => this.openHome()}>Mttrs - {headerTagline}</a>
           </h1>
 
           <nav>
@@ -32,9 +43,9 @@ class HeaderContainer extends Component {
       <NavItem
         category={{name: 'Top Stories'}}
         isSelected={!this.props.currentCategory}
-        onClick={this.openHome.bind(this)}
-        />
-      )
+        onClick={() => this.openHome()}
+      />
+    )
   }
 
   get categoriesItems () {
@@ -51,9 +62,9 @@ class HeaderContainer extends Component {
         key={category.id}
         category={category}
         isSelected={this.isSelected(category)}
-        onClick={this.openCategory.bind(this)}
-        />
-      )
+        onClick={() => this.openCategory()}
+      />
+    )
   }
 
   openCategory (category) {
@@ -80,5 +91,6 @@ let mapStateToProps = (state) => {
 }
 
 const Query = gql`query { categories(ordered: true) { id name slug color icon_id } }`
-const HeaderContainerWithData = graphql(Query)(HeaderContainer)
+const intlHeaderContainer = injectIntl(HeaderContainer)
+const HeaderContainerWithData = graphql(Query)(intlHeaderContainer)
 export default connect(mapStateToProps)(HeaderContainerWithData)
