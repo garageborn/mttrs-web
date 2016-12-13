@@ -5,6 +5,7 @@ import gql from 'graphql-tag'
 import { push } from 'react-router-redux'
 import NavItem from '../components/NavItem'
 import { categoryPath, storiesPath } from '../utils/RoutesHelper'
+import styles from '../styles/app.css'
 import { injectIntl, defineMessages } from 'react-intl'
 
 const messages = defineMessages({
@@ -21,7 +22,7 @@ class HeaderContainer extends Component {
 
     return (
       <header>
-        <div className='container'>
+        <div className={styles.container}>
           <h1>
             <a onClick={() => this.openHome()}>Mttrs - {headerTagline}</a>
           </h1>
