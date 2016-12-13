@@ -7,8 +7,6 @@ import pug from 'pug'
 import configureStore from '../config/configureStore.production'
 import configureApollo from '../config/configureApollo'
 
-require('css-modules-require-hook/preset')
-
 const templatePath = path.resolve(__dirname, 'templates/index.pug')
 
 let handleRender = (renderProps, request) => {

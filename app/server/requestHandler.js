@@ -33,7 +33,7 @@ let requestHandler = (request, response) => {
 
 let raise = (response, error) => {
   sentry.captureException(error)
-  let message = [error.message].concat(error.stack).join("\n\n")
+  let message = [error.message].concat(error.stack).join('\n\n')
   response.setHeader('content-type', 'text/plain')
   response.status(500).send(message)
 }

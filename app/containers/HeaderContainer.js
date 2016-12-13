@@ -2,15 +2,16 @@ import React, { Component, PropTypes } from 'react'
 import {connect} from 'react-redux'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
-import {push} from 'react-router-redux'
+import { push } from 'react-router-redux'
 import NavItem from '../components/NavItem'
-import {categoryPath, storiesPath} from '../utils/RoutesHelper'
+import { categoryPath, storiesPath } from '../utils/RoutesHelper'
+import styles from '../styles/app.css'
 
 class HeaderContainer extends Component {
   render () {
     return (
       <header>
-        <div className='container'>
+        <div className={styles.container}>
           <h1>
             <a onClick={this.openHome.bind(this)}>Mttrs - Read What Matters</a>
           </h1>
