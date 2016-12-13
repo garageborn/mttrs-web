@@ -1,21 +1,14 @@
 import React, {Component, PropTypes} from 'react'
-import Story from './Story'
-import moment from '../common/utils/Moment'
+import StoryContainer from '../containers/StoryContainer'
 import ParseDate from '../common/utils/ParseDate'
 
-class StoryList extends Component {
-  render() {
-    let stories = this.props.stories.map((story) => {
-      return <Story key={story.id} story={story} />
-    })
-
-    return (
-      <div>
-        <h2>{ParseDate(this.props.date)}</h2>
-        {stories}
-      </div>
-    )
-  }
+ const StoryList = ({date, stories}) => {
+  return (
+    <div>
+      <h2>{ParseDate(date)}</h2>
+      {stories.map((story) => { return <StoryContainer key={story.id} story={story} />})}
+    </div>
+  )
 }
 
 StoryList.propTypes = {

@@ -1,14 +1,16 @@
 import React, {Component, PropTypes} from 'react'
 import moment from '../common/utils/Moment'
 import ComponentsJoiner from '../utils/ComponentsJoiner'
-import PublisherTag from './PublisherTag'
+import PublisherTag from '../components/PublisherTag'
 import * as cloudinary from '../common/utils/Cloudinary'
 import {publisherPath} from '../utils/RoutesHelper'
 import ParseDate from '../common/utils/ParseDate'
+import { graphql } from 'react-apollo'
+import gql from 'graphql-tag'
 
-class Story extends Component {
+class StoryContainer extends Component {
   render() {
-    const {story} = this.props
+    const {story} = this.props.data
     return (
       <div className='story'>
         <a href={this.mainLink.url} target='_blank'>{this.renderImage()}</a>
@@ -26,14 +28,14 @@ class Story extends Component {
   renderImage() {
     if (!this.mainLink.image_source_url) return
     let options = { type: 'fetch', width: 200, height: 200, crop: 'fit', secure: true }
-    return (<img src={cloudinary.url(this.mainLink.image_source_url, options)}/>)
+    return (<img alt={this.mainLink.title} src={cloudinary.url(this.mainLink.image_source_url, options)} />)
   }
 
   renderStoryInfo() {
     return (
       <div>
-        @{ ParseDate(moment(this.mainLink.published_at).unix()) }
-        <i> from </i> { this.renderPublishers() }
+        @{ParseDate(moment(this.mainLink.published_at).unix())}
+        <i> from </i> {this.renderPublishers()}
       </div>
     )
   }
@@ -52,16 +54,51 @@ class Story extends Component {
   }
 
   get mainLink() {
-    return this.props.story.main_link
+    return this.props.data.story.main_link
   }
 
   get otherLinks() {
-    return this.props.story.other_links
+    return this.props.data.story.other_links
   }
 }
 
-Story.propTypes = {
+StoryContainer.propTypes = {
   story: PropTypes.object.isRequired
 }
 
-export default Story
+const Query = gql`
+  query($id: ID!, $publisherSlug: String) {
+    story(id: $id) {
+      total_social
+      headline
+      summary
+      main_category { name color slug }
+      main_link(publisher_slug: $publisherSlug) {
+        title
+        url
+        total_social
+        image_source_url
+        publisher { name slug icon_id }
+      }
+      other_links(publisher_slug: $publisherSlug, popular: true) {
+        title
+        url
+        total_social
+        publisher { name slug icon_id }
+      }
+    }
+  }
+`
+
+const StoryContainerWithData = graphql(Query, {
+  options(props) {
+    return {
+      variables: {
+        id: props.story.id,
+        publisherSlug: props.publisherSlug
+      }
+    }
+  }
+})(StoryContainer)
+
+export default StoryContainerWithData
