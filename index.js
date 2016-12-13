@@ -13,7 +13,7 @@ const render = ({ store, apolloClient, routes }) => {
     <App store={store} apolloClient={apolloClient} routes={routes} />,
     document.getElementById('mttrs')
   )
-  ReactDOM.render(<DevTools store={store}/>, document.getElementById('dev-tools'))
+  ReactDOM.render(<DevTools store={store} />, document.getElementById('dev-tools'))
 }
 
 buildRoutes(apolloClient).then(routes => render({ store, apolloClient, routes }))
