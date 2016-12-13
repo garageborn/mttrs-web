@@ -5,13 +5,12 @@ import gql from 'graphql-tag'
 import { push } from 'react-router-redux'
 import NavItem from '../components/NavItem'
 import { categoryPath, storiesPath } from '../utils/RoutesHelper'
-import styles from '../styles/app.css'
 
 class HeaderContainer extends Component {
   render () {
     return (
       <header>
-        <div className={styles.container}>
+        <div>
           <h1>
             <a onClick={this.openHome.bind(this)}>Mttrs - Read What Matters</a>
           </h1>

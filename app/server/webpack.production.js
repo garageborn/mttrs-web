@@ -1,4 +1,7 @@
+require('babel-core/register')
+
 const path = require('path')
+const glob = require('glob')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const cssnext = require('postcss-cssnext')
@@ -8,17 +11,21 @@ const mqpacker = require('css-mqpacker')
 const nested = require('postcss-nested')
 const atImport = require('postcss-import')
 const fontMagician = require('postcss-font-magician')
+const _flattenDeep = require('lodash/flattenDeep')
 
 var devFlagPlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
 })
 
+let entries = [
+  path.resolve('index.web.production.js'),
+  path.resolve('app//styles/app.css'),
+  glob.sync('./app/components/**/*.css')
+]
+
 module.exports = {
   devtool: 'source-map',
-  entry: [
-    path.resolve('index.web.production.js'),
-    path.resolve('app//styles/app.css')
-  ],
+  entry: _flattenDeep(entries),
   output: {
     path: path.join(__dirname, '../../web', 'public', 'static'),
     publicPath: '/static/',
