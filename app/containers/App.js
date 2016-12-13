@@ -10,7 +10,7 @@ class App extends Component {
 
     return (
       <ApolloProvider store={store} client={apolloClient}>
-        <Router history={history} routes={routes}/>
+        <Router history={history} routes={routes} />
       </ApolloProvider>
     )
   }

@@ -14,7 +14,7 @@ const defaultRoutes = () => {
 const categoriesRoutes = (categories) => {
   return categories.map((category) => {
     return [
-      <Route path={`/${category.slug}`} component={Root} categorySlug={category.slug}/>
+      <Route path={`/${category.slug}`} component={Root} categorySlug={category.slug} />
     ]
   })
 }
@@ -22,7 +22,7 @@ const categoriesRoutes = (categories) => {
 const publishersRoutes = (publishers) => {
   return publishers.map((publisher) => {
     return [
-      <Route path={`/${publisher.slug}`} component={Root} publisherSlug={publisher.slug}/>
+      <Route path={`/${publisher.slug}`} component={Root} publisherSlug={publisher.slug} />
     ]
   })
 }
