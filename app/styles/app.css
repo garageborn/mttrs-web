@@ -1,11 +1,3 @@
 @import "normalize.css";
 @import "media-queries";
 @import "global";
-
-.container {
-  background: #08C;
-
-  @media (--mq-medium) {
-    background: tomato;
-  }
-}

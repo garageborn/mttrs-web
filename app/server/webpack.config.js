@@ -49,8 +49,8 @@ module.exports = {
         loader: ExtractTextPlugin.extract('style',
         'css?modules&localIdentName=[name]_[local]__[hash:base64:5]!postcss')
       },
-      { test: /\.jpe?g$|\.gif$|\.png$|^(?!.*\.inline\.svg$).*\.svg$/, loader: 'url' },
-      { test: /\.svg$/, loader: 'babel!svg-react' },
+      { test: /\.jpe?g$|\.gif$|\.png$|^(?!.*\.inline\.svg$).*\.svg$/, loader: 'file!url' },
+      { test: /\.inline.svg$/, loader: 'babel!svg-react' },
       { test: /\.json$/, loader: 'json-loader' }
     ]
   },

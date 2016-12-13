@@ -5,24 +5,27 @@ import gql from 'graphql-tag'
 import { push } from 'react-router-redux'
 import NavItem from '../components/NavItem'
 import { categoryPath, storiesPath } from '../utils/RoutesHelper'
+import Header from '../components/Header'
 
 class HeaderContainer extends Component {
   render () {
     return (
-      <header>
-        <div>
-          <h1>
-            <a onClick={this.openHome.bind(this)}>Mttrs - Read What Matters</a>
-          </h1>
-
-          <nav>
-            <ul>
-              {this.defaultItem}
-              {this.categoriesItems}
-            </ul>
-          </nav>
-        </div>
-      </header>
+      // <header>
+      //   <div>
+      //     <Header />
+      //     <h1>
+      //       <a onClick={this.openHome.bind(this)}>Mttrs - Read What Matters</a>
+      //     </h1>
+      //
+      //     <nav>
+      //       <ul>
+      //         {this.defaultItem}
+      //         {this.categoriesItems}
+      //       </ul>
+      //     </nav>
+      //   </div>
+      // </header>
+      <Header />
     )
   }
 
