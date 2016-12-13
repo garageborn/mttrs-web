@@ -1,0 +1,5 @@
+@value medium as mq-medium, large as mq-large from "../../styles/media-queries.css";
+
+.category {
+  color: #000;
+}

@@ -4,8 +4,8 @@ import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import { push } from 'react-router-redux'
 import NavItem from '../components/NavItem'
-import { categoryPath, storiesPath } from '../utils/RoutesHelper'
 import Header from '../components/Header'
+import { categoryPath, storiesPath } from '../utils/RoutesHelper'
 
 class HeaderContainer extends Component {
   render () {
@@ -17,15 +17,23 @@ class HeaderContainer extends Component {
       //       <a onClick={this.openHome.bind(this)}>Mttrs - Read What Matters</a>
       //     </h1>
       //
-      //     <nav>
-      //       <ul>
-      //         {this.defaultItem}
-      //         {this.categoriesItems}
-      //       </ul>
-      //     </nav>
+          // <nav>
+          //   <ul>
+          //     {this.defaultItem}
+          //     {this.categoriesItems}
+          //   </ul>
+          // </nav>
       //   </div>
       // </header>
-      <Header />
+      <div>
+        <Header />
+        <nav>
+          <ul>
+            {this.defaultItem}
+            {this.categoriesItems}
+          </ul>
+        </nav>
+      </div>
     )
   }
 

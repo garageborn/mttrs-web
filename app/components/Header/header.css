@@ -1,7 +1,10 @@
+@value medium as mq-medium, large as mq-large from "../../styles/media-queries.css";
+
 .header {
   background: #262C5B;
   padding: 0.625em;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
