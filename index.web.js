@@ -14,4 +14,4 @@ ReactDOM.render(
   <App store={store} apolloClient={apolloClient} />,
   document.getElementById('mttrs')
 )
-ReactDOM.render(<DevTools store={store}/>, document.getElementById('dev-tools'))
+ReactDOM.render(<DevTools store={store} />, document.getElementById('dev-tools'))
