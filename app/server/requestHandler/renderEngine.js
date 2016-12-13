@@ -4,18 +4,10 @@ import { ApolloProvider, renderToStringWithData } from 'react-apollo'
 import { RouterContext } from 'react-router'
 import path from 'path'
 import pug from 'pug'
-import configureStore from '../config/configureStore.production'
-import configureApollo from '../config/configureApollo'
 
 const templatePath = path.resolve(__dirname, 'templates/index.pug')
 
-let handleRender = (renderProps, request) => {
-  const apolloClient = configureApollo({
-    ssrMode: true,
-    // opts: { headers: request.headers }
-  })
-  const store = configureStore({}, apolloClient)
-
+let renderEngine = ({ store, apolloClient, renderProps }) => {
   const component = (
     <ApolloProvider store={store} client={apolloClient}>
       <RouterContext {...renderProps} />
@@ -40,4 +32,4 @@ let renderFullPage = (html, state) => {
   return pug.renderFile(templatePath, data)
 }
 
-export default handleRender
+export default renderEngine
