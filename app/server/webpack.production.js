@@ -16,7 +16,7 @@ var devFlagPlugin = new webpack.DefinePlugin({
 module.exports = {
   devtool: 'source-map',
   entry: [
-    path.resolve('index.web.production.js'),
+    path.resolve('index.production.js'),
     path.resolve('app//styles/app.css')
   ],
   output: {
