@@ -18,7 +18,7 @@ var devFlagPlugin = new webpack.DefinePlugin({
 })
 
 let entries = [
-  path.resolve('index.web.production.js'),
+  path.resolve('index.production.js'),
   path.resolve('app//styles/app.css'),
   glob.sync('./app/components/**/*.css')
 ]

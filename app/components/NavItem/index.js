@@ -1,22 +1,20 @@
 import React, { PropTypes } from 'react'
+import { Link } from 'react-router'
 import styles from './navitem.css'
 
-const NavItem = ({ category, isSelected, onClick }) => {
+const NavItem = ({ name, url }) => {
   return (
-    <li className={styles.category}>
-      {isSelected
-       ? <span className={styles.active}>{category.name}</span>
-       : <a onClick={e => onClick(category)}>{category.name}</a>}
+    <li>
+      <Link to={url} title={name} activeClassName={styles.active}>
+        <span>{name}</span>
+      </Link>
     </li>
   )
 }
 
 NavItem.propTypes = {
-  category: PropTypes.shape({
-    name: PropTypes.string.isRequired
-  }).isRequired,
-  isSelected: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired
+  name: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
 }
 
 export default NavItem
