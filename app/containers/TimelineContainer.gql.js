@@ -18,6 +18,7 @@ const Query = gql`
     timeline(days: $days, offset: $offset, timezone: $timezone) {
       date
       stories(limit: $perDay, popular: true, category_slug: $categorySlug, publisher_slug: $publisherSlug) {
+        id
         total_social
         headline
         summary
