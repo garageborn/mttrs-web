@@ -1,14 +1,19 @@
 import React, {Component, PropTypes} from 'react'
 import StoryImage from '../StoryImage'
 import StoryContent from '../StoryContent'
+import styles from './styles.css'
 
 class Story extends Component {
   render() {
     const {story} = this.props
     return (
-      <div key={story.id} className='story'>
+      <div key={story.id} className={styles.story}>
         <StoryImage mainLink={this.mainLink} />
-        <StoryContent mainLink={this.mainLink} otherLinks={this.otherLinks} totalSocial={story.total_social} />
+        <StoryContent
+          mainLink={this.mainLink}
+          otherLinks={this.otherLinks}
+          totalSocial={story.total_social}
+        />
       </div>
     )
   }

@@ -1,0 +1,6 @@
+.story {
+  display: flex;
+  background-color: white;
+  flex-direction: row;
+  margin: 1rem;
+}
