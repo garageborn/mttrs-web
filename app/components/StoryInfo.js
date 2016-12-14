@@ -32,6 +32,7 @@ class StoryMetadata extends Component {
 
 StoryMetadata.propTypes = {
   mainLink: PropTypes.object.isRequired,
+  otherLinks: PropTypes.array
 }
 
 export default StoryMetadata

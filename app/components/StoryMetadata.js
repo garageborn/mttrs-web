@@ -14,6 +14,7 @@ const StoryMetadata = ({mainLink, otherLinks, totalSocial}) => {
 StoryMetadata.propTypes = {
   mainLink: PropTypes.object.isRequired,
   otherLinks: PropTypes.array,
+  totalSocial: PropTypes.number.isRequired,
 }
 
 export default StoryMetadata
