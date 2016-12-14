@@ -11,6 +11,7 @@
   "rules": {
     "quotes": [2, "single"],
     "strict": [2, "never"],
+    "no-debugger": 2,
     "babel/object-shorthand": 1,
     "no-multiple-empty-lines": [2, {"max": 2}],
     "jsx-quotes": [2, "prefer-single"],
@@ -29,6 +30,7 @@
     "react/jsx-curly-spacing": 2,
     "react/jsx-boolean-value": 2,
     "react/jsx-no-bind": 1,
+    "react/prop-types": 1,
     "jsx-a11y/img-redundant-alt": 2,
     "jsx-a11y/img-has-alt": 2,
     "jsx-a11y/aria-role": 2,
