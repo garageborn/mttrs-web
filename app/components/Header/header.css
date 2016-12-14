@@ -1,4 +1,4 @@
-@value medium as mq-medium, large as mq-large from "../../styles/media-queries.css";
+@value notSmall, medium, large from "../../styles/media-queries.css";
 
 .header {
   background: #262C5B;
@@ -9,7 +9,22 @@
   justify-content: center;
 }
 
+.logoSection {
+  display: none;
+
+  @media notSmall {
+    display: block;
+  }
+}
+
 .title {
   color: #FFF;
   font-size: 1rem;
+  text-decoration: none;
+}
+
+.menuTrigger {
+  @media notSmall {
+    display: none;
+  }
 }
