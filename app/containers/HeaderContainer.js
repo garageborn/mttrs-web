@@ -1,32 +1,26 @@
 import React, { Component, PropTypes } from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
+import { push } from 'react-router-redux'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
-import { push } from 'react-router-redux'
-import NavItem from '../components/NavItem'
 import Header from '../components/Header'
+import Nav from '../components/Nav'
+import NavItem from '../components/NavItem'
 import { categoryPath, storiesPath } from '../utils/RoutesHelper'
 
 class HeaderContainer extends Component {
-  render () {
+  constructor() {
+    super()
+
+    this.openHome = this.openHome.bind(this)
+    this.openCategory = this.openCategory.bind(this)
+  }
+
+  render() {
     return (
-      // <header>
-      //   <div>
-      //     <Header />
-      //     <h1>
-      //       <a onClick={this.openHome.bind(this)}>Mttrs - Read What Matters</a>
-      //     </h1>
-      //
-          // <nav>
-          //   <ul>
-          //     {this.defaultItem}
-          //     {this.categoriesItems}
-          //   </ul>
-          // </nav>
-      //   </div>
-      // </header>
       <div>
         <Header />
+        <Nav />
         <nav>
           <ul>
             {this.defaultItem}
@@ -37,17 +31,17 @@ class HeaderContainer extends Component {
     )
   }
 
-  get defaultItem () {
+  get defaultItem() {
     return (
       <NavItem
         category={{name: 'Top Stories'}}
         isSelected={!this.props.currentCategory}
-        onClick={this.openHome.bind(this)}
-        />
-      )
+        onClick={this.openHome}
+      />
+    )
   }
 
-  get categoriesItems () {
+  get categoriesItems() {
     const { loading, categories } = this.props.data
     if (loading) return
     return categories.map((category) => {
@@ -55,28 +49,28 @@ class HeaderContainer extends Component {
     })
   }
 
-  categoryItem (category) {
+  categoryItem(category) {
     return (
       <NavItem
         key={category.id}
         category={category}
         isSelected={this.isSelected(category)}
-        onClick={this.openCategory.bind(this)}
-        />
-      )
+        onClick={this.openCategory}
+      />
+    )
   }
 
-  openCategory (category) {
+  openCategory(category) {
     let path = categoryPath(category.slug, this.props.currentFilter)
     this.props.dispatch(push(path))
   }
 
-  openHome () {
+  openHome() {
     let path = storiesPath(this.props.currentFilter)
     this.props.dispatch(push(path))
   }
 
-  isSelected (category) {
+  isSelected(category) {
     if (!this.props.currentCategory) return false
     return category.slug === this.props.currentCategory.slug
   }
