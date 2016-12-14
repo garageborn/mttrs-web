@@ -70,6 +70,7 @@ export function getTimeline(options) {
       : promise = dispatch(getDatesStories(options))
 
     return promise.then(() => dispatch(timelineReceived()))
+    debugger
   }
 }
 
