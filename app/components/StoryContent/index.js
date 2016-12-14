@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
-import StoryTitle from './StoryTitle'
-import StoryMetadata from './StoryMetadata'
+import StoryTitle from '../StoryTitle'
+import StoryMetadata from '../StoryMetadata'
 
 const StoryContent = ({mainLink, otherLinks, totalSocial}) => {
   return (

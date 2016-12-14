@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react'
-import StoryInfo from './StoryInfo'
-import StorySocialCount from './StorySocialCount'
+import StoryInfo from '../StoryInfo'
+import SocialCount from '../SocialCount'
 
 const StoryMetadata = ({mainLink, otherLinks, totalSocial}) => {
   return (
     <div>
-      <StorySocialCount totalSocial={totalSocial} />
+      <SocialCount totalSocial={totalSocial} />
       <StoryInfo mainLink={mainLink} otherLinks={otherLinks} />
     </div>
   )

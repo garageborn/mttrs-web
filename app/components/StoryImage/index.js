@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
-import * as cloudinary from '../common/utils/Cloudinary'
-import ParseDate from '../common/utils/ParseDate'
+import * as cloudinary from '../../common/utils/Cloudinary'
+import ParseDate from '../../common/utils/ParseDate'
 
 class StoryImage extends Component {
   renderImage() {

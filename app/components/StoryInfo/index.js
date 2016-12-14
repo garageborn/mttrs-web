@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react'
-import ComponentsJoiner from '../utils/ComponentsJoiner'
-import PublisherTag from './PublisherTag'
-import {publisherPath} from '../utils/RoutesHelper'
-import ParseDate from '../common/utils/ParseDate'
-import moment from '../common/utils/Moment'
+import ComponentsJoiner from '../../utils/ComponentsJoiner'
+import PublisherTag from '../PublisherTag'
+import {publisherPath} from '../../utils/RoutesHelper'
+import ParseDate from '../../common/utils/ParseDate'
+import moment from '../../common/utils/Moment'
 
 class StoryMetadata extends Component {
   renderPublishers() {

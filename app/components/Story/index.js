@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react'
-import StoryImage from './StoryImage'
-import StoryContent from './StoryContent'
+import StoryImage from '../StoryImage'
+import StoryContent from '../StoryContent'
 
 class Story extends Component {
   render() {
