@@ -4,7 +4,7 @@ import StoryListHeader from '../components/StoryListHeader'
 
  const StoryListContainer = ({date, stories}) => {
   return (
-    <div>
+    <div key={date}>
       <StoryListHeader date={date} />
       {stories.map((story) => { return <Story key={story.id} story={story} />})}
     </div>

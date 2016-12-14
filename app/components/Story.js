@@ -6,7 +6,7 @@ class Story extends Component {
   render() {
     const {story} = this.props
     return (
-      <div className='story'>
+      <div key={story.id} className='story'>
         <StoryImage mainLink={this.mainLink} />
         <StoryContent mainLink={this.mainLink} otherLinks={this.otherLinks} totalSocial={story.total_social} />
       </div>
