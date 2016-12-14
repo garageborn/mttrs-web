@@ -1,11 +1,12 @@
-import React, {Component, PropTypes} from 'react'
-import {Link} from 'react-router'
+import React, { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
 
 class PublisherTag extends Component {
   render() {
+    const { name, title, url } = this.props
     return (
-      <Link to={this.props.url} title={this.props.title} target='_blank'>
-        <span>{this.props.name}</span>
+      <Link to={url} title={title} target='_blank'>
+        <span>{name}</span>
       </Link>
     )
   }
