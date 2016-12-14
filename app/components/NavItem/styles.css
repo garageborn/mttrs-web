@@ -1,12 +1,19 @@
 @value notSmall, medium, large from "../../styles/media-queries.css";
 
 .active {
-  border-bottom: 2px solid var(--mttrsSecondaryBlue);
+  border-bottom: 4px solid var(--mttrsSecondaryBlue);
 }
 
 .item {
   display: inline-block;
-  margin: 0 1.5em;
+
+  @media medium {
+    margin: 0 1.5em;
+  }
+
+  @media large {
+    margin-left: 3em;
+  }
 }
 
 .itemLink {
@@ -16,6 +23,9 @@
   transition: color .5s ease-in-out;
 
   &:hover {
+    /* TODO:
+     * composes: active; -- do not work bc global var(--mttrsSecondaryBlue) :(
+     */
     border-bottom: 4px solid var(--mttrsSecondaryBlue);
   }
 }
