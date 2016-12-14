@@ -4,6 +4,6 @@ import gql from 'graphql-tag'
 
 const Query = gql`query { categories(ordered: true) { id name slug color icon_id } }`
 
-export default function(HeaderContainer) {
-  return graphql(Query)(HeaderContainer)
+export default function(NavContainer) {
+  return graphql(Query)(NavContainer)
 }

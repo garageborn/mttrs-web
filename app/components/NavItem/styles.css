@@ -1,0 +1,21 @@
+@value notSmall, medium, large from "../../styles/media-queries.css";
+
+.active {
+  border-bottom: 2px solid var(--mttrsSecondaryBlue);
+}
+
+.item {
+  display: inline-block;
+  margin: 0 1.5em;
+}
+
+.itemLink {
+  text-decoration: none;
+  color: #FFF;
+  padding: 0.25em 0;
+  transition: color .5s ease-in-out;
+
+  &:hover {
+    border-bottom: 4px solid var(--mttrsSecondaryBlue);
+  }
+}

@@ -1,12 +1,12 @@
 @value notSmall, medium, large from "../../styles/media-queries.css";
 
-.header {
-  background: #262C5B;
-  padding: 0.625em;
+.subHeader {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: var(--mttrsBlue);
+  padding: 0.625em;
 }
 
 .logoSection {

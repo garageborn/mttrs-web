@@ -1,4 +1,9 @@
 :global {
+  :root {
+    --mttrsBlue: #262C5B;
+    --mttrsSecondaryBlue: #393F69;
+  }
+
   html {
     box-sizing: border-box;
   }
@@ -10,5 +15,11 @@
   body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
+    line-height: 1.5;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
   }
 }

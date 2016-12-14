@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
-import styles from './navitem.css'
+import styles from './styles.css'
 
 const NavItem = ({ name, url }) => {
   return (
-    <li>
-      <Link to={url} title={name} activeClassName={styles.active}>
+    <li className={styles.item}>
+      <Link to={url} className={styles.itemLink} activeClassName={styles.active}>
         <span>{name}</span>
       </Link>
     </li>

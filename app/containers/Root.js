@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import HeaderContainer from './HeaderContainer'
+import Header from '../components/Header'
 import TimelineContainer from './TimelineContainer'
 import { IntlProvider, addLocaleData } from 'react-intl'
 import en from 'react-intl/locale-data/en'
@@ -26,7 +26,7 @@ class Root extends Component {
     return (
       <IntlProvider locale={language} defaultLocale='en' messages={msg}>
         <div>
-          <HeaderContainer />
+          <Header />
           <TimelineContainer />
         </div>
       </IntlProvider>
