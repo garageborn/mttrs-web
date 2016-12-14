@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import StoryListContainer from './StoryListContainer'
-import graphql from './TimelineContainer.gql'
+import withQuery from './TimelineContainer.gql'
 
 const TimelineContainer = props => {
   if (props.data.loading) return <div className='loading'>Hang on...</div>
@@ -15,4 +15,4 @@ TimelineContainer.propTypes = {
   data: PropTypes.object.isRequired
 }
 
-export default graphql(TimelineContainer)
+export default withQuery(TimelineContainer)

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import { injectIntl, defineMessages } from 'react-intl'
-import graphql from './HeaderContainer.gql'
+import withQuery from './HeaderContainer.gql'
 import NavItem from '../components/NavItem'
 import { categoryPath, rootPath } from '../utils/RoutesHelper'
 import styles from '../styles/app.css'
@@ -46,4 +46,4 @@ class HeaderContainer extends Component {
 }
 
 const intlHeaderContainer = injectIntl(HeaderContainer)
-export default graphql(intlHeaderContainer)
+export default withQuery(intlHeaderContainer)
