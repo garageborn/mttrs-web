@@ -1,11 +1,10 @@
 import React, { Component, PropTypes } from 'react'
-import { graphql } from 'react-apollo'
-import gql from 'graphql-tag'
 import { Link } from 'react-router'
+import { injectIntl, defineMessages } from 'react-intl'
+import graphql from './HeaderContainer.gql'
 import NavItem from '../components/NavItem'
 import { categoryPath, rootPath } from '../utils/RoutesHelper'
 import styles from '../styles/app.css'
-import { injectIntl, defineMessages } from 'react-intl'
 
 const messages = defineMessages({
   headerTagline: {
@@ -46,6 +45,5 @@ class HeaderContainer extends Component {
   }
 }
 
-const Query = gql`query { categories(ordered: true) { id name slug color icon_id } }`
 const intlHeaderContainer = injectIntl(HeaderContainer)
-export default graphql(Query)(intlHeaderContainer)
+export default graphql(intlHeaderContainer)
