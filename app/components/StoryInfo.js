@@ -6,7 +6,6 @@ import ParseDate from '../common/utils/ParseDate'
 import moment from '../common/utils/Moment'
 
 class StoryMetadata extends Component {
-
   renderPublishers() {
     let links = [this.props.mainLink].concat(this.props.otherLinks)
 

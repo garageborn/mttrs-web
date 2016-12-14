@@ -23,9 +23,7 @@ class HeaderContainer extends Component {
       <header>
         <div className={styles.container}>
           <h1>
-            <Link to={rootPath}>
-              Mttrs - {headerTagline}
-            </Link>
+            <Link to={rootPath}>Mttrs - {headerTagline}</Link>
           </h1>
 
           <nav>
