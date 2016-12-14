@@ -7,7 +7,11 @@ import Root from '../containers/Root'
 
 const defaultRoutes = () => {
   return [
-    <Route path='/' component={Root} />
+    <Route
+      path='/'
+      component={Root}
+      section={{name: 'home'}}
+      />
   ]
 }
 
@@ -19,7 +23,7 @@ const categoriesRoutes = (categories) => {
         component={Root}
         categorySlug={category.slug}
         section={{name: 'category', slug: category.slug}}
-        />
+      />
     ]
   })
 }
@@ -31,7 +35,7 @@ const publishersRoutes = (publishers) => {
         path={`/${publisher.slug}`}
         component={Root}
         section={{name: 'publisher', slug: publisher.slug}}
-        />
+      />
     ]
   })
 }
