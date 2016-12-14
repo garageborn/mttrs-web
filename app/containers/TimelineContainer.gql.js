@@ -43,7 +43,9 @@ const Query = gql`
 
 export default function(TimelineContainer) {
   return graphql(Query, {
-    options(props) {
+    options(props, ownProps) {
+      console.log('---------props', props)
+      // console.log('---------ownProps', ownProps)
       return {
         variables: { ...defaultVariables }
       }

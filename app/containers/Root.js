@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
 import HeaderContainer from './HeaderContainer'
 import TimelineContainer from './TimelineContainer'
 import { IntlProvider, addLocaleData } from 'react-intl'
@@ -23,15 +24,25 @@ class Root extends Component {
     const language = this.getLanguage()
     const msg = messages[language]
 
+    const { categorySlug, publisherSlug } = this.props
+
     return (
       <IntlProvider locale={language} defaultLocale='en' messages={msg}>
         <div>
           <HeaderContainer />
-          <TimelineContainer />
+          <TimelineContainer categorySlug={categorySlug} publisherSlug={publisherSlug} />
         </div>
       </IntlProvider>
     )
   }
 }
 
-export default Root
+
+let mapStateToProps = (state, ownProps) => {
+  return {
+    categorySlug: ownProps.route.categorySlug,
+    publisherSlug: ownProps.route.publisherSlug
+  }
+}
+
+export default connect(mapStateToProps)(Root)
