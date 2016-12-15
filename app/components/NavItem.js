@@ -1,25 +1,22 @@
-import React, {Component, PropTypes} from 'react'
+import React, { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
 
 class NavItem extends Component {
   render () {
-    const {category, isSelected, onClick} = this.props
+    const { name, url } = this.props
     return (
       <li>
-        {isSelected
-          ? <span className='active'>{category.name}</span>
-          : <a onClick={e => onClick(category)}>{category.name}</a>
-        }
+        <Link to={url} title={name} activeClassName='active'>
+          <span>{name}</span>
+        </Link>
       </li>
     )
   }
 }
 
 NavItem.propTypes = {
-  category: PropTypes.shape({
-    name: PropTypes.string.isRequired
-  }).isRequired,
-  isSelected: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired
+  name: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
 }
 
 export default NavItem
