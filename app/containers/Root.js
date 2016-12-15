@@ -1,44 +1,34 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import * as CategoryActions from '../actions/CategoryActions'
-import * as CurrentCategoryActions from '../actions/CurrentCategoryActions'
-import * as PublishersActions from '../actions/PublishersActions'
+import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
 import HeaderContainer from './HeaderContainer'
 import TimelineContainer from './TimelineContainer'
+import IntlProvider from '../config/IntlProvider'
 
 class Root extends Component {
-  static fetchData({ dispatch, params, route }) {
-    let categorySlug = route.categorySlug
-    let filter = route.filter
-
-    return [
-      dispatch(CurrentCategoryActions.getCategory(categorySlug)),
-      TimelineContainer.fetchData.apply(this, arguments)
-    ]
-  }
-
-  componentWillReceiveProps(nextProps) {
-    let categorySlugChanged = nextProps.categorySlug !== this.props.categorySlug
-    let publisherSlugChanged = nextProps.publisherSlug !== this.props.publisherSlug
-    let filterChanged = nextProps.filter !== this.props.filter
-    if (categorySlugChanged || publisherSlugChanged || filterChanged)
-      this.constructor.fetchData(nextProps)
-  }
-
   render() {
+
     return (
-      <div>
-        <HeaderContainer />
-        <TimelineContainer />
-      </div>
+      <IntlProvider>
+        <div>
+          <HeaderContainer />
+          <TimelineContainer section={this.props.section} />
+        </div>
+      </IntlProvider>
     )
   }
 }
 
+Root.propTypes = {
+  section: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    model: PropTypes.object.isRequired
+  })
+}
+
 let mapStateToProps = (state, ownProps) => {
   return {
-    categorySlug: ownProps.route.categorySlug,
-    filter: ownProps.route.filter
+    section: ownProps.route.section
   }
 }
+
 export default connect(mapStateToProps)(Root)

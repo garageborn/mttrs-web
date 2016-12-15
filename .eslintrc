@@ -1,20 +1,16 @@
 {
-  "ecmaFeatures": {
-    "jsx": true,
-    "modules": true
+  "extends": [
+    "standard",
+    "standard-jsx"
+  ],
+  "plugins": [
+    "react",
+    "jsx-a11y"
+  ],
+  "standard": {
+    "parser": "babel-eslint"
   },
-  "env": {
-    "browser": true,
-    "node": true
-  },
-  "parser": "babel-eslint",
   "rules": {
-    "quotes": [2, "single"],
-    "strict": [2, "never"],
-    "babel/object-shorthand": 1,
-    "no-multiple-empty-lines": [2, {"max": 2}],
-    "jsx-quotes": [2, "prefer-single"],
-    "no-multi-spaces": 2,
     "react/jsx-uses-react": 2,
     "react/jsx-uses-vars": 2,
     "react/react-in-jsx-scope": 2,
@@ -29,14 +25,10 @@
     "react/jsx-curly-spacing": 2,
     "react/jsx-boolean-value": 2,
     "react/jsx-no-bind": 1,
+    "react/prop-types": 1,
     "jsx-a11y/img-redundant-alt": 2,
     "jsx-a11y/img-has-alt": 2,
     "jsx-a11y/aria-role": 2,
     "jsx-a11y/no-access-key": 2
-  },
-  "plugins": [
-    "babel",
-    "react",
-    "jsx-a11y"
-  ]
+  }
 }

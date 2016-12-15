@@ -1,24 +1,24 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import * as TimelineActions from '../actions/TimelineActions'
-import Timeline from '../components/Timeline'
+import React, {Component, PropTypes} from 'react'
+import StoryListContainer from './StoryListContainer'
+import withQuery from './TimelineContainer.gql'
 
-class TimelineContainer extends Component {
-  static fetchData({ dispatch, route }) {
-    let options = {
-      category_slug: route.categorySlug,
-      filter: route.filter,
-      publisher_slug: route.publisherSlug
-    }
-    return dispatch(TimelineActions.getTimeline(options))
-  }
-
-  render() {
-    const {items, isFetching} = this.props
-    return (
-      <Timeline items={items} isFetching={isFetching} />
-    )
-  }
+const TimelineContainer = props => {
+  if (props.data.loading) return <div className='loading'>Hang on...</div>
+  return (
+    <main>
+      {props.data.timeline.map((item) =>
+        <StoryListContainer key={item.date} date={item.date} stories={item.stories} />
+      )}
+    </main>
+  )
 }
 
-export default connect(state => state.TimelineReducers)(TimelineContainer)
+TimelineContainer.propTypes = {
+  data: PropTypes.object.isRequired,
+  section: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    model: PropTypes.object.isRequired
+  })
+}
+
+export default withQuery(TimelineContainer)

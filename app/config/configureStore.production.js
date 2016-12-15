@@ -2,17 +2,18 @@ import {createStore, applyMiddleware, combineReducers, compose} from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import {browserHistory} from 'react-router'
 import {routerMiddleware} from 'react-router-redux'
-import * as reducers from '../reducers/index'
+import configureReducers from './configureReducers'
 
 const routeMiddleware = routerMiddleware(browserHistory)
 
-let createStoreWithMiddleware = compose(
-  applyMiddleware(thunkMiddleware),
-  applyMiddleware(routeMiddleware)
-)(createStore)
+export default function configureStore(initialState, apolloClient) {
+  const rootReducer = configureReducers(apolloClient)
 
-const rootReducer = combineReducers(reducers)
+  const createStoreWithMiddleware = compose(
+    applyMiddleware(apolloClient.middleware()),
+    applyMiddleware(thunkMiddleware),
+    applyMiddleware(routeMiddleware)
+  )(createStore)
 
-export default function configureStore(initialState) {
   return createStoreWithMiddleware(rootReducer, initialState)
 }
