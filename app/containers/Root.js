@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import HeaderContainer from './HeaderContainer'
 import TimelineContainer from './TimelineContainer'
 import IntlProvider from '../config/IntlProvider'
