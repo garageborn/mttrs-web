@@ -1,6 +1,7 @@
 import React from 'react'
 import 'isomorphic-fetch'
-import { ApolloProvider, renderToStringWithData } from 'react-apollo'
+import { ApolloProvider } from 'react-apollo'
+import { renderToStringWithData }  from 'react-apollo/server'
 import { RouterContext } from 'react-router'
 import path from 'path'
 import pug from 'pug'

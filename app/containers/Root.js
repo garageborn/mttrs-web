@@ -6,7 +6,6 @@ import IntlProvider from '../config/IntlProvider'
 
 class Root extends Component {
   render() {
-
     return (
       <IntlProvider>
         <div>
@@ -20,7 +19,7 @@ class Root extends Component {
 
 Root.propTypes = {
   section: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
     model: PropTypes.object.isRequired
   })
 }
