@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 import Logo from '../Logo'
+import Arrow from '../Arrow'
 import styles from './styles.css'
 
 const SubHeader = (props) => {
@@ -12,9 +13,9 @@ const SubHeader = (props) => {
         </Link>
       </div>
       <div className={styles.menuTrigger}>
-        {/* <Logo alt={props.tagline} /> */}
+        <Logo type='mobile' alt={props.tagline} />
         <span className={styles.title}>Top Stories</span>
-        {/* <ArrowDown /> */}
+        <Arrow />
       </div>
     </section>
   )

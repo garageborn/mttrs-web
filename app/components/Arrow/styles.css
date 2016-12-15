@@ -1,0 +1,20 @@
+.arrow {
+  width: auto;
+  height: 10px;
+}
+
+.down {
+  transform: rotate(0deg);
+}
+
+.up {
+  transform: rotate(180deg);
+}
+
+.right {
+  transform: rotate(270deg);
+}
+
+.left {
+  transform: rotate(90deg);
+}
