@@ -1,6 +1,14 @@
 {
-  "extends": ["standard", "standard-jsx", "plugin:jsx-a11y/recommended"],
+  "extends": [
+    "standard",
+    "standard-jsx",
+    "plugin:react/all"
+  ],
   "standard": {
     "parser": "babel-eslint"
+  },
+  "rules": {
+    "jsx-a11y/img-has-alt": 2,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   }
 }
