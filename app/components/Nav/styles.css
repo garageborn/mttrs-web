@@ -1,0 +1,18 @@
+@value notSmall, medium, large from "../../styles/media-queries.css";
+
+.nav {
+  display: none;
+  color: #FFF;
+
+  @media notSmall {
+    display: flex;
+  }
+
+  @media medium {
+    background: var(--mttrsSecondaryBlue);
+  }
+
+  @media large {
+    background: var(--mttrsBlue);
+  }
+}

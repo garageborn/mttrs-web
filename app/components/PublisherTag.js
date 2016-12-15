@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 
 class PublisherTag extends Component {
-  render() {
+  render () {
     const { name, title, url } = this.props
     return (
       <Link to={url} title={title} target='_blank'>

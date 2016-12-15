@@ -3,7 +3,7 @@ import StoryImage from './StoryImage'
 import StoryContent from './StoryContent'
 
 class Story extends Component {
-  render() {
+  render () {
     const {story} = this.props
     return (
       <div key={story.id} className='story'>
@@ -13,11 +13,11 @@ class Story extends Component {
     )
   }
 
-  get mainLink() {
+  get mainLink () {
     return this.props.story.main_link
   }
 
-  get otherLinks() {
+  get otherLinks () {
     return this.props.story.other_links
   }
 }

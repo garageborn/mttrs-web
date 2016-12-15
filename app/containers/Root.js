@@ -1,15 +1,15 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import HeaderContainer from './HeaderContainer'
+import Header from '../components/Header'
 import TimelineContainer from './TimelineContainer'
 import IntlProvider from '../config/IntlProvider'
 
 class Root extends Component {
-  render() {
+  render () {
     return (
       <IntlProvider>
         <div>
-          <HeaderContainer />
+          <Header />
           <TimelineContainer section={this.props.section} />
         </div>
       </IntlProvider>
