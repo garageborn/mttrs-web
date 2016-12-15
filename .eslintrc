@@ -1,14 +1,34 @@
 {
   "extends": [
     "standard",
-    "standard-jsx",
-    "plugin:react/all"
+    "standard-jsx"
+  ],
+  "plugins": [
+    "react",
+    "jsx-a11y"
   ],
   "standard": {
     "parser": "babel-eslint"
   },
   "rules": {
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/react-in-jsx-scope": 2,
+    "react/prefer-es6-class": 1,
+    "react/prefer-stateless-function": 1,
+    "react/wrap-multilines": 2,
+    "react/self-closing-comp": 2,
+    "react/require-render-return": 2,
+    "react/no-unused-prop-types": 1,
+    "react/jsx-closing-bracket-location": 2,
+    "react/jsx-space-before-closing": 2,
+    "react/jsx-curly-spacing": 2,
+    "react/jsx-boolean-value": 2,
+    "react/jsx-no-bind": 1,
+    "react/prop-types": 1,
+    "jsx-a11y/img-redundant-alt": 2,
     "jsx-a11y/img-has-alt": 2,
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "jsx-a11y/aria-role": 2,
+    "jsx-a11y/no-access-key": 2
   }
 }
