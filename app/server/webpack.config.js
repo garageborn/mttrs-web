@@ -1,5 +1,9 @@
 require('babel-core/register')
 
+require.extensions['.png'] = function () {
+  return
+}
+
 const path = require('path')
 const glob = require('glob')
 const webpack = require('webpack')
@@ -50,7 +54,7 @@ module.exports = {
         loader: ExtractTextPlugin.extract('style',
         'css?modules&localIdentName=[name]_[local]__[hash:base64:5]!postcss')
       },
-      { test: /\.jpe?g$|\.gif$|\.png$|^(?!.*\.inline\.svg$).*\.svg$/, loader: 'file!url' },
+      { test: /\.(png|jpe?g|svg|gif)$/, loader: 'url-loader?limit=1' },
       { test: /\.inline.svg$/, loader: 'babel!svg-react' },
       { test: /\.json$/, loader: 'json-loader' }
     ]

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
+import Logo from '../Logo'
 import styles from './styles.css'
 
 const SubHeader = (props) => {
@@ -7,9 +8,7 @@ const SubHeader = (props) => {
     <section className={styles.subHeader}>
       <div className={styles.logoSection}>
         <Link to={props.rootPath} className={styles.title}>
-          {/* <Logo alt={props.tagline} /> */}
-          Mttrs
-          <span>{props.tagline}</span>
+          <Logo tagline={props.tagline} />
         </Link>
       </div>
       <div className={styles.menuTrigger}>

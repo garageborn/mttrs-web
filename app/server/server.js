@@ -1,3 +1,9 @@
+require('babel-core/register')
+
+require.extensions['.png'] = function () {
+  return
+}
+
 import path from 'path'
 import express from 'express'
 import favicon from 'serve-favicon'

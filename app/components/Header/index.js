@@ -14,12 +14,12 @@ const messages = defineMessages({
 
 class Header extends Component {
   render () {
-    // const { formatMessage } = this.props.intl
-    // let headerTagline = formatMessage(messages.headerTagline)
+    const { formatMessage } = this.props.intl
+    let headerTagline = formatMessage(messages.headerTagline)
 
     return (
       <header className={styles.header}>
-        <SubHeader rootPath={rootPath} />
+        <SubHeader rootPath={rootPath} tagline={headerTagline} />
         <NavContainer />
       </header>
     )
