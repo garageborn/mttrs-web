@@ -3,8 +3,10 @@
 .header {
   display: flex;
   background: var(--mttrsBlue);
+  height: 3.125em;
 
   @media medium {
+    height: auto;
     flex-direction: column;
   }
 

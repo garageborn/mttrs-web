@@ -13,7 +13,7 @@ const SubHeader = (props) => {
         </Link>
       </div>
       <div className={styles.menuTrigger}>
-        <Logo type='mobile' alt={props.tagline} />
+        <Logo type='mobile' tagline={props.tagline} />
         <span className={styles.title}>Top Stories</span>
         <Arrow />
       </div>
