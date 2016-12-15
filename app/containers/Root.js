@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import HeaderContainer from './HeaderContainer'
 import TimelineContainer from './TimelineContainer'
@@ -18,6 +18,12 @@ class Root extends Component {
   }
 }
 
+Root.propTypes = {
+  section: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    model: PropTypes.object.isRequired
+  })
+}
 
 let mapStateToProps = (state, ownProps) => {
   return {

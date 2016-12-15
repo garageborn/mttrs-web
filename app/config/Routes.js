@@ -10,8 +10,8 @@ const defaultRoutes = () => {
     <Route
       path='/'
       component={Root}
-      section={{name: 'home'}}
-      />
+      section={{name: 'home', model: {}}}
+    />
   ]
 }
 
@@ -22,7 +22,7 @@ const categoriesRoutes = (categories) => {
         path={`/${category.slug}`}
         component={Root}
         categorySlug={category.slug}
-        section={{name: 'category', slug: category.slug}}
+        section={{name: 'category', model: category}}
       />
     ]
   })
@@ -34,7 +34,7 @@ const publishersRoutes = (publishers) => {
       <Route
         path={`/${publisher.slug}`}
         component={Root}
-        section={{name: 'publisher', slug: publisher.slug}}
+        section={{name: 'publisher', model: publisher}}
       />
     ]
   })
