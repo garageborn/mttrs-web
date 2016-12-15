@@ -16,7 +16,7 @@ const TimelineContainer = props => {
 TimelineContainer.propTypes = {
   data: PropTypes.object.isRequired,
   section: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
     model: PropTypes.object.isRequired
   })
 }

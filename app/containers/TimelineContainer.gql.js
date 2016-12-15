@@ -44,10 +44,12 @@ const Query = gql`
 export default function(TimelineContainer) {
   return graphql(Query, {
     options(props, ownProps) {
-      console.log('---------props', props)
-      // console.log('---------ownProps', ownProps)
       return {
-        variables: { ...defaultVariables }
+        variables: {
+          ...defaultVariables,
+          categorySlug: props.section.type === 'category' ? props.section.model.slug : '',
+          publisherSlug: props.section.type === 'publisher' ? props.section.model.slug : ''
+        }
       }
     },
     props({ data }) {

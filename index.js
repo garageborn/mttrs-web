@@ -16,4 +16,6 @@ const render = ({ store, apolloClient, routes }) => {
   ReactDOM.render(<DevTools store={store} />, document.getElementById('dev-tools'))
 }
 
-buildRoutes(apolloClient).then(routes => render({ store, apolloClient, routes }))
+buildRoutes(apolloClient)
+  .then(routes => render({ store, apolloClient, routes }))
+  .catch(error => console.error(error))
