@@ -1,37 +1,34 @@
-import React, {Component} from 'react'
+import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
 import HeaderContainer from './HeaderContainer'
 import TimelineContainer from './TimelineContainer'
-import { IntlProvider, addLocaleData } from 'react-intl'
-import en from 'react-intl/locale-data/en'
-import pt from 'react-intl/locale-data/pt'
-import * as messages from '../common/translations/i18n'
-import Tenant from '../common/utils/Tenant'
-import Routes from '../config/Routes'
-import intl from 'intl'
-addLocaleData([...en, ...pt])
+import IntlProvider from '../config/IntlProvider'
 
 class Root extends Component {
-  getLanguage() {
-    if (Tenant.current === 'mttrs_br') {
-      return 'pt'
-    } else {
-      return 'en'
-    }
-  }
-
   render() {
-    const language = this.getLanguage()
-    const msg = messages[language]
 
     return (
-      <IntlProvider locale={language} defaultLocale='en' messages={msg}>
+      <IntlProvider>
         <div>
           <HeaderContainer />
-          <TimelineContainer />
+          <TimelineContainer section={this.props.section} />
         </div>
       </IntlProvider>
     )
   }
 }
 
-export default Root
+Root.propTypes = {
+  section: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    model: PropTypes.object.isRequired
+  })
+}
+
+let mapStateToProps = (state, ownProps) => {
+  return {
+    section: ownProps.route.section
+  }
+}
+
+export default connect(mapStateToProps)(Root)
