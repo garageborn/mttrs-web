@@ -1,0 +1,20 @@
+@value notSmall, small from "../../styles/media-queries.css";
+
+.container {
+  margin: 0 1rem;
+  display: flex;
+  flex-flow: row;
+}
+
+.shouldShowSmall {
+  @media notSmall {
+    display: none
+  }
+}
+
+.shouldShowNotSmall {
+  display: none;
+  @media notSmall {
+    display: flex;
+  }
+}

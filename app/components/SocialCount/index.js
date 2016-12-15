@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
 const StorySocialCount = ({totalSocial}) => {
-  return <sup>{totalSocial}</sup>
+  return <p>{totalSocial}</p>
 }
 
 StorySocialCount.propTypes = {

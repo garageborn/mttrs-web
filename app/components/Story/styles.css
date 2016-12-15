@@ -1,6 +1,11 @@
+.container {
+  display: flex;
+  flex-flow: column;
+  background-color: white;
+  padding: 0 1rem;
+  margin: 1rem 0;
+}
 .story {
   display: flex;
-  background-color: white;
-  flex-direction: row;
-  margin: 1rem;
+  flex-flow: row;
 }
