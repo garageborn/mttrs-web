@@ -1,0 +1,9 @@
+.text {
+  display: flex;
+  align-items: center;
+  font-size: .9rem;
+  color: #999;
+  a {
+    color: #666;
+  }
+}

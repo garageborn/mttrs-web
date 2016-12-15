@@ -1,9 +1,11 @@
 @value notSmall, small from "../../styles/media-queries.css";
 
 .container {
-  margin: 0 1rem;
+  margin: .5em 0 0 0;
   display: flex;
   flex-flow: row;
+  height: 2.5rem;
+  border-top: 1px solid #F1F1F1;
 }
 
 .shouldShowSmall {
