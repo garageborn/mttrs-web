@@ -7,14 +7,23 @@ import Root from '../containers/Root'
 
 const defaultRoutes = () => {
   return [
-    <Route path='/' component={Root} />
+    <Route
+      path='/'
+      component={Root}
+      section={{type: 'home', model: {}}}
+    />
   ]
 }
 
 const categoriesRoutes = (categories) => {
   return categories.map((category) => {
     return [
-      <Route path={`/${category.slug}`} component={Root} categorySlug={category.slug} />
+      <Route
+        path={`/${category.slug}`}
+        component={Root}
+        categorySlug={category.slug}
+        section={{type: 'category', model: category}}
+      />
     ]
   })
 }
@@ -22,7 +31,11 @@ const categoriesRoutes = (categories) => {
 const publishersRoutes = (publishers) => {
   return publishers.map((publisher) => {
     return [
-      <Route path={`/${publisher.slug}`} component={Root} publisherSlug={publisher.slug} />
+      <Route
+        path={`/${publisher.slug}`}
+        component={Root}
+        section={{type: 'publisher', model: publisher}}
+      />
     ]
   })
 }
@@ -48,6 +61,6 @@ export const buildRoutes = (apolloClient) => {
     apolloClient.query({ query: routesQuery })
       .then(props => resolve(allRoutes(props.data)))
       .catch(error => reject(error))
-    })
+  })
   return routes
 }

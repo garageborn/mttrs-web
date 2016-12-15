@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 import { ApolloProvider } from 'react-apollo'
-import {Router, browserHistory} from 'react-router'
-import {syncHistoryWithStore} from 'react-router-redux'
+import { Router, browserHistory } from 'react-router'
+import { syncHistoryWithStore } from 'react-router-redux'
 
 class App extends Component {
   render() {
