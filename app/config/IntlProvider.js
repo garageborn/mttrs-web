@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { IntlProvider, addLocaleData } from 'react-intl'
 import en from 'react-intl/locale-data/en'
 import pt from 'react-intl/locale-data/pt'
@@ -22,6 +22,10 @@ class Provider extends Component {
     if (Tenant.current === 'mttrs_br') return 'pt'
     return 'en'
   }
+}
+
+Provider.propTypes = {
+  children: PropTypes.any.isRequired
 }
 
 export default Provider
