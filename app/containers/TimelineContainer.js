@@ -14,7 +14,11 @@ const TimelineContainer = props => {
 }
 
 TimelineContainer.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
+  section: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    model: PropTypes.object.isRequired
+  })
 }
 
 export default withQuery(TimelineContainer)
