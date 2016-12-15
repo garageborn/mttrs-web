@@ -22,7 +22,8 @@ const SubHeader = (props) => {
 }
 
 SubHeader.propTypes = {
-  rootPath: PropTypes.string.isRequired
+  rootPath: PropTypes.string.isRequired,
+  tagline: PropTypes.string.isRequired
 }
 
 export default SubHeader

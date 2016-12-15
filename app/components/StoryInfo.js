@@ -1,12 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 import ComponentsJoiner from '../utils/ComponentsJoiner'
 import PublisherTag from './PublisherTag'
-import {publisherPath} from '../utils/RoutesHelper'
 import ParseDate from '../common/utils/ParseDate'
 import moment from '../common/utils/Moment'
 
 class StoryMetadata extends Component {
-  renderPublishers() {
+  renderPublishers () {
     let links = [this.props.mainLink].concat(this.props.otherLinks)
 
     let publishers = links.map((link) => {
@@ -19,7 +18,7 @@ class StoryMetadata extends Component {
     )
   }
 
-  render() {
+  render () {
     return (
       <div>
         @{ParseDate(moment(this.props.mainLink.published_at).unix())}

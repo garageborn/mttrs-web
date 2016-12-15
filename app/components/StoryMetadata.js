@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import StoryInfo from './StoryInfo'
 import StorySocialCount from './StorySocialCount'
 
@@ -14,7 +14,7 @@ const StoryMetadata = ({mainLink, otherLinks, totalSocial}) => {
 StoryMetadata.propTypes = {
   mainLink: PropTypes.object.isRequired,
   otherLinks: PropTypes.array,
-  totalSocial: PropTypes.number.isRequired,
+  totalSocial: PropTypes.number.isRequired
 }
 
 export default StoryMetadata

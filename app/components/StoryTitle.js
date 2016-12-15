@@ -7,7 +7,7 @@ const StoryTitle = ({mainLink}) => {
 }
 
 StoryTitle.propTypes = {
-  mainLink: PropTypes.object.isRequired,
+  mainLink: PropTypes.object.isRequired
 }
 
 export default StoryTitle

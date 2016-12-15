@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import { Link } from 'react-router'
 import { injectIntl, defineMessages } from 'react-intl'
 import SubHeader from '../SubHeader'
 import NavContainer from '../../containers/NavContainer'
@@ -14,9 +13,9 @@ const messages = defineMessages({
 })
 
 class Header extends Component {
-  render() {
-    const { formatMessage } = this.props.intl
-    let headerTagline = formatMessage(messages.headerTagline)
+  render () {
+    // const { formatMessage } = this.props.intl
+    // let headerTagline = formatMessage(messages.headerTagline)
 
     return (
       <header className={styles.header}>

@@ -4,7 +4,7 @@ import { categoryPath } from '../../utils/RoutesHelper'
 import styles from './styles.css'
 
 class Nav extends Component {
-  render() {
+  render () {
     return (
       <nav className={styles.nav}>
         <ul className={styles.navList}>
@@ -14,7 +14,7 @@ class Nav extends Component {
     )
   }
 
-  get categoriesItems() {
+  get categoriesItems () {
     const { categories, loading } = this.props.data
     return categories.map((category) => {
       if (loading) return

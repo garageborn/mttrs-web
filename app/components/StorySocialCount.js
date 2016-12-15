@@ -5,7 +5,7 @@ const StorySocialCount = ({totalSocial}) => {
 }
 
 StorySocialCount.propTypes = {
-  totalSocial: PropTypes.number.isRequired,
+  totalSocial: PropTypes.number.isRequired
 }
 
 export default StorySocialCount
