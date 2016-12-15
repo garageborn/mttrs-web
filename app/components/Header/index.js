@@ -1,27 +1,33 @@
-import React, { PropTypes } from 'react'
-import { Link } from 'react-router'
-import styles from './header.css'
+import React, { Component, PropTypes } from 'react'
+import { injectIntl, defineMessages } from 'react-intl'
+import SubHeader from '../SubHeader'
+import NavContainer from '../../containers/NavContainer'
+import { rootPath } from '../../utils/RoutesHelper'
+import styles from './styles.css'
 
-const Header = (props) => {
-  return (
-    <header className={styles.header}>
-      <div>
-        <Link to={props.rootPath} className={styles.title}>
-          {/* <Logo alt={props.tagline} /> */}
-          Mttrs
-        </Link>
-      </div>
-      <div className={styles.menuTrigger}>
-        {/* <Logo alt={props.tagline} /> */}
-        <span className={styles.title}>Top Stories</span>
-        {/* <ArrowDown /> */}
-      </div>
-    </header>
-  )
+const messages = defineMessages({
+  headerTagline: {
+    id: 'header.tagline',
+    defaultMessage: 'Read What Matters'
+  }
+})
+
+class Header extends Component {
+  render () {
+    const { formatMessage } = this.props.intl
+    let headerTagline = formatMessage(messages.headerTagline)
+
+    return (
+      <header className={styles.header}>
+        <SubHeader rootPath={rootPath} tagline={headerTagline} />
+        <NavContainer />
+      </header>
+    )
+  }
 }
 
 Header.propTypes = {
-  rootPath: PropTypes.string.isRequired
+  intl: PropTypes.object.isRequired
 }
 
-export default Header
+export default injectIntl(Header)

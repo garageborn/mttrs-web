@@ -10,7 +10,7 @@ const defaultRoutes = () => {
     <Route
       path='/'
       component={Root}
-      section={{name: 'home', model: {}}}
+      section={{type: 'home', model: {}}}
     />
   ]
 }
@@ -22,7 +22,7 @@ const categoriesRoutes = (categories) => {
         path={`/${category.slug}`}
         component={Root}
         categorySlug={category.slug}
-        section={{name: 'category', model: category}}
+        section={{type: 'category', model: category}}
       />
     ]
   })
@@ -34,7 +34,7 @@ const publishersRoutes = (publishers) => {
       <Route
         path={`/${publisher.slug}`}
         component={Root}
-        section={{name: 'publisher', model: publisher}}
+        section={{type: 'publisher', model: publisher}}
       />
     ]
   })
@@ -61,6 +61,6 @@ export const buildRoutes = (apolloClient) => {
     apolloClient.query({ query: routesQuery })
       .then(props => resolve(allRoutes(props.data)))
       .catch(error => reject(error))
-    })
+  })
   return routes
 }

@@ -8,7 +8,7 @@
     "build": "npm run build-webpack && npm run build-babel"
   },
   "dependencies": {
-    "apollo-client": "^0.5.20",
+    "apollo-client": "^0.5.21",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.20.0",
     "babel-eslint": "^7.1.1",
@@ -59,7 +59,7 @@
     "raven": "^1.1.1",
     "raven-js": "^3.9.0",
     "react": "~15.4.1",
-    "react-apollo": "^0.7.1",
+    "react-apollo": "^0.6.0",
     "react-dom": "~15.4.1",
     "react-intl": "^2.1.5",
     "react-redux": "^5.0.1",
@@ -69,6 +69,7 @@
     "redux-thunk": "^2.1.0",
     "serve-favicon": "^2.3.2",
     "style-loader": "^0.13.1",
+    "svg-react-loader": "next",
     "underscore.string": "^3.3.4",
     "url-loader": "^0.5.7",
     "webpack": "^1.14.0",

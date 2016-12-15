@@ -6,7 +6,7 @@ const StoryListHeader = ({date}) => {
 }
 
 StoryListHeader.propTypes = {
-  date: PropTypes.number.isRequired,
+  date: PropTypes.number.isRequired
 }
 
 export default StoryListHeader

@@ -1,10 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import { injectIntl, defineMessages } from 'react-intl'
-import withQuery from './HeaderContainer.gql'
-import Header from '../components/Header'
-import NavItem from '../components/NavItem'
-import { categoryPath, rootPath } from '../utils/RoutesHelper'
+import SubHeader from '../components/SubHeader'
+import NavContainer from '../containers/NavContainer'
+import { rootPath } from '../utils/RoutesHelper'
 import styles from '../styles/app.css'
 
 const messages = defineMessages({
@@ -14,13 +13,16 @@ const messages = defineMessages({
   }
 })
 
-class HeaderContainer extends Component {
-  render () {
+class Header extends Component {
+  render() {
     const { formatMessage } = this.props.intl
     let headerTagline = formatMessage(messages.headerTagline)
 
     return (
-      <Header rootPath={rootPath} />
+      <div>
+        <SubHeader rootPath={rootPath} />
+        <NavContainer />
+      </div>
       // <header>
       //   <div className={styles.container}>
       //     <h1>
@@ -37,15 +39,6 @@ class HeaderContainer extends Component {
       // </header>
     )
   }
-
-  get categoriesItems() {
-    const { loading, categories } = this.props.data
-    if (loading) return
-    return categories.map((category) => {
-      return <NavItem key={category.id} name={category.name} url={categoryPath(category.slug)} />
-    })
-  }
 }
 
-const intlHeaderContainer = injectIntl(HeaderContainer)
-export default withQuery(intlHeaderContainer)
+export default injectIntl(Header)
