@@ -9,7 +9,7 @@ class StoryImage extends Component {
       type: 'fetch', width: 120, height: 90, crop: 'fill', secure: true
     }
     return (
-      <a href={this.props.mainLink.url} target='_blank'>
+      <a href={this.props.mainLink.url} className={styles.link} target='_blank'>
         <img
           className={styles.image}
           alt={this.props.mainLink.title}

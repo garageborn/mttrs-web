@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import PublisherIcon from '../PublisherIcon'
 import styles from './styles.css'
+import { Link } from 'react-router'
 
-class StoryMetadata extends Component {
+class StoryInfo extends Component {
   renderPublishers () {
     if (this.props.otherLinks.length === 0) return this.renderMainPublisherName()
     return this.renderPublishersText()
@@ -13,13 +14,13 @@ class StoryMetadata extends Component {
   }
 
   renderMainPublisherName () {
-    return <a href='#'>{this.props.mainLink.publisher.name}</a>
+    return <Link to={this.props.mainLink.publisher.slug}>{this.props.mainLink.publisher.name}</Link>
   }
 
   renderOtherLinks () {
     let otherString = 'other'
     if (this.props.otherLinks.length > 1) otherString = 'others'
-    return <a href='#'>{this.props.otherLinks.length} {otherString}</a>
+    return <Link to='#'>{this.props.otherLinks.length} {otherString}</Link>
   }
 
   renderPublisherIcon () {
@@ -33,9 +34,9 @@ class StoryMetadata extends Component {
   }
 }
 
-StoryMetadata.propTypes = {
+StoryInfo.propTypes = {
   mainLink: PropTypes.object.isRequired,
   otherLinks: PropTypes.array
 }
 
-export default StoryMetadata
+export default StoryInfo

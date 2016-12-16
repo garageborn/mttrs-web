@@ -1,9 +1,16 @@
+@value notSmall from "../../styles/media-queries.css";
+
 .container {
   display: flex;
   flex-flow: column;
   background-color: white;
   padding: 0 1rem;
   margin: 1rem 0;
+  box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.20);
+  
+  @media notSmall {
+    padding: .5rem 1rem;
+  }
 }
 .story {
   display: flex;
