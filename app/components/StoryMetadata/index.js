@@ -4,15 +4,15 @@ import StoryInfo from '../StoryInfo'
 import SocialCount from '../SocialCount'
 import styles from './styles.css'
 
-let cx = classNames.bind(styles);
+let cx = classNames.bind(styles)
 
 class StoryMetadata extends Component {
-  getClassNames() {
+  getClassNames () {
     return cx({
       container: true,
       shouldShowNotSmall: this.props.source === 'storyContent',
       shouldShowSmall: this.props.source === 'story'
-    });
+    })
   }
   render () {
     let { mainLink, otherLinks, totalSocial } = this.props
