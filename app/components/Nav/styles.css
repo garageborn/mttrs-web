@@ -2,6 +2,7 @@
 
 .nav {
   display: none;
+  font-family: 'Cabin', sans-serif;
   color: #FFF;
 
   @media notSmall {
@@ -10,6 +11,7 @@
 
   @media medium {
     background: var(--mttrsSecondaryBlue);
+    justify-content: center;
   }
 
   @media large {

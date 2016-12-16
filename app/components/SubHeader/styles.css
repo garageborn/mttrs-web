@@ -7,6 +7,15 @@
   justify-content: center;
   background: var(--mttrsBlue);
   padding: 0.625em;
+  width: 100%;
+
+  @media notSmall {
+    width: auto;
+  }
+
+  @media medium {
+    height: 3.75em;
+  }
 }
 
 .logoSection {
@@ -14,6 +23,8 @@
 
   @media notSmall {
     display: block;
+    position: relative;
+    top: 4px;
   }
 }
 
@@ -21,9 +32,19 @@
   color: #FFF;
   font-size: 1rem;
   text-decoration: none;
+  margin: 0 1.25em;
+
+  @media notSmall {
+    margin: 0;
+  }
 }
 
 .menuTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
   @media notSmall {
     display: none;
   }

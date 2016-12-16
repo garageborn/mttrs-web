@@ -6,13 +6,14 @@
 
 .item {
   display: inline-block;
+  font-size: 1.125em;
 
   @media medium {
-    margin: 0 1.5em;
+    margin: 0 0.5em;
   }
 
   @media large {
-    margin-left: 3em;
+    margin-left: 1.125em;
   }
 }
 
@@ -27,5 +28,8 @@
      * composes: active; -- do not work bc global var(--mttrsSecondaryBlue) :(
      */
     border-bottom: 4px solid var(--mttrsSecondaryBlue);
+  }
+  @media medium {
+    padding: 0.3125em;
   }
 }
