@@ -2,6 +2,7 @@
 
 .nav {
   display: none;
+  font-family: 'Cabin', sans-serif;
   color: #FFF;
 
   @media notSmall {
