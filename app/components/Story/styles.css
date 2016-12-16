@@ -5,9 +5,10 @@
   flex-flow: column;
   background-color: white;
   padding: 0 1rem;
-  margin: 1rem 0;
+  margin: 3rem 0;
   box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.20);
-  
+  position: relative;
+
   @media notSmall {
     padding: .5rem 1rem;
   }
