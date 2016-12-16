@@ -19,8 +19,10 @@ class Header extends Component {
 
     return (
       <header className={styles.header}>
-        <SubHeader rootPath={rootPath} tagline={headerTagline} />
-        <NavContainer />
+        <div>
+          <SubHeader rootPath={rootPath} tagline={headerTagline} />
+          <NavContainer />
+        </div>
       </header>
     )
   }

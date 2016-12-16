@@ -10,6 +10,7 @@
 
   @media medium {
     background: var(--mttrsSecondaryBlue);
+    justify-content: center;
   }
 
   @media large {
