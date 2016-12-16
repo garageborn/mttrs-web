@@ -1,4 +1,3 @@
-import React from 'react'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
@@ -41,9 +40,9 @@ const Query = gql`
   }
 `
 
-export default function(TimelineContainer) {
+export default function (TimelineContainer) {
   return graphql(Query, {
-    options(props, ownProps) {
+    options (props, ownProps) {
       return {
         variables: {
           ...defaultVariables,
@@ -52,7 +51,7 @@ export default function(TimelineContainer) {
         }
       }
     },
-    props({ data }) {
+    props ({ data }) {
       return {
         data: { ...data }
       }

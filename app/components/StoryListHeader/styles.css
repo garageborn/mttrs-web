@@ -1,0 +1,7 @@
+.title {
+  font-size: 1.375rem;
+  color: var(--mttrsGray);
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}

@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 import { connect } from 'react-redux'
-import StoryListContainer from './StoryListContainer'
 import withQuery from './TimelineContainer.gql'
+import StoryList from '../components/StoryList'
 
 class TimelineContainer extends Component {
   render () {
@@ -11,7 +11,7 @@ class TimelineContainer extends Component {
     return (
       <main>
         {data.timeline.map((item) =>
-          <StoryListContainer key={item.date} date={item.date} stories={item.stories} routing={locationBeforeTransitions} />
+          <StoryList key={item.date} date={item.date} stories={item.stories} routing={locationBeforeTransitions} />
         )}
       </main>
     )

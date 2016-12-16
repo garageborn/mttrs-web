@@ -20,7 +20,10 @@ class PublisherIcon extends Component {
 }
 
 PublisherIcon.propTypes = {
-  publisher: PropTypes.shape.isRequired
+  publisher: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    icon_id: PropTypes.string.isRequired
+  }).isRequired
 }
 
 export default PublisherIcon
