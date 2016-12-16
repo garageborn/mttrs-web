@@ -1,6 +1,7 @@
 @value notSmall, medium, large from "../../styles/media-queries.css";
 
 .header {
+
   background: var(--mttrsBlue);
   > div {
     display: flex;

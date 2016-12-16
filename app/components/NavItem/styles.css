@@ -29,7 +29,6 @@
      */
     border-bottom: 4px solid var(--mttrsSecondaryBlue);
   }
-
   @media medium {
     padding: 0.3125em;
   }

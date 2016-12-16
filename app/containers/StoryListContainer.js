@@ -1,12 +1,12 @@
-import React, {Component, PropTypes} from 'react'
+import React, { PropTypes } from 'react'
 import Story from '../components/Story'
 import StoryListHeader from '../components/StoryListHeader'
 
- const StoryListContainer = ({date, stories}) => {
+const StoryListContainer = ({date, stories, routing}) => {
   return (
     <div>
       <StoryListHeader date={date} />
-      {stories.map((story) => <Story key={story.id} story={story} />)}
+      {stories.map((story) => <Story key={story.id} story={story} routing={routing} />)}
     </div>
   )
 }
