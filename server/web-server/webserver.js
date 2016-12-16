@@ -4,7 +4,7 @@ import webservice from 'web-service'
 const web = webservice({ log })
 
 // serve static files
-web.files('/assets', path.join(Root_folder, 'build', 'assets'))
+web.files('/assets', path.join(Root, 'build', 'assets'))
 
 // if it's not a static file url:
 // Proxy all the rest requests to Webpage rendering server

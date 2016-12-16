@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { title } from 'react-isomorphic-render'
 
-export default class Page extends Component {
+export default class Root extends Component {
   render () {
+    console.log('---------render')
     const husky = require('../assets/images/husky.jpg')
 
     const markup = (

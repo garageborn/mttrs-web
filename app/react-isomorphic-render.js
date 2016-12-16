@@ -1,14 +1,23 @@
-import routes from './routes'
 import wrapper from './wrapper'
+import configureApollo from './config/configureApollo'
+import configureReducers from './config/configureReducers'
+import configureRoutes from './config/configureRoutes'
 
+const apolloClient = configureApollo()
 export default {
+  // (optional)
+  // User can add his own middleware to this `middleware` list
+  reduxMiddleware: () => {
+    return [apolloClient.middleware()]
+  },
+
   // Redux reducer
   // (either an object or a function returning an object)
-  reducer: () => require('./reducer'),
+  reducer: () => configureReducers(apolloClient),
 
   // React-router routes
   // (either a `<Route/>` element or a `function({ store })` returning a `<Route/>` element)
-  routes,
+  routes: configureRoutes(),
 
   // Wraps React page component with arbitrary elements (e.g. <Provider/>, etc; see an example below)
   wrapper,
@@ -20,7 +29,7 @@ export default {
     // http://webpack.github.io/docs/hot-module-replacement.html#accept
     if (_development_ && module.hot) {
       // this path must be equal to the path in the `require()` call in `create_store` above
-      module.hot.accept('./reducer', reload_reducer)
+      module.hot.accept('./reducers', reload_reducer)
     }
   }
 }

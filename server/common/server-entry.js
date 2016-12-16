@@ -3,7 +3,7 @@
 var minimist = require('minimist')
 var path = require('path')
 
-global.Root_folder = path.resolve(__dirname, '..', '..')
+global.Root = path.resolve(__dirname, '..', '..')
 
 var commandLineArguments = minimist(process.argv.slice(2))
 
@@ -23,7 +23,7 @@ require('babel-register')({
   // https://github.com/halt-hammerzeit/webpack-react-redux-isomorphic-render-example/issues/5
   //
   ignore: function (filename) {
-    const relativePath = path.relative(global.Root_folder, filename)
+    const relativePath = path.relative(global.Root, filename)
     let folder = path.dirname(relativePath)
 
     // If it's a `node_modules` folder, ignore it

@@ -5,14 +5,14 @@ var webpack = require('webpack')
 var autoprefixer = require('autoprefixer')
 
 // project folder
-var root_folder = path.resolve(__dirname, '..')
+var Root = path.resolve(__dirname, '..')
 
 // where all the (source) assets reside
-var assets_source_folder = path.resolve(root_folder, 'assets')
+var assets_source_folder = path.resolve(Root, 'assets')
 
 var configuration = {
   // resolve all relative paths from the project root folder
-  context: root_folder,
+  context: Root,
 
   // https://webpack.github.io/docs/multiple-entry-points.html
   entry: {
@@ -21,7 +21,7 @@ var configuration = {
 
   output: {
     // filesystem path for static files
-    path: path.resolve(root_folder, 'build/assets'),
+    path: path.resolve(Root, 'build/assets'),
 
     // network path for static files
     publicPath: '/assets/',
@@ -37,19 +37,19 @@ var configuration = {
     loaders:
     [
       {
-        test   : /\.json$/,
-        loader : 'json-loader'
+        test: /\.json$/,
+        loader: 'json-loader'
       },
       {
-        test    : /\.js$/,
-        // include: [path.resolve(root_folder, 'code')],
-        // exclude: path.resolve(root_folder, 'node_modules'),
+        test: /\.js$/,
+        // include: [path.resolve(Root, 'code')],
+        // exclude: path.resolve(Root, 'node_modules'),
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
       {
-        test    : /\.scss$/,
-        loaders :
+        test: /\.scss$/,
+        loaders:
         [
           'style-loader',
           'css-loader?importLoaders=2&sourceMap',
@@ -58,8 +58,8 @@ var configuration = {
         ]
       },
       {
-        test    : /\.(jpg|png)$/,
-        loaders :
+        test: /\.(jpg|png)$/,
+        loaders:
         [
           'url-loader?limit=10000' // Any png-image or woff-font below or equal to 10K will be converted to inline base64 instead
         ]

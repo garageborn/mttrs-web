@@ -101,7 +101,7 @@ export default function create (name, options = {}) {
     }
   }
 
-  const logPath = path.resolve(Root_folder, 'log', `${name}.txt`)
+  const logPath = path.resolve(Root, 'log', `${name}.txt`)
 
   fs.ensureDirSync(path.dirname(logPath))
 
