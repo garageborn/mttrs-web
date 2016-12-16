@@ -23,6 +23,8 @@
 
   @media notSmall {
     display: block;
+    position: relative;
+    top: 4px;
   }
 }
 

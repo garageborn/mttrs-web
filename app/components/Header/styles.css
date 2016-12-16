@@ -1,19 +1,22 @@
 @value notSmall, medium, large from "../../styles/media-queries.css";
 
 .header {
-  display: flex;
   background: var(--mttrsBlue);
-  height: 3.125em;
+  > div {
+    display: flex;
+    height: 3.125em;
 
-  @media medium {
-    height: auto;
-    flex-direction: column;
-  }
+    @media medium {
+      height: auto;
+      flex-direction: column;
+    }
 
-  @media large {
-    height: 4.375em;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    @media large {
+      lost-center: 60em;
+      height: 4.375em;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 }
