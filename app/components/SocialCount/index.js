@@ -1,7 +1,15 @@
 import React, { PropTypes } from 'react'
+import SocialCount from '../../common/utils/SocialCount'
+import styles from './styles.css'
 
 const StorySocialCount = ({totalSocial}) => {
-  return <p>{totalSocial}</p>
+  let count = SocialCount(totalSocial)
+  let socialCountAlt = `Social Count: ${count}`
+  return (
+    <p className={styles.text}>
+      <img src={require('../../assets/icon-social-count.png')} alt={socialCountAlt} /> {count}
+    </p>
+  )
 }
 
 StorySocialCount.propTypes = {
