@@ -1,7 +1,3 @@
 @import "normalize.css";
 @import "media-queries";
 @import "global";
-
-body {
-  backgroun: black
-}
