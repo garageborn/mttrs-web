@@ -1,4 +1,5 @@
 var path = require('path')
+var webpack = require('webpack')
 
 var cssnext = require('postcss-cssnext')
 var lost = require('lost')
@@ -79,7 +80,13 @@ var configuration = {
     ]
   },
 
-  plugins: []
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'commons',
+      filename: 'commons.js'
+
+    })
+  ]
 }
 
 module.exports = configuration

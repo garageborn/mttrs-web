@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-require('../styles/app.css')
 import Header from '../components/Header'
 import TimelineContainer from './TimelineContainer'
 import IntlProvider from '../config/IntlProvider'

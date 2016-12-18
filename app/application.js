@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom'
 import { render } from 'react-isomorphic-render/redux'
 
 import common from './react-isomorphic-render'
-require('./styles/app.css')
+// require('./styles/app.css')
 
 // renders the webpage on the client side
 render({

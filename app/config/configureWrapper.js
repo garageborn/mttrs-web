@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { ApolloProvider } from 'react-apollo'
 import { renderToStringWithData }  from 'react-apollo/server'
+require('../styles/app.css')
 
 class Wrapper extends Component {
   // all React "prop"erty providers go here.
