@@ -80,13 +80,7 @@ var configuration = {
     ]
   },
 
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'commons',
-      filename: 'commons.js'
-
-    })
-  ]
+  plugins: []
 }
 
 module.exports = configuration
