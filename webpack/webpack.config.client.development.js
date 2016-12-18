@@ -13,8 +13,7 @@ configuration.plugins.push(
       BABEL_ENV: JSON.stringify('development/client')
     },
     _production_: false,
-    _development_: true,
-    _development_tools_: false  // enable/disable redux-devtools
+    _development_: true
   }),
 
   // faster code reload on changes

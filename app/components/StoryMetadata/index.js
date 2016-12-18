@@ -28,7 +28,7 @@ class StoryMetadata extends Component {
 
 StoryMetadata.propTypes = {
   mainLink: PropTypes.object.isRequired,
-  otherLinks: PropTypes.object.isRequired,
+  otherLinks: PropTypes.array.isRequired,
   totalSocial: PropTypes.number.isRequired,
   source: PropTypes.string.isRequired
 }

@@ -1,20 +1,23 @@
-// The polyfill will emulate a full ES6 environment (for old browsers)
-// (including generators, which means async/await)
-import 'babel-polyfill'
-
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { render } from 'react-isomorphic-render/redux'
+import App from './containers/App'
+import DevTools from './utils/DevTools'
+import configureStore from './config/configureStore'
+import configureApollo from './config/configureApollo'
+import { buildRoutes } from './config/Routes'
 
-import common from './react-isomorphic-render'
-// require('./styles/app.css')
+const apolloClient = configureApollo()
+const store = configureStore(window.__INITIAL_STATE__, apolloClient)
+const render = ({ store, apolloClient, routes }) => {
+  ReactDOM.render(
+    <App store={store} apolloClient={apolloClient} routes={routes} />,
+    document.getElementById('react')
+  )
+  if (_development_) {
+    ReactDOM.render(<DevTools store={store} />, document.getElementById('dev-tools'))
+  }
+}
 
-// renders the webpage on the client side
-render({
-  // enable/disable development mode
-  development: _development_,
-
-  // enable/disable Redux dev-tools
-  devtools: _development_tools_ ? require('./devtools') : undefined
-},
-common)
+buildRoutes(apolloClient)
+  .then(routes => render({ store, apolloClient, routes }))
+  .catch(error => console.error(error))

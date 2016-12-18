@@ -8,18 +8,12 @@ class Root extends Component {
   render () {
     return (
       <IntlProvider>
-        <Header />
+        <div>
+          <Header />
+          <TimelineContainer section={this.props.section} />
+        </div>
       </IntlProvider>
     )
-
-    // return (
-    //   <IntlProvider>
-    //     <div>
-    //       <Header />
-    //       <TimelineContainer section={this.props.section} />
-    //     </div>
-    //   </IntlProvider>
-    // )
   }
 }
 
