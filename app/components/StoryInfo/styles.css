@@ -1,0 +1,9 @@
+.text {
+  display: flex;
+  align-items: center;
+  font-size: var(--mttrsFontSmall);
+  color: var(--mttrsGray);
+  a {
+    color: var(--mttrsDarkGray);
+  }
+}

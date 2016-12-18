@@ -1,0 +1,20 @@
+@value notSmall, medium, large from "../../styles/media-queries.css";
+
+.nav {
+  display: none;
+  font-family: 'Cabin', sans-serif;
+  color: #FFF;
+
+  @media notSmall {
+    display: flex;
+  }
+
+  @media medium {
+    background: var(--mttrsSecondaryBlue);
+    justify-content: center;
+  }
+
+  @media large {
+    background: var(--mttrsBlue);
+  }
+}

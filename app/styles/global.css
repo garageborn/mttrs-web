@@ -1,0 +1,36 @@
+:global {
+  :root {
+    --mttrsBlue: #262C5B;
+    --mttrsSecondaryBlue: #393F69;
+    --mttrsDarkestColor: #333;
+    --mttrsBackgroundColor: #F1F1F1;
+    --mttrsGray: #999;
+    --mttrsDarkGray: #666;
+    --mttrsFontSmall: .9rem;
+  }
+
+  html {
+    box-sizing: border-box;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    background: var(--mttrsBackgroundColor);
+    line-height: 1.5;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--darkestColor);
+  }
+}

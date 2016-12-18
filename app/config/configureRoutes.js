@@ -5,6 +5,7 @@ import Root from '../containers/Root'
 const defaultRoutes = () => {
   return [
     <IndexRoute
+      key={'home'}
       component={Root}
       section={{type: 'home', model: {}}}
     />
@@ -15,6 +16,7 @@ const categoriesRoutes = (categories) => {
   return categories.map((category) => {
     return (
       <Route
+        key={category.slug}
         path={`/${category.slug}`}
         component={Root}
         categorySlug={category.slug}

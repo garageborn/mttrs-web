@@ -1,0 +1,35 @@
+@value notSmall, medium, large from "../../styles/media-queries.css";
+
+.active {
+  border-bottom: 4px solid var(--mttrsSecondaryBlue);
+}
+
+.item {
+  display: inline-block;
+  font-size: 1.125rem;
+
+  @media medium {
+    margin: 0 0.5em;
+  }
+
+  @media large {
+    margin-left: 1.125em;
+  }
+}
+
+.itemLink {
+  text-decoration: none;
+  color: #FFF;
+  padding: 0.25em 0;
+  transition: color .5s ease-in-out;
+
+  &:hover {
+    /* TODO:
+     * composes: active; -- do not work bc global var(--mttrsSecondaryBlue) :(
+     */
+    border-bottom: 4px solid var(--mttrsSecondaryBlue);
+  }
+  @media medium {
+    padding: 0.3125em;
+  }
+}

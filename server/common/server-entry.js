@@ -2,6 +2,7 @@
 
 var minimist = require('minimist')
 var path = require('path')
+require('isomorphic-fetch')
 
 global.Root = path.resolve(__dirname, '..', '..')
 

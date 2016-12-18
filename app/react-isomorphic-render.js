@@ -1,10 +1,15 @@
-import wrapper from './wrapper'
+import configureWrapper from './config/configureWrapper'
 import configureApollo from './config/configureApollo'
 import configureReducers from './config/configureReducers'
 import configureRoutes from './config/configureRoutes'
 
-const apolloClient = configureApollo()
+const apolloClient = configureApollo({ssrMode: true})
 export default {
+  initialize: async (httpClient, { request }) => (
+    console.log('-------------initializ222222222e')
+    // return {batata: 10}
+  ),
+
   // (optional)
   // User can add his own middleware to this `middleware` list
   reduxMiddleware: () => {
@@ -20,7 +25,7 @@ export default {
   routes: configureRoutes(),
 
   // Wraps React page component with arbitrary elements (e.g. <Provider/>, etc; see an example below)
-  wrapper,
+  wrapper: (props) => configureWrapper(apolloClient, props),
 
   on_store_created ({ reload_reducer }) {
     // (for Webpack users only)

@@ -48,20 +48,19 @@ var configuration = {
         loader: 'babel-loader'
       },
       {
-        test: /\.scss$/,
+        test: /\.css$/,
         loaders:
         [
           'style-loader',
           'css-loader?importLoaders=2&sourceMap',
-          'postcss-loader',
-          'sass-loader?outputStyle=expanded&sourceMap=true&sourceMapContents=true'
+          'postcss-loader'
         ]
       },
       {
-        test: /\.(jpg|png)$/,
+        test: /\.(jpg|png|ico)$/,
         loaders:
         [
-          'url-loader?limit=10000' // Any png-image or woff-font below or equal to 10K will be converted to inline base64 instead
+          'url-loader?limit=1' // Any png-image or woff-font below or equal to 10K will be converted to inline base64 instead
         ]
       }
     ]

@@ -1,23 +1,39 @@
-import React, { Component } from 'react'
-import { title } from 'react-isomorphic-render'
+import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
+import Header from '../components/Header'
+import TimelineContainer from './TimelineContainer'
+import IntlProvider from '../config/IntlProvider'
 
-export default class Root extends Component {
+class Root extends Component {
   render () {
-    console.log('---------render')
-    const husky = require('../assets/images/husky.jpg')
-
-    const markup = (
-      <section className='content'>
-        {title('Home')}
-
-        <h1>
-          Husky
-        </h1>
-
-        <img src={husky} />
-      </section>
+    return (
+      <IntlProvider>
+        <Header />
+      </IntlProvider>
     )
 
-    return markup
+    // return (
+    //   <IntlProvider>
+    //     <div>
+    //       <Header />
+    //       <TimelineContainer section={this.props.section} />
+    //     </div>
+    //   </IntlProvider>
+    // )
   }
 }
+
+Root.propTypes = {
+  section: PropTypes.shape({
+    type: PropTypes.string.isRequired,
+    model: PropTypes.object.isRequired
+  })
+}
+
+let mapStateToProps = (state, ownProps) => {
+  return {
+    section: ownProps.route.section
+  }
+}
+
+export default connect(mapStateToProps)(Root)

@@ -1,0 +1,3 @@
+@value notSmall: (min-width: 30em);
+@value medium: (min-width: 30em) and (max-width: 60em);
+@value large: (min-width: 60em);
