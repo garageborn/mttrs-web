@@ -1,14 +1,15 @@
-// This is the base Webpack configuration file
-
 var path = require('path')
-var webpack = require('webpack')
-var autoprefixer = require('autoprefixer')
+
+var cssnext = require('postcss-cssnext')
+var lost = require('lost')
+var precss = require('precss')
+var mqpacker = require('css-mqpacker')
+var nested = require('postcss-nested')
+var atImport = require('postcss-import')
+var fontMagician = require('postcss-font-magician')
 
 // project folder
 var Root = path.resolve(__dirname, '..')
-
-// where all the (source) assets reside
-var assets_source_folder = path.resolve(Root, 'assets')
 
 var configuration = {
   // resolve all relative paths from the project root folder
@@ -52,7 +53,7 @@ var configuration = {
         loaders:
         [
           'style-loader',
-          'css-loader?importLoaders=2&sourceMap',
+          'css-loader?modules&importLoaders=2&sourceMap',
           'postcss-loader'
         ]
       },
@@ -66,7 +67,17 @@ var configuration = {
     ]
   },
 
-  postcss: () => [autoprefixer({ browsers: 'last 2 version' })],
+  postcss: function (webpack) {
+    return [
+      atImport,
+      precss,
+      fontMagician,
+      cssnext({ browsers: ['last 2 versions'] }),
+      lost,
+      nested,
+      mqpacker
+    ]
+  },
 
   plugins: []
 }
