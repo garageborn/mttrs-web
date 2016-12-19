@@ -1,3 +1,6 @@
 .container {
+  display: flex;
   flex: 10;
+  justify-content: center;
+  flex-direction: column;
 }
