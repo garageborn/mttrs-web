@@ -1,8 +1,13 @@
 import React, {Component, PropTypes} from 'react'
 import withQuery from './TimelineContainer.gql'
 import StoryList from '../components/StoryList'
+import { UIActions } from '../actions/index'
 
 class TimelineContainer extends Component {
+  constructor () {
+    super()
+    this.handleStoryLinks = this.handleStoryLinks.bind(this)
+  }
   render () {
     const {data} = this.props
     if (data.loading) return <div className='loading'>Hang on...</div>
@@ -19,6 +24,10 @@ class TimelineContainer extends Component {
     if (!item.stories.length) return
     return <StoryList key={item.date} date={item.date} stories={item.stories} options={options} />
   }
+  handleStoryLinks () {
+    let {dispatch} = this.props
+    dispatch(UIActions.openModal())
+  }
 }
 
 TimelineContainer.propTypes = {
@@ -26,7 +35,8 @@ TimelineContainer.propTypes = {
   options: PropTypes.shape({
     renderCategory: PropTypes.bool
   }),
-  queryVariables: PropTypes.object
+  queryVariables: PropTypes.object,
+  dispatch: PropTypes.func.isRequired
 }
 
 TimelineContainer.defaultProps = {

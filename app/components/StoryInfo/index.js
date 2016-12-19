@@ -20,7 +20,7 @@ class StoryInfo extends Component {
   renderOtherLinks () {
     let otherString = 'other'
     if (this.props.otherLinks.length > 1) otherString = 'others'
-    return <Link to='#'>{this.props.otherLinks.length} {otherString}</Link>
+    return <a onClick={this.props.handleStoryLinks}>{this.props.otherLinks.length} {otherString}</a>
   }
 
   renderPublisherIcon () {
@@ -36,7 +36,8 @@ class StoryInfo extends Component {
 
 StoryInfo.propTypes = {
   mainLink: PropTypes.object.isRequired,
-  otherLinks: PropTypes.array
+  otherLinks: PropTypes.array,
+  handleStoryLinks: PropTypes.func.isRequired
 }
 
 export default StoryInfo

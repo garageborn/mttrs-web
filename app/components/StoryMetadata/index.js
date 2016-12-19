@@ -13,11 +13,15 @@ class StoryMetadata extends Component {
     })
   }
   render () {
-    let { mainLink, otherLinks, totalSocial } = this.props
+    let {mainLink, otherLinks, totalSocial, handleStoryLinks} = this.props
 
     return (
       <div className={this.getClassNames()}>
-        <StoryInfo mainLink={mainLink} otherLinks={otherLinks} />
+        <StoryInfo
+          mainLink={mainLink}
+          otherLinks={otherLinks}
+          handleStoryLinks={handleStoryLinks}
+        />
         <SocialCount totalSocial={totalSocial} />
       </div>
     )
@@ -28,7 +32,8 @@ StoryMetadata.propTypes = {
   mainLink: PropTypes.object.isRequired,
   otherLinks: PropTypes.array.isRequired,
   totalSocial: PropTypes.number.isRequired,
-  source: PropTypes.string.isRequired
+  source: PropTypes.string.isRequired,
+  handleStoryLinks: PropTypes.func.isRequired
 }
 
 export default StoryMetadata
