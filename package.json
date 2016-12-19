@@ -62,6 +62,7 @@
     "shiitake": "^1.1.6",
     "source-map-support": "^0.4.0",
     "style-loader": "^0.13.1",
+    "svg-react-loader": "^0.3.7",
     "universal-webpack": "^0.1.31",
     "url-loader": "^0.5.5",
     "web-service": "^0.4.4",

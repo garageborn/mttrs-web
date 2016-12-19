@@ -17,5 +17,6 @@
 
   @media large {
     background: $mttrsBlue;
+    margin-right: -2.5em;
   }
 }
