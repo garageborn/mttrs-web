@@ -18,8 +18,7 @@ class Logo extends Component {
 }
 
 Logo.propTypes = {
-  type: PropTypes.string.isRequired,
-  tagline: PropTypes.string.isRequired
+  type: PropTypes.string.isRequired
 }
 
 Logo.defaultProps = {
