@@ -17,6 +17,10 @@
   @media medium {
     height: 3.75em;
   }
+
+  @media large {
+    margin-left: -2.5em;
+  }
 }
 
 .logoSection {
@@ -25,7 +29,7 @@
   @media notSmall {
     display: block;
     position: relative;
-    top: 4px;
+    top: 1px;
   }
 }
 

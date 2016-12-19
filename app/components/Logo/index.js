@@ -1,40 +1,24 @@
 import React, { Component, PropTypes } from 'react'
-import classNames from 'classnames'
-import styles from './styles.css'
+import LogoMttrs from '../../assets/logo-mttrs.svg'
+import LogoMttrsMobile from '../../assets/logo-mttrs-mobile.svg'
 
 class Logo extends Component {
   getLogoType () {
     const { type } = this.props
     if (type === 'mobile') {
-      return require('../../assets/logo-mttrs-mobile.png')
+      return <LogoMttrsMobile />
     }
 
-    return require('../../assets/logo-mttrs.png')
-  }
-
-  getClassNames () {
-    const { type } = this.props
-    return classNames({
-      [styles.logo]: true,
-      [styles.logoMobile]: type === 'mobile',
-      [styles.logoNotMobile]: type === 'default'
-    })
+    return <LogoMttrs />
   }
 
   render () {
-    return (
-      <img
-        className={this.getClassNames()}
-        src={this.getLogoType()}
-        alt={this.props.tagline}
-      />
-    )
+    return this.getLogoType()
   }
 }
 
 Logo.propTypes = {
-  type: PropTypes.string.isRequired,
-  tagline: PropTypes.string.isRequired
+  type: PropTypes.string.isRequired
 }
 
 Logo.defaultProps = {

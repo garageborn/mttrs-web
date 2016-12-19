@@ -20,7 +20,7 @@ class Header extends Component {
     return (
       <header className={styles.header}>
         <div>
-          <SubHeader rootPath={rootPath} tagline={headerTagline} />
+          <SubHeader rootPath={rootPath} />
           <NavContainer />
         </div>
       </header>

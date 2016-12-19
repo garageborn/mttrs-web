@@ -9,11 +9,11 @@ const SubHeader = (props) => {
     <section className={styles.subHeader}>
       <div className={styles.logoSection}>
         <Link to={props.rootPath} className={styles.title}>
-          <Logo tagline={props.tagline} />
+          <Logo />
         </Link>
       </div>
       <div className={styles.menuTrigger}>
-        <Logo type='mobile' tagline={props.tagline} />
+        <Logo type='mobile' />
         <span className={styles.title}>Top Stories</span>
         <Arrow />
       </div>
@@ -22,8 +22,7 @@ const SubHeader = (props) => {
 }
 
 SubHeader.propTypes = {
-  rootPath: PropTypes.string.isRequired,
-  tagline: PropTypes.string.isRequired
+  rootPath: PropTypes.string.isRequired
 }
 
 export default SubHeader
