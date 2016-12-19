@@ -41,5 +41,5 @@ let mapStateToProps = (state, ownProps) => {
 }
 
 const PublisherWithIntl = injectIntl(Publisher)
-const PublisherWithQuery = withQuery(PublisherWithIntl)
-export default connect(mapStateToProps)(PublisherWithQuery)
+const PublisherWithRedux = connect(mapStateToProps)(PublisherWithIntl)
+export default withQuery(PublisherWithRedux)

@@ -43,5 +43,5 @@ let mapStateToProps = (state, ownProps) => {
 }
 
 const CategoryWithIntl = injectIntl(Category)
-const CategoryWithQuery = withQuery(CategoryWithIntl)
-export default connect(mapStateToProps)(CategoryWithQuery)
+const CategoryWithRedux = connect(mapStateToProps)(CategoryWithIntl)
+export default withQuery(CategoryWithRedux)
