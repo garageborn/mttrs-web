@@ -9,7 +9,7 @@ const Query = gql`
 
 export default function (Publisher) {
   return graphql(Query, {
-    options (props, ownProps) {
+    options (props) {
       return {
         variables: { slug: props.route.slug }
       }
