@@ -24,9 +24,10 @@ class TimelineContainer extends Component {
     if (!item.stories.length) return
     return <StoryList key={item.date} date={item.date} stories={item.stories} options={options} />
   }
-  handleStoryLinks () {
+
+  handleStoryLinks (modalType, content) {
     let {dispatch} = this.props
-    dispatch(UIActions.openModal())
+    dispatch(UIActions.openModal(modalType, content))
   }
 }
 

@@ -3,7 +3,8 @@ import { OPEN_MODAL } from '../constants/ActionTypes'
 let defaultState = {
   modal: {
     isOpen: false,
-    story: {}
+    type: '',
+    content: {}
   }
 }
 
@@ -13,8 +14,10 @@ export default function (state = defaultState, action) {
       return {
         ...state,
         modal: {
-          ...state.menu,
-          isOpen: true
+          ...state.modal,
+          isOpen: true,
+          modalType: action.modalType,
+          content: action.content
         }
       }
     default:

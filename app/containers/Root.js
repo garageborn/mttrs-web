@@ -13,7 +13,7 @@ class Root extends Component {
         <div>
           <Header />
           <TimelineContainer section={this.props.section} />
-          <Modal isOpen={UIReducer.modal.isOpen}>oi</Modal>
+          <Modal isOpen={UIReducer.modal.isOpen}>{UIReducer.modal.content}</Modal>
         </div>
       </IntlProvider>
     )
@@ -26,8 +26,10 @@ Root.propTypes = {
     model: PropTypes.object.isRequired
   }),
   UIReducer: PropTypes.shape({
-    menu: PropTypes.shape({
-      isOpen: PropTypes.bool.isRequired
+    modal: PropTypes.shape({
+      isOpen: PropTypes.bool.isRequired,
+      type: PropTypes.string.isRequired,
+      content: PropTypes.any.isRequired
     })
   })
 }

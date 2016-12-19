@@ -1,0 +1,15 @@
+@value notSmall, medium, large from "../../styles/media-queries.css";
+
+.container {
+  @media medium {
+    padding: 0 1em;
+  }
+
+  @media large {
+    lost-center: 60em;
+  }
+
+  &:first-of-type {
+    margin-top: 3em;
+  }
+}
