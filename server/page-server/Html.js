@@ -25,6 +25,7 @@ export default class Html extends Component {
     let contentElement = <div id='react' dangerouslySetInnerHTML={{ __html: body }} />
 
     const webpageHead = Helmet.rewind()
+    const metaViewport = <meta name='viewport' content='width=device-width, initial-scale=1' />
 
     let htmlAttributes = webpageHead.htmlAttributes.toComponent()
 
@@ -52,8 +53,9 @@ export default class Html extends Component {
       <html {...htmlAttributes} >
         <head>
           {/* webpage title and various meta tags */}
-          {webpageHead.title.toComponent()}
+          {metaViewport}
           {webpageHead.meta.toComponent()}
+          {webpageHead.title.toComponent()}
           {webpageHead.link.toComponent()}
 
           {/* (will be done only in production mode
