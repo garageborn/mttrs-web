@@ -122,7 +122,7 @@ Html.propTypes = {
   store: PropTypes.object.isRequired,
   children: PropTypes.node,
   head: PropTypes.node,
-  body: PropTypes.func,
+  body: PropTypes.string,
   bodyStart: PropTypes.node,
   bodyEnd: PropTypes.node
 }

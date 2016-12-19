@@ -6,11 +6,14 @@ import {renderToStringWithData} from 'react-apollo/server'
 import {RouterContext} from 'react-router'
 import htmlOptions from './htmlOptions'
 import Html from '../Html'
+import IntlProvider from '../../../app/config/IntlProvider'
 
 let renderEngine = ({ store, apolloClient, parameters, renderProps }) => {
   const component = (
     <ApolloProvider store={store} client={apolloClient}>
-      <RouterContext {...renderProps} />
+      <IntlProvider>
+        <RouterContext {...renderProps} />
+      </IntlProvider>
     </ApolloProvider>
   )
 

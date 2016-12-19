@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react'
 import { ApolloProvider } from 'react-apollo'
 import { Router, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
+import IntlProvider from '../config/IntlProvider'
 require('../styles/app.css')
 
 class App extends Component {
@@ -11,7 +12,9 @@ class App extends Component {
 
     return (
       <ApolloProvider store={store} client={apolloClient}>
-        <Router history={history} routes={routes} />
+        <IntlProvider>
+          <Router history={history} routes={routes} />
+        </IntlProvider>
       </ApolloProvider>
     )
   }

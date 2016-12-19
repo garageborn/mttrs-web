@@ -1,32 +1,39 @@
 import React, {Component, PropTypes} from 'react'
-import { connect } from 'react-redux'
 import withQuery from './TimelineContainer.gql'
 import StoryList from '../components/StoryList'
 
 class TimelineContainer extends Component {
   render () {
-    const {data, routing} = this.props
+    const {data} = this.props
     if (data.loading) return <div className='loading'>Hang on...</div>
-    let locationBeforeTransitions = routing.locationBeforeTransitions || { pathname: '' }
+
     return (
       <main>
-        {data.timeline.map((item) =>
-          <StoryList key={item.date} date={item.date} stories={item.stories} routing={locationBeforeTransitions} />
-        )}
+        {data.timeline.map((item) => this.renderStoryList(item))}
       </main>
     )
+  }
+
+  renderStoryList (item) {
+    const {options} = this.props
+    if (!item.stories.length) return
+    return <StoryList key={item.date} date={item.date} stories={item.stories} options={options} />
   }
 }
 
 TimelineContainer.propTypes = {
   data: PropTypes.object.isRequired,
-  routing: PropTypes.object
+  options: PropTypes.shape({
+    renderCategory: PropTypes.bool
+  }),
+  queryVariables: PropTypes.object
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    routing: state.routing
-  }
+TimelineContainer.defaultProps = {
+  options: {
+    renderCategory: true
+  },
+  queryVariables: {}
 }
-const TimelineContainerWithQuery = withQuery(TimelineContainer)
-export default connect(mapStateToProps)(TimelineContainerWithQuery)
+
+export default withQuery(TimelineContainer)

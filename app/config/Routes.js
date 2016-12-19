@@ -1,29 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Route } from 'react-router'
-import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import _flattenDeep from 'lodash/flattenDeep'
-import Root from '../containers/Root'
+import Home from '../pages/Home'
+import Category from '../pages/Category'
+import Publisher from '../pages/Publisher'
 
 const defaultRoutes = () => {
   return [
-    <Route
-      path='/'
-      component={Root}
-      section={{type: 'home', model: {}}}
-    />
+    <Route path='/' component={Home} />
   ]
 }
 
 const categoriesRoutes = (categories) => {
   return categories.map((category) => {
     return [
-      <Route
-        path={`/${category.slug}`}
-        component={Root}
-        categorySlug={category.slug}
-        section={{type: 'category', model: category}}
-      />
+      <Route path={`/${category.slug}`} component={Category} slug={category.slug} />
     ]
   })
 }
@@ -31,11 +23,7 @@ const categoriesRoutes = (categories) => {
 const publishersRoutes = (publishers) => {
   return publishers.map((publisher) => {
     return [
-      <Route
-        path={`/${publisher.slug}`}
-        component={Root}
-        section={{type: 'publisher', model: publisher}}
-      />
+      <Route path={`/${publisher.slug}`} component={Publisher} slug={publisher.slug} />
     ]
   })
 }
@@ -56,7 +44,7 @@ const routesQuery = gql`
   }
 `
 
-export const buildRoutes = (apolloClient) => {
+export default function (apolloClient) {
   let routes = new Promise((resolve, reject) => {
     apolloClient.query({ query: routesQuery })
       .then(props => resolve(allRoutes(props.data)))

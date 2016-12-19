@@ -6,12 +6,6 @@ import styles from './styles.css'
 import StoryMetadata from '../StoryMetadata'
 
 class Story extends Component {
-  renderCategory () {
-    let pathname = this.props.routing.pathname
-
-    if (pathname !== '/') return
-    return <StoryCategory category={this.category} />
-  }
   render () {
     const {story} = this.props
     return (
@@ -35,6 +29,11 @@ class Story extends Component {
     )
   }
 
+  renderCategory () {
+    if (this.props.options.renderCategory === false) return
+    return <StoryCategory category={this.category} />
+  }
+
   get mainLink () {
     return this.props.story.main_link
   }
@@ -49,7 +48,16 @@ class Story extends Component {
 }
 
 Story.propTypes = {
-  story: PropTypes.object.isRequired
+  story: PropTypes.object.isRequired,
+  options: PropTypes.shape({
+    renderCategory: PropTypes.bool
+  })
+}
+
+Story.defaultProps = {
+  options: {
+    renderCategory: true
+  }
 }
 
 export default Story
