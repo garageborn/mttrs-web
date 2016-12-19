@@ -8,6 +8,7 @@ var mqpacker = require('css-mqpacker')
 var nested = require('postcss-nested')
 var atImport = require('postcss-import')
 var fontMagician = require('postcss-font-magician')
+var simpleVars = require('postcss-simple-vars')
 
 // project folder
 var Root = path.resolve(__dirname, '..')
@@ -54,7 +55,7 @@ var configuration = {
         loaders:
         [
           'style-loader',
-          'css-loader?modules&importLoaders=2&sourceMap',
+          'css-loader?modules&localIdentName=[name]_[local]_[hash:base64:5]&importLoaders=2&sourceMap',
           'postcss-loader'
         ]
       },
@@ -74,6 +75,7 @@ var configuration = {
       precss,
       fontMagician,
       cssnext({ browsers: ['last 2 versions'] }),
+      simpleVars,
       lost,
       nested,
       mqpacker

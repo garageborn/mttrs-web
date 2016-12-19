@@ -1,8 +1,8 @@
+@import "../../styles/variables.css";
 @value notSmall, medium, large from "../../styles/media-queries.css";
 
 .header {
-
-  background: var(--mttrsBlue);
+  background: $mttrsBlue;
   > div {
     display: flex;
     height: 3.125em;

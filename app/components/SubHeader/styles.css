@@ -1,3 +1,4 @@
+@import "../../styles/variables.css";
 @value notSmall, medium, large from "../../styles/media-queries.css";
 
 .subHeader {
@@ -5,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--mttrsBlue);
+  background: $mttrsBlue;
   padding: 0.625em;
   width: 100%;
 

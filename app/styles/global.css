@@ -1,14 +1,6 @@
-:global {
-  :root {
-    --mttrsBlue: #262C5B;
-    --mttrsSecondaryBlue: #393F69;
-    --mttrsDarkestColor: #333;
-    --mttrsBackgroundColor: #F1F1F1;
-    --mttrsGray: #999;
-    --mttrsDarkGray: #666;
-    --mttrsFontSmall: .9rem;
-  }
+@import "variables";
 
+:global {
   html {
     box-sizing: border-box;
   }
@@ -20,7 +12,7 @@
   body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    background: var(--mttrsBackgroundColor);
+    background: $mttrsBackgroundColor;
     line-height: 1.5;
   }
 
@@ -31,6 +23,6 @@
 
   a {
     text-decoration: none;
-    color: var(--darkestColor);
+    color: $mttrsDarkestColor;
   }
 }

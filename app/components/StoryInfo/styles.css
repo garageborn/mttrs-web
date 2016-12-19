@@ -1,9 +1,11 @@
+@import "../../styles/variables.css";
+
 .text {
   display: flex;
   align-items: center;
-  font-size: var(--mttrsFontSmall);
-  color: var(--mttrsGray);
+  font-size: $mttrsFontSmall;
+  color: $mttrsGray;
   a {
-    color: var(--mttrsDarkGray);
+    color: $mttrsDarkGray;
   }
 }
