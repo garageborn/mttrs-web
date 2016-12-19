@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import classNames from 'classNames'
+import classNames from 'classnames'
 import StoryInfo from '../StoryInfo'
 import SocialCount from '../SocialCount'
 import styles from './styles.css'
