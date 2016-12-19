@@ -19,5 +19,4 @@ RUN mkdir $MTTRS_WEB
 COPY . $MTTRS_WEB
 WORKDIR $MTTRS_WEB
 
-RUN npm install -g yarn
 RUN yarn install --production
