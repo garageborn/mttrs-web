@@ -4,10 +4,13 @@ import App from './containers/App'
 import DevTools from './utils/DevTools'
 import configureStore from './config/configureStore'
 import configureApollo from './config/configureApollo'
-import { buildRoutes } from './config/Routes'
+import buildRoutes from './config/Routes'
+import Setup from './config/Setup'
 
+if (window) Setup.fromWindow(window)
 const apolloClient = configureApollo()
 const store = configureStore(window.__INITIAL_STATE__, apolloClient)
+
 const render = ({ store, apolloClient, routes }) => {
   ReactDOM.render(
     <App store={store} apolloClient={apolloClient} routes={routes} />,

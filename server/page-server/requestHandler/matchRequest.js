@@ -1,5 +1,5 @@
 import { match } from 'react-router'
-import { buildRoutes } from '../../../app/config/Routes'
+import buildRoutes from '../../../app/config/Routes'
 import sentry from '../sentry'
 import renderEngine from './renderEngine'
 
