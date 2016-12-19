@@ -1,17 +1,15 @@
 import React, { Component, PropTypes } from 'react'
-import classNames from 'classNames/bind'
+import classNames from 'classNames'
 import StoryInfo from '../StoryInfo'
 import SocialCount from '../SocialCount'
 import styles from './styles.css'
 
-let cx = classNames.bind(styles)
-
 class StoryMetadata extends Component {
   getClassNames () {
-    return cx({
-      container: true,
-      shouldShowNotSmall: this.props.source === 'storyContent',
-      shouldShowSmall: this.props.source === 'story'
+    return classNames({
+      [styles.container]: true,
+      [styles.shouldShowNotSmall]: this.props.source === 'storyContent',
+      [styles.shouldShowSmall]: this.props.source === 'story'
     })
   }
   render () {
