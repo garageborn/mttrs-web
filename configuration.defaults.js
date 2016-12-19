@@ -2,13 +2,13 @@ module.exports = {
   webpage_server: {
     http: {
       host: '127.0.0.1',
-      port: 3003
+      port: 4003
     }
   },
   web_server: {
     http: {
       host: '127.0.0.1',
-      port: 3000
+      port: 4000
     }
   },
   session_secret_keys: ['stackenblochen'],
@@ -16,7 +16,7 @@ module.exports = {
     webpack: {
       development_server: {
         host: '127.0.0.1',
-        port: 3001
+        port: 4001
       }
     }
   }
