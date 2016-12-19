@@ -1,7 +1,8 @@
+@import "../../styles/variables.css";
 @value notSmall, medium, large from "../../styles/media-queries.css";
 
 .active {
-  border-bottom: 4px solid var(--mttrsSecondaryBlue);
+  border-bottom: 4px solid $mttrsSecondaryBlue;
 }
 
 .item {
@@ -27,7 +28,7 @@
     /* TODO:
      * composes: active; -- do not work bc global var(--mttrsSecondaryBlue) :(
      */
-    border-bottom: 4px solid var(--mttrsSecondaryBlue);
+    border-bottom: 4px solid $mttrsSecondaryBlue;
   }
   @media medium {
     padding: 0.3125em;

@@ -1,14 +1,9 @@
-# OSX
-#
 .DS_Store
-
-# Web
-#
-/public/static
-
-# node.js
-#
 .env
+/build
+/log
+/node_modules
+/public/static
 node_modules/
 npm-debug.log
 yarn-error.log

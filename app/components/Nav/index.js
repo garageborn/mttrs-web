@@ -16,8 +16,8 @@ class Nav extends Component {
 
   get categoriesItems () {
     const { categories, loading } = this.props.data
+    if (loading) return
     return categories.map((category) => {
-      if (loading) return
       return <NavItem key={category.id} name={category.name} url={categoryPath(category.slug)} />
     })
   }
@@ -25,7 +25,7 @@ class Nav extends Component {
 
 Nav.propTypes = {
   data: PropTypes.shape({
-    categories: PropTypes.array.isRequired,
+    categories: PropTypes.array,
     loading: PropTypes.bool.isRequired
   }).isRequired
 }

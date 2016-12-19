@@ -2,9 +2,10 @@ import React, {Component, PropTypes} from 'react'
 import { ApolloProvider } from 'react-apollo'
 import { Router, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
+require('../styles/app.css')
 
 class App extends Component {
-  render() {
+  render () {
     const { store, apolloClient, routes } = this.props
     const history = syncHistoryWithStore(browserHistory, store)
 
@@ -19,7 +20,7 @@ class App extends Component {
 App.propTypes = {
   store: PropTypes.object.isRequired,
   apolloClient: PropTypes.object.isRequired,
-  routes: PropTypes.array.isRequired,
+  routes: PropTypes.array.isRequired
 }
 
 export default App

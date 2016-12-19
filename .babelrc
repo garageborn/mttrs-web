@@ -1,15 +1,16 @@
 {
-  "presets": ["es2015", "react", "stage-0"],
-  "env": {
-    "production": {
-      "plugins": [["css-modules-transform", {
-        "generateScopedName": "[hash:base64:4]"
-      }]]
-    },
-    "development": {
-      "plugins": [["css-modules-transform", {
-        "generateScopedName": "[name]_[local]__[hash:base64:5]"
-      }]]
-    }
-  }
+  "presets":
+  [
+    "react",
+    "es2015",
+    "stage-0"
+  ],
+
+  "plugins":
+  [
+    "transform-runtime",
+    "add-module-exports",
+    "transform-decorators-legacy",
+    "transform-react-display-name"
+  ]
 }

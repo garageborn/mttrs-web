@@ -1,4 +1,6 @@
+@import "../../styles/variables.css";
+
 .text {
-  color: var(--mttrsGray);
-  font-size: var(--mttrsFontSmall);
+  color: $mttrsGray;
+  font-size: $mttrsFontSmall;
 }

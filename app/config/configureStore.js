@@ -1,30 +1,24 @@
-import {createStore, applyMiddleware, combineReducers, compose} from 'redux'
+import {createStore, applyMiddleware, compose} from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import {browserHistory} from 'react-router'
 import {routerMiddleware} from 'react-router-redux'
-import DevTools from '../utils/DevTools'
 import configureReducers from './configureReducers'
+import DevTools from '../utils/DevTools'
 
 const routeMiddleware = routerMiddleware(browserHistory)
 
-export default function configureStore(initialState, apolloClient) {
+export default function configureStore (initialState, apolloClient) {
   const rootReducer = configureReducers(apolloClient)
 
-  let createStoreWithMiddleware
-  if (typeof __DEV__ !== 'undefined' && __DEV__) {
-    createStoreWithMiddleware = compose(
-      applyMiddleware(thunkMiddleware),
-      applyMiddleware(routeMiddleware),
-      applyMiddleware(apolloClient.middleware()),
-      DevTools.instrument()
-    )(createStore)
-  } else {
-    createStoreWithMiddleware = compose(
-      applyMiddleware(thunkMiddleware),
-      applyMiddleware(routeMiddleware),
-      applyMiddleware(apolloClient.middleware())
-    )(createStore)
-  }
+  let middlewares = [
+    applyMiddleware(apolloClient.middleware()),
+    applyMiddleware(thunkMiddleware),
+    applyMiddleware(routeMiddleware)
+  ]
+
+  if (_development_) middlewares.push(DevTools.instrument())
+
+  const createStoreWithMiddleware = compose(...middlewares)(createStore)
 
   return createStoreWithMiddleware(rootReducer, initialState)
 }
