@@ -2,18 +2,26 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Modal from 'react-modal'
 import Header from '../components/Header'
+import CloseModal from '../components/CloseModal'
 import TimelineContainer from './TimelineContainer'
 import IntlProvider from '../config/IntlProvider'
+import { MODAL_STYLES } from '../constants/ModalStyles'
 
 class Root extends Component {
   render () {
-    const {UIReducer} = this.props
+    const {UIReducer, section, dispatch} = this.props
     return (
       <IntlProvider>
         <div>
           <Header />
-          <TimelineContainer section={this.props.section} />
-          <Modal isOpen={UIReducer.modal.isOpen}>{UIReducer.modal.content}</Modal>
+          <TimelineContainer section={section} />
+          <Modal
+            isOpen={UIReducer.modal.isOpen}
+            style={MODAL_STYLES}
+          >
+            {UIReducer.modal.content}
+            <CloseModal dispatch={dispatch} />
+          </Modal>
         </div>
       </IntlProvider>
     )

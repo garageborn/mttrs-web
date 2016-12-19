@@ -29,7 +29,7 @@ class StoryInfo extends Component {
   }
 
   renderPublisherIcon () {
-    return <PublisherIcon source='storyInfo' publisher={this.props.mainLink.publisher} />
+    return <PublisherIcon size='small' publisher={this.props.mainLink.publisher} />
   }
 
   handleStoryLinks () {
