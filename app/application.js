@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './containers/App'
-import DevTools from './utils/DevTools'
 import configureStore from './config/configureStore'
 import configureApollo from './config/configureApollo'
 import buildRoutes from './config/Routes'
@@ -17,6 +16,7 @@ const render = ({ store, apolloClient, routes }) => {
     document.getElementById('react')
   )
   if (_development_) {
+    const DevTools = require('./utils/DevTools')
     ReactDOM.render(<DevTools store={store} />, document.getElementById('dev-tools'))
   }
 }
