@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react'
-import StoryLink from '../StoryLink'
+import StoryLinkContainer from '../../containers/StoryLinkContainer'
 import styles from './style.css'
 
 const StoryLinksModal = ({mainLink, otherLinks}) => {
   return (
     <div className={styles.container}>
-      <StoryLink key={mainLink.id} type='main' storyLink={mainLink} />
+      <StoryLinkContainer key={mainLink.id} type='main' storyLink={mainLink} />
       {otherLinks.map((storyLink) =>
-        <StoryLink key={storyLink.id} type='other' storyLink={storyLink} />
+        <StoryLinkContainer key={storyLink.id} type='other' storyLink={storyLink} />
       )}
     </div>
   )
