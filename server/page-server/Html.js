@@ -52,8 +52,8 @@ export default class Html extends Component {
       <html {...htmlAttributes} >
         <head>
           {/* webpage title and various meta tags */}
-          {webpageHead.title.toComponent()}
           {webpageHead.meta.toComponent()}
+          {webpageHead.title.toComponent()}
           {webpageHead.link.toComponent()}
 
           {/* (will be done only in production mode

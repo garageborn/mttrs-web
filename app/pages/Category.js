@@ -5,6 +5,7 @@ import { injectIntl, defineMessages } from 'react-intl'
 import Header from '../components/Header'
 import TimelineContainer from '../containers/TimelineContainer'
 import withQuery from './Category.gql'
+import Layout from './Layout'
 
 const messages = defineMessages({
   pageTitle: { id: 'category.pageTitle' }
@@ -16,22 +17,21 @@ class Category extends Component {
     const options = {renderCategory: false}
 
     return (
-      <div>
-        <Helmet {...this.helmet()} />
+      <Layout {...this.meta()}>
         <Header />
         <TimelineContainer queryVariables={queryVariables} options={options} />
-      </div>
+      </Layout>
     )
   }
 
-  helmet () {
-    const {category, loading} = this.props.data
-    const {formatMessage} = this.props.intl
+  meta () {
+    const { category, loading } = this.props.data
+    const { formatMessage } = this.props.intl
     if (loading) return {}
 
     return {
       title: formatMessage(messages.pageTitle, { name: category.name }),
-      meta: [{name: 'description', content: category.name}] // todo
+      description: category.name // todo
     }
   }
 }
