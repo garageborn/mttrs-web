@@ -72,8 +72,6 @@ export default class Html extends Component {
           {styleUrl && <link href={styleUrl} rel='stylesheet' type='text/css' charSet='UTF-8' />}
 
           {head}
-
-          {assets.icon && <link rel='shortcut icon' href={assets.icon} />}
         </head>
 
         <body>

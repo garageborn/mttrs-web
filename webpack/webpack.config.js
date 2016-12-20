@@ -1,14 +1,13 @@
-var path = require('path')
-var webpack = require('webpack')
+import path from 'path'
 
-var cssnext = require('postcss-cssnext')
-var lost = require('lost')
-var precss = require('precss')
-var mqpacker = require('css-mqpacker')
-var nested = require('postcss-nested')
-var atImport = require('postcss-import')
-var fontMagician = require('postcss-font-magician')
-var simpleVars = require('postcss-simple-vars')
+import cssnext from 'postcss-cssnext'
+import lost from 'lost'
+import precss from 'precss'
+import mqpacker from 'css-mqpacker'
+import nested from 'postcss-nested'
+import atImport from 'postcss-import'
+import fontMagician from 'postcss-font-magician'
+import simpleVars from 'postcss-simple-vars'
 
 // project folder
 var Root = path.resolve(__dirname, '..')

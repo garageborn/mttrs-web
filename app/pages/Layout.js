@@ -20,6 +20,7 @@ class Layout extends Component {
         { name: 'viewport', content: 'width=device-width, initial-scale=1' }
       ],
       link: [
+        { rel: 'shortcut icon', href: require('../assets/favicon.ico') },
         { rel: 'dns-prefetch', href: '//fonts.googleapis.com' }
       ]
     }
