@@ -52,8 +52,8 @@ export default class Html extends Component {
       <html {...htmlAttributes} >
         <head>
           {/* webpage title and various meta tags */}
-          {webpageHead.title.toComponent()}
           {webpageHead.meta.toComponent()}
+          {webpageHead.title.toComponent()}
           {webpageHead.link.toComponent()}
 
           {/* (will be done only in production mode
@@ -72,8 +72,6 @@ export default class Html extends Component {
           {styleUrl && <link href={styleUrl} rel='stylesheet' type='text/css' charSet='UTF-8' />}
 
           {head}
-
-          {assets.icon && <link rel='shortcut icon' href={assets.icon} />}
         </head>
 
         <body>

@@ -1,9 +1,14 @@
 import React, { Component, PropTypes } from 'react'
 import PublisherIcon from '../PublisherIcon'
+import StoryLinksModal from '../StoryLinksModal'
 import styles from './styles.css'
 import { Link } from 'react-router'
 
 class StoryInfo extends Component {
+  constructor () {
+    super()
+    this.handleStoryLinks = this.handleStoryLinks.bind(this)
+  }
   renderPublishers () {
     if (this.props.otherLinks.length === 0) return this.renderMainPublisherName()
     return this.renderPublishersText()
@@ -20,11 +25,15 @@ class StoryInfo extends Component {
   renderOtherLinks () {
     let otherString = 'other'
     if (this.props.otherLinks.length > 1) otherString = 'others'
-    return <Link to='#'>{this.props.otherLinks.length} {otherString}</Link>
+    return <a onClick={this.handleStoryLinks}>{this.props.otherLinks.length} {otherString}</a>
   }
 
   renderPublisherIcon () {
-    return <PublisherIcon source='storyInfo' publisher={this.props.mainLink.publisher} />
+    return <PublisherIcon size='small' publisher={this.props.mainLink.publisher} />
+  }
+
+  handleStoryLinks () {
+    this.props.handleStoryLinks('storyLinks', <StoryLinksModal mainLink={this.props.mainLink} otherLinks={this.props.otherLinks} />)
   }
 
   render () {
@@ -36,7 +45,8 @@ class StoryInfo extends Component {
 
 StoryInfo.propTypes = {
   mainLink: PropTypes.object.isRequired,
-  otherLinks: PropTypes.array
+  otherLinks: PropTypes.array,
+  handleStoryLinks: PropTypes.func.isRequired
 }
 
 export default StoryInfo

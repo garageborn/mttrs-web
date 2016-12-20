@@ -1,8 +1,14 @@
 import React, {Component, PropTypes} from 'react'
+import { connect } from 'react-redux'
 import withQuery from './TimelineContainer.gql'
 import StoryList from '../components/StoryList'
+import { UIActions } from '../actions/index'
 
 class TimelineContainer extends Component {
+  constructor () {
+    super()
+    this.handleStoryLinks = this.handleStoryLinks.bind(this)
+  }
   render () {
     const {data} = this.props
     if (data.loading) return <div className='loading'>Hang on...</div>
@@ -17,7 +23,12 @@ class TimelineContainer extends Component {
   renderStoryList (item) {
     const {options} = this.props
     if (!item.stories.length) return
-    return <StoryList key={item.date} date={item.date} stories={item.stories} options={options} />
+    return <StoryList key={item.date} date={item.date} stories={item.stories} options={options} handleStoryLinks={this.handleStoryLinks} />
+  }
+
+  handleStoryLinks (modalType, content) {
+    let {dispatch} = this.props
+    dispatch(UIActions.openModal(modalType, content))
   }
 }
 
@@ -26,7 +37,8 @@ TimelineContainer.propTypes = {
   options: PropTypes.shape({
     renderCategory: PropTypes.bool
   }),
-  queryVariables: PropTypes.object
+  queryVariables: PropTypes.object,
+  dispatch: PropTypes.func.isRequired
 }
 
 TimelineContainer.defaultProps = {
@@ -36,4 +48,5 @@ TimelineContainer.defaultProps = {
   queryVariables: {}
 }
 
-export default withQuery(TimelineContainer)
+const TimelineContainerWithQuery = withQuery(TimelineContainer)
+export default connect()(TimelineContainerWithQuery)
