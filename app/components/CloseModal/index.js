@@ -1,26 +1,14 @@
-import React, { Component, PropTypes } from 'react'
-import { UIActions } from '../../actions/index'
+import React, { PropTypes } from 'react'
 import styles from './styles.css'
 
-class CloseModal extends Component {
-  constructor () {
-    super()
-    this.closeModal = this.closeModal.bind(this)
-  }
-
-  closeModal () {
-    this.props.dispatch(UIActions.closeModal())
-  }
-
-  render () {
-    return (
-      <div className={styles.button} onClick={this.closeModal}>✕</div>
-    )
-  }
+const CloseModal = ({closeModal}) => {
+  return (
+    <div className={styles.button} onClick={closeModal}>✕</div>
+  )
 }
 
 CloseModal.propTypes = {
-  dispatch: PropTypes.func.isRequired
+  closeModal: PropTypes.func.isRequired
 }
 
 export default CloseModal

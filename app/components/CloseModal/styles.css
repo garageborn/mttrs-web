@@ -9,5 +9,6 @@
   text-align: center;
   padding: .4em;
   font-size: 1.3rem;
-  cursor: pointer
+  cursor: pointer;
+  z-index: 5;
 }

@@ -6,7 +6,8 @@ import { injectIntl, defineMessages } from 'react-intl'
 import Header from '../components/Header'
 import TimelineContainer from '../containers/TimelineContainer'
 import CloseModal from '../components/CloseModal'
-import { MODAL_STYLES } from '../constants/ModalStyles'
+import modalStyles from '../styles/modal.css'
+import { UIActions } from '../actions/index'
 
 const messages = defineMessages({
   pageTitle: { id: 'home.pageTitle' },
@@ -14,21 +15,18 @@ const messages = defineMessages({
 })
 
 class Home extends Component {
+  constructor () {
+    super()
+    this.closeModal = this.closeModal.bind(this)
+  }
+
   render () {
-    const {UIReducer, dispatch} = this.props
     return (
       <div>
         <Helmet {...this.helmet()} />
         <Header />
         <TimelineContainer />
-        <Modal
-          isOpen={UIReducer.modal.isOpen}
-          contentLabel='Modal'
-          style={MODAL_STYLES}
-        >
-          {UIReducer.modal.content}
-          <CloseModal dispatch={dispatch} />
-        </Modal>
+        {this.renderModal()}
       </div>
     )
   }
@@ -40,6 +38,36 @@ class Home extends Component {
       title: formatMessage(messages.pageTitle),
       meta: [{name: 'description', content: formatMessage(messages.pageDescription)}] // todo
     }
+  }
+
+  renderModal () {
+    const {UIReducer} = this.props
+    return (
+      <div>
+        <Modal
+          isOpen={UIReducer.modal.isOpen}
+          contentLabel='Modal'
+          className={modalStyles.modal}
+          overlayClassName={modalStyles.overlay}
+
+          onRequestClose={this.closeModal}
+        >
+          {UIReducer.modal.content}
+        </Modal>
+        {this.renderCloseButton()}
+      </div>
+    )
+  }
+
+  renderCloseButton () {
+    const {UIReducer} = this.props
+
+    if (!UIReducer.modal.isOpen) return
+    return <CloseModal shoudldShowButton={UIReducer.modal.isOpen} closeModal={this.closeModal} />
+  }
+
+  closeModal () {
+    this.props.dispatch(UIActions.closeModal())
   }
 }
 

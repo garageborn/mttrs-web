@@ -1,36 +1,34 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import Modal from 'react-modal'
 import Helmet from 'react-helmet'
 import { injectIntl, defineMessages } from 'react-intl'
-import Modal from 'react-modal'
 import Header from '../components/Header'
 import TimelineContainer from '../containers/TimelineContainer'
-import withQuery from './Category.gql'
 import CloseModal from '../components/CloseModal'
-import { MODAL_STYLES } from '../constants/ModalStyles'
+import withQuery from './Category.gql'
+import modalStyles from '../styles/modal.css'
+import { UIActions } from '../actions/index'
 
 const messages = defineMessages({
   pageTitle: { id: 'category.pageTitle' }
 })
 
 class Category extends Component {
+  constructor () {
+    super()
+    this.closeModal = this.closeModal.bind(this)
+  }
+
   render () {
     const queryVariables = {categorySlug: this.props.slug}
     const options = {renderCategory: false}
-    const {UIReducer, dispatch} = this.props
     return (
       <div>
         <Helmet {...this.helmet()} />
         <Header />
         <TimelineContainer queryVariables={queryVariables} options={options} />
-        <Modal
-          isOpen={UIReducer.modal.isOpen}
-          contentLabel='Modal'
-          style={MODAL_STYLES}
-        >
-          {UIReducer.modal.content}
-          <CloseModal dispatch={dispatch} />
-        </Modal>
+        {this.renderModal()}
       </div>
     )
   }
@@ -44,6 +42,35 @@ class Category extends Component {
       title: formatMessage(messages.pageTitle, { name: category.name }),
       meta: [{name: 'description', content: category.name}] // todo
     }
+  }
+
+  renderModal () {
+    const {UIReducer} = this.props
+    return (
+      <div>
+        <Modal
+          isOpen={UIReducer.modal.isOpen}
+          contentLabel='Modal'
+          className={modalStyles.modal}
+          overlayClassName={modalStyles.overlay}
+          onRequestClose={this.closeModal}
+        >
+          {UIReducer.modal.content}
+        </Modal>
+        {this.renderCloseButton()}
+      </div>
+    )
+  }
+
+  renderCloseButton () {
+    const {UIReducer} = this.props
+
+    if (!UIReducer.modal.isOpen) return
+    return <CloseModal shoudldShowButton={UIReducer.modal.isOpen} closeModal={this.closeModal} />
+  }
+
+  closeModal () {
+    this.props.dispatch(UIActions.closeModal())
   }
 }
 
