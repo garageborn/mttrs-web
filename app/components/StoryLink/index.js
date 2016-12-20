@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import classNames from 'classNames'
+import classNames from 'classnames'
 import { Link } from 'react-router'
 import PublisherIcon from '../PublisherIcon'
 import SocialCount from '../SocialCount'

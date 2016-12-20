@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import classNames from 'classNames'
+import classNames from 'classnames'
 import * as cloudinary from '../../common/utils/Cloudinary'
 import styles from './styles.css'
 
