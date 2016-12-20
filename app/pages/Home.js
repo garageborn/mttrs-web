@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Modal from 'react-modal'
-import Helmet from 'react-helmet'
 import { injectIntl, defineMessages } from 'react-intl'
+import Layout from './Layout'
 import Header from '../components/Header'
 import TimelineContainer from '../containers/TimelineContainer'
 import CloseModal from '../components/CloseModal'
@@ -22,21 +22,20 @@ class Home extends Component {
 
   render () {
     return (
-      <div>
-        <Helmet {...this.helmet()} />
+      <Layout {...this.meta()}>
         <Header />
         <TimelineContainer />
         {this.renderModal()}
-      </div>
+      </Layout>
     )
   }
 
-  helmet () {
-    const {formatMessage} = this.props.intl
+  meta () {
+    const { formatMessage } = this.props.intl
 
     return {
       title: formatMessage(messages.pageTitle),
-      meta: [{name: 'description', content: formatMessage(messages.pageDescription)}] // todo
+      description: formatMessage(messages.pageDescription) // todo
     }
   }
 

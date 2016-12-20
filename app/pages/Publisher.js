@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Modal from 'react-modal'
-import Helmet from 'react-helmet'
+import Layout from './Layout'
 import { injectIntl, defineMessages } from 'react-intl'
 import Header from '../components/Header'
 import TimelineContainer from '../containers/TimelineContainer'
@@ -22,25 +22,24 @@ class Publisher extends Component {
   }
 
   render () {
-    const queryVariables = {publisherSlug: this.props.slug}
+    const queryVariables = { publisherSlug: this.props.slug }
     return (
-      <div>
-        <Helmet {...this.helmet()} />
+      <Layout {...this.meta()}>
         <Header />
         <TimelineContainer queryVariables={queryVariables} />
         {this.renderModal()}
-      </div>
+      </Layout>
     )
   }
 
-  helmet () {
-    const {publisher, loading} = this.props.data
-    const {formatMessage} = this.props.intl
+  meta () {
+    const { publisher, loading } = this.props.data
+    const { formatMessage } = this.props.intl
     if (loading) return {}
 
     return {
       title: formatMessage(messages.pageTitle, { name: publisher.name }),
-      meta: [{name: 'description', content: publisher.name}] // todo
+      description: publisher.name // todo
     }
   }
 

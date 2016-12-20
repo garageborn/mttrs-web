@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Modal from 'react-modal'
-import Helmet from 'react-helmet'
 import { injectIntl, defineMessages } from 'react-intl'
 import Header from '../components/Header'
 import TimelineContainer from '../containers/TimelineContainer'
@@ -9,6 +8,7 @@ import CloseModal from '../components/CloseModal'
 import withQuery from './Category.gql'
 import modalStyles from '../styles/modal.css'
 import { UIActions } from '../actions/index'
+import Layout from './Layout'
 
 const messages = defineMessages({
   pageTitle: { id: 'category.pageTitle' }
@@ -24,23 +24,22 @@ class Category extends Component {
     const queryVariables = {categorySlug: this.props.slug}
     const options = {renderCategory: false}
     return (
-      <div>
-        <Helmet {...this.helmet()} />
+      <Layout {...this.meta()}>
         <Header />
         <TimelineContainer queryVariables={queryVariables} options={options} />
         {this.renderModal()}
-      </div>
+      </Layout>
     )
   }
 
-  helmet () {
-    const {category, loading} = this.props.data
-    const {formatMessage} = this.props.intl
+  meta () {
+    const { category, loading } = this.props.data
+    const { formatMessage } = this.props.intl
     if (loading) return {}
 
     return {
       title: formatMessage(messages.pageTitle, { name: category.name }),
-      meta: [{name: 'description', content: category.name}] // todo
+      description: category.name // todo
     }
   }
 
