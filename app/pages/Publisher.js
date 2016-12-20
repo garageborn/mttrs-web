@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Helmet from 'react-helmet'
+import Layout from './Layout'
 import { injectIntl, defineMessages } from 'react-intl'
 import Header from '../components/Header'
 import TimelineContainer from '../containers/TimelineContainer'
@@ -14,11 +15,11 @@ class Publisher extends Component {
   render () {
     const queryVariables = {publisherSlug: this.props.slug}
     return (
-      <div>
+      <Layout>
         <Helmet {...this.helmet()} />
         <Header />
         <TimelineContainer queryVariables={queryVariables} />
-      </div>
+      </Layout>
     )
   }
 
