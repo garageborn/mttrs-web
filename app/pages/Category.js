@@ -17,22 +17,21 @@ class Category extends Component {
     const options = {renderCategory: false}
 
     return (
-      <Layout>
-        <Helmet {...this.helmet()} />
+      <Layout {...this.meta()}>
         <Header />
         <TimelineContainer queryVariables={queryVariables} options={options} />
       </Layout>
     )
   }
 
-  helmet () {
-    const {category, loading} = this.props.data
-    const {formatMessage} = this.props.intl
+  meta () {
+    const { category, loading } = this.props.data
+    const { formatMessage } = this.props.intl
     if (loading) return {}
 
     return {
       title: formatMessage(messages.pageTitle, { name: category.name }),
-      meta: [{name: 'description', content: category.name}] // todo
+      description: category.name // todo
     }
   }
 }

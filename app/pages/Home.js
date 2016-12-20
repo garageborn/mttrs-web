@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Helmet from 'react-helmet'
 import { injectIntl, defineMessages } from 'react-intl'
 import Layout from './Layout'
 import Header from '../components/Header'
@@ -13,20 +12,19 @@ const messages = defineMessages({
 class Home extends Component {
   render () {
     return (
-      <Layout>
-        <Helmet {...this.helmet()} />
+      <Layout {...this.meta()}>
         <Header />
         <TimelineContainer />
       </Layout>
     )
   }
 
-  helmet () {
-    const {formatMessage} = this.props.intl
+  meta () {
+    const { formatMessage } = this.props.intl
 
     return {
       title: formatMessage(messages.pageTitle),
-      meta: [{name: 'description', content: formatMessage(messages.pageDescription)}] // todo
+      description: formatMessage(messages.pageDescription) // todo
     }
   }
 }
