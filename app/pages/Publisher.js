@@ -9,7 +9,6 @@ import CloseModal from '../components/CloseModal'
 import modalStyles from '../styles/modal.css'
 import { UIActions } from '../actions/index'
 import withQuery from './Publisher.gql'
-import { MODAL_STYLES } from '../constants/ModalStyles'
 
 const messages = defineMessages({
   pageTitle: { id: 'publisher.pageTitle' }
@@ -84,8 +83,8 @@ Publisher.propTypes = {
   }),
   slug: PropTypes.string.isRequired,
   data: PropTypes.shape({
-    publisher: PropTypes.object.isRequired,
-    loading: PropTypes.bool.isRequired
+    publisher: PropTypes.object,
+    loading: PropTypes.bool
   }),
   dispatch: PropTypes.func.isRequired
 }

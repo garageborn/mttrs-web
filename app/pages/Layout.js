@@ -28,8 +28,8 @@ class Layout extends Component {
 }
 
 Layout.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  description: PropTypes.string,
   children: PropTypes.node
 }
 

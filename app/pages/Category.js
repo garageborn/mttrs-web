@@ -84,8 +84,8 @@ Category.propTypes = {
   }),
   slug: PropTypes.string.isRequired,
   data: PropTypes.shape({
-    category: PropTypes.object.isRequired,
-    loading: PropTypes.bool.isRequired
+    category: PropTypes.object,
+    loading: PropTypes.bool
   }),
   dispatch: PropTypes.func.isRequired
 }
