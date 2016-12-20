@@ -17,6 +17,7 @@ class Story extends Component {
             mainLink={this.mainLink}
             otherLinks={this.otherLinks}
             totalSocial={story.total_social}
+            handleStoryLinks={this.props.handleStoryLinks}
           />
         </div>
         <StoryMetadata
@@ -24,6 +25,7 @@ class Story extends Component {
           mainLink={this.mainLink}
           otherLinks={this.otherLinks}
           totalSocial={story.total_social}
+          handleStoryLinks={this.props.handleStoryLinks}
         />
       </div>
     )
@@ -51,7 +53,8 @@ Story.propTypes = {
   story: PropTypes.object.isRequired,
   options: PropTypes.shape({
     renderCategory: PropTypes.bool
-  })
+  }),
+  handleStoryLinks: PropTypes.func.isRequired
 }
 
 Story.defaultProps = {

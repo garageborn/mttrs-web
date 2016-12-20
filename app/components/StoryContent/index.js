@@ -3,7 +3,7 @@ import StoryTitle from '../StoryTitle'
 import StoryMetadata from '../StoryMetadata'
 import styles from './styles.css'
 
-const StoryContent = ({mainLink, otherLinks, totalSocial}) => {
+const StoryContent = ({mainLink, otherLinks, totalSocial, handleStoryLinks}) => {
   return (
     <div className={styles.container}>
       <StoryTitle mainLink={mainLink} />
@@ -12,6 +12,7 @@ const StoryContent = ({mainLink, otherLinks, totalSocial}) => {
         mainLink={mainLink}
         otherLinks={otherLinks}
         totalSocial={totalSocial}
+        handleStoryLinks={handleStoryLinks}
       />
     </div>
   )

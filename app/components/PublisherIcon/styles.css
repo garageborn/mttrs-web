@@ -1,12 +1,19 @@
+
 .container {
-  height: 24px;
-  width: 24px;
   border-radius: 40px;
   border: 1px solid #DDD;
 }
 
 .image {
   padding: 1px;
+}
+
+.imageSmall {
   height: 22px;
   width: 22px;
+}
+
+.imageBig {
+  height: 32px;
+  width: 32px;
 }

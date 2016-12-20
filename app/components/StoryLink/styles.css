@@ -1,0 +1,46 @@
+@import "../../styles/variables.css";
+
+.container {
+  padding: 1em;
+  border-bottom: 1px solid rgba(38,44,91,.1);
+}
+
+.section {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+.main {
+  background-color: rgba(38,44,91,.1);
+}
+
+.primary {
+  composes: section;
+  justify-content: flex-start;
+}
+
+.secondary {
+  composes: section;
+  justify-content: space-between;
+}
+
+.countContainer {
+  display: flex;
+  justify-content: flex-end;
+  flex: 2;
+}
+
+.title {
+  flex: 8;
+  cursor: pointer;
+  composes: lineClamp from "../../styles/line-clamp.css";
+  composes: lineClamp1 from "../../styles/line-clamp.css";
+}
+
+.publisherName {
+  font-size: 1.3rem;
+  color: $mttrsGray;
+  margin: 0 .5em;
+  cursor: pointer;
+}
