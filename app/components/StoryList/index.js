@@ -7,7 +7,7 @@ const StoryListContainer = ({date, stories, handleStoryLinks, options}) => {
   return (
     <div className={styles.container}>
       <StoryListHeader date={date} />
-      {stories.map((story) => <Story key={story.id} story={story} options={options} />)}
+      {stories.map((story) => <Story key={story.id} story={story} options={options} handleStoryLinks={handleStoryLinks} />)}
     </div>
   )
 }

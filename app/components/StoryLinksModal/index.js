@@ -5,9 +5,9 @@ import styles from './style.css'
 const StoryLinksModal = ({mainLink, otherLinks}) => {
   return (
     <div className={styles.container}>
-      <StoryLink type='main' storyLink={mainLink} />
+      <StoryLink key={mainLink.id} type='main' storyLink={mainLink} />
       {otherLinks.map((storyLink) =>
-        <StoryLink type='other' storyLink={storyLink} />
+        <StoryLink key={storyLink.id} type='other' storyLink={storyLink} />
       )}
     </div>
   )
