@@ -7,5 +7,6 @@
   color: $mttrsGray;
   a {
     color: $mttrsDarkGray;
+    cursor: pointer;
   }
 }

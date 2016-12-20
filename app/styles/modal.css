@@ -1,0 +1,65 @@
+@value notSmall, medium, large from "./media-queries.css";
+
+:global {
+  .ReactModal__Body--open {
+    overflow: hidden
+  }
+
+  .ReactModal__Overlay {
+    opacity: 0;
+    &--after-open {
+      opacity: 1;
+      transition: opacity 200ms ease-in-out;
+    }
+    &--before-close {
+        opacity: 0;
+    }
+  }
+
+  .ReactModal__Content {
+    transform: translateY(25em);
+    opacity: 0;
+    transition: transform 190ms ease-in, opacity 230ms ease-in;
+    transition-delay: 240ms
+  }
+
+  .ReactModal__Content--after-open {
+    opacity: 1;
+    transform: translateY(0em);
+  }
+
+  .ReactModal__Content--before-close {
+    transform: translateY(25em);
+  }
+
+  .ReactModal__Overlay--before-close {
+    opacity: 0;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 70px;
+  background: #fff;
+  overflow: auto;
+  overflow-scrolling: touch;
+  border-radius: 4px;
+  outline: none;
+  padding: 0;
+
+  @media notSmall {
+    lost-center: 60em;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #262C5B
+}

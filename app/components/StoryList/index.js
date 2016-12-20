@@ -3,11 +3,11 @@ import Story from '../Story'
 import StoryListHeader from '../StoryListHeader'
 import styles from './styles.css'
 
-const StoryListContainer = ({date, stories, options}) => {
+const StoryListContainer = ({date, stories, handleStoryLinks, options}) => {
   return (
     <div className={styles.container}>
       <StoryListHeader date={date} />
-      {stories.map((story) => <Story key={story.id} story={story} options={options} />)}
+      {stories.map((story) => <Story key={story.id} story={story} options={options} handleStoryLinks={handleStoryLinks} />)}
     </div>
   )
 }
@@ -17,7 +17,8 @@ StoryListContainer.propTypes = {
   date: PropTypes.any.isRequired,
   options: PropTypes.shape({
     renderCategory: PropTypes.bool
-  })
+  }),
+  handleStoryLinks: PropTypes.func.isRequired
 }
 
 StoryListContainer.defaultProps = {
