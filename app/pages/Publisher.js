@@ -9,7 +9,6 @@ import CloseModal from '../components/CloseModal'
 import modalStyles from '../styles/modal.css'
 import { UIActions } from '../actions/index'
 import withQuery from './Publisher.gql'
-import { MODAL_STYLES } from '../constants/ModalStyles'
 
 const messages = defineMessages({
   pageTitle: { id: 'publisher.pageTitle' }

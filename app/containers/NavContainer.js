@@ -1,15 +1,24 @@
 import React, { PropTypes } from 'react'
+import { connect } from 'react-redux'
 import withQuery from './NavContainer.gql'
 import Nav from '../components/Nav'
 
-const NavContainer = (props) => {
+const NavContainer = ({data, menu}) => {
   return (
-    <Nav data={props.data} />
+    <Nav data={data} menu={menu} />
   )
 }
 
 NavContainer.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
+  menu: PropTypes.object.isRequired
 }
 
-export default withQuery(NavContainer)
+let mapStateToProps = (state, ownProps) => {
+  return {
+    menu: state.UIReducer.menu
+  }
+}
+
+const NavContainerWithQuery = withQuery(NavContainer)
+export default connect(mapStateToProps)(NavContainerWithQuery)

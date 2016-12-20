@@ -1,12 +1,17 @@
 import React, { Component, PropTypes } from 'react'
+import classNames from 'classnames'
 import NavItem from '../NavItem'
 import { categoryPath } from '../../utils/RoutesHelper'
 import styles from './styles.css'
 
 class Nav extends Component {
   render () {
+    const navClasses = classNames({
+      [styles.nav]: true,
+      [styles.navActive]: this.props.menu.isOpen
+    })
     return (
-      <nav className={styles.nav}>
+      <nav className={navClasses}>
         <ul className={styles.navList}>
           {this.categoriesItems}
         </ul>
@@ -27,7 +32,10 @@ Nav.propTypes = {
   data: PropTypes.shape({
     categories: PropTypes.array,
     loading: PropTypes.bool.isRequired
-  }).isRequired
+  }).isRequired,
+  menu: PropTypes.shape({
+    isOpen: PropTypes.bool.isRequired
+  })
 }
 
 export default Nav
