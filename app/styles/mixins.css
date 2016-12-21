@@ -1,4 +1,4 @@
-@define-mixin lineClamp $fontSize $lineHeight $linesToShow $bg {
+@define-mixin lineClamp $fontSize, $lineHeight, $linesToShow, $bg {
   background: $bg;
   display: block;
   display: -webkit-box;
@@ -11,7 +11,7 @@
   text-overflow: ellipsis;
 }
 
-@define-mixin lineClampFirefox $bg $class {
+@define-mixin lineClampFirefox $bg, $class {
   @-moz-document url-prefix() {
     $class {
       position: relative;

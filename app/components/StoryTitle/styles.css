@@ -4,15 +4,15 @@
 .title {
   font-weight: 500;
   margin: .9rem 0;
-  @mixin lineClamp 16px 1.6 3 #FFF;
+  @mixin lineClamp 16px, 1.6, 3, #FFF;
 
   @media medium {
-    @mixin lineClamp 16px 1.6 2 #FFF;
+    @mixin lineClamp 16px, 1.6, 2, #FFF;
   }
 
   @media large {
-    @mixin lineClamp 16px 1.6 1 #FFF;
+    @mixin lineClamp 16px, 1.6, 1, #FFF;
   }
 }
 
-@mixin lineClampFirefox #FFF .title;
+@mixin lineClampFirefox #FFF, .title;
