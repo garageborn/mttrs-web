@@ -1,0 +1,41 @@
+@define-mixin lineClamp $fontSize $lineHeight $linesToShow $bg {
+  background: $bg;
+  display: block;
+  display: -webkit-box;
+  max-height: calc($fontSize * $lineHeight * $linesToShow);
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  -webkit-line-clamp: $linesToShow;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@define-mixin lineClampFirefox $bg $class {
+  @-moz-document url-prefix() {
+    $class {
+      position: relative;
+      overflow: hidden;
+
+      &:before {
+        position: absolute;
+        background: $bg;
+        right: 0;
+        bottom: 0;
+        float: right;
+        content: '\2026';
+        margin-left: -3rem;
+        width: 3rem;
+      }
+
+      &:after {
+        position: absolute;
+        content: '';
+        background: $bg;
+        height: 50px;
+        width: 100%;
+        z-index: 1;
+      }
+    }
+  }
+}
