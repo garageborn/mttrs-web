@@ -1,7 +1,6 @@
 import moment from './Moment'
 
 const ParseDate = (date) => {
-  console.log('-------moment', moment)
   switch (date) {
     case 'last_week':
       return 'Last Week'

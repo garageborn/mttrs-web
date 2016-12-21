@@ -1,10 +1,8 @@
 import { TENANTS } from '../constants/Tenants'
 import moment from 'moment-timezone'
 
-console.log('--------------------setup maldiiitoooooooooo')
 class Setup {
   static fromRequest (request) {
-    console.log('==============fromRequest')
     this.tenant = request.headers.host
     this.timezone = request.headers['X-TIMEZONE']
   }
@@ -24,12 +22,10 @@ class Setup {
   }
 
   static set timezone (timezone) {
-    console.log('--------set timezone', timezone, moment.tz.zone(timezone) !== null)
     if (moment.tz.zone(timezone) !== null) this._timezone = timezone
   }
 
   static get timezone () {
-    console.log('--------get timezone', this._timezone)
     return this._timezone || this.defaultTimezone
   }
 
@@ -43,7 +39,11 @@ class Setup {
 }
 
 Setup.defaultTenant = 'mttrs_us'
-Setup.defaultTimezone = 'UTC'
+Setup.defaultTimezone = (function () {
+  if (_development_) return Intl.DateTimeFormat().resolvedOptions().timeZone
+  return 'UTC'
+}())
+
 Setup.defaultLanguage = 'en'
 
 export default Setup
