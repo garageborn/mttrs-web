@@ -44,6 +44,7 @@ const Query = gql`
 export default function (TimelineContainer) {
   return graphql(Query, {
     options (props) {
+      console.log('# graphql', defaultVariables.timezone)
       return {
         variables: {
           ...defaultVariables,

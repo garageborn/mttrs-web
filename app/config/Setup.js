@@ -3,11 +3,13 @@ import moment from 'moment-timezone'
 
 class Setup {
   static fromRequest (request) {
+    console.log('Setup.fromRequest', request.headers['x-timezone'])
     this.tenant = request.headers.host
     this.timezone = request.headers['x-timezone']
   }
 
   static fromWindow (window) {
+    console.log('Setup.fromWindow', Intl.DateTimeFormat().resolvedOptions().timeZone)
     this.tenant = window.location.host
     this.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
   }
@@ -22,7 +24,8 @@ class Setup {
   }
 
   static set timezone (timezone) {
-    if (moment.tz.zone(timezone) !== null) this._timezone = timezone
+    if (moment.tz.zone(timezone) !== null) timezone = this.defaultTimezone
+    this._timezone = timezone
   }
 
   static get timezone () {
