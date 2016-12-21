@@ -38,12 +38,11 @@ class Setup {
   }
 }
 
+Setup.defaultLanguage = 'en'
 Setup.defaultTenant = 'mttrs_us'
 Setup.defaultTimezone = (function () {
   if (_development_) return Intl.DateTimeFormat().resolvedOptions().timeZone
   return 'UTC'
 }())
-
-Setup.defaultLanguage = 'en'
 
 export default Setup
