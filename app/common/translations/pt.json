@@ -3,5 +3,10 @@
   "publisher.pageTitle": "{name} no mttrs",
   "home.pageTitle": "mttrs",
   "home.pageDescription": "mttrs",
-  "header.tagline": "Leia o que importa"
+  "header.tagline": "Leia o que importa",
+  "header.topStories": "Principais histórias",
+  "from": "Via",
+  "and": "e",
+  "other": "outro",
+  "others": "outros"
 }
