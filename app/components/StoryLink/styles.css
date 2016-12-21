@@ -35,8 +35,13 @@
 .title {
   flex: 8;
   cursor: pointer;
-  composes: lineClamp from "../../styles/line-clamp.css";
-  composes: lineClamp1 from "../../styles/line-clamp.css";
+  max-width: 80%;
+
+  h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 .publisherName {

@@ -3,7 +3,9 @@ import styles from './styles.css'
 
 const CloseModal = ({closeModal}) => {
   return (
-    <div className={styles.button} onClick={closeModal}>✕</div>
+    <div className={styles.button} onClick={closeModal}>
+      <span>✕</span>
+    </div>
   )
 }
 
