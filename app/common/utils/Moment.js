@@ -1,4 +1,7 @@
 import moment from 'moment-timezone'
-moment.tz.setDefault('UTC')
+import Setup from '../../config/Setup'
+
+console.log('------------------moment.js', Setup.language)
+moment.tz.setDefault(Setup.language)
 
 export default moment
