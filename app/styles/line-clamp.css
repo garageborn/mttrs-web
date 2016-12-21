@@ -14,11 +14,6 @@
     display: block;
     position: absolute;
     height: calc(1em * 1.2);
-    background: linear-gradient(to right,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 1)
-      75%
-    );
     content: '';
     text-align: right;
     bottom: 0;
