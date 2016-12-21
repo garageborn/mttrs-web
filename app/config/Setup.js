@@ -4,7 +4,7 @@ import moment from 'moment-timezone'
 class Setup {
   static fromRequest (request) {
     this.tenant = request.headers.host
-    this.timezone = request.headers['X-TIMEZONE']
+    this.timezone = request.headers['x-timezone']
   }
 
   static fromWindow (window) {
