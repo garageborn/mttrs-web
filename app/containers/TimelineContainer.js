@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react'
 import { connect } from 'react-redux'
 import withQuery from './TimelineContainer.gql'
 import StoryList from '../components/StoryList'
+import Placeholder from '../components/Placeholder'
 import { UIActions } from '../actions/index'
 
 class TimelineContainer extends Component {
@@ -10,8 +11,8 @@ class TimelineContainer extends Component {
     this.handleStoryLinks = this.handleStoryLinks.bind(this)
   }
   render () {
-    const {data} = this.props
-    if (data.loading) return <div className='loading'>Hang on...</div>
+    const { data } = this.props
+    if (data.loading) return <Placeholder />
 
     return (
       <main>
@@ -23,7 +24,15 @@ class TimelineContainer extends Component {
   renderStoryList (item) {
     const {options} = this.props
     if (!item.stories.length) return
-    return <StoryList key={item.date} date={item.date} stories={item.stories} options={options} handleStoryLinks={this.handleStoryLinks} />
+    return (
+      <StoryList
+        key={item.date}
+        date={item.date}
+        stories={item.stories}
+        options={options}
+        handleStoryLinks={this.handleStoryLinks}
+      />
+    )
   }
 
   handleStoryLinks (modalType, content) {
