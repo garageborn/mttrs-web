@@ -1,4 +1,2 @@
-import Setup from './config/Setup'
-
-Setup.fromWindow(window)
+require('./styles/app.css')
 require('./application')

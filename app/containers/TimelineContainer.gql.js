@@ -1,14 +1,12 @@
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
-import Setup from '../config/Setup'
 
 const defaultVariables = {
   days: 7,
   offset: 0,
   perDay: 10,
   categorySlug: '',
-  publisherSlug: '',
-  timezone: Setup.timezone
+  publisherSlug: ''
 }
 
 const Query = gql`
@@ -47,6 +45,7 @@ export default function (TimelineContainer) {
       return {
         variables: {
           ...defaultVariables,
+          ...{timezone: props.settings.timezone},
           ...props.queryVariables
         }
       }

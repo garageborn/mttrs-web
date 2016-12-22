@@ -2,7 +2,7 @@ import http from 'http'
 import express from 'express'
 import Log from '../common/log'
 const log = Log('webpage renderer')
-import Setup from '../../app/config/Setup'
+import RequestHandler from './requestHandler'
 
 // The server code must export a function
 // (`parameters` may contain some miscellaneous library-specific stuff)
@@ -16,8 +16,7 @@ export default function (parameters) {
 
   // React application rendering
   app.use((request, response) => {
-    Setup.fromRequest(request)
-    return require('./requestHandler')({request, response, parameters})
+    return new RequestHandler({request, response, parameters}).run()
   })
 
   // Start webpage rendering server

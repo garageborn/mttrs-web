@@ -4,6 +4,7 @@ import withQuery from './TimelineContainer.gql'
 import StoryList from '../components/StoryList'
 import Placeholder from '../components/Placeholder'
 import { UIActions } from '../actions/index'
+import injectSettings from '../config/injectSettings'
 
 class TimelineContainer extends Component {
   constructor () {
@@ -47,7 +48,10 @@ TimelineContainer.propTypes = {
     renderCategory: PropTypes.bool
   }),
   queryVariables: PropTypes.object,
-  dispatch: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired,
+  settings: PropTypes.shape({
+    timezone: PropTypes.string.isRequired
+  }).isRequired
 }
 
 TimelineContainer.defaultProps = {
@@ -58,4 +62,5 @@ TimelineContainer.defaultProps = {
 }
 
 const TimelineContainerWithQuery = withQuery(TimelineContainer)
-export default connect()(TimelineContainerWithQuery)
+const TimelineWithSettings = injectSettings(TimelineContainerWithQuery)
+export default connect()(TimelineWithSettings)
