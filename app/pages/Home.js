@@ -9,6 +9,8 @@ import CloseModal from '../components/CloseModal'
 import modalStyles from '../styles/modal.css'
 import { UIActions } from '../actions/index'
 
+import injectSettings from '../config/injectSettings'
+
 const messages = defineMessages({
   pageTitle: { id: 'home.pageTitle' },
   pageDescription: { id: 'home.pageDescription' }
@@ -23,9 +25,9 @@ class Home extends Component {
   render () {
     return (
       <Layout {...this.meta()}>
-        <Header />
+        {/* <Header />
         <TimelineContainer />
-        {this.renderModal()}
+        {this.renderModal()} */}
       </Layout>
     )
   }
@@ -88,6 +90,6 @@ let mapStateToProps = (state, ownProps) => {
   }
 }
 
-const HomeWithIntl = injectIntl(Home)
+const HomeWithIntl = injectIntl(injectSettings(Home))
 
 export default connect(mapStateToProps)(HomeWithIntl)
