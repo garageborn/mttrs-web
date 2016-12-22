@@ -1,12 +1,13 @@
 import { TENANTS } from '../constants/Tenants'
 import moment from 'moment-timezone'
+import jstz from 'jstz'
 import configureStore from './configureStore'
 import configureApollo from './configureApollo'
 
 const defaultLanguage = 'en'
 const defaultTenant = 'mttrs_us'
 const defaultTimezone = (function () {
-  if (_development_) return Intl.DateTimeFormat().resolvedOptions().timeZone
+  if (_development_) return jstz.determine().name()
   return 'UTC'
 }())
 
@@ -25,7 +26,7 @@ class Settings {
 
   fromClient (window) {
     this.tenant = window.location.host
-    this.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+    this.timezone = jstz.determine().name()
     this.apolloClient = configureApollo({ tenant: this.tenant })
     this.store = configureStore(window.__INITIAL_STATE__, this.apolloClient)
   }
