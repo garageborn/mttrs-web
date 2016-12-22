@@ -1,0 +1,34 @@
+@import "../../styles/variables.css";
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding-left: 5%;
+}
+
+.topStories {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $mttrsIndigoBlue;
+  color: #000;
+  height: 6.25em;
+  margin: 15px 5%;
+  box-shadow: 1px 1px 3px 0 #000000;
+}
+
+.topStoriesWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topStoriesIcon,
+.topStoriesTitle {
+  margin: 0 8px;
+}
+
+.topStoriesTitle {
+  color: #FFF;
+}
