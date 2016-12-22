@@ -2,9 +2,11 @@ import {createStore, applyMiddleware, compose, combineReducers} from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import {browserHistory} from 'react-router'
 import {routerMiddleware} from 'react-router-redux'
+import {createTracker} from 'redux-segment'
 import * as reducers from '../reducers/index'
 
 const routeMiddleware = routerMiddleware(browserHistory)
+const trackMiddleware = createTracker()
 
 export default function configureStore (initialState, apolloClient) {
   const rootReducer = combineReducers({
@@ -15,6 +17,7 @@ export default function configureStore (initialState, apolloClient) {
   let middlewares = [
     applyMiddleware(apolloClient.middleware()),
     applyMiddleware(thunkMiddleware),
+    applyMiddleware(trackMiddleware),
     applyMiddleware(routeMiddleware)
   ]
 
