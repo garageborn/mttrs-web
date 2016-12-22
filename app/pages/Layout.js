@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
+import ModalContainer from '../containers/ModalContainer'
+import MenuContainer from '../containers/MenuContainer'
 
 class Layout extends Component {
   render () {
@@ -7,6 +9,8 @@ class Layout extends Component {
       <div>
         <Helmet {...this.helmet()} />
         {this.props.children}
+        <ModalContainer />
+        <MenuContainer />
       </div>
     )
   }

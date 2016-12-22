@@ -1,0 +1,75 @@
+@import "../../styles/mixins.css";
+@value notSmall, medium, large from "../../styles/media-queries.css";
+
+.placeholder {
+  padding-top: 5em;
+}
+
+.wrapper {
+  @media medium {
+    padding: 0 1em;
+  }
+
+  @media large {
+    lost-center: 60em;
+  }
+}
+
+.story {
+  display: flex;
+  flex-flow: row;
+  background-color: white;
+  padding: 0 1em;
+  margin: 3em 0;
+  height: 128px;
+  box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.20);
+  position: relative;
+
+  @media notSmall {
+    padding: .5em 1em;
+  }
+}
+
+.image {
+  @mixin animated-background;
+
+  width: 120px;
+  height: 90px;
+  margin-right: 10px;
+}
+
+.aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.title {
+  @mixin animated-background;
+
+  width: 70%;
+  height: 15px;
+  margin-bottom: 20px;
+
+  @media medium {
+    width: 80%;
+  }
+
+  @media large {
+    width: 600px;
+  }
+}
+
+.publisher {
+  @mixin animated-background;
+
+  width: 130px;
+  height: 15px;
+}
