@@ -19,7 +19,7 @@ export default function configureStore (initialState, apolloClient) {
   ]
 
   if (_development_) {
-    const DevTools = require('../utils/DevTools')
+    const DevTools = require('./DevTools')
     middlewares.push(DevTools.instrument())
   }
 

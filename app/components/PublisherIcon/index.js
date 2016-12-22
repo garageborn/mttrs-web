@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import classNames from 'classnames'
-import * as cloudinary from '../../common/utils/Cloudinary'
+import * as cloudinary from '../../utils/Cloudinary'
 import styles from './styles.css'
 
 class PublisherIcon extends Component {
