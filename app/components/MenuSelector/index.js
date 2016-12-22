@@ -1,11 +1,12 @@
+/* eslint-disable react/jsx-no-bind */
 import React, { PropTypes } from 'react'
 import styles from './styles.css'
 
 const MenuSelector = ({activePanel, selectPanel}) => {
   return (
     <div className={styles.container}>
-      <div onClick={() => selectPanel('categories')}>Categories</div>
-      <div onClick={() => selectPanel('publishers')}>Publishers</div>
+      <button className={styles.button} onClick={() => selectPanel('categories')}>Categories</button>
+      <button className={styles.button} onClick={() => selectPanel('publishers')}>Publishers</button>
     </div>
   )
 }

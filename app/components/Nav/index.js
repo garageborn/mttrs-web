@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import NavItem from '../NavItem'
-import { categoryPath } from '../../utils/RoutesHelper'
+import { rootPath, categoryPath } from '../../utils/RoutesHelper'
 import styles from './styles.css'
 
 class Nav extends Component {
@@ -8,6 +8,7 @@ class Nav extends Component {
     return (
       <nav className={styles.nav}>
         <ul className={styles.navList}>
+          <NavItem name='Top Stories' url={rootPath} />
           {this.categoriesItems}
         </ul>
       </nav>
