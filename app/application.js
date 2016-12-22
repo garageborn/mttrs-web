@@ -9,7 +9,7 @@ const render = (routes) => {
     document.getElementById('react')
   )
   if (_development_) {
-    const DevTools = require('./utils/DevTools')
+    const DevTools = require('./config/DevTools')
     ReactDOM.render(<DevTools store={config.settings.store} />, document.getElementById('dev-tools'))
   }
 }

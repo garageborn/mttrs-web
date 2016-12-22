@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import ParseDate from '../../common/utils/ParseDate'
+import ParseDate from '../../utils/ParseDate'
 import injectSettings from '../../config/injectSettings'
 import styles from './styles.css'
 
