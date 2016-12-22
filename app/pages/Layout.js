@@ -4,6 +4,7 @@ import ModalContainer from '../containers/ModalContainer'
 import MenuContainer from '../containers/MenuContainer'
 import injectSettings from '../config/injectSettings'
 import sentry from '../utils/Sentry'
+import segment from '../utils/Segment'
 
 class Layout extends Component {
   render () {
@@ -30,7 +31,7 @@ class Layout extends Component {
         { rel: 'shortcut icon', href: require('../assets/favicon.ico') },
         { rel: 'dns-prefetch', href: '//fonts.googleapis.com' }
       ],
-      script: [...sentry]
+      script: [...sentry, ...segment]
     }
   }
 }
