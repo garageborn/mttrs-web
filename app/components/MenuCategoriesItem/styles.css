@@ -30,3 +30,9 @@
   font-weight: 500;
   margin: 0;
 }
+
+.active {
+  .title {
+    color: #FFF !important;
+  }
+}

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
-import styles from './styles.css'
 import MenuPublishersItem from '../MenuPublishersItem'
+import styles from './styles.css'
 
 const MenuPublishers = ({publishers}) => {
   return (

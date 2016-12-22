@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
-import LogoMttrs from '../../assets/logo-mttrs.svg'
+import LogoMttrs from '../../assets/logo-mttrs.png'
 import LogoMttrsMobile from '../../assets/logo-mttrs-mobile.svg'
+import styles from './styles.css'
 
 class Logo extends Component {
   getLogoType () {
@@ -9,7 +10,7 @@ class Logo extends Component {
       return <LogoMttrsMobile />
     }
 
-    return <LogoMttrs />
+    return <img className={styles.desktop} src={LogoMttrs} alt='' />
   }
 
   render () {

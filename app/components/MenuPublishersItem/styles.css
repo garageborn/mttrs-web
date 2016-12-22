@@ -1,0 +1,16 @@
+@import "../../styles/variables.css";
+
+.publisher {
+  background: $mttrsBackgroundColor;
+  color: $mttrsDarkGray;
+  display: flex;
+  align-items: center;
+  height: 3.125em;
+  padding: 0 1.25em;
+  font-size: 1.25rem;
+  border-bottom: 1px solid mttrsDarkGray;
+
+  > div {
+    margin-right: 0.75em;
+  }
+}
