@@ -1,13 +1,13 @@
 import moment from './Moment'
 
-const ParseDate = (date) => {
+const ParseDate = (date, timezone) => {
   switch (date) {
     case 'last_week':
       return 'Last Week'
     case 'last_month':
       return 'Last Month'
     default:
-      return moment.unix(date).calendar(null, {
+      return moment(timezone).unix(date).calendar(null, {
         sameDay: '[Today]',
         lastDay: '[Yesterday]',
         lastWeek: 'MMMM D',

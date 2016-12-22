@@ -1,4 +1,6 @@
 import moment from 'moment-timezone'
 
-// moment.tz.setDefault(Setup.timezone)
-export default moment
+export default function (timezone) {
+  moment.tz.setDefault(timezone)
+  return moment
+}

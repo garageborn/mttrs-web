@@ -1,11 +1,8 @@
-import React, { Component } from 'react'
+import React, {Component, PropTypes} from 'react'
 
 export default function injectSettings (WrappedComponent) {
   class InjectSettings extends Component {
     render () {
-      console.log('-------------------------------InjectSettings')
-      console.log('InjectSettings WrappedComponent', WrappedComponent)
-      console.log('InjectSettings this.context.settings', this.context.settings)
       return (
         <WrappedComponent
           {...this.props}
@@ -13,6 +10,14 @@ export default function injectSettings (WrappedComponent) {
         />
       )
     }
+  }
+
+  InjectSettings.contextTypes = {
+    settings: PropTypes.shape({
+      language: PropTypes.string,
+      tenant: PropTypes.string,
+      timezone: PropTypes.string
+    })
   }
 
   return InjectSettings

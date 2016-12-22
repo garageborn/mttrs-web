@@ -9,7 +9,7 @@ export default function configureApollo (options = {}) {
   networkInterface.use([{
     applyMiddleware (req, next) {
       if (!req.options.headers) {
-        // req.options.headers = { 'X-Tenant': Setup.tenant }
+        req.options.headers = { 'X-Tenant': options.tenant }
       }
       next()
     }

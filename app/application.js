@@ -14,6 +14,6 @@ const render = (routes) => {
   }
 }
 
-config.buildRoutes()
+config.buildRoutes
   .then(routes => render(routes))
   .catch(error => console.error(error))

@@ -8,9 +8,7 @@ addLocaleData([...en, ...pt])
 
 class Provider extends Component {
   render () {
-    // const { settings } = this.props
-    const settings = { language: 'en'}
-
+    const { settings } = this.props
     const msg = messages[settings.language]
 
     return (
@@ -23,9 +21,9 @@ class Provider extends Component {
 
 Provider.propTypes = {
   children: PropTypes.any.isRequired,
-  // settings: PropTypes.shape({
-  //   timezone: PropTypes.string.isRequired
-  // }).isRequired
+  settings: PropTypes.shape({
+    timezone: PropTypes.string.isRequired
+  }).isRequired
 }
 
 export default injectSettings(Provider)

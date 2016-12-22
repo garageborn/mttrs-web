@@ -19,14 +19,14 @@ class Settings {
   fromServer (request) {
     this.tenant = request.headers.host
     this.timezone = request.headers['x-timezone']
-    this.apolloClient = configureApollo({ ssrMode: true })
+    this.apolloClient = configureApollo({ ssrMode: true, tenant: this.tenant })
     this.store = configureStore({}, this.apolloClient)
   }
 
   fromClient (window) {
     this.tenant = window.location.host
     this.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
-    this.apolloClient = configureApollo()
+    this.apolloClient = configureApollo({ tenant: this.tenant })
     this.store = configureStore(window.__INITIAL_STATE__, this.apolloClient)
   }
 
@@ -40,7 +40,7 @@ class Settings {
   }
 
   set timezone (timezone) {
-    if (moment.tz.zone(timezone) !== null) timezone = defaultTimezone
+    if (moment.tz.zone(timezone) === null) timezone = defaultTimezone
     this._timezone = timezone
   }
 

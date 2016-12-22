@@ -7,7 +7,6 @@ import IntlProvider from '../config/IntlProvider'
 class SettingsProvider extends Component {
   getChildContext () {
     const {settings} = this.props
-    console.log('================settingsProvider', this.props.settings.language)
     return {
       settings: {language: settings.language, tenant: settings.tenant, timezone: settings.timezone}
     }
