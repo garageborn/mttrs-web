@@ -6,7 +6,6 @@ import {createTracker} from 'redux-segment'
 import * as reducers from '../reducers/index'
 
 const routeMiddleware = routerMiddleware(browserHistory)
-const trackMiddleware = createTracker()
 
 export default function configureStore (initialState, apolloClient) {
   const rootReducer = combineReducers({
@@ -17,11 +16,13 @@ export default function configureStore (initialState, apolloClient) {
   let middlewares = [
     applyMiddleware(apolloClient.middleware()),
     applyMiddleware(thunkMiddleware),
-    applyMiddleware(trackMiddleware),
     applyMiddleware(routeMiddleware)
   ]
 
-  if (_development_) {
+  if (_production_) {
+    const trackMiddleware = createTracker()
+    middlewares.push(applyMiddleware(trackMiddleware))
+  } else if (_development_) {
     const DevTools = require('./DevTools')
     middlewares.push(DevTools.instrument())
   }
