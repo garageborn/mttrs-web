@@ -13,15 +13,6 @@ let assets = (parameters) => {
   // Webpack entry point (can be used for code splitting)
   result.entry = 'main'
 
-  // Clear Webpack require() cache for hot reload in development mode
-  // (this is not necessary)
-  if (_development_) {
-    delete require.cache[require.resolve('../../../app/assets/favicon.ico')]
-  }
-
-  // Add "favicon"
-  result.icon = require('../../../app/assets/favicon.ico')
-
   // Return assets
   return result
 }
@@ -39,9 +30,7 @@ let head = (parameters) => {
 }
 
 let bodyEnd = () => {
-  if (_development_) {
-    return <div id='dev-tools' />
-  }
+  if (_development_) return <div id='dev-tools' />
 }
 
 export default function htmlOptions (parameters) {

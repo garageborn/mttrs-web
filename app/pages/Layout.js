@@ -24,6 +24,7 @@ class Layout extends Component {
         { name: 'viewport', content: 'width=device-width, initial-scale=1' }
       ],
       link: [
+        { rel: 'shortcut icon', href: require('../assets/favicon.ico') },
         { rel: 'dns-prefetch', href: '//fonts.googleapis.com' }
       ]
     }
@@ -31,8 +32,8 @@ class Layout extends Component {
 }
 
 Layout.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  description: PropTypes.string,
   children: PropTypes.node
 }
 

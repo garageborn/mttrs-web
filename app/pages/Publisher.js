@@ -39,9 +39,10 @@ Publisher.propTypes = {
   }),
   slug: PropTypes.string.isRequired,
   data: PropTypes.shape({
-    publisher: PropTypes.object.isRequired,
-    loading: PropTypes.bool.isRequired
-  })
+    publisher: PropTypes.object,
+    loading: PropTypes.bool
+  }),
+  dispatch: PropTypes.func.isRequired
 }
 
 let mapStateToProps = (state, ownProps) => {

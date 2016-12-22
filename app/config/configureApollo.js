@@ -1,6 +1,6 @@
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
 import * as ENDPOINTS from '../constants/APIEndpoints'
-import Tenant from '../common/utils/Tenant'
+import Setup from '../config/Setup'
 
 export default function configureApollo (options = {}) {
   const networkInterface = createNetworkInterface(
@@ -10,7 +10,7 @@ export default function configureApollo (options = {}) {
   networkInterface.use([{
     applyMiddleware (req, next) {
       if (!req.options.headers) {
-        req.options.headers = { 'X-Tenant': Tenant.current }
+        req.options.headers = { 'X-Tenant': Setup.tenant }
       }
       next()
     }

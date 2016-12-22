@@ -1,6 +1,18 @@
+@import "../../styles/mixins.css";
+@value notSmall, medium, large from "../../styles/media-queries.css";
+
 .title {
   font-weight: 500;
   margin: .9rem 0;
-  composes: lineClamp from "../../styles/line-clamp.css";
-  composes: lineClamp3 from "../../styles/line-clamp.css";
+  @mixin lineClamp 16px, 1.6, 3, #FFF;
+
+  @media medium {
+    @mixin lineClamp 16px, 1.6, 2, #FFF;
+  }
+
+  @media large {
+    @mixin lineClamp 16px, 1.6, 1, #FFF;
+  }
 }
+
+@mixin lineClampFirefox #FFF, .title;
