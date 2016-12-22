@@ -1,10 +1,13 @@
-import { OPEN_MODAL, CLOSE_MODAL } from '../constants/ActionTypes'
+import { OPEN_MODAL, CLOSE_MODAL, OPEN_MENU, CLOSE_MENU } from '../constants/ActionTypes'
 
 let defaultState = {
   modal: {
     isOpen: false,
     type: '',
     content: {}
+  },
+  menu: {
+    isOpen: false
   }
 }
 
@@ -22,10 +25,27 @@ export default function (state = defaultState, action) {
       }
     case CLOSE_MODAL:
       return {
+        ...state,
         modal: {
           isOpen: false,
           type: '',
           content: {}
+        }
+      }
+    case OPEN_MENU:
+      return {
+        ...state,
+        menu: {
+          ...state.menu,
+          isOpen: true
+        }
+      }
+    case CLOSE_MENU:
+      return {
+        ...state,
+        menu: {
+          ...state.menu,
+          isOpen: false
         }
       }
     default:

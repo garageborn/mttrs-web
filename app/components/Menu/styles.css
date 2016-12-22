@@ -1,0 +1,12 @@
+@import "../../styles/variables.css";
+
+.container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 3.125em;
+  left: 0;
+  background-color: $mttrsBlue;
+  overflow: auto;
+  color: white;
+}

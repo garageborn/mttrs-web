@@ -2,9 +2,9 @@ import React, { PropTypes } from 'react'
 import withQuery from './NavContainer.gql'
 import Nav from '../components/Nav'
 
-const NavContainer = (props) => {
+const NavContainer = ({data}) => {
   return (
-    <Nav data={props.data} />
+    <Nav data={data} />
   )
 }
 

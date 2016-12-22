@@ -1,14 +1,13 @@
-import React, { PropTypes } from 'react'
-import SubHeader from '../SubHeader'
+import React from 'react'
+import SubHeaderContainer from '../../containers/SubHeaderContainer'
 import NavContainer from '../../containers/NavContainer'
-import { rootPath } from '../../utils/RoutesHelper'
 import styles from './styles.css'
 
 const Header = () => {
   return (
     <header className={styles.header}>
       <div>
-        <SubHeader rootPath={rootPath} />
+        <SubHeaderContainer />
         <NavContainer />
       </div>
     </header>
