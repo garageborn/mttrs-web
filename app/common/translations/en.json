@@ -3,5 +3,10 @@
   "publisher.pageTitle": "{name} on mttrs",
   "home.pageTitle": "mttrs",
   "home.pageDescription": "mttrs",
-  "header.tagline": "Read What Matters"
+  "header.tagline": "Read What Matters",
+  "header.topStories": "Top Stories",
+  "from": "from",
+  "and": "and",
+  "other": "other",
+  "others": "others"
 }
