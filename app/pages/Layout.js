@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
 import ModalContainer from '../containers/ModalContainer'
 import MenuContainer from '../containers/MenuContainer'
+import injectSettings from '../config/injectSettings'
 
 class Layout extends Component {
   render () {
@@ -17,6 +18,7 @@ class Layout extends Component {
 
   helmet () {
     return {
+      htmlAttributes: { lang: this.props.settings.language },
       title: this.props.title,
       meta: [
         { charset: 'utf-8' },
@@ -37,4 +39,4 @@ Layout.propTypes = {
   children: PropTypes.node
 }
 
-export default Layout
+export default injectSettings(Layout)

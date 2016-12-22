@@ -122,8 +122,8 @@ anymatch@^1.3.0:
     micromatch "^2.1.5"
 
 apollo-client@^0.5.21:
-  version "0.5.23"
-  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-0.5.23.tgz#f6446cd882d4aace19ab40939ded946fbbae9efd"
+  version "0.5.24"
+  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-0.5.24.tgz#9d01da5bee067835320a09c55b1c39905a167007"
   dependencies:
     graphql-anywhere "^1.0.0"
     graphql-tag "^1.1.1"
@@ -1196,8 +1196,8 @@ caniuse-api@^1.3.2:
     shelljs "^0.7.0"
 
 caniuse-db@^1.0.30000346, caniuse-db@^1.0.30000539, caniuse-db@^1.0.30000597:
-  version "1.0.30000601"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000601.tgz#073c9d1c62edb399ecc783a7ab40698b5694d2fe"
+  version "1.0.30000602"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000602.tgz#06b2cbfb6c3aeef7ddb18cd588043549ad1a2d4e"
 
 caseless@~0.11.0:
   version "0.11.0"
@@ -1635,21 +1635,15 @@ date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
 
-debug@*, debug@^2.1.1, debug@^2.2.0:
-  version "2.4.5"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-2.4.5.tgz#34c7b12a1ca96674428f41fe92c49b4ce7cd0607"
-  dependencies:
-    ms "0.7.2"
-
-debug@~0.7.4:
-  version "0.7.4"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-0.7.4.tgz#06e1ea8082c2cb14e39806e22e2f6f757f92af39"
-
-debug@~2.2.0:
+debug@*, debug@^2.1.1, debug@^2.2.0, debug@~2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.2.0.tgz#f87057e995b1a1f6ae6a4960664137bc56f039da"
   dependencies:
     ms "0.7.1"
+
+debug@~0.7.4:
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-0.7.4.tgz#06e1ea8082c2cb14e39806e22e2f6f757f92af39"
 
 decamelize@^1.0.0, decamelize@^1.1.2:
   version "1.2.0"
@@ -1719,7 +1713,7 @@ dicer@0.2.5:
     readable-stream "1.1.x"
     streamsearch "0.1.2"
 
-directory-fonts-complete@^1.0.0:
+directory-fonts-complete@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/directory-fonts-complete/-/directory-fonts-complete-1.1.0.tgz#f68c4cdd4d31dffe3761fda62f43a4b273853091"
   dependencies:
@@ -2202,8 +2196,8 @@ fbjs@0.1.0-alpha.10:
     whatwg-fetch "^0.9.0"
 
 fbjs@^0.8.1, fbjs@^0.8.4:
-  version "0.8.7"
-  resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.7.tgz#14fa1653cda5a299f191c92c8c5a1eb8acdbe5eb"
+  version "0.8.8"
+  resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.8.tgz#02f1b6e0ea0d46c24e0b51a2d24df069563a5ad6"
   dependencies:
     core-js "^1.0.0"
     isomorphic-fetch "^2.1.1"
@@ -2525,7 +2519,7 @@ globby@^6.0.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
-google-fonts-complete@^1.0.0:
+google-fonts-complete@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/google-fonts-complete/-/google-fonts-complete-1.1.0.tgz#afd2e88e2058f815c2a8dc38532e46a87f06d72f"
   dependencies:
@@ -2888,8 +2882,8 @@ is-fullwidth-code-point@^2.0.0:
   resolved "https://registry.yarnpkg.com/is-fullwidth-code-point/-/is-fullwidth-code-point-2.0.0.tgz#a3b30a5c4f199183167aaab93beefae3ddfb654f"
 
 is-generator-function@^1.0.3:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/is-generator-function/-/is-generator-function-1.0.5.tgz#9ddb7301a157d011aec579cf691e6551c0c806db"
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/is-generator-function/-/is-generator-function-1.0.6.tgz#9e71653cd15fff341c79c4151460a131d31e9fc4"
 
 is-glob@^2.0.0, is-glob@^2.0.1:
   version "2.0.1"
@@ -3110,8 +3104,8 @@ jsonify@~0.0.0:
   resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
 
 jsonpointer@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/jsonpointer/-/jsonpointer-4.0.0.tgz#6661e161d2fc445f19f98430231343722e1fcbd5"
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/jsonpointer/-/jsonpointer-4.0.1.tgz#4fd92cb34e0e9db3c89c8622ecf51f9b978c6cb9"
 
 jsonwebtoken@^5.5.4:
   version "5.7.0"
@@ -3128,6 +3122,10 @@ jsprim@^1.2.2:
     extsprintf "1.0.2"
     json-schema "0.2.3"
     verror "1.3.6"
+
+jstz@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/jstz/-/jstz-1.0.7.tgz#ed3cbd2ac3c68532db08635c114586ce934d9eca"
 
 jsx-ast-utils@^1.0.0, jsx-ast-utils@^1.3.4:
   version "1.3.5"
@@ -3613,13 +3611,9 @@ moment-timezone@^0.5.10:
   version "2.17.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.17.1.tgz#fed9506063f36b10f066c8b59a144d7faebe1d82"
 
-ms@0.7.1:
+ms@0.7.1, ms@^0.7.1:
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.1.tgz#9cd13c03adbff25b65effde7ce864ee952017098"
-
-ms@0.7.2, ms@^0.7.1:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.2.tgz#ae25cf2512b3885a1d95d7f037868d8431124765"
 
 mumath@^3.0.0:
   version "3.3.1"
@@ -3648,8 +3642,8 @@ mz@^2.3.1:
     thenify-all "^1.0.0"
 
 nan@^2.3.0, nan@^2.3.3:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/nan/-/nan-2.4.0.tgz#fb3c59d45fe4effe215f0b890f8adf6eb32d2232"
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.5.0.tgz#aa8f1e34531d807e9e27755b234b4a6ec0c152a8"
 
 natural-compare@^1.4.0:
   version "1.4.0"
@@ -4031,7 +4025,7 @@ pkg-dir@^1.0.0:
 
 pleeease-filters@^3.0.0:
   version "3.0.0"
-  resolved "http://registry.npmjs.org/pleeease-filters/-/pleeease-filters-3.0.0.tgz#35a4d4c2086413eabc2ce17aaa2ec29054e3075c"
+  resolved "https://registry.yarnpkg.com/pleeease-filters/-/pleeease-filters-3.0.0.tgz#35a4d4c2086413eabc2ce17aaa2ec29054e3075c"
   dependencies:
     onecolor "~2.4.0"
     postcss "^5.0.4"
@@ -4253,13 +4247,13 @@ postcss-filter-plugins@^2.0.0:
     postcss "^5.0.4"
     uniqid "^4.0.0"
 
-postcss-font-magician@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/postcss-font-magician/-/postcss-font-magician-1.5.0.tgz#aac113feb314a7fafff61466163bf755a58db245"
+postcss-font-magician@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/postcss-font-magician/-/postcss-font-magician-1.6.0.tgz#4bbe9404b1d5b4ec6f11ac45b49c43a7608bef4e"
   dependencies:
     bootstrap-fonts-complete "^1.0.0"
-    directory-fonts-complete "^1.0.0"
-    google-fonts-complete "^1.0.0"
+    directory-fonts-complete "^1.1.0"
+    google-fonts-complete "^1.1.0"
     postcss "^5.0.12"
 
 postcss-font-variant@^2.0.0:
@@ -4327,7 +4321,7 @@ postcss-loader@^1.2.0:
 
 postcss-media-minmax@^2.1.0:
   version "2.1.2"
-  resolved "https://registry.yarnpkg.com/postcss-media-minmax/-/postcss-media-minmax-2.1.2.tgz#444c5cf8926ab5e4fd8a2509e9297e751649cdf8"
+  resolved "http://registry.npmjs.org/postcss-media-minmax/-/postcss-media-minmax-2.1.2.tgz#444c5cf8926ab5e4fd8a2509e9297e751649cdf8"
   dependencies:
     postcss "^5.0.4"
 
@@ -4372,8 +4366,8 @@ postcss-minify-gradients@^1.0.1:
     postcss-value-parser "^3.3.0"
 
 postcss-minify-params@^1.0.4:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/postcss-minify-params/-/postcss-minify-params-1.1.0.tgz#b6093472b5872a6deda47aa3b0b5b8b973547c50"
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/postcss-minify-params/-/postcss-minify-params-1.2.1.tgz#c899444d9e2ff8933018befac151fbfadf10e737"
   dependencies:
     alphanum-sort "^1.0.1"
     postcss "^5.0.2"
@@ -5134,7 +5128,7 @@ regenerator-transform@0.9.8:
 
 regex-cache@^0.4.2:
   version "0.4.3"
-  resolved "https://registry.yarnpkg.com/regex-cache/-/regex-cache-0.4.3.tgz#9b1a6c35d4d0dfcef5711ae651e8e9d3d7114145"
+  resolved "http://registry.npmjs.org/regex-cache/-/regex-cache-0.4.3.tgz#9b1a6c35d4d0dfcef5711ae651e8e9d3d7114145"
   dependencies:
     is-equal-shallow "^0.1.3"
     is-primitive "^2.0.0"
@@ -5421,9 +5415,9 @@ source-list-map@^0.1.4, source-list-map@~0.1.0, source-list-map@~0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-0.1.7.tgz#d4b5ce2a46535c72c7e8527c71a77d250618172e"
 
-source-map-support@^0.4.0, source-map-support@^0.4.2:
-  version "0.4.6"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.6.tgz#32552aa64b458392a85eab3b0b5ee61527167aeb"
+source-map-support@^0.4.2, source-map-support@^0.4.7:
+  version "0.4.7"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.7.tgz#7a7988e0e66241c778c78dd179199bb6bcd35bd6"
   dependencies:
     source-map "^0.5.3"
 
