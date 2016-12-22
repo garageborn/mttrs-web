@@ -2,6 +2,8 @@ import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
 import ModalContainer from '../containers/ModalContainer'
 import MenuContainer from '../containers/MenuContainer'
+import injectSettings from '../config/injectSettings'
+import sentry from '../utils/Sentry'
 
 class Layout extends Component {
   render () {
@@ -17,6 +19,7 @@ class Layout extends Component {
 
   helmet () {
     return {
+      htmlAttributes: { lang: this.props.settings.language },
       title: this.props.title,
       meta: [
         { charset: 'utf-8' },
@@ -26,7 +29,8 @@ class Layout extends Component {
       link: [
         { rel: 'shortcut icon', href: require('../assets/favicon.ico') },
         { rel: 'dns-prefetch', href: '//fonts.googleapis.com' }
-      ]
+      ],
+      script: [...sentry]
     }
   }
 }
@@ -37,4 +41,4 @@ Layout.propTypes = {
   children: PropTypes.node
 }
 
-export default Layout
+export default injectSettings(Layout)
