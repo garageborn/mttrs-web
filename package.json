@@ -125,6 +125,8 @@
     "globals": [
       "_development_",
       "_production_",
+      "_server_",
+      "_client_",
       "configuration",
       "log"
     ]

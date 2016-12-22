@@ -36,8 +36,8 @@ var configuration = {
   },
 
   module: {
-    loaders:
-    [
+    noParse: /node_modules\/localforage\/dist\/localforage.js/,
+    loaders: [
       {
         test: /\.json$/,
         loader: 'json-loader'

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import withQuery from './TimelineContainer.gql'
 import StoryList from '../components/StoryList'
 import Placeholder from '../components/Placeholder'
-import { UIActions } from '../actions/index'
+import { UIActions, StorageActions } from '../actions/index'
 import injectSettings from '../config/injectSettings'
 
 class TimelineContainer extends Component {
@@ -11,6 +11,11 @@ class TimelineContainer extends Component {
     super()
     this.handleStoryLinks = this.handleStoryLinks.bind(this)
   }
+
+  componentWillMount () {
+    this.props.dispatch(StorageActions.getVisitedStories())
+  }
+
   render () {
     const { data } = this.props
     if (data.loading) return <Placeholder />
@@ -23,7 +28,7 @@ class TimelineContainer extends Component {
   }
 
   renderStoryList (item) {
-    const {options} = this.props
+    const {options, visitedStories} = this.props
     if (!item.stories.length) return
     return (
       <StoryList
@@ -31,6 +36,7 @@ class TimelineContainer extends Component {
         date={item.date}
         stories={item.stories}
         options={options}
+        visitedStories={visitedStories}
         handleStoryLinks={this.handleStoryLinks}
       />
     )
@@ -51,6 +57,11 @@ TimelineContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
   settings: PropTypes.shape({
     timezone: PropTypes.string.isRequired
+  }).isRequired,
+  visitedStories: PropTypes.shape({
+    isFetching: PropTypes.bool.isRequired,
+    isLoaded: PropTypes.bool.isRequired,
+    items: PropTypes.array.isRequired
   }).isRequired
 }
 
@@ -61,6 +72,13 @@ TimelineContainer.defaultProps = {
   queryVariables: {}
 }
 
+let mapStateToProps = (state) => {
+  return {
+    visitedStories: state.StorageReducer.visitedStories
+  }
+}
+
 const TimelineContainerWithQuery = withQuery(TimelineContainer)
 const TimelineWithSettings = injectSettings(TimelineContainerWithQuery)
-export default connect()(TimelineWithSettings)
+
+export default connect(mapStateToProps)(TimelineWithSettings)

@@ -1,33 +1,34 @@
-import path     from 'path'
-
-import webpack             from 'webpack'
-import base_configuration  from './webpack.config.client'
-import clean_plugin        from 'clean-webpack-plugin'
+import path from 'path'
+import webpack from 'webpack'
+import baseConfiguration from './webpack.config.client'
+import CleanPlugin from 'clean-webpack-plugin'
 
 // With `development: false` all CSS will be extracted into a file
 // named '[name]-[contenthash].css' using `extract-text-webpack-plugin`
 // (this behaviour can be disabled with `css_bundle: false`)
 // (the filename can be customized with `css_bundle: "filename.css"`)
-const configuration = base_configuration({ development: false })
+const configuration = baseConfiguration({ development: false })
 
 configuration.devtool = 'source-map'
 
-configuration.plugins = configuration.plugins.concat
-(
+configuration.plugins = configuration.plugins.concat(
   // clears the output folder
-  new clean_plugin([path.relative(configuration.context, configuration.output.path)], { root: configuration.context }),
+  new CleanPlugin(
+    [path.relative(configuration.context, configuration.output.path)],
+    { root: configuration.context }
+  ),
 
   // environment variables
-  new webpack.DefinePlugin
-  ({
-    'process.env':
-    {
+  new webpack.DefinePlugin({
+    'process.env': {
       // Useful to reduce the size of client-side libraries, e.g. react
       NODE_ENV: JSON.stringify('production') // 'development' to see non-minified React errors
     },
 
-    _development_       : false,
-    _production_        : true
+    _development_: false,
+    _production_: true,
+    _server_: false,
+    _client_: true
   }),
 
   // Omit duplicate modules
@@ -42,10 +43,8 @@ configuration.plugins = configuration.plugins.concat
   // new webpack.optimize.CommonsChunkPlugin('common', 'common.[hash].js'),
 
   // Compresses javascript files
-  new webpack.optimize.UglifyJsPlugin
-  ({
-    compress:
-    {
+  new webpack.optimize.UglifyJsPlugin({
+    compress: {
       warnings: false
     }
   })

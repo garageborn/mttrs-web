@@ -8,8 +8,10 @@ import StoryMetadata from '../StoryMetadata'
 class Story extends Component {
   render () {
     const {story} = this.props
+    this.isVisited
     return (
       <div key={story.id} className={styles.container}>
+        {this.renderVisited() /* mock */}
         {this.renderCategory()}
         <div className={styles.story}>
           <StoryImage mainLink={this.mainLink} />
@@ -36,6 +38,11 @@ class Story extends Component {
     return <StoryCategory category={this.category} />
   }
 
+  renderVisited () {
+    if (!this.isVisited) return
+    return <span>Visited</span>
+  }
+
   get mainLink () {
     return this.props.story.main_link
   }
@@ -47,6 +54,11 @@ class Story extends Component {
   get category () {
     return this.props.story.main_category
   }
+
+  get isVisited () {
+    const visitedStories = this.props.visitedStories.items
+    return visitedStories.indexOf(this.props.story.id) !== -1
+  }
 }
 
 Story.propTypes = {
@@ -54,7 +66,12 @@ Story.propTypes = {
   options: PropTypes.shape({
     renderCategory: PropTypes.bool
   }),
-  handleStoryLinks: PropTypes.func.isRequired
+  handleStoryLinks: PropTypes.func.isRequired,
+  visitedStories: PropTypes.shape({
+    isFetching: PropTypes.bool.isRequired,
+    isLoaded: PropTypes.bool.isRequired,
+    items: PropTypes.array.isRequired
+  }).isRequired
 }
 
 Story.defaultProps = {

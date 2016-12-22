@@ -1,5 +1,19 @@
-import base_configuration from './webpack.config.server'
+import baseConfiguration from './webpack.config.server'
 
-// Nothing special to add here.
+const configuration = Object.assign({}, baseConfiguration)
 
-export default base_configuration
+configuration.plugins.push(
+  // environment variables
+  new webpack.DefinePlugin({
+    'process.env': {
+      NODE_ENV: JSON.stringify('development'),
+      BABEL_ENV: JSON.stringify('development/client')
+    },
+    _production_: true,
+    _development_: false,
+    _server_: true,
+    _client_: false
+  })
+)
+
+export default configuration

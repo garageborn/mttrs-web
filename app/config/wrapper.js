@@ -41,7 +41,7 @@ class Wrapper {
   }
 
   run ({renderProps, routes}) {
-    if (this.request) return this.fromServer(renderProps)
+    if (_server_) return this.fromServer(renderProps)
     return this.fromClient(routes)
   }
 
