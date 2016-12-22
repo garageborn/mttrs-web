@@ -33,7 +33,9 @@ class Settings {
 
   set tenant (host) {
     let domain = host.split(':')[0]
-    this._tenant = TENANTS.find((item) => item.domain.test(domain))
+    let tenant = TENANTS.find((item) => item.domain.test(domain))
+    if (tenant) tenant = tenant.id
+    this._tenant = tenant
   }
 
   get tenant () {

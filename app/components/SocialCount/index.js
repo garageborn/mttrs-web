@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import SocialCount from '../../common/utils/SocialCount'
+import SocialCount from '../../utils/SocialCount'
 import styles from './styles.css'
 
 const StorySocialCount = ({totalSocial}) => {

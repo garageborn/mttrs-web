@@ -71,6 +71,8 @@ export default class Html extends Component {
 
           {styleUrl && <link href={styleUrl} rel='stylesheet' type='text/css' charSet='UTF-8' />}
 
+          {webpageHead.script.toComponent()}
+
           {head}
         </head>
 
