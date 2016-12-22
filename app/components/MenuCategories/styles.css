@@ -1,0 +1,6 @@
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding-left: 5%;
+}
