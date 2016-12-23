@@ -8,7 +8,7 @@ import styles from './styles.css'
 
 class Story extends Component {
   render () {
-    const {story, handleVisitedStory, handleStoryLinks, isVisited} = this.props
+    const {story, handleVisitedStory, handleStoryLinks} = this.props
 
     return (
       <div key={story.id} className={this.storyContainerClass()}>
@@ -22,7 +22,6 @@ class Story extends Component {
             totalSocial={story.total_social}
             handleStoryLinks={handleStoryLinks}
             handleVisitedStory={handleVisitedStory}
-            isVisited={isVisited}
           />
         </div>
         <StoryMetadata
@@ -32,7 +31,6 @@ class Story extends Component {
           otherLinks={this.otherLinks}
           totalSocial={story.total_social}
           handleStoryLinks={handleStoryLinks}
-          isVisited={isVisited}
         />
       </div>
     )

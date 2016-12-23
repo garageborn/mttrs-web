@@ -1,18 +1,17 @@
-/* eslint-disable react/jsx-no-bind */
 import React, { Component, PropTypes } from 'react'
 import * as cloudinary from '../../utils/Cloudinary'
 import styles from './styles.css'
 
 class StoryImage extends Component {
   renderImage () {
-    const {story, handleVisitedStory} = this.props
+    const { handleVisitedStory } = this.props
     if (!this.mainLink.image_source_url) return
     let options = {
       type: 'fetch', width: 120, height: 90, crop: 'fill', secure: true
     }
     return (
       <a
-        onClick={() => handleVisitedStory(story)}
+        onClick={handleVisitedStory}
         href={this.mainLink.url}
         className={styles.link}
         target='_blank'

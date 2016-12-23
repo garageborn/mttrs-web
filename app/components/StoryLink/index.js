@@ -5,11 +5,10 @@ import PublisherIcon from '../PublisherIcon'
 import SocialCount from '../SocialCount'
 import styles from './styles.css'
 
-const StoryLink = ({story, type, storyLink, closeModal, isVisited}) => {
+const StoryLink = ({story, type, storyLink, closeModal}) => {
   let containerClass = classNames({
     [styles.container]: true,
-    [styles.main]: type === 'main',
-    [styles.read]: isVisited
+    [styles.main]: type === 'main'
   })
   return (
     <div className={containerClass}>
@@ -31,8 +30,7 @@ StoryLink.propTypes = {
   story: PropTypes.object.isRequired,
   type: PropTypes.string,
   storyLink: PropTypes.object.isRequired,
-  closeModal: PropTypes.func.isRequired,
-  isVisited: PropTypes.bool.isRequired
+  closeModal: PropTypes.func.isRequired
 }
 
 export default StoryLink

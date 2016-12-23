@@ -6,10 +6,6 @@
   border-bottom: 1px solid rgba(38,44,91,.1);
 }
 
-.read {
-  opacity: 0.5;
-}
-
 .section {
   display: flex;
   flex-flow: row;

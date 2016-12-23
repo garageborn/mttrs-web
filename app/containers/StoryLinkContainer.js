@@ -14,7 +14,7 @@ class StoryLinkContainer extends Component {
     dispatch(StorageActions.addVisitedStory(story))
   }
   render () {
-    let {story, key, type, storyLink, isVisited} = this.props
+    let {story, key, type, storyLink} = this.props
     return (
       <StoryLink
         key={key}
@@ -22,7 +22,6 @@ class StoryLinkContainer extends Component {
         story={story}
         storyLink={storyLink}
         closeModal={this.closeModal}
-        isVisited={isVisited}
       />
     )
   }
@@ -33,8 +32,7 @@ StoryLinkContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
   key: PropTypes.number,
   type: PropTypes.string.isRequired,
-  storyLink: PropTypes.object.isRequired,
-  isVisited: PropTypes.bool.isRequired
+  storyLink: PropTypes.object.isRequired
 }
 
 export default connect()(StoryLinkContainer)
