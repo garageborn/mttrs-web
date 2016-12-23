@@ -1,16 +1,17 @@
-import React, {Component, PropTypes} from 'react'
+import React, { Component, PropTypes } from 'react'
+import className from 'classnames'
 import StoryImage from '../StoryImage'
 import StoryContent from '../StoryContent'
 import StoryCategory from '../StoryCategory'
-import styles from './styles.css'
 import StoryMetadata from '../StoryMetadata'
+import styles from './styles.css'
 
 class Story extends Component {
   render () {
-    const {story, handleVisitedStory, handleStoryLinks} = this.props
+    const {story, handleVisitedStory, handleStoryLinks, isVisited} = this.props
 
     return (
-      <div key={story.id} className={styles.container} style={this.renderVisitedStyle()}>
+      <div key={story.id} className={this.storyContainerClass()}>
         {this.renderCategory()}
         <div className={styles.story}>
           <StoryImage story={story} handleVisitedStory={handleVisitedStory} />
@@ -21,29 +22,32 @@ class Story extends Component {
             totalSocial={story.total_social}
             handleStoryLinks={handleStoryLinks}
             handleVisitedStory={handleVisitedStory}
+            isVisited={isVisited}
           />
         </div>
         <StoryMetadata
+          story={story}
           source='story'
           mainLink={this.mainLink}
           otherLinks={this.otherLinks}
           totalSocial={story.total_social}
           handleStoryLinks={handleStoryLinks}
+          isVisited={isVisited}
         />
       </div>
     )
   }
 
+  storyContainerClass () {
+    return className({
+      [styles.container]: true,
+      [styles.read]: this.props.isVisited
+    })
+  }
+
   renderCategory () {
     if (this.props.options.renderCategory === false) return
     return <StoryCategory category={this.category} />
-  }
-
-  renderVisitedStyle () {
-    if (!this.props.isVisited) return
-    return {
-      opacity: '0.5'
-    }
   }
 
   get mainLink () {

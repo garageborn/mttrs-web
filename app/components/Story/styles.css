@@ -17,3 +17,7 @@
   display: flex;
   flex-flow: row;
 }
+
+.read {
+  opacity: 0.5;
+}
