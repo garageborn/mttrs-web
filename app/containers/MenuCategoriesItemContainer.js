@@ -10,12 +10,8 @@ class MenuCategoriesItemContainer extends Component {
   }
   render () {
     return (
-      <MenuCategoriesItem closeMenu={this.closeMenu} isActive={this.activeStatus} category={this.props.category} />
+      <MenuCategoriesItem closeMenu={this.closeMenu} category={this.props.category} />
     )
-  }
-
-  get activeStatus () {
-    return this.props.activeSlug === this.props.category.slug
   }
 
   closeMenu () {
@@ -24,15 +20,8 @@ class MenuCategoriesItemContainer extends Component {
 }
 
 MenuCategoriesItemContainer.propTypes = {
-  activeSlug: PropTypes.string.isRequired,
   category: PropTypes.object.isRequired,
   dispatch: PropTypes.func.isRequired
 }
 
-let mapStateToProps = (state, ownProps) => {
-  return {
-    activeSlug: state.routing.locationBeforeTransitions.pathname.substr(1) // FIXME: FUGLY!
-  }
-}
-
-export default connect(mapStateToProps)(MenuCategoriesItemContainer)
+export default connect()(MenuCategoriesItemContainer)

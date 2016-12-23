@@ -38,21 +38,12 @@ class MenuCategoriesItem extends Component {
       secure: true
     }
 
-    if (this.props.isActive) {
-      options = {
-        ...options,
-        effect: 'colorize',
-        color: '#FFF'
-      }
-    }
-
     return cloudinary.id(category.icon_id, options)
   }
 }
 
 MenuCategoriesItem.propTypes = {
   category: PropTypes.object.isRequired,
-  isActive: PropTypes.bool.isRequired,
   closeMenu: PropTypes.func.isRequired
 }
 

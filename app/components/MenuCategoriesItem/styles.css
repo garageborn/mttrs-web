@@ -35,4 +35,7 @@
   .title {
     color: #FFF !important;
   }
+  img {
+    filter: brightness(10)
+  }
 }
