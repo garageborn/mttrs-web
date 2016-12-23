@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
-import MenuCategoriesItemContainer from '../../containers/MenuCategoriesItemContainer'
+import MenuCategoriesItem from '../MenuCategoriesItem'
 import TopStoriesLogo from '../../assets/logo-mttrs-mobile.svg'
 import styles from './styles.css'
 
-const MenuCategories = ({categories}) => {
+const MenuCategories = ({categories, closeMenu}) => {
   return (
     <div className={styles.container}>
       <Link to='/' className={styles.topStories}>
@@ -14,14 +14,15 @@ const MenuCategories = ({categories}) => {
         </div>
       </Link>
       <div className={styles.categories}>
-        {categories.map((category) => <MenuCategoriesItemContainer key={category.id} category={category} />)}
+        {categories.map((category) => <MenuCategoriesItem closeMenu={closeMenu} key={category.id} category={category} />)}
       </div>
     </div>
   )
 }
 
 MenuCategories.propTypes = {
-  categories: PropTypes.array.isRequired
+  categories: PropTypes.array.isRequired,
+  closeMenu: PropTypes.func.isRequired
 }
 
 export default MenuCategories

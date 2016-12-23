@@ -1,8 +1,13 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import { UIActions } from '../actions/index'
 import Menu from '../components/Menu'
 
 class MenuContainer extends Component {
+  constructor () {
+    super()
+    this.closeMenu = this.closeMenu.bind(this)
+  }
   render () {
     return this.renderMenu()
   }
@@ -10,7 +15,12 @@ class MenuContainer extends Component {
   renderMenu () {
     const {UIReducer} = this.props
     if (!UIReducer.menu.isOpen) return null
-    return <Menu isOpen={UIReducer.menu.isOpen} />
+    return <Menu closeMenu={this.closeMenu} isOpen={UIReducer.menu.isOpen} />
+  }
+
+  closeMenu () {
+    const {dispatch} = this.props
+    dispatch(UIActions.closeMenu())
   }
 }
 
@@ -19,7 +29,8 @@ MenuContainer.propTypes = {
     menu: PropTypes.shape({
       isOpen: PropTypes.bool.isRequired
     }).isRequired
-  }).isRequired
+  }).isRequired,
+  dispatch: PropTypes.func.isRequired
 }
 
 let mapStateToProps = (state, ownProps) => {
