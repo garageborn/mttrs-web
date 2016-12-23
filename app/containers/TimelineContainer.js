@@ -1,22 +1,10 @@
 import React, {Component, PropTypes} from 'react'
-import { connect } from 'react-redux'
 import withQuery from './TimelineContainer.gql'
 import StoryList from '../components/StoryList'
 import Placeholder from '../components/Placeholder'
-import { UIActions, StorageActions } from '../actions/index'
 import injectSettings from '../config/injectSettings'
 
 class TimelineContainer extends Component {
-  constructor () {
-    super()
-    this.handleStoryLinks = this.handleStoryLinks.bind(this)
-    this.handleVisitedStory = this.handleVisitedStory.bind(this)
-  }
-
-  componentWillMount () {
-    this.props.dispatch(StorageActions.getVisitedStories())
-  }
-
   render () {
     const { data } = this.props
     if (data.loading) return <Placeholder />
@@ -29,7 +17,7 @@ class TimelineContainer extends Component {
   }
 
   renderStoryList (item) {
-    const {options, visitedStories} = this.props
+    const {options} = this.props
     if (!item.stories.length) return
     return (
       <StoryList
@@ -37,20 +25,8 @@ class TimelineContainer extends Component {
         date={item.date}
         stories={item.stories}
         options={options}
-        visitedStories={visitedStories}
-        handleStoryLinks={this.handleStoryLinks}
-        handleVisitedStory={this.handleVisitedStory}
       />
     )
-  }
-
-  handleStoryLinks (modalType, content) {
-    let {dispatch} = this.props
-    dispatch(UIActions.openModal(modalType, content))
-  }
-
-  handleVisitedStory (story) {
-    this.props.dispatch(StorageActions.addVisitedStory(story))
   }
 }
 
@@ -60,14 +36,8 @@ TimelineContainer.propTypes = {
     renderCategory: PropTypes.bool
   }),
   queryVariables: PropTypes.object,
-  dispatch: PropTypes.func.isRequired,
   settings: PropTypes.shape({
     timezone: PropTypes.string.isRequired
-  }).isRequired,
-  visitedStories: PropTypes.shape({
-    isFetching: PropTypes.bool.isRequired,
-    isLoaded: PropTypes.bool.isRequired,
-    items: PropTypes.array.isRequired
   }).isRequired
 }
 
@@ -78,13 +48,5 @@ TimelineContainer.defaultProps = {
   queryVariables: {}
 }
 
-let mapStateToProps = (state) => {
-  return {
-    visitedStories: state.StorageReducer.visitedStories
-  }
-}
-
 const TimelineContainerWithQuery = withQuery(TimelineContainer)
-const TimelineWithSettings = injectSettings(TimelineContainerWithQuery)
-
-export default connect(mapStateToProps)(TimelineWithSettings)
+export default injectSettings(TimelineContainerWithQuery)

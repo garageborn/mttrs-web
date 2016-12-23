@@ -1,10 +1,9 @@
 import React, {Component, PropTypes} from 'react'
-import Story from '../Story'
+import StoryContainer from '../../containers/StoryContainer'
 import StoryListHeader from '../StoryListHeader'
 import styles from './styles.css'
 
 class StoryListContainer extends Component {
-
   render () {
     const {date, stories} = this.props
 
@@ -17,17 +16,7 @@ class StoryListContainer extends Component {
   }
 
   renderStory (story) {
-    const {handleStoryLinks, handleVisitedStory, options, visitedStories} = this.props
-    return (
-      <Story
-        key={story.id}
-        story={story}
-        options={options}
-        handleStoryLinks={handleStoryLinks}
-        handleVisitedStory={handleVisitedStory}
-        visitedStories={visitedStories}
-      />
-    )
+    return <StoryContainer key={story.id} story={story} options={this.props.options} />
   }
 }
 
@@ -36,14 +25,7 @@ StoryListContainer.propTypes = {
   date: PropTypes.any.isRequired,
   options: PropTypes.shape({
     renderCategory: PropTypes.bool
-  }),
-  handleStoryLinks: PropTypes.func.isRequired,
-  handleVisitedStory: PropTypes.func.isRequired,
-  visitedStories: PropTypes.shape({
-    isFetching: PropTypes.bool.isRequired,
-    isLoaded: PropTypes.bool.isRequired,
-    items: PropTypes.array.isRequired
-  }).isRequired
+  })
 }
 
 StoryListContainer.defaultProps = {

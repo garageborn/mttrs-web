@@ -7,8 +7,7 @@ import StoryMetadata from '../StoryMetadata'
 
 class Story extends Component {
   render () {
-    const {story, handleVisitedStory} = this.props
-    console.log('----render', story.id)
+    const {story, handleVisitedStory, handleStoryLinks} = this.props
 
     return (
       <div key={story.id} className={styles.container}>
@@ -20,7 +19,7 @@ class Story extends Component {
             mainLink={this.mainLink}
             otherLinks={this.otherLinks}
             totalSocial={story.total_social}
-            handleStoryLinks={this.props.handleStoryLinks}
+            handleStoryLinks={handleStoryLinks}
             handleVisitedStory={handleVisitedStory}
           />
         </div>
@@ -29,7 +28,7 @@ class Story extends Component {
           mainLink={this.mainLink}
           otherLinks={this.otherLinks}
           totalSocial={story.total_social}
-          handleStoryLinks={this.props.handleStoryLinks}
+          handleStoryLinks={handleStoryLinks}
         />
       </div>
     )
@@ -41,7 +40,7 @@ class Story extends Component {
   }
 
   renderVisited () {
-    if (!this.isVisited) return
+    if (!this.props.isVisited) return
     return <span>Visited</span>
   }
 
@@ -56,11 +55,6 @@ class Story extends Component {
   get category () {
     return this.props.story.main_category
   }
-
-  get isVisited () {
-    const visitedStories = this.props.visitedStories.items
-    return visitedStories.indexOf(this.props.story.id) !== -1
-  }
 }
 
 Story.propTypes = {
@@ -70,14 +64,11 @@ Story.propTypes = {
   }),
   handleStoryLinks: PropTypes.func.isRequired,
   handleVisitedStory: PropTypes.func.isRequired,
-  visitedStories: PropTypes.shape({
-    isFetching: PropTypes.bool.isRequired,
-    isLoaded: PropTypes.bool.isRequired,
-    items: PropTypes.array.isRequired
-  }).isRequired
+  isVisited: PropTypes.bool.isRequired
 }
 
 Story.defaultProps = {
+  isVisited: false,
   options: {
     renderCategory: true
   }

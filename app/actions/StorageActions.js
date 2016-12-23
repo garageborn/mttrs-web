@@ -21,7 +21,6 @@ export function getVisitedStories () {
     const localForage = require('localforage')
     dispatch(requestVisitedStories())
     return localForage.getItem('visitedStories', (error, stories) => {
-      console.log('----------get item', stories)
       return dispatch(receiveVisitedStories(stories || []))
     })
   }
@@ -32,8 +31,8 @@ export function addVisitedStory (story) {
     if (isVisitedStory(getState, story)) return
 
     const localForage = require('localforage')
-    let stories = _uniq(_flatten([visitedStories(getState).items, story.id]))
-    console.log('set stories', stories)
+    let storyId = parseInt(story.id)
+    let stories = _uniq(_flatten([visitedStories(getState).items, storyId]))
     localForage.setItem('visitedStories', stories)
     return dispatch(receiveVisitedStories(stories))
   }
@@ -51,6 +50,7 @@ function isVisitedStoriesLoaded (getState) {
   return visitedStories(getState).isLoaded
 }
 
-function isVisitedStory(getState, story) {
-  return visitedStories(getState).items.indexOf(story.id) !== -1
+function isVisitedStory (getState, story) {
+  let storyId = parseInt(story.id)
+  return visitedStories(getState).items.indexOf(storyId) !== -1
 }
