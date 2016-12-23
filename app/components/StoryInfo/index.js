@@ -59,7 +59,15 @@ class StoryInfo extends Component {
   }
 
   handleStoryLinks () {
-    this.props.handleStoryLinks('storyLinks', <StoryLinksModal mainLink={this.props.mainLink} otherLinks={this.props.otherLinks} />)
+    const { story, handleStoryLinks } = this.props
+    handleStoryLinks(
+      'storyLinks',
+      <StoryLinksModal
+        story={story}
+        mainLink={this.props.mainLink}
+        otherLinks={this.props.otherLinks}
+      />
+    )
   }
 
   render () {
@@ -72,6 +80,7 @@ class StoryInfo extends Component {
 }
 
 StoryInfo.propTypes = {
+  story: PropTypes.object.isRequired,
   mainLink: PropTypes.object.isRequired,
   otherLinks: PropTypes.array,
   handleStoryLinks: PropTypes.func.isRequired,

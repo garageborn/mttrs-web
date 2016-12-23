@@ -1,21 +1,22 @@
-import React, {Component, PropTypes} from 'react'
+import React, { Component, PropTypes } from 'react'
+import className from 'classnames'
 import StoryImage from '../StoryImage'
 import StoryContent from '../StoryContent'
 import StoryCategory from '../StoryCategory'
-import styles from './styles.css'
 import StoryMetadata from '../StoryMetadata'
+import styles from './styles.css'
 
 class Story extends Component {
   render () {
     const {story, handleVisitedStory, handleStoryLinks} = this.props
 
     return (
-      <div key={story.id} className={styles.container}>
-        {this.renderVisited() /* mock */}
+      <div key={story.id} className={this.storyContainerClass()}>
         {this.renderCategory()}
         <div className={styles.story}>
           <StoryImage story={story} handleVisitedStory={handleVisitedStory} />
           <StoryContent
+            story={story}
             mainLink={this.mainLink}
             otherLinks={this.otherLinks}
             totalSocial={story.total_social}
@@ -24,6 +25,7 @@ class Story extends Component {
           />
         </div>
         <StoryMetadata
+          story={story}
           source='story'
           mainLink={this.mainLink}
           otherLinks={this.otherLinks}
@@ -34,14 +36,16 @@ class Story extends Component {
     )
   }
 
+  storyContainerClass () {
+    return className({
+      [styles.container]: true,
+      [styles.read]: this.props.isVisited
+    })
+  }
+
   renderCategory () {
     if (this.props.options.renderCategory === false) return
     return <StoryCategory category={this.category} />
-  }
-
-  renderVisited () {
-    if (!this.props.isVisited) return
-    return <span>Visited</span>
   }
 
   get mainLink () {

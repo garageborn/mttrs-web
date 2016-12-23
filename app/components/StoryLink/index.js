@@ -5,7 +5,7 @@ import PublisherIcon from '../PublisherIcon'
 import SocialCount from '../SocialCount'
 import styles from './styles.css'
 
-const StoryLink = ({type, storyLink, closeModal}) => {
+const StoryLink = ({story, type, storyLink, closeModal}) => {
   let containerClass = classNames({
     [styles.container]: true,
     [styles.main]: type === 'main'
@@ -19,7 +19,7 @@ const StoryLink = ({type, storyLink, closeModal}) => {
         </Link>
       </div>
       <div className={styles.secondary}>
-        <a className={styles.title} onClick={closeModal} href={storyLink.url} alt={storyLink.title}><h3>{storyLink.title}</h3></a>
+        <a className={styles.title} onClick={closeModal} href={storyLink.url} alt={storyLink.title} target='_blank'><h3>{storyLink.title}</h3></a>
         <div className={styles.countContainer}><SocialCount totalSocial={storyLink.total_social} /></div>
       </div>
     </div>
@@ -27,6 +27,7 @@ const StoryLink = ({type, storyLink, closeModal}) => {
 }
 
 StoryLink.propTypes = {
+  story: PropTypes.object.isRequired,
   type: PropTypes.string,
   storyLink: PropTypes.object.isRequired,
   closeModal: PropTypes.func.isRequired
