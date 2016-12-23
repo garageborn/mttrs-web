@@ -48,7 +48,7 @@ ModalContainer.propTypes = {
   dispatch: PropTypes.func.isRequired
 }
 
-let mapStateToProps = (state, ownProps) => {
+let mapStateToProps = (state) => {
   return {
     UIReducer: state.UIReducer
   }

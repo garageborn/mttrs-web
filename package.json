@@ -33,6 +33,7 @@
     "isomorphic-fetch": "^2.2.1",
     "json-loader": "^0.5.2",
     "jstz": "^1.0.7",
+    "localforage": "^1.4.3",
     "lost": "^7.1.1",
     "minimist": "^1.1.1",
     "moment": "^2.17.1",
@@ -124,6 +125,8 @@
     "globals": [
       "_development_",
       "_production_",
+      "_server_",
+      "_client_",
       "configuration",
       "log"
     ]

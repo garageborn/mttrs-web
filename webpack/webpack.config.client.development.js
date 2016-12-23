@@ -13,7 +13,9 @@ configuration.plugins.push(
       BABEL_ENV: JSON.stringify('development/client')
     },
     _production_: false,
-    _development_: true
+    _development_: true,
+    _server_: false,
+    _client_: true
   }),
 
   // faster code reload on changes
@@ -36,25 +38,25 @@ configuration.output.publicPath = `http://${host}:${port}${configuration.output.
 
 // Add React Hot Module Replacement plugin to `babel-loader`
 
-const javascript_loader = configuration.module.loaders.filter(loader => {
+const javascriptLoader = configuration.module.loaders.filter(loader => {
   return loader.test.toString() === /\.js$/.toString()
 })[0]
 
-javascript_loader.query = javascript_loader.query || {}
+javascriptLoader.query = javascriptLoader.query || {}
 
-javascript_loader.query.plugins = javascript_loader.query.plugins || []
+javascriptLoader.query.plugins = javascriptLoader.query.plugins || []
 
-javascript_loader.query.plugins = javascript_loader.query.plugins.concat([[
+javascriptLoader.query.plugins = javascriptLoader.query.plugins.concat([[
   'react-transform', {
     transforms: [{
-        transform : 'react-transform-catch-errors',
-        imports   : ['react', 'redbox-react']
-      },
-      {
-        transform : 'react-transform-hmr',
-        imports   : ['react'],
-        locals    : ['module']
-      }]
+      transform: 'react-transform-catch-errors',
+      imports: ['react', 'redbox-react']
+    },
+    {
+      transform: 'react-transform-hmr',
+      imports: ['react'],
+      locals: ['module']
+    }]
   }
 ]])
 

@@ -7,17 +7,20 @@ import StoryMetadata from '../StoryMetadata'
 
 class Story extends Component {
   render () {
-    const {story} = this.props
+    const {story, handleVisitedStory, handleStoryLinks} = this.props
+
     return (
       <div key={story.id} className={styles.container}>
+        {this.renderVisited() /* mock */}
         {this.renderCategory()}
         <div className={styles.story}>
-          <StoryImage mainLink={this.mainLink} />
+          <StoryImage story={story} handleVisitedStory={handleVisitedStory} />
           <StoryContent
             mainLink={this.mainLink}
             otherLinks={this.otherLinks}
             totalSocial={story.total_social}
-            handleStoryLinks={this.props.handleStoryLinks}
+            handleStoryLinks={handleStoryLinks}
+            handleVisitedStory={handleVisitedStory}
           />
         </div>
         <StoryMetadata
@@ -25,7 +28,7 @@ class Story extends Component {
           mainLink={this.mainLink}
           otherLinks={this.otherLinks}
           totalSocial={story.total_social}
-          handleStoryLinks={this.props.handleStoryLinks}
+          handleStoryLinks={handleStoryLinks}
         />
       </div>
     )
@@ -34,6 +37,11 @@ class Story extends Component {
   renderCategory () {
     if (this.props.options.renderCategory === false) return
     return <StoryCategory category={this.category} />
+  }
+
+  renderVisited () {
+    if (!this.props.isVisited) return
+    return <span>Visited</span>
   }
 
   get mainLink () {
@@ -54,10 +62,13 @@ Story.propTypes = {
   options: PropTypes.shape({
     renderCategory: PropTypes.bool
   }),
-  handleStoryLinks: PropTypes.func.isRequired
+  handleStoryLinks: PropTypes.func.isRequired,
+  handleVisitedStory: PropTypes.func.isRequired,
+  isVisited: PropTypes.bool.isRequired
 }
 
 Story.defaultProps = {
+  isVisited: false,
   options: {
     renderCategory: true
   }

@@ -4,16 +4,22 @@ import styles from './styles.css'
 
 class StoryImage extends Component {
   renderImage () {
-    if (!this.props.mainLink.image_source_url) return
+    const {story, handleVisitedStory} = this.props
+    if (!this.mainLink.image_source_url) return
     let options = {
       type: 'fetch', width: 120, height: 90, crop: 'fill', secure: true
     }
     return (
-      <a href={this.props.mainLink.url} className={styles.link} target='_blank'>
+      <a
+        onClick={() => handleVisitedStory(story)}
+        href={this.mainLink.url}
+        className={styles.link}
+        target='_blank'
+      >
         <img
           className={styles.image}
-          alt={this.props.mainLink.title}
-          src={cloudinary.url(this.props.mainLink.image_source_url, options)}
+          alt={this.mainLink.title}
+          src={cloudinary.url(this.mainLink.image_source_url, options)}
         />
       </a>
     )
@@ -26,10 +32,17 @@ class StoryImage extends Component {
       </aside>
     )
   }
+
+  get mainLink () {
+    return this.props.story.main_link
+  }
 }
 
 StoryImage.propTypes = {
-  mainLink: PropTypes.object.isRequired,
+  story: PropTypes.shape({
+    main_link: PropTypes.object.isRequired
+  }).isRequired,
+  handleVisitedStory: PropTypes.func.isRequired
 }
 
 export default StoryImage

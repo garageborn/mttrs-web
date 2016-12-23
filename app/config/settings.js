@@ -13,7 +13,7 @@ const defaultTimezone = (function () {
 
 class Settings {
   run ({request, window}) {
-    if (request) return this.fromServer(request)
+    if (_server_) return this.fromServer(request)
     return this.fromClient(window)
   }
 
