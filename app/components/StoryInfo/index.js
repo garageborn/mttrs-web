@@ -59,12 +59,14 @@ class StoryInfo extends Component {
   }
 
   handleStoryLinks () {
-    const { handleStoryLinks } = this.props
+    const { story, handleStoryLinks, isVisited } = this.props
     handleStoryLinks(
       'storyLinks',
       <StoryLinksModal
+        story={story}
         mainLink={this.props.mainLink}
         otherLinks={this.props.otherLinks}
+        isVisited={isVisited}
       />
     )
   }
@@ -79,12 +81,14 @@ class StoryInfo extends Component {
 }
 
 StoryInfo.propTypes = {
+  story: PropTypes.object.isRequired,
   mainLink: PropTypes.object.isRequired,
   otherLinks: PropTypes.array,
   handleStoryLinks: PropTypes.func.isRequired,
   intl: PropTypes.shape({
     formatMessage: PropTypes.func.isRequired
-  }).isRequired
+  }).isRequired,
+  isVisited: PropTypes.bool.isRequired
 }
 
 export default injectIntl(StoryInfo)

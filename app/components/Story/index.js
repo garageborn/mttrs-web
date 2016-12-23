@@ -26,11 +26,13 @@ class Story extends Component {
           />
         </div>
         <StoryMetadata
+          story={story}
           source='story'
           mainLink={this.mainLink}
           otherLinks={this.otherLinks}
           totalSocial={story.total_social}
           handleStoryLinks={handleStoryLinks}
+          isVisited={isVisited}
         />
       </div>
     )

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { UIActions } from '../actions/index'
+import { UIActions, StorageActions } from '../actions/index'
 import StoryLink from '../components/StoryLink'
 
 class StoryLinkContainer extends Component {
@@ -9,27 +9,33 @@ class StoryLinkContainer extends Component {
     this.closeModal = this.closeModal.bind(this)
   }
   closeModal () {
-    const { dispatch } = this.props
+    const { dispatch, story } = this.props
+    console.log(this.props)
     dispatch(UIActions.closeModal())
+    dispatch(StorageActions.addVisitedStory(story))
   }
   render () {
-    let {key, type, storyLink} = this.props
+    let {story, key, type, storyLink, isVisited} = this.props
     return (
       <StoryLink
         key={key}
         type={type}
+        story={story}
         storyLink={storyLink}
         closeModal={this.closeModal}
+        isVisited={isVisited}
       />
     )
   }
 }
 
 StoryLinkContainer.propTypes = {
+  story: PropTypes.object.isRequired,
   dispatch: PropTypes.func.isRequired,
   key: PropTypes.number,
   type: PropTypes.string.isRequired,
-  storyLink: PropTypes.object.isRequired
+  storyLink: PropTypes.object.isRequired,
+  isVisited: PropTypes.bool.isRequired
 }
 
 export default connect()(StoryLinkContainer)
