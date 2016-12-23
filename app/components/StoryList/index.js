@@ -17,13 +17,14 @@ class StoryListContainer extends Component {
   }
 
   renderStory (story) {
-    const {handleStoryLinks, options, visitedStories} = this.props
+    const {handleStoryLinks, handleVisitedStory, options, visitedStories} = this.props
     return (
       <Story
         key={story.id}
         story={story}
         options={options}
         handleStoryLinks={handleStoryLinks}
+        handleVisitedStory={handleVisitedStory}
         visitedStories={visitedStories}
       />
     )
@@ -37,6 +38,7 @@ StoryListContainer.propTypes = {
     renderCategory: PropTypes.bool
   }),
   handleStoryLinks: PropTypes.func.isRequired,
+  handleVisitedStory: PropTypes.func.isRequired,
   visitedStories: PropTypes.shape({
     isFetching: PropTypes.bool.isRequired,
     isLoaded: PropTypes.bool.isRequired,

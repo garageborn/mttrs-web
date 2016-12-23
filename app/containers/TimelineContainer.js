@@ -10,6 +10,7 @@ class TimelineContainer extends Component {
   constructor () {
     super()
     this.handleStoryLinks = this.handleStoryLinks.bind(this)
+    this.handleVisitedStory = this.handleVisitedStory.bind(this)
   }
 
   componentWillMount () {
@@ -38,6 +39,7 @@ class TimelineContainer extends Component {
         options={options}
         visitedStories={visitedStories}
         handleStoryLinks={this.handleStoryLinks}
+        handleVisitedStory={this.handleVisitedStory}
       />
     )
   }
@@ -45,6 +47,10 @@ class TimelineContainer extends Component {
   handleStoryLinks (modalType, content) {
     let {dispatch} = this.props
     dispatch(UIActions.openModal(modalType, content))
+  }
+
+  handleVisitedStory (story) {
+    this.props.dispatch(StorageActions.addVisitedStory(story))
   }
 }
 

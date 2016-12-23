@@ -7,19 +7,21 @@ import StoryMetadata from '../StoryMetadata'
 
 class Story extends Component {
   render () {
-    const {story} = this.props
-    this.isVisited
+    const {story, handleVisitedStory} = this.props
+    console.log('----render', story.id)
+
     return (
       <div key={story.id} className={styles.container}>
         {this.renderVisited() /* mock */}
         {this.renderCategory()}
         <div className={styles.story}>
-          <StoryImage mainLink={this.mainLink} />
+          <StoryImage story={story} handleVisitedStory={handleVisitedStory} />
           <StoryContent
             mainLink={this.mainLink}
             otherLinks={this.otherLinks}
             totalSocial={story.total_social}
             handleStoryLinks={this.props.handleStoryLinks}
+            handleVisitedStory={handleVisitedStory}
           />
         </div>
         <StoryMetadata
@@ -67,6 +69,7 @@ Story.propTypes = {
     renderCategory: PropTypes.bool
   }),
   handleStoryLinks: PropTypes.func.isRequired,
+  handleVisitedStory: PropTypes.func.isRequired,
   visitedStories: PropTypes.shape({
     isFetching: PropTypes.bool.isRequired,
     isLoaded: PropTypes.bool.isRequired,
