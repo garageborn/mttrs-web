@@ -1,10 +1,19 @@
 import React, {Component, PropTypes} from 'react'
+import Waypoint from 'react-waypoint'
 import withQuery from './TimelineContainer.gql'
 import StoryList from '../components/StoryList'
+import Spinner from 'react-spinner'
 import Placeholder from '../components/Placeholder'
 import injectSettings from '../config/injectSettings'
 
 class TimelineContainer extends Component {
+  constructor () {
+    super()
+    // this.loadMoreDays = this.loadMoreDays.bind(this)
+    this.state = {
+      loading: false
+    }
+  }
   render () {
     const { data } = this.props
     if (data.loading) return <Placeholder />
@@ -12,8 +21,19 @@ class TimelineContainer extends Component {
     return (
       <main>
         {data.timeline.map((item) => this.renderStoryList(item))}
+        {this.renderInfiniteScrollWaypoint()}
       </main>
     )
+  }
+
+  loadMoreDays () {
+    this.setState({loading: true})
+    return this.props.data.infiniteScroll().then((data) => this.setState({loading: false}))
+  }
+
+  renderInfiniteScrollWaypoint () {
+    if (this.state.loading) return <Spinner />
+    return <Waypoint onEnter={this.loadMoreDays.bind(this)}/>
   }
 
   renderStoryList (item) {
