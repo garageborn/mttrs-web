@@ -10,12 +10,12 @@ class Story extends Component {
     const {story, handleVisitedStory, handleStoryLinks} = this.props
 
     return (
-      <div key={story.id} className={styles.container}>
-        {this.renderVisited() /* mock */}
+      <div key={story.id} className={styles.container} style={this.renderVisitedStyle()}>
         {this.renderCategory()}
         <div className={styles.story}>
           <StoryImage story={story} handleVisitedStory={handleVisitedStory} />
           <StoryContent
+            story={story}
             mainLink={this.mainLink}
             otherLinks={this.otherLinks}
             totalSocial={story.total_social}
@@ -39,9 +39,11 @@ class Story extends Component {
     return <StoryCategory category={this.category} />
   }
 
-  renderVisited () {
+  renderVisitedStyle () {
     if (!this.props.isVisited) return
-    return <span>Visited</span>
+    return {
+      opacity: '0.5'
+    }
   }
 
   get mainLink () {

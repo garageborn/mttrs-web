@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import React, { Component, PropTypes } from 'react'
 import * as cloudinary from '../../utils/Cloudinary'
 import styles from './styles.css'

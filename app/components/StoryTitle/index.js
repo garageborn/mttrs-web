@@ -1,9 +1,10 @@
+/* eslint-disable react/jsx-no-bind */
 import React, { PropTypes } from 'react'
 import styles from './styles.css'
 
-const StoryTitle = ({mainLink}) => {
+const StoryTitle = ({story, mainLink, handleVisitedStory}) => {
   return (
-    <a href={mainLink.url} target='_blank'>
+    <a href={mainLink.url} onClick={() => handleVisitedStory(story)} target='_blank'>
       <h3 className={styles.title}>
         {mainLink.title}
       </h3>
@@ -12,7 +13,9 @@ const StoryTitle = ({mainLink}) => {
 }
 
 StoryTitle.propTypes = {
-  mainLink: PropTypes.object.isRequired
+  story: PropTypes.object.isRequired,
+  mainLink: PropTypes.object.isRequired,
+  handleVisitedStory: PropTypes.func.isRequired
 }
 
 export default StoryTitle
