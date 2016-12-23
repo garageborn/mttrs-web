@@ -7,7 +7,7 @@ import styles from './styles.css'
 const MenuPublishersItem = ({publisher}) => {
   return (
     <Link to={publisherPath(publisher.slug)} key={publisher.id} className={styles.publisher}>
-      <PublisherIcon publisher={publisher} size='small' />
+      <PublisherIcon publisher={publisher} size='big' />
       {publisher.name}
     </Link>
   )
