@@ -11,11 +11,11 @@ class MenuCategoriesItem extends Component {
       <Link
         to={categoryPath(category.slug)}
         className={styles.category}
-        // activeClassName={styles.active}
-        // activeStyle={this.activeStyle()}
+        activeClassName={styles.active}
+        activeStyle={this.activeStyle()}
       >
         <div className={styles.container}>
-          <img className={styles.icon} src={this.getIcon()} alt='' />
+          <img className={styles.icon} src={this.getIcon()} alt={category.name} />
           <p className={styles.title} style={{color: category.color}}>{category.name}</p>
         </div>
       </Link>
@@ -37,12 +37,21 @@ class MenuCategoriesItem extends Component {
       secure: true
     }
 
+    if (this.props.isActive) {
+      options = {
+        ...options,
+        effect: 'colorize',
+        color: '#FFF'
+      }
+    }
+
     return cloudinary.id(category.icon_id, options)
   }
 }
 
 MenuCategoriesItem.propTypes = {
-  category: PropTypes.object.isRequired
+  category: PropTypes.object.isRequired,
+  isActive: PropTypes.bool.isRequired
 }
 
 export default MenuCategoriesItem

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
-import MenuCategoriesItem from '../MenuCategoriesItem'
+import MenuCategoriesItemContainer from '../../containers/MenuCategoriesItemContainer'
 import TopStoriesLogo from '../../assets/logo-mttrs-mobile.svg'
 import styles from './styles.css'
 
@@ -14,7 +14,7 @@ const MenuCategories = ({categories}) => {
         </div>
       </Link>
       <div className={styles.categories}>
-        {categories.map((category) => <MenuCategoriesItem key={category.id} category={category} />)}
+        {categories.map((category) => <MenuCategoriesItemContainer key={category.id} category={category} />)}
       </div>
     </div>
   )
