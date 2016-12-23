@@ -1,6 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component, PropTypes } from 'react'
-import MenuPublishersItem from '../MenuPublishersItem'
+import MenuPublishersItemContainer from '../../containers/MenuPublishersItemContainer'
 import MenuSearch from '../MenuSearch'
 import styles from './styles.css'
 
@@ -15,7 +15,7 @@ class MenuPublishers extends Component {
   render () {
     return (
       <div className={styles.container}>
-        <MenuSearch handleSearchTerm={this.handleSearchTermt}/>
+        <MenuSearch handleSearchTerm={this.handleSearchTermt} />
         <div className={styles.publishers}>
           {this.renderPublishers()}
         </div>
@@ -26,7 +26,7 @@ class MenuPublishers extends Component {
     const { publishers } = this.props
     const queryMatcher = new RegExp(this.state.query, 'i')
     const filteredPublishers = publishers.filter(publisher => publisher.name.match(queryMatcher))
-    return filteredPublishers.map((publisher) => <MenuPublishersItem key={publisher.id} publisher={publisher} />)
+    return filteredPublishers.map((publisher) => <MenuPublishersItemContainer key={publisher.id} publisher={publisher} />)
   }
   handleSearchTerm (e) {
     this.setState({

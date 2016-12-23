@@ -6,9 +6,10 @@ import styles from './styles.css'
 
 class MenuCategoriesItem extends Component {
   render () {
-    const { category } = this.props
+    const { category, closeMenu } = this.props
     return (
       <Link
+        onClick={closeMenu}
         to={categoryPath(category.slug)}
         className={styles.category}
         activeClassName={styles.active}
@@ -51,7 +52,8 @@ class MenuCategoriesItem extends Component {
 
 MenuCategoriesItem.propTypes = {
   category: PropTypes.object.isRequired,
-  isActive: PropTypes.bool.isRequired
+  isActive: PropTypes.bool.isRequired,
+  closeMenu: PropTypes.func.isRequired
 }
 
 export default MenuCategoriesItem
