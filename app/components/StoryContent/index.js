@@ -9,12 +9,10 @@ const StoryContent = ({story, mainLink, otherLinks, totalSocial, handleStoryLink
       <StoryTitle story={story} mainLink={mainLink} handleVisitedStory={handleVisitedStory} />
       <StoryMetadata
         source='storyContent'
-        story={story}
         mainLink={mainLink}
         otherLinks={otherLinks}
         totalSocial={totalSocial}
         handleStoryLinks={handleStoryLinks}
-        isVisited={isVisited}
       />
     </div>
   )

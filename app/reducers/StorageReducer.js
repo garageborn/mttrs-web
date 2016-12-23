@@ -4,7 +4,7 @@ let defaultState = {
   visitedStories: { isFetching: false, isLoaded: false, items: [] }
 }
 
-export default function(state = defaultState, action) {
+export default function (state = defaultState, action) {
   switch (action.type) {
     case REQUEST_VISITED_STORIES:
       return {
