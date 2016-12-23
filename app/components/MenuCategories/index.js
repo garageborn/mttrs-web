@@ -1,15 +1,20 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 import MenuCategoriesItem from '../MenuCategoriesItem'
-import TopStoriesLogo from '../../assets/logo-mttrs-mobile.svg'
+import topStoriesIcon from '../../assets/logo-mttrs-alt-mobile.png'
 import styles from './styles.css'
 
 const MenuCategories = ({categories, closeMenu}) => {
   return (
     <div className={styles.container}>
-      <Link to='/' className={styles.topStories}>
+      <Link
+        to='/'
+        onClick={closeMenu}
+        className={styles.topStories}
+        activeClassName={styles.topStoriesActive}
+      >
         <div className={styles.topStoriesWrapper}>
-          <TopStoriesLogo className={styles.topStoriesIcon} />
+          <img src={topStoriesIcon} className={styles.icon} alt='' />
           <p className={styles.topStoriesTitle}>Top Stories</p>
         </div>
       </Link>

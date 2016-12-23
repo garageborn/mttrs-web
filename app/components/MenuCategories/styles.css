@@ -11,11 +11,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: $mttrsIndigoBlue;
-  color: #000;
+  background: #F1F1F1;
   height: 6.25em;
   margin: 15px 5%;
   box-shadow: 1px 1px 3px 0 #000000;
+}
+
+.topStoriesActive {
+  background: $mttrsIndigoBlue;
+
+  .topStoriesTitle {
+    color: #FFF;
+  }
+
+  .icon {
+    filter: brightness(10);
+  }
 }
 
 .topStoriesWrapper {
@@ -24,11 +35,16 @@
   justify-content: center;
 }
 
-.topStoriesIcon,
+.icon,
 .topStoriesTitle {
   margin: 0 8px;
 }
 
 .topStoriesTitle {
-  color: #FFF;
+  color: $mttrsIndigoBlue;;
+}
+
+.icon {
+  width: 19px;
+  height: 20px;
 }

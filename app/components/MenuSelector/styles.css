@@ -16,6 +16,8 @@
   font-size: 0.875rem;
   letter-spacing: 1;
   border: 2px solid $mttrsIndigoBlue;
+  cursor: pointer;
+  outline: 0;
 
   &:first-of-type {
     border-top-left-radius: 4px;
