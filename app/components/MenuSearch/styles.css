@@ -1,3 +1,5 @@
+@value notSmall, medium, large from "../../styles/media-queries.css";
+
 .search {
   display: flex;
   align-items: center;

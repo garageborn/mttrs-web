@@ -3,10 +3,11 @@
 .container {
   height: 100vh;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 3.125em;
   left: 0;
   background-color: $mttrsBlue;
   overflow: auto;
   color: white;
+  z-index: 2;
 }

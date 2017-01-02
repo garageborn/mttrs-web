@@ -14,7 +14,9 @@ class MenuPublishers extends Component {
   render () {
     return (
       <div className={styles.container}>
-        <MenuSearch handleSearchTerm={this.handleSearchTerm} />
+        <div className={styles.search}>
+          <MenuSearch handleSearchTerm={this.handleSearchTerm} />
+        </div>
         <div className={styles.publishers}>
           {this.renderPublishers()}
         </div>

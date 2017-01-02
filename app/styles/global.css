@@ -28,3 +28,11 @@ a {
   text-decoration: none;
   color: $mttrsDarkestColor;
 }
+
+main {
+  padding-top: 45px;
+
+  @media (min-width: 30em) {
+    padding-top: 0;
+  }
+}

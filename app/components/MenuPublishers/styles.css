@@ -3,6 +3,11 @@
   flex-direction: column;
 }
 
+.search {
+  position: fixed;
+  width: 100%;
+}
+
 .publishers {
   margin-top: 1.5625em;
 }
