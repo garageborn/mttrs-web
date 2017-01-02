@@ -1,6 +1,7 @@
-/* eslint-disable react/jsx-no-bind, react/prefer-stateless-function */
+/* eslint-disable react/jsx-no-bind */
 import React, { Component, PropTypes } from 'react'
 import { injectIntl, defineMessages } from 'react-intl'
+import className from 'classnames'
 import styles from './styles.css'
 
 const messages = defineMessages({
@@ -16,13 +17,31 @@ const messages = defineMessages({
 })
 
 class MenuSelector extends Component {
+  buttonClass (panel) {
+    const { activePanel } = this.props
+    return className({
+      [styles.button]: true,
+      [styles.buttonActive]: activePanel === panel
+    })
+  }
+
   render () {
     const { selectPanel } = this.props
     const { formatMessage } = this.props.intl
     return (
       <div className={styles.container}>
-        <button className={styles.button} onClick={() => selectPanel('categories')}>{formatMessage(messages.categories)}</button>
-        <button className={styles.button} onClick={() => selectPanel('publishers')}>{formatMessage(messages.publishers)}</button>
+        <button
+          className={this.buttonClass('categories')}
+          onClick={() => selectPanel('categories')}
+        >
+          {formatMessage(messages.categories)}
+        </button>
+        <button
+          className={this.buttonClass('publishers')}
+          onClick={() => selectPanel('publishers')}
+        >
+          {formatMessage(messages.publishers)}
+        </button>
       </div>
     )
   }
@@ -30,6 +49,7 @@ class MenuSelector extends Component {
 
 MenuSelector.propTypes = {
   selectPanel: PropTypes.func.isRequired,
+  activePanel: PropTypes.string.isRequired,
   intl: PropTypes.shape({
     formatMessage: PropTypes.func.isRequired
   }).isRequired
