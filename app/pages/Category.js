@@ -5,12 +5,23 @@ import Header from '../components/Header'
 import TimelineContainer from '../containers/TimelineContainer'
 import withQuery from './Category.gql'
 import Layout from './Layout'
+import { UIActions } from '../actions/index'
 
 const messages = defineMessages({
   pageTitle: { id: 'category.pageTitle' }
 })
 
 class Category extends Component {
+  componentDidMount () {
+    this.updateSection('category', this.props)
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.slug !== this.props.slug) {
+      this.updateSection('category', nextProps)
+    }
+  }
+
   render () {
     const queryVariables = {categorySlug: this.props.slug}
     const options = {renderCategory: false}
@@ -20,6 +31,16 @@ class Category extends Component {
         <TimelineContainer queryVariables={queryVariables} options={options} />
       </Layout>
     )
+  }
+
+  updateSection (name, props) {
+    const section = {
+      name: name,
+      model: {
+        slug: props.slug
+      }
+    }
+    this.props.dispatch(UIActions.updateSection(section))
   }
 
   meta () {

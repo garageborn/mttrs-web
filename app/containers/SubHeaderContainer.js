@@ -11,7 +11,12 @@ class SubHeaderContainer extends Component {
   }
   render () {
     return (
-      <SubHeader openMenu={this.openMenu} closeMenu={this.closeMenu} menu={this.props.menu} />
+      <SubHeader
+        openMenu={this.openMenu}
+        closeMenu={this.closeMenu}
+        menu={this.props.menu}
+        section={this.props.section}
+      />
     )
   }
 
@@ -31,7 +36,8 @@ SubHeaderContainer.propTypes = {
 
 let mapStateToProps = (state, ownProps) => {
   return {
-    menu: state.UIReducer.menu
+    menu: state.UIReducer.menu,
+    section: state.UIReducer.section
   }
 }
 

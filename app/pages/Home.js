@@ -20,6 +20,11 @@ class Home extends Component {
     this.closeModal = this.closeModal.bind(this)
   }
 
+  componentWillMount () {
+    const section = { name: 'home' }
+    this.props.dispatch(UIActions.updateSection(section))
+  }
+
   render () {
     return (
       <Layout {...this.meta()}>
