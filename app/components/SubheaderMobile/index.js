@@ -1,35 +1,34 @@
 import React, { PropTypes } from 'react'
 import Logo from '../Logo'
 import Arrow from '../Arrow'
+import PublisherIcon from '../PublisherIcon'
 import styles from './styles.css'
 
 const SubheaderMobile = ({section}) => {
-  switch (section.type) {
-    case 'category':
-      return (
-        <div>
-          <Logo type='mobile' />
-          <span className={styles.text}>{section.model.name}</span>
-          <Arrow />
-        </div>
-      )
-    case 'publisher':
-      return (
-        <div>
-          <Logo type='mobile' />
-          <span className={styles.text}>{section.model.name}</span>
-          <Arrow />
-        </div>
-      )
-    default:
-      return (
-        <div>
-          <Logo type='mobile' />
-          <span className={styles.text}>Top Stories</span>
-          <Arrow />
-        </div>
-      )
+  let getText = () => {
+    if (section.type !== 'home') {
+      return section.model.name
+    }
+    return 'Top Stories'
   }
+  let getLogo = () => {
+    if (section.type === 'publisher') {
+      let publisher = {
+        name: section.model.name,
+        icon_id: section.model.icon_id
+      }
+      return <PublisherIcon publisher={publisher} size='small' />
+    }
+    return <Logo type='mobile' />
+  }
+
+  return (
+    <div className={styles.container}>
+      {getLogo()}
+      <span className={styles.text}>{getText()}</span>
+      <Arrow />
+    </div>
+  )
 }
 
 SubheaderMobile.propTypes = {

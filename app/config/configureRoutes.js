@@ -18,7 +18,8 @@ const categoriesRoutes = (categories) => {
       type: 'category',
       model: {
         name: category.name,
-        slug: category.slug
+        slug: category.slug,
+        icon_id: category.icon_id
       }
     }
     return [
@@ -33,7 +34,8 @@ const publishersRoutes = (publishers) => {
       type: 'publisher',
       model: {
         name: publisher.name,
-        slug: publisher.slug
+        slug: publisher.slug,
+        icon_id: publisher.icon_id
       }
     }
     return [
@@ -53,8 +55,8 @@ const allRoutes = ({ categories, publishers }) => {
 
 const routesQuery = gql`
   query {
-    categories { name slug }
-    publishers { name slug }
+    categories { name slug icon_id }
+    publishers { name slug icon_id }
   }
 `
 
