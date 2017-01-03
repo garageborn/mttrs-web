@@ -21,7 +21,7 @@ class Home extends Component {
   }
 
   componentWillMount () {
-    const section = { name: 'home' }
+    const section = { type: 'home' }
     this.props.dispatch(UIActions.updateSection(section))
   }
 
