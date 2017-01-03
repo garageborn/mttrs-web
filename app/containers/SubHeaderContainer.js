@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import elementClass from 'element-class'
 import { UIActions } from '../actions/index'
 import SubHeader from '../components/SubHeader'
 
@@ -16,10 +17,12 @@ class SubHeaderContainer extends Component {
   }
 
   openMenu () {
+    elementClass(document.body).add('o-hidden')
     this.props.dispatch(UIActions.openMenu())
   }
 
   closeMenu () {
+    elementClass(document.body).remove('o-hidden')
     this.props.dispatch(UIActions.closeMenu())
   }
 }
