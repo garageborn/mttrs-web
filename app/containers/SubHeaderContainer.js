@@ -31,7 +31,8 @@ class SubHeaderContainer extends Component {
 
 SubHeaderContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  menu: PropTypes.object.isRequired
+  menu: PropTypes.object,
+  section: PropTypes.object
 }
 
 let mapStateToProps = (state, ownProps) => {

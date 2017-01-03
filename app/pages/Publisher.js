@@ -13,17 +13,17 @@ const messages = defineMessages({
 
 class Publisher extends Component {
   componentDidMount () {
-    this.updateSection('publisher', this.props)
+    this.updateSection(this.props)
   }
 
   componentWillReceiveProps (nextProps) {
-    if (nextProps.slug !== this.props.slug) {
-      this.updateSection('publisher', nextProps)
+    if (nextProps.section.model.slug !== this.props.section.model.slug) {
+      this.updateSection(nextProps)
     }
   }
 
   render () {
-    const queryVariables = { publisherSlug: this.props.slug }
+    const queryVariables = { publisherSlug: this.props.section.model.slug }
     return (
       <Layout {...this.meta()}>
         <Header />
@@ -32,14 +32,8 @@ class Publisher extends Component {
     )
   }
 
-  updateSection (name, props) {
-    const section = {
-      name: name,
-      model: {
-        slug: props.slug
-      }
-    }
-    this.props.dispatch(UIActions.updateSection(section))
+  updateSection (props) {
+    this.props.dispatch(UIActions.updateSection(props.section))
   }
 
   meta () {
@@ -58,18 +52,23 @@ Publisher.propTypes = {
   intl: PropTypes.shape({
     formatMessage: PropTypes.function
   }),
-  slug: PropTypes.string.isRequired,
+  section: PropTypes.shape({
+    type: PropTypes.string,
+    model: PropTypes.shape({
+      name: PropTypes.string,
+      slug: PropTypes.string
+    })
+  }).isRequired,
   data: PropTypes.shape({
     publisher: PropTypes.object,
     loading: PropTypes.bool
   }),
-  updateSection: PropTypes.func,
   dispatch: PropTypes.func.isRequired
 }
 
 let mapStateToProps = (state, ownProps) => {
   return {
-    slug: ownProps.route.slug
+    section: ownProps.route.section
   }
 }
 

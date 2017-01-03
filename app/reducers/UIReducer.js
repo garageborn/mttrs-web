@@ -10,8 +10,11 @@ let defaultState = {
     isOpen: false
   },
   section: {
-    name: '',
-    model: {}
+    type: '',
+    model: {
+      name: '',
+      slug: ''
+    }
   }
 }
 
@@ -55,10 +58,7 @@ export default function (state = defaultState, action) {
     case UPDATE_SECTION: {
       return {
         ...state,
-        section: {
-          name: action.section.name,
-          model: action.section.model
-        }
+        section: action.section
       }
     }
     default:

@@ -13,17 +13,17 @@ const messages = defineMessages({
 
 class Category extends Component {
   componentDidMount () {
-    this.updateSection('category', this.props)
+    this.updateSection(this.props)
   }
 
   componentWillReceiveProps (nextProps) {
-    if (nextProps.slug !== this.props.slug) {
-      this.updateSection('category', nextProps)
+    if (nextProps.section.model.slug !== this.props.section.model.slug) {
+      this.updateSection(nextProps)
     }
   }
 
   render () {
-    const queryVariables = {categorySlug: this.props.slug}
+    const queryVariables = {categorySlug: this.props.section.model.slug}
     const options = {renderCategory: false}
     return (
       <Layout {...this.meta()}>
@@ -33,14 +33,8 @@ class Category extends Component {
     )
   }
 
-  updateSection (name, props) {
-    const section = {
-      name: name,
-      model: {
-        slug: props.slug
-      }
-    }
-    this.props.dispatch(UIActions.updateSection(section))
+  updateSection (props) {
+    this.props.dispatch(UIActions.updateSection(props.section))
   }
 
   meta () {
@@ -59,7 +53,13 @@ Category.propTypes = {
   intl: PropTypes.shape({
     formatMessage: PropTypes.function
   }),
-  slug: PropTypes.string.isRequired,
+  section: PropTypes.shape({
+    type: PropTypes.string,
+    model: PropTypes.shape({
+      name: PropTypes.string,
+      slug: PropTypes.string
+    })
+  }).isRequired,
   data: PropTypes.shape({
     category: PropTypes.object,
     loading: PropTypes.bool
@@ -69,7 +69,7 @@ Category.propTypes = {
 
 let mapStateToProps = (state, ownProps) => {
   return {
-    slug: ownProps.route.slug
+    section: ownProps.route.section
   }
 }
 
