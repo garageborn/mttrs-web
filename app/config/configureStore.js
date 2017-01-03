@@ -19,11 +19,11 @@ export default function configureStore (initialState, apolloClient) {
     applyMiddleware(routeMiddleware)
   ]
 
-  if (_production_ && !_server_) {
+  if (_production_) {
     const trackMiddleware = createTracker()
     middlewares.push(applyMiddleware(trackMiddleware))
   }
-    
+
   if (_development_) {
     const DevTools = require('./DevTools')
     middlewares.push(DevTools.instrument())
