@@ -39,6 +39,18 @@ const Query = gql`
   }
 `
 
+const infiniteScroll = ({ fetchMore, variables, timeline }) => {
+  return fetchMore({
+    variables: { ...variables, days: 1, offset: timeline.length },
+    updateQuery: (previousResult, { fetchMoreResult }) => {
+      if (!fetchMoreResult.data) { return previousResult }
+      return Object.assign({}, previousResult, {
+        timeline: [...previousResult.timeline, ...fetchMoreResult.data.timeline]
+      })
+    }
+  })
+}
+
 export default function (TimelineContainer) {
   return graphql(Query, {
     options (props) {
@@ -47,6 +59,14 @@ export default function (TimelineContainer) {
           ...defaultVariables,
           ...{timezone: props.settings.timezone},
           ...props.queryVariables
+        }
+      }
+    },
+    props ({data}) {
+      return {
+        data: {
+          ...data,
+          infiniteScroll: infiniteScroll.bind(this, data)
         }
       }
     }
