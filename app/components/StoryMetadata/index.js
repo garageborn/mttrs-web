@@ -12,6 +12,7 @@ class StoryMetadata extends Component {
       [styles.shouldShowSmall]: this.props.source === 'story'
     })
   }
+
   render () {
     let {story, mainLink, otherLinks, totalSocial, handleStoryLinks} = this.props
 

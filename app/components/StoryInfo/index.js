@@ -33,6 +33,7 @@ class StoryInfo extends Component {
     super()
     this.handleStoryLinks = this.handleStoryLinks.bind(this)
   }
+
   renderPublishers () {
     if (this.props.otherLinks.length === 0) return this.renderMainPublisherName()
     return this.renderPublishersText()

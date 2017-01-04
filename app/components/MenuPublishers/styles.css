@@ -15,7 +15,7 @@
 .publishers {
   position: relative;
   top: 5.3125em;
-  height: calc(100% - 170px);
+  height: calc(100% - $menuPublishersHeaderHeight);
   margin: 0;
   overflow-y: scroll;
   z-index: 1;

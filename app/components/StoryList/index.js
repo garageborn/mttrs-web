@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react'
+import React, { Component, PropTypes } from 'react'
 import StoryContainer from '../../containers/StoryContainer'
 import StoryListHeader from '../StoryListHeader'
 import styles from './styles.css'

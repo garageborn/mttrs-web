@@ -8,7 +8,8 @@ const StoryListHeader = ({date, settings}) => {
 }
 
 StoryListHeader.propTypes = {
-  date: PropTypes.number.isRequired
+  date: PropTypes.number.isRequired,
+  settings: PropTypes.object.isRequired
 }
 
 export default injectSettings(StoryListHeader)

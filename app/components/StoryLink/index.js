@@ -10,6 +10,7 @@ const StoryLink = ({story, type, storyLink, closeModal}) => {
     [styles.container]: true,
     [styles.main]: type === 'main'
   })
+
   return (
     <div className={containerClass}>
       <div>

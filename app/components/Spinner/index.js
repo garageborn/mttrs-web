@@ -1,5 +1,4 @@
-/* eslint-disable react/prefer-stateless-function */
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import { injectIntl, defineMessages } from 'react-intl'
 import styles from './styles.css'
 
@@ -10,17 +9,14 @@ const messages = defineMessages({
   }
 })
 
-class Spinner extends Component {
-  render () {
-    let { formatMessage } = this.props.intl
-    return (
-      <div className={styles.container}>
-        <div className={styles.progress}>
-          <div>{formatMessage(messages.spinner)}</div>
-        </div>
+const Spinner = ({intl}) => {
+  return (
+    <div className={styles.container}>
+      <div className={styles.progress}>
+        <div>{intl.formatMessage(messages.spinner)}</div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 Spinner.propTypes = {
