@@ -2,8 +2,8 @@ import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 import Logo from '../Logo'
 import SubheaderMobile from '../SubheaderMobile'
-import styles from './styles.css'
 import { rootPath } from '../../utils/RoutesHelper'
+import styles from './styles.css'
 
 const SubHeader = ({openMenu, closeMenu, menu, section}) => {
   let toggleMenu = () => {

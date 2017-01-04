@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import { injectIntl, defineMessages } from 'react-intl'
 import Logo from '../Logo'
 import Arrow from '../Arrow'
 import PublisherIcon from '../PublisherIcon'
@@ -6,7 +7,14 @@ import CategoryIcon from '../CategoryIcon'
 import styles from './styles.css'
 import classNames from 'classnames'
 
-const SubheaderMobile = ({section}) => {
+const messages = defineMessages({
+  topStories: {
+    id: 'header.topStories',
+    defaultMessage: 'Top Stories'
+  }
+})
+
+const SubheaderMobile = ({section, intl}) => {
   let getTextClassNames = () => {
     return classNames({
       [styles.text]: true,
@@ -17,7 +25,7 @@ const SubheaderMobile = ({section}) => {
     if (section.type !== 'home') {
       return section.model.name
     }
-    return 'Top Stories'
+    return intl.formatMessage(messages.topStories)
   }
   let getLogo = () => {
     switch (section.type) {
@@ -48,7 +56,10 @@ const SubheaderMobile = ({section}) => {
 }
 
 SubheaderMobile.propTypes = {
-  section: PropTypes.object.isRequired
+  section: PropTypes.object.isRequired,
+  intl: PropTypes.shape({
+    formatMessage: PropTypes.func.isRequired
+  }).isRequired
 }
 
-export default SubheaderMobile
+export default injectIntl(SubheaderMobile)
