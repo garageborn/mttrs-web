@@ -17,13 +17,15 @@ class Category extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    if (nextProps.section.model.slug !== this.props.section.model.slug) {
+    let loadingWillChange = this.props.data.loading !== nextProps.data.loading
+    let nextWillNotBeLoading = nextProps.data.loading === false
+    if (loadingWillChange && nextWillNotBeLoading) {
       this.updateSection(nextProps)
     }
   }
 
   render () {
-    const queryVariables = {categorySlug: this.props.section.model.slug}
+    const queryVariables = {categorySlug: this.props.slug}
     const options = {renderCategory: false}
     return (
       <Layout {...this.meta()}>
@@ -34,7 +36,16 @@ class Category extends Component {
   }
 
   updateSection (props) {
-    this.props.dispatch(UIActions.updateSection(props.section))
+    if (props.data.loading) return
+    let section = {
+      type: 'category',
+      model: {
+        name: props.data.category.name,
+        slug: props.data.category.slug,
+        icon_id: props.data.category.icon_id
+      }
+    }
+    this.props.dispatch(UIActions.updateSection(section))
   }
 
   meta () {
@@ -53,13 +64,7 @@ Category.propTypes = {
   intl: PropTypes.shape({
     formatMessage: PropTypes.function
   }),
-  section: PropTypes.shape({
-    type: PropTypes.string,
-    model: PropTypes.shape({
-      name: PropTypes.string,
-      slug: PropTypes.string
-    })
-  }).isRequired,
+  slug: PropTypes.string.isRequired,
   data: PropTypes.shape({
     category: PropTypes.object,
     loading: PropTypes.bool
@@ -69,7 +74,7 @@ Category.propTypes = {
 
 let mapStateToProps = (state, ownProps) => {
   return {
-    section: ownProps.route.section
+    slug: ownProps.route.slug
   }
 }
 

@@ -14,32 +14,16 @@ const defaultRoutes = () => {
 
 const categoriesRoutes = (categories) => {
   return categories.map((category) => {
-    const section = {
-      type: 'category',
-      model: {
-        name: category.name,
-        slug: category.slug,
-        icon_id: category.icon_id
-      }
-    }
     return [
-      <Route path={`/${category.slug}`} component={Category} section={section} slug={category.slug} />
+      <Route path={`/${category.slug}`} component={Category} slug={category.slug} />
     ]
   })
 }
 
 const publishersRoutes = (publishers) => {
   return publishers.map((publisher) => {
-    const section = {
-      type: 'publisher',
-      model: {
-        name: publisher.name,
-        slug: publisher.slug,
-        icon_id: publisher.icon_id
-      }
-    }
     return [
-      <Route path={`/${publisher.slug}`} component={Publisher} section={section} slug={publisher.slug} />
+      <Route path={`/${publisher.slug}`} component={Publisher} slug={publisher.slug} />
     ]
   })
 }
@@ -55,8 +39,8 @@ const allRoutes = ({ categories, publishers }) => {
 
 const routesQuery = gql`
   query {
-    categories { name slug icon_id }
-    publishers { name slug icon_id }
+    categories { slug }
+    publishers { slug }
   }
 `
 

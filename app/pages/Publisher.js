@@ -17,13 +17,15 @@ class Publisher extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    if (nextProps.section.model.slug !== this.props.section.model.slug) {
+    let loadingWillChange = this.props.data.loading !== nextProps.data.loading
+    let nextWillNotBeLoading = nextProps.data.loading === false
+    if (loadingWillChange && nextWillNotBeLoading) {
       this.updateSection(nextProps)
     }
   }
 
   render () {
-    const queryVariables = { publisherSlug: this.props.section.model.slug }
+    const queryVariables = { publisherSlug: this.props.slug }
     return (
       <Layout {...this.meta()}>
         <Header />
@@ -33,7 +35,16 @@ class Publisher extends Component {
   }
 
   updateSection (props) {
-    this.props.dispatch(UIActions.updateSection(props.section))
+    if (props.data.loading) return
+    let section = {
+      type: 'publisher',
+      model: {
+        name: props.data.publisher.name,
+        slug: props.data.publisher.slug,
+        icon_id: props.data.publisher.icon_id
+      }
+    }
+    this.props.dispatch(UIActions.updateSection(section))
   }
 
   meta () {
@@ -52,13 +63,7 @@ Publisher.propTypes = {
   intl: PropTypes.shape({
     formatMessage: PropTypes.function
   }),
-  section: PropTypes.shape({
-    type: PropTypes.string,
-    model: PropTypes.shape({
-      name: PropTypes.string,
-      slug: PropTypes.string
-    })
-  }).isRequired,
+  slug: PropTypes.string.isRequired,
   data: PropTypes.shape({
     publisher: PropTypes.object,
     loading: PropTypes.bool
@@ -68,7 +73,7 @@ Publisher.propTypes = {
 
 let mapStateToProps = (state, ownProps) => {
   return {
-    section: ownProps.route.section
+    slug: ownProps.route.slug
   }
 }
 
