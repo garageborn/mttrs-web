@@ -11,6 +11,7 @@ class MenuPublishers extends Component {
       query: ''
     }
   }
+
   render () {
     return (
       <div className={styles.container}>
@@ -23,12 +24,14 @@ class MenuPublishers extends Component {
       </div>
     )
   }
+
   renderPublishers () {
     const { publishers, closeMenu } = this.props
     const queryMatcher = new RegExp(this.state.query, 'i')
     const filteredPublishers = publishers.filter(publisher => publisher.name.match(queryMatcher))
     return filteredPublishers.map((publisher) => <MenuPublishersItem closeMenu={closeMenu} key={publisher.id} publisher={publisher} />)
   }
+
   handleSearchTerm (e) {
     this.setState({
       query: e.target.value

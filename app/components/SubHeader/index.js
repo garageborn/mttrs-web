@@ -13,6 +13,7 @@ const SubHeader = ({openMenu, closeMenu, menu, section}) => {
       return openMenu()
     }
   }
+
   return (
     <section className={styles.subHeader}>
       <div className={styles.logoSection}>

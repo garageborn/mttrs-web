@@ -21,12 +21,14 @@ const SubheaderMobile = ({section, intl}) => {
       [styles.categoryText]: section.type === 'category'
     })
   }
+
   let getText = () => {
     if (section.type !== 'home') {
       return section.model.name
     }
     return intl.formatMessage(messages.topStories)
   }
+
   let getLogo = () => {
     switch (section.type) {
       case 'publisher':

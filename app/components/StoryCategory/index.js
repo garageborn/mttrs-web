@@ -16,7 +16,7 @@ const StoryCategory = ({category}) => {
 }
 
 StoryCategory.propTypes = {
-  category: PropTypes.object.isRequired,
+  category: PropTypes.object.isRequired
 }
 
 export default StoryCategory
