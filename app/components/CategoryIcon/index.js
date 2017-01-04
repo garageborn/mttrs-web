@@ -17,6 +17,7 @@ class PublisherIcon extends Component {
   render () {
     return <img className={this.getImageClass()} src={this.categoryLogo} alt={this.props.category.name} />
   }
+
   get categoryLogo () {
     const { category } = this.props
     if (!category.icon_id) return
