@@ -12,7 +12,7 @@ class MenuContainer extends Component {
   }
   render () {
     return (
-      <ReactCSSTransitionGroup transitionName={menuAnimations} transitionAppear transitionEnter transitionAppearTimeout={150} transitionEnterTimeout={150} transitionLeaveTimeout={150}>
+      <ReactCSSTransitionGroup transitionName={menuAnimations} transitionAppear transitionEnter transitionAppearTimeout={330} transitionEnterTimeout={330} transitionLeaveTimeout={330}>
         {this.renderMenu()}
       </ReactCSSTransitionGroup>
     )
