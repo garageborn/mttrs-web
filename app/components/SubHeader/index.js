@@ -30,6 +30,7 @@ const SubHeader = ({openMenu, closeMenu, menu, section}) => {
 SubHeader.propTypes = {
   openMenu: PropTypes.func.isRequired,
   closeMenu: PropTypes.func.isRequired,
+  section: PropTypes.object.isRequired,
   menu: PropTypes.shape({
     isOpen: PropTypes.bool.isRequired
   }).isRequired
