@@ -11,10 +11,7 @@ let defaultState = {
   },
   section: {
     type: '',
-    model: {
-      name: '',
-      slug: ''
-    }
+    model: {}
   }
 }
 
