@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import LazyLoad from 'react-lazy-load'
 import * as cloudinary from '../../utils/Cloudinary'
 import styles from './styles.css'
 
@@ -16,11 +17,13 @@ class StoryImage extends Component {
         className={styles.link}
         target='_blank'
       >
-        <img
-          className={styles.image}
-          alt={this.mainLink.title}
-          src={cloudinary.url(this.mainLink.image_source_url, options)}
-        />
+        <LazyLoad height={90} width={120} offset={300}>
+          <img
+            className={styles.image}
+            alt={this.mainLink.title}
+            src={cloudinary.url(this.mainLink.image_source_url, options)}
+          />
+        </LazyLoad>
       </a>
     )
   }

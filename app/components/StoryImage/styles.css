@@ -14,3 +14,10 @@
   height: 90px;
   width: 120px;
 }
+
+:global {
+  .LazyLoad {
+    background-image: url(../../assets/mttrs-loading.gif);
+    background-size: 120px 90px;
+  }
+}
