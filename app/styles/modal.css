@@ -39,7 +39,7 @@
 
 .modal {
   position: fixed;
-  top: 10px;
+  top: 50px;
   left: 10px;
   right: 10px;
   bottom: 70px;
@@ -52,6 +52,7 @@
 
   @media notSmall {
     lost-center: 60em;
+    top: 90px;
   }
 }
 
