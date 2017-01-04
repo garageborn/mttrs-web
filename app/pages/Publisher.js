@@ -5,12 +5,25 @@ import { injectIntl, defineMessages } from 'react-intl'
 import Header from '../components/Header'
 import TimelineContainer from '../containers/TimelineContainer'
 import withQuery from './Publisher.gql'
+import { UIActions } from '../actions/index'
 
 const messages = defineMessages({
   pageTitle: { id: 'publisher.pageTitle' }
 })
 
 class Publisher extends Component {
+  componentDidMount () {
+    this.updateSection(this.props)
+  }
+
+  componentWillReceiveProps (nextProps) {
+    let loadingWillChange = this.props.data.loading !== nextProps.data.loading
+    let nextWillNotBeLoading = nextProps.data.loading === false
+    if (loadingWillChange && nextWillNotBeLoading) {
+      this.updateSection(nextProps)
+    }
+  }
+
   render () {
     const queryVariables = { publisherSlug: this.props.slug }
     return (
@@ -19,6 +32,15 @@ class Publisher extends Component {
         <TimelineContainer queryVariables={queryVariables} />
       </Layout>
     )
+  }
+
+  updateSection (props) {
+    if (props.data.loading) return
+    let section = {
+      type: 'publisher',
+      model: props.data.publisher
+    }
+    this.props.dispatch(UIActions.updateSection(section))
   }
 
   meta () {

@@ -33,17 +33,6 @@
   }
 }
 
-.title {
-  color: #FFF;
-  font-size: 1rem;
-  text-decoration: none;
-  margin: 0 1.25em;
-
-  @media notSmall {
-    margin: 0;
-  }
-}
-
 .menuTrigger {
   display: flex;
   align-items: center;

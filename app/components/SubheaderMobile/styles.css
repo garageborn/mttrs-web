@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.text {
+  color: #FFF;
+  font-size: 1rem;
+  text-decoration: none;
+  margin: 0 .75em;
+
+  @media notSmall {
+    margin: 0;
+  }
+}
+
+.categoryText {
+  margin-left: .50em;
+}
