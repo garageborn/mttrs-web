@@ -1,5 +1,10 @@
 @import "../../styles/variables.css";
 
+.container {
+  height: calc(100% - 100px);
+  overflow-y: scroll;
+}
+
 .categories {
   display: flex;
   flex-wrap: wrap;
