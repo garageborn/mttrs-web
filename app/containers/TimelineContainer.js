@@ -9,13 +9,18 @@ class TimelineContainer extends Component {
   constructor () {
     super()
     this.timelineContainerRef = this.timelineContainerRef.bind(this)
+    this.handleScroll = this.handleScroll.bind(this)
     this.state = {
       loading: false
     }
   }
 
   componentDidMount () {
-    window.addEventListener('scroll', this.handleScroll.bind(this))
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 
   render () {
@@ -23,17 +28,15 @@ class TimelineContainer extends Component {
     if (data.loading) return <Placeholder />
 
     return (
-      <main
-        ref={this.timelineContainerRef}
-      >
+      <main ref={this.timelineContainerRef}>
         {data.timeline.map((item) => this.renderStoryList(item))}
         {this.renderSpinner()}
       </main>
     )
   }
 
-  timelineContainerRef (c) {
-    const ref = this.timelineContainer = c
+  timelineContainerRef (component) {
+    const ref = this.timelineContainer = component
     return ref
   }
 
@@ -49,12 +52,11 @@ class TimelineContainer extends Component {
     const scrollYAndWindowHeightBiggerThanTimelineHeight = verticalScrollAndVisibleHeight > timelineHeight
     const timelineHeightDiffThreshold = scrollYAndWindowHeightBiggerThanTimelineHeight - infiniteScrollThreshold
     const isLoading = this.state.loading
-    if (timelineHeightDiffThreshold && !isLoading) {
-      this.setState({loading: true})
-      return this.props.data.infiniteScroll().then((data) => {
-        this.setState({loading: data.loading})
-      })
-    }
+    if (isLoading || !timelineHeightDiffThreshold) return
+    this.setState({loading: true})
+    return this.props.data.infiniteScroll().then((data) => {
+      this.setState({loading: data.loading})
+    })
   }
 
   renderStoryList (item) {
