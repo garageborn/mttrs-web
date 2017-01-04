@@ -1,5 +1,5 @@
+import webpack from 'webpack'
 import baseConfiguration from './webpack.config.server'
-
 const configuration = Object.assign({}, baseConfiguration)
 
 configuration.plugins.push(

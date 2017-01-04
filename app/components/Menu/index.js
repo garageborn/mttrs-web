@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import styles from './styles.css'
+import React, { Component, PropTypes } from 'react'
 import MenuSelector from '../MenuSelector'
 import MenuPanel from '../MenuPanel'
+import styles from './styles.css'
 
 class Menu extends Component {
   constructor () {
@@ -11,14 +11,19 @@ class Menu extends Component {
     }
     this.selectPanel = this.selectPanel.bind(this)
   }
+
   render () {
+    const { closeMenu } = this.props
     return (
       <div className={styles.container}>
-        <MenuSelector activePanel={this.state.activePanel} selectPanel={this.selectPanel} />
-        <MenuPanel activePanel={this.state.activePanel} />
+        <div className={styles.selector}>
+          <MenuSelector activePanel={this.state.activePanel} selectPanel={this.selectPanel} />
+        </div>
+        <MenuPanel closeMenu={closeMenu} activePanel={this.state.activePanel} />
       </div>
     )
   }
+
   selectPanel (panel) {
     return (
       this.setState({
@@ -26,6 +31,10 @@ class Menu extends Component {
       })
     )
   }
+}
+
+Menu.propTypes = {
+  closeMenu: PropTypes.func.isRequired
 }
 
 export default Menu

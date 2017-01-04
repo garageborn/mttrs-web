@@ -3,6 +3,10 @@
 
 .header {
   background: $mttrsBlue;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+
   > div {
     display: flex;
     height: 3.125em;
@@ -19,5 +23,10 @@
       align-items: center;
       justify-content: space-between;
     }
+  }
+
+  @media notSmall {
+    position: relative;
+    width: auto;
   }
 }

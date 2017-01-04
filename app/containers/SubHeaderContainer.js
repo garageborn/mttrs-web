@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import elementClass from 'element-class'
 import { UIActions } from '../actions/index'
 import SubHeader from '../components/SubHeader'
 
@@ -11,27 +12,36 @@ class SubHeaderContainer extends Component {
   }
   render () {
     return (
-      <SubHeader openMenu={this.openMenu} closeMenu={this.closeMenu} menu={this.props.menu} />
+      <SubHeader
+        openMenu={this.openMenu}
+        closeMenu={this.closeMenu}
+        menu={this.props.menu}
+        section={this.props.section}
+      />
     )
   }
 
   openMenu () {
+    elementClass(document.body).add('o-hidden')
     this.props.dispatch(UIActions.openMenu())
   }
 
   closeMenu () {
+    elementClass(document.body).remove('o-hidden')
     this.props.dispatch(UIActions.closeMenu())
   }
 }
 
 SubHeaderContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  menu: PropTypes.object.isRequired
+  menu: PropTypes.object,
+  section: PropTypes.object
 }
 
 let mapStateToProps = (state, ownProps) => {
   return {
-    menu: state.UIReducer.menu
+    menu: state.UIReducer.menu,
+    section: state.UIReducer.section
   }
 }
 

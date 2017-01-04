@@ -6,10 +6,12 @@ import styles from './styles.css'
 
 const MenuPublishersItem = ({publisher, closeMenu}) => {
   return (
-    <Link onClick={closeMenu} to={publisherPath(publisher.slug)} key={publisher.id} className={styles.publisher}>
-      <PublisherIcon publisher={publisher} size='big' />
-      {publisher.name}
-    </Link>
+    <li>
+      <Link onClick={closeMenu} to={publisherPath(publisher.slug)} key={publisher.id} className={styles.publisher}>
+        <PublisherIcon publisher={publisher} size='big' />
+        {publisher.name}
+      </Link>
+    </li>
   )
 }
 

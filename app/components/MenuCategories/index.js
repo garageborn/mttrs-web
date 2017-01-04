@@ -1,27 +1,33 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
-import MenuCategoriesItemContainer from '../../containers/MenuCategoriesItemContainer'
-import TopStoriesLogo from '../../assets/logo-mttrs-mobile.svg'
+import MenuCategoriesItem from '../MenuCategoriesItem'
+import topStoriesIcon from '../../assets/logo-mttrs-alt-mobile.png'
 import styles from './styles.css'
 
-const MenuCategories = ({categories}) => {
+const MenuCategories = ({categories, closeMenu}) => {
   return (
     <div className={styles.container}>
-      <Link to='/' className={styles.topStories}>
+      <Link
+        to='/'
+        onClick={closeMenu}
+        className={styles.topStories}
+        activeClassName={styles.topStoriesActive}
+      >
         <div className={styles.topStoriesWrapper}>
-          <TopStoriesLogo className={styles.topStoriesIcon} />
+          <img src={topStoriesIcon} className={styles.icon} alt='' />
           <p className={styles.topStoriesTitle}>Top Stories</p>
         </div>
       </Link>
       <div className={styles.categories}>
-        {categories.map((category) => <MenuCategoriesItemContainer key={category.id} category={category} />)}
+        {categories.map((category) => <MenuCategoriesItem closeMenu={closeMenu} key={category.id} category={category} />)}
       </div>
     </div>
   )
 }
 
 MenuCategories.propTypes = {
-  categories: PropTypes.array.isRequired
+  categories: PropTypes.array.isRequired,
+  closeMenu: PropTypes.func.isRequired
 }
 
 export default MenuCategories

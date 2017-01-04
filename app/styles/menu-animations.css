@@ -1,0 +1,25 @@
+.enter {
+  transform: translateY(-100%);
+}
+
+.enterActive {
+  transform: translateY(0px);
+  transition: all 330ms cubic-bezier(.07,.4,.81,.91);
+}
+
+.appear {
+  opacity: 1;
+}
+
+.appearActive {
+  opacity: 1;
+}
+
+.leave {
+  transform: translateY(0);
+}
+
+.leaveActive {
+  transform: translateY(-100%);
+  transition: all 230ms cubic-bezier(.07,.4,.81,.91);
+}

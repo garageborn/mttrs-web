@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 import Logo from '../Logo'
-import Arrow from '../Arrow'
+import SubheaderMobile from '../SubheaderMobile'
 import styles from './styles.css'
 import { rootPath } from '../../utils/RoutesHelper'
 
-const SubHeader = ({openMenu, closeMenu, menu}) => {
+const SubHeader = ({openMenu, closeMenu, menu, section}) => {
   let toggleMenu = () => {
     if (menu.isOpen) {
       return closeMenu()
@@ -21,9 +21,7 @@ const SubHeader = ({openMenu, closeMenu, menu}) => {
         </Link>
       </div>
       <div onClick={toggleMenu} className={styles.menuTrigger}>
-        <Logo type='mobile' />
-        <span className={styles.title}>Top Stories</span>
-        <Arrow />
+        <SubheaderMobile section={section} />
       </div>
     </section>
   )
@@ -32,6 +30,7 @@ const SubHeader = ({openMenu, closeMenu, menu}) => {
 SubHeader.propTypes = {
   openMenu: PropTypes.func.isRequired,
   closeMenu: PropTypes.func.isRequired,
+  section: PropTypes.object.isRequired,
   menu: PropTypes.shape({
     isOpen: PropTypes.bool.isRequired
   }).isRequired

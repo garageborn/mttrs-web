@@ -13,16 +13,18 @@ class MenuPanel extends Component {
   }
 
   renderPanel () {
+    const { closeMenu } = this.props
     if (this.props.activePanel === 'categories') {
-      return <MenuCategoriesContainer />
+      return <MenuCategoriesContainer closeMenu={closeMenu} />
     } else {
-      return <MenuPublishersContainer />
+      return <MenuPublishersContainer closeMenu={closeMenu} />
     }
   }
 }
 
 MenuPanel.propTypes = {
-  activePanel: PropTypes.string.isRequired
+  activePanel: PropTypes.string.isRequired,
+  closeMenu: PropTypes.func.isRequired
 }
 
 export default MenuPanel

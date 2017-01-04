@@ -1,4 +1,4 @@
-import { OPEN_MODAL, CLOSE_MODAL, OPEN_MENU, CLOSE_MENU } from '../constants/ActionTypes'
+import { OPEN_MODAL, CLOSE_MODAL, OPEN_MENU, CLOSE_MENU, UPDATE_SECTION } from '../constants/ActionTypes'
 
 export const openModal = (modalType, content) => ({
   type: OPEN_MODAL,
@@ -16,4 +16,9 @@ export const openMenu = () => ({
 
 export const closeMenu = () => ({
   type: CLOSE_MENU
+})
+
+export const updateSection = (section) => ({
+  type: UPDATE_SECTION,
+  section
 })
