@@ -39,11 +39,7 @@ class Category extends Component {
     if (props.data.loading) return
     let section = {
       type: 'category',
-      model: {
-        name: props.data.category.name,
-        slug: props.data.category.slug,
-        icon_id: props.data.category.icon_id
-      }
+      model: props.data.category
     }
     this.props.dispatch(UIActions.updateSection(section))
   }

@@ -38,11 +38,7 @@ class Publisher extends Component {
     if (props.data.loading) return
     let section = {
       type: 'publisher',
-      model: {
-        name: props.data.publisher.name,
-        slug: props.data.publisher.slug,
-        icon_id: props.data.publisher.icon_id
-      }
+      model: props.data.publisher
     }
     this.props.dispatch(UIActions.updateSection(section))
   }
