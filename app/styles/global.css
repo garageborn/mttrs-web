@@ -1,28 +1,44 @@
 @import "variables";
 
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 90%;
+  background: $mttrsBackgroundColor;
+  line-height: 1.5;
+
+  @media (min-width: 30em) {
+    font-size: 100%;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $mttrsDarkestColor;
+}
+
+main {
+  padding-top: 45px;
+
+  @media (min-width: 30em) {
+    padding-top: 0;
+  }
+}
+
 :global {
-  html {
-    box-sizing: border-box;
-  }
-
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-
-  body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    background: $mttrsBackgroundColor;
-    line-height: 1.5;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  a {
-    text-decoration: none;
-    color: $mttrsDarkestColor;
+  .o-hidden {
+    overflow: hidden;
   }
 }

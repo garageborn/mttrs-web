@@ -1,8 +1,22 @@
+@import "../../styles/variables.css";
+
 .container {
   display: flex;
   flex-direction: column;
 }
 
+.search {
+  position: fixed;
+  background-color: $mttrsBlue;
+  width: 100%;
+  z-index: 2;
+}
+
 .publishers {
-  margin-top: 1.5625em;
+  position: relative;
+  top: 5.3125em;
+  height: calc(100% - 170px);
+  margin: 0;
+  overflow-y: scroll;
+  z-index: 1;
 }
