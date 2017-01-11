@@ -131,7 +131,8 @@
       "_server_",
       "_client_",
       "configuration",
-      "log"
+      "log",
+      "Raven"
     ]
   }
 }

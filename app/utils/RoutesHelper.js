@@ -7,3 +7,7 @@ export function categoryPath (slug) {
 export function publisherPath (slug) {
   return `/${slug}`
 }
+
+export function linkPath (slug) {
+  return `/link/${slug}`
+}

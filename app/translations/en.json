@@ -1,16 +1,18 @@
 {
   "category.pageTitle": "{name} on mttrs",
-  "publisher.pageTitle": "{name} on mttrs",
-  "home.pageTitle": "mttrs",
-  "home.pageDescription": "mttrs",
   "header.tagline": "Read What Matters",
   "header.topStories": "Top Stories",
+  "home.pageDescription": "mttrs",
+  "home.pageTitle": "mttrs",
+  "link.pageDescription": "{title} on mttrs",
+  "link.pageTitle": "{title} on mttrs",
+  "publisher.pageTitle": "{name} on mttrs",
   "publishers.search": "Search for publishers",
-  "spinner.loading": "Loading...",
   "selector.categories": "Categories",
   "selector.publishers": "Publishers",
-  "from": "from",
+  "spinner.loading": "Loading...",
   "and": "and",
+  "from": "from",
   "other": "other",
   "others": "others"
 }

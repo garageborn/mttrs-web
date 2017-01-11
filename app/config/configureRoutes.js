@@ -5,26 +5,24 @@ import _flattenDeep from 'lodash/flattenDeep'
 import Home from '../pages/Home'
 import Category from '../pages/Category'
 import Publisher from '../pages/Publisher'
+import Link from '../pages/Link'
 
 const defaultRoutes = () => {
   return [
-    <Route path='/' component={Home} />
+    <Route path='/' component={Home} />,
+    <Route path='/link/:slug' component={Link} />
   ]
 }
 
 const categoriesRoutes = (categories) => {
   return categories.map((category) => {
-    return [
-      <Route path={`/${category.slug}`} component={Category} slug={category.slug} />
-    ]
+    return <Route path={`/${category.slug}`} component={Category} slug={category.slug} />
   })
 }
 
 const publishersRoutes = (publishers) => {
   return publishers.map((publisher) => {
-    return [
-      <Route path={`/${publisher.slug}`} component={Publisher} slug={publisher.slug} />
-    ]
+    return <Route path={`/${publisher.slug}`} component={Publisher} slug={publisher.slug} />
   })
 }
 

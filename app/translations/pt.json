@@ -1,16 +1,18 @@
 {
   "category.pageTitle": "{name} no mttrs",
-  "publisher.pageTitle": "{name} no mttrs",
-  "home.pageTitle": "mttrs",
-  "home.pageDescription": "mttrs",
   "header.tagline": "Leia o que importa",
   "header.topStories": "Principais histórias",
+  "home.pageDescription": "mttrs",
+  "home.pageTitle": "mttrs",
+  "link.pageDescription": "{title} no mttrs",
+  "link.pageTitle": "{title} no mttrs",
+  "publisher.pageTitle": "{name} no mttrs",
   "publishers.search": "Busca de editores",
-  "spinner.loading": "Carregando...",
   "selector.categories": "Categorias",
   "selector.publishers": "Editores",
-  "from": "Via",
+  "spinner.loading": "Carregando...",
   "and": "e",
+  "from": "Via",
   "other": "outro",
   "others": "outros"
 }

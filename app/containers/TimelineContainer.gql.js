@@ -22,7 +22,7 @@ const Query = gql`
         main_link(publisher_slug: $publisherSlug) {
           id
           title
-          url
+          slug
           total_social
           image_source_url
           publisher { name slug icon_id }
@@ -30,7 +30,7 @@ const Query = gql`
         other_links(publisher_slug: $publisherSlug, popular: true) {
           id
           title
-          url
+          slug
           total_social
           publisher { name slug icon_id }
         }
