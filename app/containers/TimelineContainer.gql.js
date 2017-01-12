@@ -2,8 +2,8 @@ import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
 const defaultVariables = {
-  days: 7,
-  offset: 0,
+  days: 20,
+  offset: 10,
   perDay: 10,
   categorySlug: '',
   publisherSlug: ''
@@ -22,7 +22,7 @@ const Query = gql`
         main_link(publisher_slug: $publisherSlug) {
           id
           title
-          url
+          slug
           total_social
           image_source_url
           publisher { name slug icon_id }
@@ -30,7 +30,7 @@ const Query = gql`
         other_links(publisher_slug: $publisherSlug, popular: true) {
           id
           title
-          url
+          slug
           total_social
           publisher { name slug icon_id }
         }
