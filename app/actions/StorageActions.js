@@ -20,6 +20,7 @@ export function getVisitedStories () {
     const localForage = require('localforage')
     dispatch(requestVisitedStories())
     return localForage.getItem('visitedStories', (error, stories) => {
+      if (error) return
       return dispatch(receiveVisitedStories(stories || []))
     })
   }

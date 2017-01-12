@@ -3,7 +3,12 @@ import gql from 'graphql-tag'
 
 const Query = gql`
   query($slug: String!) {
-    link(slug: $slug) { title image_source_url url }
+    link(slug: $slug) {
+      title
+      image_source_url
+      url
+      story { id }
+    }
   }
 `
 
