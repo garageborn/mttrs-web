@@ -6,7 +6,6 @@ import precss from 'precss'
 import mqpacker from 'css-mqpacker'
 import nested from 'postcss-nested'
 import atImport from 'postcss-import'
-import fontMagician from 'postcss-font-magician'
 import simpleVars from 'postcss-simple-vars'
 
 // project folder
