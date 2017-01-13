@@ -8,7 +8,8 @@ const links = [
 ]
 
 const meta = [
-  { name: 'theme-color', content: '#FFFFFF' }
+  { name: 'theme-color', content: '#FFFFFF' },
+  { name: 'msapplication-config', content: 'none' }
 ]
 
 export default { links, meta }
