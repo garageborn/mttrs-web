@@ -2,17 +2,14 @@ import React, { Component, PropTypes } from 'react'
 import className from 'classnames'
 import StoryImage from '../StoryImage'
 import StoryContent from '../StoryContent'
-import StoryCategory from '../StoryCategory'
 import StoryMetadata from '../StoryMetadata'
 import styles from './styles.css'
 
 class Story extends Component {
   render () {
     const {story, handleVisitedStory, handleStoryLinks} = this.props
-
     return (
       <div key={story.id} className={this.storyContainerClass()}>
-        {this.renderCategory()}
         <div className={styles.story}>
           <StoryImage story={story} handleVisitedStory={handleVisitedStory} />
           <StoryContent
@@ -22,6 +19,8 @@ class Story extends Component {
             totalSocial={story.total_social}
             handleStoryLinks={handleStoryLinks}
             handleVisitedStory={handleVisitedStory}
+            shouldRenderCategory={this.props.options.renderCategory}
+            category={this.category}
           />
         </div>
         <StoryMetadata
@@ -41,11 +40,6 @@ class Story extends Component {
       [styles.container]: true,
       [styles.read]: this.props.isVisited
     })
-  }
-
-  renderCategory () {
-    if (this.props.options.renderCategory === false) return
-    return <StoryCategory category={this.category} />
   }
 
   get mainLink () {
