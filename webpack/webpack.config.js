@@ -44,8 +44,6 @@ var configuration = {
       },
       {
         test: /\.js$/,
-        // include: [path.resolve(Root, 'code')],
-        // exclude: path.resolve(Root, 'node_modules'),
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
