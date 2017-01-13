@@ -3,7 +3,7 @@
 
 .title {
   font-weight: 400;
-  margin: 0;
+  margin-right: .7rem;
   @mixin lineClamp 1.2rem, 1.3, 3, #FFF;
 
   @media medium {
