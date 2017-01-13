@@ -1,4 +1,4 @@
-@value notSmall from "../../styles/media-queries.css";
+@value notSmall, medium, large from "../../styles/media-queries.css";
 
 .container {
   display: flex;
@@ -8,6 +8,9 @@
   padding: .7rem .7rem .3rem;
   box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.20);
   position: relative;
+  @media notSmall {
+    lost-center: 45.5em;
+  }
 }
 
 .story {
