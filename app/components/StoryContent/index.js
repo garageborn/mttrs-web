@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react'
 import StoryTitle from '../StoryTitle'
-import StoryMetadata from '../StoryMetadata'
 import styles from './styles.css'
 
 const StoryContent = ({
@@ -14,14 +13,6 @@ const StoryContent = ({
   return (
     <div className={styles.container}>
       <StoryTitle mainLink={mainLink} handleVisitedStory={handleVisitedStory} />
-      <StoryMetadata
-        source='storyContent'
-        story={story}
-        mainLink={mainLink}
-        otherLinks={otherLinks}
-        totalSocial={totalSocial}
-        handleStoryLinks={handleStoryLinks}
-      />
     </div>
   )
 }
