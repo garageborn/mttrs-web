@@ -1,9 +1,8 @@
 @import "../../styles/variables.css";
 @value notSmall, medium, large from "../../styles/media-queries.css";
 
-.nav {
+/*.nav {
   display: none;
-  font-family: 'Cabin', sans-serif;
   color: #FFF;
 
   @media notSmall {
@@ -16,7 +15,7 @@
   }
 
   @media large {
-    background: $mttrsBlue;
+    background: $mttrsDark;
     margin-right: -2.5em;
   }
-}
+}*/

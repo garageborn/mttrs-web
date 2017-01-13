@@ -76,7 +76,6 @@ var configuration = {
     return [
       atImport,
       precss,
-      fontMagician,
       cssnext({ browsers: ['last 2 versions'] }),
       simpleVars,
       lost,
