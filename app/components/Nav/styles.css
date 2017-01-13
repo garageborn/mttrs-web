@@ -1,6 +1,16 @@
 @import "../../styles/variables.css";
 @value notSmall, medium, large from "../../styles/media-queries.css";
 
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media large {
+    lost-center: 71.25em;
+  }
+}
+
 /*.nav {
   display: none;
   color: #FFF;

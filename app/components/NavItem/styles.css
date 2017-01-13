@@ -1,33 +1,59 @@
 @import "../../styles/variables.css";
 @value notSmall, medium, large from "../../styles/media-queries.css";
 
-/*.active {
-  border-bottom: 4px solid $mttrsSecondaryBlue;
+.active {
+  .name {
+    opacity: 1;
+  }
+
+  .color {
+    height: 25px;
+  }
 }
 
 .item {
   display: inline-block;
-  font-size: 1.125rem;
+  font-size: 0.875rem;
+  width: 7.125rem;
+  text-align: center;
+}
 
-  @media medium {
-    margin: 0 0.5em;
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-decoration: none;
+  color: #FFF;
+  transition: color .5s ease-in-out;
+
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 25px;
   }
 
-  @media large {
-    margin-left: 1.125em;
+  &:hover {
+    .name {
+      opacity: 1;
+    }
+
+    .color {
+      height: 25px;
+    }
   }
 }
 
-.itemLink {
-  text-decoration: none;
-  color: #FFF;
-  padding: 0.25em 0;
-  transition: color .5s ease-in-out;
+.name {
+  display: block;
+  opacity: 0.5;
+  margin-bottom: 0.5em;
+}
 
-  &:hover {
-    border-bottom: 4px solid $mttrsSecondaryBlue;
-  }
-  @media medium {
-    padding: 0.3125em;
-  }
-}*/
+.color {
+  display: block;
+  width: 100%;
+  height: 5px;
+}
