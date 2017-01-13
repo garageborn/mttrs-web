@@ -1,23 +1,8 @@
-@value notSmall, small from "../../styles/media-queries.css";
-
 .container {
   display: flex;
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
-  height: 2.5rem;
+  height: 2rem;
   border-top: 1px solid #F1F1F1;
-}
-
-.shouldShowSmall {
-  @media notSmall {
-    display: none
-  }
-}
-
-.shouldShowNotSmall {
-  display: none;
-  @media notSmall {
-    display: flex;
-  }
 }
