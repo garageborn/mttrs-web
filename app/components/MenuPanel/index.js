@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import MenuCategoriesContainer from '../../containers/MenuCategoriesContainer'
-import MenuPublishersContainer from '../../containers/MenuPublishersContainer'
+import PublishersListContainer from '../../containers/PublishersListContainer'
 import styles from './styles.css'
 
 class MenuPanel extends Component {
@@ -17,7 +17,7 @@ class MenuPanel extends Component {
     if (this.props.activePanel === 'categories') {
       return <MenuCategoriesContainer closeMenu={closeMenu} />
     } else {
-      return <MenuPublishersContainer closeMenu={closeMenu} />
+      return <PublishersListContainer closeMenu={closeMenu} />
     }
   }
 }

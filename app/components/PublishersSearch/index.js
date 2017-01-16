@@ -10,7 +10,7 @@ const messages = defineMessages({
   }
 })
 
-const MenuSearch = ({handleSearchTerm, intl}) => {
+const PublishersSearch = ({handleSearchTerm, intl}) => {
   return (
     <div className={styles.search}>
       <Loupe />
@@ -19,11 +19,11 @@ const MenuSearch = ({handleSearchTerm, intl}) => {
   )
 }
 
-MenuSearch.propTypes = {
+PublishersSearch.propTypes = {
   handleSearchTerm: PropTypes.func.isRequired,
   intl: PropTypes.shape({
     formatMessage: PropTypes.func.isRequired
   }).isRequired
 }
 
-export default injectIntl(MenuSearch)
+export default injectIntl(PublishersSearch)

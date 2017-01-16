@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react'
-import MenuPublishersItem from '../MenuPublishersItem'
-import MenuSearch from '../MenuSearch'
+import PublishersListItem from '../PublishersListItem'
+import PublishersSearch from '../PublishersSearch'
 import styles from './styles.css'
 
-class MenuPublishers extends Component {
+class PublishersList extends Component {
   constructor () {
     super()
     this.handleSearchTerm = this.handleSearchTerm.bind(this)
@@ -16,7 +16,7 @@ class MenuPublishers extends Component {
     return (
       <div className={styles.container}>
         <div className={styles.search}>
-          <MenuSearch handleSearchTerm={this.handleSearchTerm} />
+          <PublishersSearch handleSearchTerm={this.handleSearchTerm} />
         </div>
         <ul className={styles.publishers}>
           {this.renderPublishers()}
@@ -29,7 +29,7 @@ class MenuPublishers extends Component {
     const { publishers, closeMenu } = this.props
     const queryMatcher = new RegExp(this.state.query, 'i')
     const filteredPublishers = publishers.filter(publisher => publisher.name.match(queryMatcher))
-    return filteredPublishers.map((publisher) => <MenuPublishersItem closeMenu={closeMenu} key={publisher.id} publisher={publisher} />)
+    return filteredPublishers.map((publisher) => <PublishersListItem closeMenu={closeMenu} key={publisher.id} publisher={publisher} />)
   }
 
   handleSearchTerm (e) {
@@ -39,9 +39,9 @@ class MenuPublishers extends Component {
   }
 }
 
-MenuPublishers.propTypes = {
+PublishersList.propTypes = {
   publishers: PropTypes.array.isRequired,
   closeMenu: PropTypes.func.isRequired
 }
 
-export default MenuPublishers
+export default PublishersList

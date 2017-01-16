@@ -4,7 +4,7 @@ import { publisherPath } from '../../utils/RoutesHelper'
 import PublisherIcon from '../PublisherIcon'
 import styles from './styles.css'
 
-const MenuPublishersItem = ({publisher, closeMenu}) => {
+const PublishersListItem = ({publisher, closeMenu}) => {
   return (
     <li>
       <Link onClick={closeMenu} to={publisherPath(publisher.slug)} key={publisher.id} className={styles.publisher}>
@@ -15,9 +15,9 @@ const MenuPublishersItem = ({publisher, closeMenu}) => {
   )
 }
 
-MenuPublishersItem.propTypes = {
+PublishersListItem.propTypes = {
   publisher: PropTypes.object.isRequired,
   closeMenu: PropTypes.func.isRequired
 }
 
-export default MenuPublishersItem
+export default PublishersListItem
