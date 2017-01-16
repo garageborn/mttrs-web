@@ -1,9 +1,6 @@
 import React, { PropTypes } from 'react'
 import { injectIntl, defineMessages } from 'react-intl'
-import Logo from '../Logo'
 import Arrow from '../Arrow'
-import PublisherIcon from '../PublisherIcon'
-import CategoryIcon from '../CategoryIcon'
 import styles from './styles.css'
 import classNames from 'classnames'
 
@@ -29,28 +26,8 @@ const SubheaderMobile = ({section, intl}) => {
     return intl.formatMessage(messages.topStories)
   }
 
-  let getLogo = () => {
-    switch (section.type) {
-      case 'publisher':
-        let publisher = {
-          name: section.model.name,
-          icon_id: section.model.icon_id
-        }
-        return <PublisherIcon publisher={publisher} size='small' />
-      case 'category':
-        let category = {
-          name: section.model.name,
-          icon_id: section.model.icon_id
-        }
-        return <CategoryIcon category={category} size='big' />
-      default:
-        return <Logo type='mobile' />
-    }
-  }
-
   return (
     <div className={styles.container}>
-      {getLogo()}
       <span className={getTextClassNames()}>{getText()}</span>
       <Arrow />
     </div>

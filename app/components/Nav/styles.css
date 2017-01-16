@@ -1,22 +1,16 @@
 @import "../../styles/variables.css";
-@value notSmall, medium, large from "../../styles/media-queries.css";
+@value notSmall, xNotSmall, medium, xMedium, large, xLarge from "../../styles/media-queries.css";
 
 .nav {
-  display: none;
-  font-family: 'Cabin', sans-serif;
-  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  @media notSmall {
-    display: flex;
+  @media xMedium {
+    lost-center: 100%;
   }
 
-  @media medium {
-    background: $mttrsSecondaryBlue;
-    justify-content: center;
-  }
-
-  @media large {
-    background: $mttrsBlue;
-    margin-right: -2.5em;
+  @media xLarge {
+    lost-center: 71.25em;
   }
 }
