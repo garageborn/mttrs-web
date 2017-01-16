@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import MenuSelector from '../MenuSelector'
-import MenuPanel from '../MenuPanel'
+import MenuCategoriesContainer from '../../containers/MenuCategoriesContainer'
 import styles from './styles.css'
 
 class Menu extends Component {
@@ -16,10 +15,7 @@ class Menu extends Component {
     const { closeMenu } = this.props
     return (
       <div className={styles.container}>
-        <div className={styles.selector}>
-          <MenuSelector activePanel={this.state.activePanel} selectPanel={this.selectPanel} />
-        </div>
-        <MenuPanel closeMenu={closeMenu} activePanel={this.state.activePanel} />
+        <MenuCategoriesContainer closeMenu={closeMenu} />
       </div>
     )
   }

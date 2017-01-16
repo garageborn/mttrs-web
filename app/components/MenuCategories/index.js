@@ -2,32 +2,41 @@ import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 import { injectIntl, defineMessages } from 'react-intl'
 import MenuCategoriesItem from '../MenuCategoriesItem'
-import topStoriesIcon from '../../assets/logo-mttrs-alt-mobile.png'
 import styles from './styles.css'
 
 const messages = defineMessages({
   topStories: {
     id: 'header.topStories',
     defaultMessage: 'Top Stories'
+  },
+
+  publishers: {
+    id: 'menu.publishers',
+    defaultMessage: 'Publishers'
   }
 })
 
 const MenuCategories = ({categories, closeMenu, intl}) => {
   return (
     <div className={styles.container}>
-      <Link
-        to='/'
-        onClick={closeMenu}
-        className={styles.topStories}
-        activeClassName={styles.topStoriesActive}
-      >
-        <div className={styles.topStoriesWrapper}>
-          <img src={topStoriesIcon} className={styles.icon} alt='' />
-          <p className={styles.topStoriesTitle}>{intl.formatMessage(messages.topStories)}</p>
-        </div>
-      </Link>
       <div className={styles.categories}>
+        <Link
+          to='/'
+          onClick={closeMenu}
+          className={styles.category}
+          style={{backgroundColor: '#FF5606'}}
+        >
+          {intl.formatMessage(messages.topStories)}
+        </Link>
         {categories.map((category) => <MenuCategoriesItem closeMenu={closeMenu} key={category.id} category={category} />)}
+        <Link
+          to='/'
+          onClick={closeMenu}
+          className={styles.category}
+          style={{backgroundColor: '#999'}}
+        >
+          {intl.formatMessage(messages.publishers)}
+        </Link>
       </div>
     </div>
   )
