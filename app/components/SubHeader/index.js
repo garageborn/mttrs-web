@@ -19,6 +19,7 @@ const SubHeader = ({openMenu, closeMenu, menu, section}) => {
       <div className={styles.logoSection}>
         <Link to={rootPath} className={styles.title}>
           <Logo />
+          <span className='u-hidden'>mttrs</span>
         </Link>
       </div>
       <div onClick={toggleMenu} className={styles.menuTrigger}>

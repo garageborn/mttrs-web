@@ -1,31 +1,16 @@
 @import "../../styles/variables.css";
-@value notSmall, medium, large from "../../styles/media-queries.css";
+@value notSmall, xNotSmall, medium, xMedium, large, xLarge from "../../styles/media-queries.css";
 
 .nav {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  @media large {
+  @media xMedium {
+    lost-center: 100%;
+  }
+
+  @media xLarge {
     lost-center: 71.25em;
   }
 }
-
-/*.nav {
-  display: none;
-  color: #FFF;
-
-  @media notSmall {
-    display: flex;
-  }
-
-  @media medium {
-    background: $mttrsSecondaryBlue;
-    justify-content: center;
-  }
-
-  @media large {
-    background: $mttrsDark;
-    margin-right: -2.5em;
-  }
-}*/

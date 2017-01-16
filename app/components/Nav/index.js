@@ -10,7 +10,7 @@ class Nav extends Component {
         <ul className={styles.navList}>
           <NavItem name='Top Stories' url={rootPath} color='#FF5606' />
           {this.categoriesItems}
-          <NavItem name='Publishers' url='/foo' color='#999' />
+          <NavItem name='Publishers' url='/publishers' color='#999' />
         </ul>
       </nav>
     )
