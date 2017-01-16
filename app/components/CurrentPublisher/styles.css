@@ -1,0 +1,12 @@
+@import "../../styles/variables.css";
+
+.publisher {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  lost-center: 45.5rem;
+  > div {
+    margin-right: 0.75em;
+  }
+}

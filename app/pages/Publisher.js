@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Layout from './Layout'
 import { injectIntl, defineMessages } from 'react-intl'
 import Header from '../components/Header'
+import CurrentPublisher from '../components/CurrentPublisher'
 import PublishersListContainer from '../containers/PublishersListContainer'
 import TimelineContainer from '../containers/TimelineContainer'
 import withQuery from './Publisher.gql'
@@ -31,6 +32,7 @@ class Publisher extends Component {
       <Layout {...this.meta()}>
         <Header />
         <PublishersListContainer type='publisherPage' />
+        <CurrentPublisher publisher={this.props.data.publisher} />
         <TimelineContainer queryVariables={queryVariables} />
       </Layout>
     )
