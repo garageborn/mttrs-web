@@ -22,6 +22,7 @@
 .item {
   display: inline-block;
   width: 40px;
+  font-size: 0;
   font-weight: 300;
   text-align: center;
 
@@ -81,7 +82,6 @@
 }
 
 .name {
-  display: none;
   opacity: 0.5;
 
   @media xNotSmall {

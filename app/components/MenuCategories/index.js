@@ -30,7 +30,7 @@ const MenuCategories = ({categories, closeMenu, intl}) => {
         </Link>
         {categories.map((category) => <MenuCategoriesItem closeMenu={closeMenu} key={category.id} category={category} />)}
         <Link
-          to='/'
+          to='/publishers'
           onClick={closeMenu}
           className={styles.category}
           style={{backgroundColor: '#999'}}
