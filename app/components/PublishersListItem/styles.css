@@ -17,4 +17,8 @@
   &:focus {
     outline: thin dotted;
   }
+
+  &:hover {
+    background-color: mttrsDarkGray;  
+  }
 }

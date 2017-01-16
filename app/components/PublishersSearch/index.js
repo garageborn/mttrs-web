@@ -10,19 +10,26 @@ const messages = defineMessages({
   }
 })
 
-const PublishersSearch = ({isActive, handleSearchTerm, intl}) => {
+const PublishersSearch = ({handleFocus, handleBlur, isActive, handleSearchTerm, intl}) => {
   return (
     <div className={styles.outerBorder}>
       <div className={styles.search}>
         <Loupe />
-        <input onChange={handleSearchTerm} className={styles.input} placeholder={intl.formatMessage(messages.searchPublishers)} />
+        <input
+          onChange={handleSearchTerm}
+          className={styles.input}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          placeholder={intl.formatMessage(messages.searchPublishers)}
+        />
       </div>
     </div>
   )
 }
 
 PublishersSearch.propTypes = {
-  isActive: PropTypes.bool.isRequired,
+  handleBlur: PropTypes.func.isRequired,
+  handleFocus: PropTypes.func.isRequired,
   handleSearchTerm: PropTypes.func.isRequired,
   intl: PropTypes.shape({
     formatMessage: PropTypes.func.isRequired

@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+
 import withQuery from './PublishersListContainer.gql'
 import PublishersList from '../components/PublishersList'
 

@@ -34,4 +34,10 @@
   margin: 0;
   overflow-y: scroll;
   z-index: 1;
+  @media notSmall {
+    top: 0;
+    height: auto;
+    overflow-y: visible;
+    lost-center: 45.5em;
+  }
 }
