@@ -17,7 +17,7 @@ class MenuPanel extends Component {
     if (this.props.activePanel === 'categories') {
       return <MenuCategoriesContainer closeMenu={closeMenu} />
     } else {
-      return <PublishersListContainer closeMenu={closeMenu} />
+      return <PublishersListContainer type='menu' closeMenu={closeMenu} />
     }
   }
 }

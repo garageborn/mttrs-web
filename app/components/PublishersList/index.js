@@ -16,12 +16,25 @@ class PublishersList extends Component {
     return (
       <div className={styles.container}>
         <div className={styles.search}>
+          {this.renderSearchDisclaimer()}
           <PublishersSearch handleSearchTerm={this.handleSearchTerm} />
         </div>
-        <ul className={styles.publishers}>
-          {this.renderPublishers()}
-        </ul>
+        {this.renderPublishersList()}
       </div>
+    )
+  }
+
+  renderSearchDisclaimer () {
+    if (this.props.type !== 'publisherPage') return
+    return <p className={styles.disclaimer}>Search for publishers</p>
+  }
+
+  renderPublishersList () {
+    if (this.props.type === 'publisherPage' && !this.state.query.length) return
+    return (
+      <ul className={styles.publishers}>
+        {this.renderPublishers()}
+      </ul>
     )
   }
 
@@ -40,6 +53,7 @@ class PublishersList extends Component {
 }
 
 PublishersList.propTypes = {
+  type: PropTypes.object,
   publishers: PropTypes.array.isRequired,
   closeMenu: PropTypes.func.isRequired
 }

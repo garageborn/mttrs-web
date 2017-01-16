@@ -1,8 +1,15 @@
 @import "../../styles/variables.css";
+@value notSmall from "../../styles/media-queries.css";
 
 .container {
   display: flex;
   flex-direction: column;
+}
+
+.disclaimer {
+  font-size: 0.9rem;
+  margin: 1.2rem 0 .2rem .2rem;
+  color: #999999;
 }
 
 .search {
@@ -10,12 +17,20 @@
   background-color: $mttrsBlue;
   width: 100%;
   z-index: 2;
+  @media notSmall {
+    position: relative;
+    background-color: transparent;
+    width: 100%;
+    z-index: 2;
+    lost-center: 45.5em;
+  }
 }
 
 .publishers {
   position: relative;
   top: 5.3125em;
   height: calc(100% - $menuPublishersHeaderHeight);
+  flex: 1;
   margin: 0;
   overflow-y: scroll;
   z-index: 1;

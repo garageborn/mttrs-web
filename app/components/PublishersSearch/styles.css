@@ -6,12 +6,19 @@
   width: 80%;
   height: 2.5em;
   background: #FFF;
-  margin: 1.25em auto;
   border-radius: 4px;
 
   svg {
     margin-left: 1em;
     margin-right: 0.7em;
+  }
+
+  @media notSmall {
+    width: 100%;
+    border-radius: 0px;
+    border: 1px solid #F1F1F1;
+    background-color: #CCC;
+    box-shadow: 1px 1px 3px 0 rgba(0,0,0,.2);
   }
 }
 
@@ -19,4 +26,21 @@
   border: 0;
   outline: 0;
   width: 100%;
+  font-size: .9rem;
+  color: #2D2D2B;
+
+  @media notSmall {
+    background-color: #CCC;
+    &::placeholder {
+      color: white;
+    }
+  }
+}
+
+.outerBorder {
+  margin: 1.25em auto;
+  @media notSmall {
+    margin: 0;
+    border: 1px solid #F1F1F1;
+  }
 }
