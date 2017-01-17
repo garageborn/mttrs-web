@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import withQuery from './Link.gql'
 import Layout from './Layout'
 import { StorageActions } from '../actions/index'
+import LoadingRequestLink from '../components/LoadingRequestLink'
 
 const messages = defineMessages({
   pageTitle: { id: 'link.pageTitle' },
@@ -18,7 +19,9 @@ class Link extends Component {
 
   render () {
     return (
-      <Layout {...this.meta()} />
+      <Layout {...this.meta()}>
+        <LoadingRequestLink />
+      </Layout>
     )
   }
 
