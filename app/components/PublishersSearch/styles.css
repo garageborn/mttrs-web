@@ -3,22 +3,17 @@
 .search {
   display: flex;
   align-items: center;
-  width: 80%;
-  height: 2.5em;
-  background: #FFF;
+  height: 2.5625rem;
   border-radius: 4px;
+  border-radius: 0px;
+  border: 1px solid #F1F1F1;
+  background-color: #DADADA;
+  box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.2);
+
 
   svg {
     margin-left: 1em;
     margin-right: 0.7em;
-  }
-
-  @media notSmall {
-    width: 100%;
-    border-radius: 0px;
-    border: 1px solid #F1F1F1;
-    background-color: #CCC;
-    box-shadow: 1px 1px 3px 0 rgba(0,0,0,.2);
   }
 }
 
@@ -27,18 +22,16 @@
   outline: 0;
   width: 100%;
   font-size: .9rem;
-  color: #2D2D2B;
+  color: #DADADA;
 
-  @media notSmall {
-    background-color: #CCC;
-    &::placeholder {
-      color: white;
-    }
+  background-color: #DADADA;
+  &::placeholder {
+    color: white;
   }
 }
 
 .outerBorder {
-  margin: 1.25em auto;
+  margin: 0.34375rem auto 0.875rem;
   @media notSmall {
     margin: 0;
     border: 1px solid #F1F1F1;

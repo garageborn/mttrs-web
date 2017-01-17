@@ -6,14 +6,14 @@ import styles from './styles.css'
 
 const PublishersListItem = ({publisher, onSelectPublisher}) => {
   return (
-    <li>
+    <li className={styles.container}>
       <Link
         onClick={onSelectPublisher}
         to={publisherPath(publisher.slug)}
         key={publisher.id}
         className={styles.publisher}
       >
-        <PublisherIcon publisher={publisher} size='big' />
+        <PublisherIcon publisher={publisher} size='huge' />
         {publisher.name}
       </Link>
     </li>

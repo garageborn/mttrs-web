@@ -3,12 +3,11 @@ import React, { PropTypes } from 'react'
 import withQuery from './PublishersListContainer.gql'
 import PublishersList from '../components/PublishersList'
 
-const PublishersListContainer = ({type, data, closeMenu}) => {
+const PublishersListContainer = ({type, data}) => {
   if (data.loading) return null
   return (
     <PublishersList
       type={type}
-      closeMenu={closeMenu}
       publishers={data.publishers}
     />
   )
@@ -16,8 +15,7 @@ const PublishersListContainer = ({type, data, closeMenu}) => {
 
 PublishersListContainer.propTypes = {
   type: PropTypes.string,
-  data: PropTypes.object.isRequired,
-  closeMenu: PropTypes.func
+  data: PropTypes.object.isRequired
 }
 
 export default withQuery(PublishersListContainer)

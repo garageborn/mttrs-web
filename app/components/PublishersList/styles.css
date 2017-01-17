@@ -1,43 +1,41 @@
 @import "../../styles/variables.css";
-@value notSmall from "../../styles/media-queries.css";
+@value notSmall, large from "../../styles/media-queries.css";
 
 .container {
   display: flex;
   flex-direction: column;
+  /*overflow: auto;*/
+  @media notSmall {
+    lost-center: 45.5em;
+  }
 }
 
 .disclaimer {
-  font-size: 0.9rem;
-  margin: 1.2rem 0 .2rem .2rem;
+  font-size: 0.75rem;
+  margin: 1.2rem 0 .2rem 1.15625rem;
   color: #999999;
 }
 
 .search {
-  position: fixed;
-  background-color: $mttrsBlue;
+  position: relative;
+  background-color: transparent;
+  margin-top: 5.55rem;
   width: 100%;
-  z-index: 2;
+
   @media notSmall {
-    position: relative;
-    background-color: transparent;
-    width: 100%;
-    z-index: 2;
-    lost-center: 45.5em;
+    margin: 6.25rem 0 0.875rem
+  }
+
+  @media large {
+    margin: 8.25rem 0 0.875rem
   }
 }
 
 .publishers {
   position: relative;
-  top: 5.3125em;
-  height: calc(100% - $menuPublishersHeaderHeight);
   flex: 1;
-  margin: 0;
-  overflow-y: scroll;
   z-index: 1;
-  @media notSmall {
-    top: 0;
-    height: auto;
-    overflow-y: visible;
-    lost-center: 45.5em;
-  }
+  background-color: white;
+  box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.2);
+  border: 1px solid #DADADA
 }

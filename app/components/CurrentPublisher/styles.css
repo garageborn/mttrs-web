@@ -1,11 +1,14 @@
 @import "../../styles/variables.css";
 
 .publisher {
+  color: $mttrsGray;
   display: flex;
   align-items: center;
-  font-size: 1.25rem;
-  margin-top: 2rem;
-  lost-center: 45.5rem;
+  height: 4.85rem;
+  padding: 0 0.5325rem;
+  font-size: 0.875rem;
+  margin: 0 0.65625rem;
+
   > div {
     margin-right: 0.75em;
   }
