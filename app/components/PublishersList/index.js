@@ -75,9 +75,9 @@ class PublishersList extends Component {
 }
 
 PublishersList.propTypes = {
-  type: PropTypes.object,
+  type: PropTypes.string,
   publishers: PropTypes.array.isRequired,
-  closeMenu: PropTypes.func.isRequired
+  closeMenu: PropTypes.func
 }
 
 export default PublishersList

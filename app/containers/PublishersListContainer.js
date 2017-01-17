@@ -15,9 +15,9 @@ const PublishersListContainer = ({type, data, closeMenu}) => {
 }
 
 PublishersListContainer.propTypes = {
-  type: PropTypes.object,
+  type: PropTypes.string,
   data: PropTypes.object.isRequired,
-  closeMenu: PropTypes.func.isRequired
+  closeMenu: PropTypes.func
 }
 
 export default withQuery(PublishersListContainer)
