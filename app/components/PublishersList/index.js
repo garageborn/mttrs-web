@@ -8,7 +8,7 @@ class PublishersList extends Component {
     super()
     this.handleSearchTerm = this.handleSearchTerm.bind(this)
     this.handleFocus = this.handleFocus.bind(this)
-    this.handleBlur = this.handleBlur.bind(this)
+    this.deactivateSearch = this.deactivateSearch.bind(this)
     this.state = {
       isSearchActive: false,
       query: ''
@@ -21,8 +21,9 @@ class PublishersList extends Component {
         <div className={styles.search}>
           {this.renderSearchDisclaimer()}
           <PublishersSearch
+            isActive={this.state.isSearchActive}
             handleFocus={this.handleFocus}
-            handleBlur={this.handleBlur}
+            deactivateSearch={this.deactivateSearch}
             handleSearchTerm={this.handleSearchTerm}
           />
         </div>
@@ -37,10 +38,11 @@ class PublishersList extends Component {
     })
   }
 
-  handleBlur () {
-    setTimeout(this.setState({
+  deactivateSearch () {
+    return this.setState({
+      query: '',
       isSearchActive: false
-    }), 200)
+    })
   }
 
   renderSearchDisclaimer () {
@@ -59,9 +61,10 @@ class PublishersList extends Component {
 
   renderPublishers () {
     const { publishers, closeMenu } = this.props
+    const onSelectPublisher = this.props.type !== 'publisherPage' ? closeMenu : this.deactivateSearch
     const queryMatcher = new RegExp(this.state.query, 'i')
     const filteredPublishers = publishers.filter(publisher => publisher.name.match(queryMatcher))
-    return filteredPublishers.map((publisher) => <PublishersListItem closeMenu={closeMenu} key={publisher.id} publisher={publisher} />)
+    return filteredPublishers.map((publisher) => <PublishersListItem onSelectPublisher={onSelectPublisher} key={publisher.id} publisher={publisher} />)
   }
 
   handleSearchTerm (e) {
