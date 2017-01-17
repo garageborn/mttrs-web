@@ -1,16 +1,22 @@
 @import "../../styles/variables.css";
-@value notSmall, xNotSmall, medium, xMedium, large, xLarge from "../../styles/media-queries.css";
+@value notSmall, medium, large from "../../styles/media-queries.css";
 
 .nav {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  @media xMedium {
+  @media medium {
     lost-center: 100%;
   }
 
-  @media xLarge {
+  @media large {
     lost-center: 71.25em;
+  }
+
+  ul {
+    display: flex;
+    flex-basis: calc((10 * 100%) / 10);
+    flex-direction: row;
   }
 }

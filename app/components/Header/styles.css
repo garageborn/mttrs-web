@@ -1,5 +1,5 @@
 @import "../../styles/variables.css";
-@value xNotSmall, xMedium, xLarge from "../../styles/media-queries.css";
+@value notSmall, medium, large from "../../styles/media-queries.css";
 
 .header {
   background: $mttrsDark;
@@ -9,11 +9,11 @@
   top: 0;
   z-index: 2;
 
-  @media xMedium {
+  @media medium {
     height: 100px;
   }
 
-  @media xLarge {
+  @media large {
     height: 120px;
   }
 }

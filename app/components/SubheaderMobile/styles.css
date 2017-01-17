@@ -1,4 +1,4 @@
-@value xNotSmall, xMedium, xLarge from "../../styles/media-queries.css";
+@value notSmall, medium, large from "../../styles/media-queries.css";
 
 .container {
   display: flex;

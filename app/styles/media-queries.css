@@ -1,11 +1,3 @@
-@value notSmall: (min-width: 30em);
-@value medium: (min-width: 30em) and (max-width: 60em);
-@value large: (min-width: 60em);
-
-@value xNotSmall: (min-width: 48.125em);
-@value xMedium: (min-width: 48.125em) and (max-width: 71.25em);
-@value xLarge: (min-width: 71.25em);
-
-/*mobile = max 320
-tablet = min 320 / max 768
-desktop = min 768*/
+@value notSmall: (min-width: 48.125em);
+@value medium: (min-width: 48.125em) and (max-width: 71.25em);
+@value large: (min-width: 71.25em);

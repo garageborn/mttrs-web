@@ -39,11 +39,11 @@ main {
 }
 
 :global {
-  .o-hidden {
+  .overflow-hidden {
     overflow: hidden;
   }
 
-  .u-hidden {
+  .visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;

@@ -1,5 +1,5 @@
 @import "../../styles/variables.css";
-@value notSmall, xNotSmall, medium, xMedium, large, xLarge from "../../styles/media-queries.css";
+@value notSmall, medium, large from "../../styles/media-queries.css";
 
 .active {
   .name {
@@ -9,11 +9,11 @@
   .color {
     height: 10px;
 
-    @media xMedium {
+    @media medium {
       height: 20px;
     }
 
-    @media xLarge {
+    @media large {
       height: 25px;
     }
   }
@@ -21,17 +21,16 @@
 
 .item {
   display: inline-block;
-  width: 40px;
+  width: 100%;
   font-size: 0;
   font-weight: 300;
   text-align: center;
 
-  @media xMedium {
-    width: 4.8125rem;
+  @media medium {
     font-size: 0.6875rem;
   }
 
-  @media xLarge {
+  @media large {
     width: 7.125rem;
     font-size: 0.9375rem;
   }
@@ -53,11 +52,11 @@
     width: 100%;
     height: 10px;
 
-    @media xMedium {
+    @media medium {
       height: 20px;
     }
 
-    @media xLarge {
+    @media large {
       height: 25px;
     }
   }
@@ -70,11 +69,11 @@
     .color {
       height: 10px;
 
-      @media xMedium {
+      @media medium {
         height: 20px;
       }
 
-      @media xLarge {
+      @media large {
         height: 25px;
       }
     }
@@ -84,15 +83,15 @@
 .name {
   opacity: 0.5;
 
-  @media xNotSmall {
+  @media notSmall {
     display: block;
   }
 
-  @media xMedium {
+  @media medium {
     margin-bottom: 0.4em;
   }
 
-  @media xLarge {
+  @media large {
     margin-bottom: 0.3em;
   }
 }
