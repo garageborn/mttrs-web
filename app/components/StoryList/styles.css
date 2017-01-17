@@ -10,6 +10,8 @@
   }
 
   &:first-of-type {
-    padding-top: 3em;
+    @media notSmall {
+      padding-top: 3em;
+    }
   }
 }

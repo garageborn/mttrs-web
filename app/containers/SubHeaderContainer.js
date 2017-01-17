@@ -22,12 +22,12 @@ class SubHeaderContainer extends Component {
   }
 
   openMenu () {
-    elementClass(document.body).add('o-hidden')
+    elementClass(document.body).add('overflowHidden')
     this.props.dispatch(UIActions.openMenu())
   }
 
   closeMenu () {
-    elementClass(document.body).remove('o-hidden')
+    elementClass(document.body).remove('overflowHidden')
     this.props.dispatch(UIActions.closeMenu())
   }
 }

@@ -10,8 +10,8 @@
     padding: 0 1em;
   }
 
-  @media large {
-    lost-center: 60em;
+  @media notSmall {
+    lost-center: 45.5em;
   }
 }
 
@@ -20,7 +20,7 @@
   flex-flow: row;
   background-color: white;
   padding: 0 1em;
-  margin: 3em 0;
+  margin: 2em 0;
   height: 128px;
   box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.20);
   position: relative;
@@ -59,11 +59,11 @@
   margin-bottom: 20px;
 
   @media medium {
-    width: 80%;
+    width: 60%;
   }
 
   @media large {
-    width: 600px;
+    width: 500px;
   }
 }
 

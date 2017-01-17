@@ -1,5 +1,5 @@
 @import "../../styles/variables.css";
-@value xNotSmall, xMedium, xLarge from "../../styles/media-queries.css";
+@value notSmall, medium, large from "../../styles/media-queries.css";
 
 .subHeader {
   display: flex;
@@ -19,7 +19,7 @@
   top: 10px;
   margin-bottom: 14px;
 
-  @media xNotSmall {
+  @media notSmall {
     top: 18px;
     margin-bottom: 25px;
   }
@@ -31,7 +31,7 @@
   justify-content: center;
   cursor: pointer;
 
-  @media xNotSmall {
+  @media notSmall {
     display: none;
   }
 }
