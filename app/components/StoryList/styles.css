@@ -10,8 +10,22 @@
   }
 
   &:first-of-type {
-    @media notSmall {
-      padding-top: 3em;
+    h2 {
+      padding-bottom: 0.625rem;
+    }
+
+    @media medium {
+      padding-top: 1em;
+    }
+
+    @media large {
+      padding-top: 2.5em;
+    }
+  }
+
+  &:not(:first-of-type) {
+    h2 {
+      padding: 1rem 0;
     }
   }
 }
