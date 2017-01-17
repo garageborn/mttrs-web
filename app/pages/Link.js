@@ -68,9 +68,17 @@ class Link extends Component {
 }
 
 Link.propTypes = {
+  createLinkAccess: PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired,
   intl: PropTypes.shape({
     formatMessage: PropTypes.function
-  })
+  }),
+  data: PropTypes.shape({
+    link: PropTypes.shape({
+      story: PropTypes.object.isRequired,
+      title: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired
 }
 
 const LinkWithIntl = injectIntl(Link)
