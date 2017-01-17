@@ -25,6 +25,7 @@ body {
 ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 a {
@@ -33,15 +34,20 @@ a {
 }
 
 main {
-  padding-top: 45px;
-
-  @media (min-width: 30em) {
-    padding-top: 0;
-  }
+  position: relative;
+  top: 7.5em;
 }
 
 :global {
-  .o-hidden {
+  .overflowHidden {
     overflow: hidden;
+  }
+
+  .visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
   }
 }

@@ -6,30 +6,22 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: $mttrsBlue;
   padding: 0.625em;
   width: 100%;
+}
 
-  @media notSmall {
-    width: auto;
-  }
-
-  @media medium {
-    height: 3.75em;
-  }
-
-  @media large {
-    margin-left: -2.5em;
-  }
+.title {
+  display: inline-block;
 }
 
 .logoSection {
-  display: none;
+  position: relative;
+  top: 10px;
+  margin-bottom: 14px;
 
   @media notSmall {
-    display: block;
-    position: relative;
-    top: 1px;
+    top: 18px;
+    margin-bottom: 25px;
   }
 }
 

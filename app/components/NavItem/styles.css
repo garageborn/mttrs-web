@@ -2,35 +2,102 @@
 @value notSmall, medium, large from "../../styles/media-queries.css";
 
 .active {
-  border-bottom: 4px solid $mttrsSecondaryBlue;
+  .name {
+    opacity: 1;
+  }
+
+  .color {
+    height: 10px;
+
+    @media medium {
+      height: 20px;
+    }
+
+    @media large {
+      height: 25px;
+    }
+  }
 }
 
 .item {
   display: inline-block;
-  font-size: 1.125rem;
+  width: 100%;
+  font-size: 0;
+  font-weight: 300;
+  text-align: center;
 
   @media medium {
-    margin: 0 0.5em;
+    font-size: 0.75rem;
   }
 
   @media large {
-    margin-left: 1.125em;
+    width: 7.125rem;
+    font-size: 0.9375rem;
   }
 }
 
-.itemLink {
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   text-decoration: none;
   color: #FFF;
-  padding: 0.25em 0;
   transition: color .5s ease-in-out;
 
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10px;
+
+    @media medium {
+      height: 20px;
+    }
+
+    @media large {
+      height: 25px;
+    }
+  }
+
   &:hover {
-    /* TODO:
-     * composes: active; -- do not work bc global var(--mttrsSecondaryBlue) :(
-     */
-    border-bottom: 4px solid $mttrsSecondaryBlue;
+    .name {
+      opacity: 1;
+    }
+
+    .color {
+      height: 10px;
+
+      @media medium {
+        height: 20px;
+      }
+
+      @media large {
+        height: 25px;
+      }
+    }
   }
+}
+
+.name {
+  opacity: 0.5;
+
+  @media notSmall {
+    display: block;
+  }
+
   @media medium {
-    padding: 0.3125em;
+    margin-bottom: 0.2em;
   }
+
+  @media large {
+    margin-bottom: 0.3em;
+  }
+}
+
+.color {
+  display: block;
+  width: 100%;
+  height: 5px;
 }

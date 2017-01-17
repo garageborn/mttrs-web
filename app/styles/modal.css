@@ -1,3 +1,4 @@
+@import "variables.css";
 @value notSmall, medium, large from "./media-queries.css";
 
 :global {
@@ -39,7 +40,7 @@
 
 .modal {
   position: fixed;
-  top: 50px;
+  top: 100px;
   left: 10px;
   right: 10px;
   bottom: 70px;
@@ -51,8 +52,8 @@
   padding: 0;
 
   @media notSmall {
-    lost-center: 60em;
-    top: 90px;
+    lost-center: 45.5em;
+    top: 140px;
   }
 }
 
@@ -62,5 +63,5 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #262C5B
+  background-color: $mttrsGray;
 }

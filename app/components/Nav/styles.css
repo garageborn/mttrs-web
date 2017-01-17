@@ -2,21 +2,21 @@
 @value notSmall, medium, large from "../../styles/media-queries.css";
 
 .nav {
-  display: none;
-  font-family: 'Cabin', sans-serif;
-  color: #FFF;
-
-  @media notSmall {
-    display: flex;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media medium {
-    background: $mttrsSecondaryBlue;
-    justify-content: center;
+    lost-center: 100%;
   }
 
   @media large {
-    background: $mttrsBlue;
-    margin-right: -2.5em;
+    lost-center: 71.25em;
+  }
+
+  ul {
+    display: flex;
+    flex-basis: calc((10 * 100%) / 10);
+    flex-direction: row;
   }
 }
