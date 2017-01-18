@@ -18,7 +18,7 @@ const StorySummary = ({story}) => {
           <div className={styles.gradient} />
           <div className={styles.button}>
             <div className={styles.buttonText}>show more</div>
-            <div className={styles.showLessTriangle} />
+            <div className={styles.showMoreTriangle} />
           </div>
         </div>
       </div>

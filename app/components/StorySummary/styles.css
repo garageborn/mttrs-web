@@ -79,7 +79,8 @@
   background: #F7F7F8;
   font-size: 0.8125rem;
   font-weight: 500;
-  color: #2D2D2B
+  color: #2D2D2B;
+  cursor: pointer;
 }
 
 .buttonText {
@@ -92,6 +93,12 @@
   border-right: 5px solid transparent;
   margin: 7px 3px;
   position: relative;
+}
+
+.showMoreTriangle {
+  composes: expandButtonTriangle;
+  border-bottom: 0px;
+  border-top: 5px solid #2D2D2B;
 }
 
 .showLessTriangle {
