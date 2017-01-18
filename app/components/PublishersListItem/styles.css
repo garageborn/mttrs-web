@@ -1,0 +1,26 @@
+@import "../../styles/variables.css";
+
+.container {
+  &:hover {
+    background: $mttrsBackgroundColor;
+  }
+}
+
+.publisher {
+  color: $mttrsGray;
+  display: flex;
+  align-items: center;
+  height: 4.85rem;
+  padding: 0 0.5325rem;
+  font-size: 0.875rem;
+  border-bottom: 1px solid $mttrsBackgroundColor;
+  margin: 0 0.65625rem;
+
+  > div {
+    margin-right: 0.75em;
+  }
+
+  &:focus {
+    outline: thin dotted;
+  }
+}

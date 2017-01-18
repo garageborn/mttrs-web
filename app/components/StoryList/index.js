@@ -3,12 +3,16 @@ import StoryContainer from '../../containers/StoryContainer'
 import StoryListHeader from '../StoryListHeader'
 import styles from './styles.css'
 
-class StoryListContainer extends Component {
+class StoryList extends Component {
+  getClassNames () {
+    const { type } = this.props
+    if (type !== 'publisher') return styles.container
+    return styles.containerNotPublisher
+  }
   render () {
     const {date, stories} = this.props
-
     return (
-      <div className={styles.container}>
+      <div className={this.getClassNames()}>
         <StoryListHeader date={date} />
         {stories.map((story) => this.renderStory(story))}
       </div>
@@ -20,18 +24,19 @@ class StoryListContainer extends Component {
   }
 }
 
-StoryListContainer.propTypes = {
+StoryList.propTypes = {
   stories: PropTypes.array.isRequired,
   date: PropTypes.any.isRequired,
   options: PropTypes.shape({
     renderCategory: PropTypes.bool
-  })
+  }),
+  type: PropTypes.string.isRequired
 }
 
-StoryListContainer.defaultProps = {
+StoryList.defaultProps = {
   options: {
     renderCategory: true
   }
 }
 
-export default StoryListContainer
+export default StoryList

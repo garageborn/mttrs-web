@@ -28,4 +28,10 @@
       padding: 1rem 0;
     }
   }
+  margin-top: 7.5em
+}
+
+.containerNotPublisher {
+  composes: container;
+  margin-top: 0;
 }

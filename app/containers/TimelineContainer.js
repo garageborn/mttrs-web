@@ -60,10 +60,11 @@ class TimelineContainer extends Component {
   }
 
   renderStoryList (item) {
-    const {options} = this.props
+    const {options, type} = this.props
     if (!item.stories.length) return
     return (
       <StoryList
+        type={type}
         key={item.date}
         date={item.date}
         stories={item.stories}

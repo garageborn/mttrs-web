@@ -1,0 +1,48 @@
+@value notSmall, medium, large from "../../styles/media-queries.css";
+
+.search {
+  display: flex;
+  align-items: center;
+  height: 2.5625rem;
+  border-radius: 4px;
+  border-radius: 0px;
+  border: 1px solid #F1F1F1;
+  background-color: #DADADA;
+  box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.2);
+
+  svg {
+    margin-left: 1em;
+    margin-right: 0.7em;
+  }
+}
+
+.input {
+  border: 0;
+  outline: 0;
+  width: 100%;
+  font-size: .9rem;
+  color: #999;
+
+  background-color: #DADADA;
+  &::placeholder {
+    color: white;
+  }
+}
+
+.outerBorder {
+  margin: 0.34375rem auto 0.875rem;
+  @media notSmall {
+    margin: 0;
+    border: 1px solid #F1F1F1;
+  }
+}
+
+.close {
+  font-size: .8em;
+  background-color: #999;
+  color: white;
+  cursor: pointer;
+  padding: .1rem .3rem;
+  margin-right: .5rem;
+  border-radius: 4px;
+}

@@ -29,7 +29,7 @@ class Home extends Component {
     return (
       <Layout {...this.meta()}>
         <Header />
-        <TimelineContainer />
+        <TimelineContainer type='home'/>
         {this.renderModal()}
       </Layout>
     )
