@@ -1,8 +1,10 @@
 import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
 import Layout from './Layout'
 import { injectIntl, defineMessages } from 'react-intl'
 import Header from '../components/Header'
 import PublishersListContainer from '../containers/PublishersListContainer'
+import { UIActions } from '../actions/index'
 
 const messages = defineMessages({
   pageTitle: { id: 'publisher.pageTitle' }
@@ -10,16 +12,8 @@ const messages = defineMessages({
 
 class Publishers extends Component {
   componentDidMount () {
-    this.updateSection(this.props)
+    this.updateSection()
   }
-
-  // componentWillReceiveProps (nextProps) {
-  //   let loadingWillChange = this.props.data.loading !== nextProps.data.loading
-  //   let nextWillNotBeLoading = nextProps.data.loading === false
-  //   if (loadingWillChange && nextWillNotBeLoading) {
-  //     this.updateSection(nextProps)
-  //   }
-  // }
 
   render () {
     return (
@@ -31,12 +25,13 @@ class Publishers extends Component {
   }
 
   updateSection (props) {
-    // if (props.data.loading) return
-    // let section = {
-    //   type: 'publisher',
-    //   model: props.data.publisher
-    // }
-    // this.props.dispatch(UIActions.updateSection(section))
+    let section = {
+      type: 'publishers',
+      model: {
+        name: 'Publishers'
+      }
+    }
+    this.props.dispatch(UIActions.updateSection(section))
   }
 
   meta () {
@@ -49,15 +44,12 @@ class Publishers extends Component {
 }
 
 Publishers.propTypes = {
+  dispatch: PropTypes.func.isRequired,
   intl: PropTypes.shape({
     formatMessage: PropTypes.function
-  }),
-  data: PropTypes.shape({
-    publisher: PropTypes.object,
-    loading: PropTypes.bool
   })
 }
 
-
 const PublishersWithIntl = injectIntl(Publishers)
-export default PublishersWithIntl
+const PublisherWithRedux = connect()(PublishersWithIntl)
+export default PublisherWithRedux
