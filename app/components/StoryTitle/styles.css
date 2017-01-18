@@ -11,7 +11,7 @@
   }
 
   @media large {
-    @mixin lineClamp 1.2rem, 1.3, 1, #FFF;
+    @mixin lineClamp 1.2rem, 1.3, 2, #FFF;
   }
 }
 
