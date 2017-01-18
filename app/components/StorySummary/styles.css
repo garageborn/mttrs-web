@@ -60,10 +60,14 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 4rem;
   width: 100%;
   margin-top: -1rem;
   z-index: 2;
+}
+
+.footerWithGradient {
+  composes: footer;
+  height: 4rem;
 }
 
 .gradient {
@@ -81,6 +85,7 @@
   font-weight: 500;
   color: #2D2D2B;
   cursor: pointer;
+  height: 2rem;
 }
 
 .buttonText {
