@@ -1,1 +1,100 @@
 @value notSmall from "../../styles/media-queries.css";
+
+.container {
+  lost-center: 55.5em
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  background: transparent;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 8px solid;
+  position: absolute
+}
+
+.triangleContainer {
+  position: absolute;
+  z-index: 1;
+  margin-left: 0.9375rem;
+}
+
+.outerTriangle {
+  composes: triangle;
+  border-bottom-color: #DDDDDD;
+}
+
+.innerTriangle {
+  composes: triangle;
+  margin-top: 1px;
+  border-bottom-color: #F7F7F8;
+}
+
+.box {
+  position: relative;
+  margin-top: 8px;
+  padding: 0.9375rem;
+  border-radius: 5px;
+  background-color: #F7F7F8;
+  border: 1px solid #DDDDDD;
+}
+
+.headline {
+  color: #666666;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 5px;
+  padding-left: 5px
+}
+
+.text {
+  font-size: 0.875rem;
+  line-height: 1.4375rem;
+  opacity: 0.95;
+  color: #666
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rem;
+  width: 100%;
+  margin-top: -1rem;
+  z-index: 2;
+}
+
+.gradient {
+  height: 2rem;
+  background: linear-gradient(-180deg, rgba(247, 247, 248, 0.2) 0%, #F7F7F8 100%);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  background: #F7F7F8;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #2D2D2B
+}
+
+.buttonText {
+  margin-right: 0.5rem;
+}
+
+.expandButtonTriangle {
+  composes: triangle;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  margin: 7px 3px;
+  position: relative;
+}
+
+.showLessTriangle {
+  composes: expandButtonTriangle;
+  border-bottom: 5px solid #2D2D2B;
+}
