@@ -35,7 +35,7 @@ a {
 
 main {
   position: relative;
-  top: 7.5em;
+  /*top: 7.5em;*/
 }
 
 :global {

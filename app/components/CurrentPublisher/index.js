@@ -5,9 +5,11 @@ import styles from './styles.css'
 const CurrentPublisher = ({publisher}) => {
   if (!publisher) return <div />
   return (
-    <div className={styles.publisher}>
-      <PublisherIcon publisher={publisher} size='huge' />
-      {publisher.name}
+    <div className={styles.container}>
+      <div className={styles.publisher}>
+        <PublisherIcon publisher={publisher} size='huge' />
+        {publisher.name}
+      </div>
     </div>
   )
 }

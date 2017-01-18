@@ -31,9 +31,9 @@ class Publisher extends Component {
     return (
       <Layout {...this.meta()}>
         <Header />
-        <PublishersListContainer type='publisherPage' />
+        <PublishersListContainer />
         <CurrentPublisher publisher={this.props.data.publisher} />
-        <TimelineContainer queryVariables={queryVariables} />
+        <TimelineContainer type='publisher' queryVariables={queryVariables} />
       </Layout>
     )
   }

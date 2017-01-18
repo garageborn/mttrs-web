@@ -14,4 +14,10 @@
       padding-top: 3em;
     }
   }
+  margin-top: 7.5em
+}
+
+.containerNotPublisher {
+  composes: container;
+  margin-top: 0;
 }

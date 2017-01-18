@@ -1,5 +1,9 @@
 @import "../../styles/variables.css";
 
+.container {
+  lost-center: 45.5em;
+}
+
 .publisher {
   color: $mttrsGray;
   display: flex;

@@ -25,7 +25,7 @@ class Publishers extends Component {
     return (
       <Layout {...this.meta()}>
         <Header />
-        <PublishersListContainer type='publisherPage' />
+        <PublishersListContainer type='publishers' />
       </Layout>
     )
   }

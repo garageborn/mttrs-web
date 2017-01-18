@@ -10,9 +10,9 @@ const messages = defineMessages({
   }
 })
 
-const PublishersSearch = ({handleFocus, deactivateSearch, isActive, handleSearchTerm, intl}) => {
+const PublishersSearch = ({fromPublishersPage, handleFocus, deactivateSearch, isActive, handleSearchTerm, intl}) => {
   let renderClose = <div />
-  if (isActive) {
+  if (isActive && !fromPublishersPage) {
     renderClose = (
       <div
         className={styles.close}
@@ -43,6 +43,7 @@ PublishersSearch.propTypes = {
   deactivateSearch: PropTypes.func.isRequired,
   handleFocus: PropTypes.func.isRequired,
   handleSearchTerm: PropTypes.func.isRequired,
+  fromPublishersPage: PropTypes.bool,
   intl: PropTypes.shape({
     formatMessage: PropTypes.func.isRequired
   }).isRequired

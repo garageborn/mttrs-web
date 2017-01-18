@@ -10,7 +10,6 @@
   background-color: #DADADA;
   box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.2);
 
-
   svg {
     margin-left: 1em;
     margin-right: 0.7em;
@@ -22,7 +21,7 @@
   outline: 0;
   width: 100%;
   font-size: .9rem;
-  color: #DADADA;
+  color: #999;
 
   background-color: #DADADA;
   &::placeholder {

@@ -30,7 +30,7 @@ class Category extends Component {
     return (
       <Layout {...this.meta()}>
         <Header />
-        <TimelineContainer queryVariables={queryVariables} options={options} />
+        <TimelineContainer type='category' queryVariables={queryVariables} options={options} />
       </Layout>
     )
   }

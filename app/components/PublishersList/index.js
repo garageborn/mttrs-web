@@ -15,6 +15,14 @@ class PublishersList extends Component {
     }
   }
 
+  componentWillMount () {
+    if (this.props.type === 'publishers') {
+      this.setState({
+        isSearchActive: true
+      })
+    }
+  }
+
   render () {
     return (
       <div className={styles.container}>
@@ -25,6 +33,7 @@ class PublishersList extends Component {
             handleFocus={this.handleFocus}
             deactivateSearch={this.deactivateSearch}
             handleSearchTerm={this.handleSearchTerm}
+            fromPublishersPage={this.props.type === 'publishers'}
           />
         </div>
         {this.renderPublishersList()}
@@ -46,12 +55,11 @@ class PublishersList extends Component {
   }
 
   renderSearchDisclaimer () {
-    if (this.props.type !== 'publisherPage') return
     return <p className={styles.disclaimer}>Search for publishers</p>
   }
 
   renderPublishersList () {
-    if (this.props.type === 'publisherPage' && !this.state.isSearchActive) return
+    if (!this.state.isSearchActive) return
     return (
       <ul className={styles.publishers}>
         {this.renderPublishers()}
@@ -60,11 +68,10 @@ class PublishersList extends Component {
   }
 
   renderPublishers () {
-    const { publishers, closeMenu } = this.props
-    const onSelectPublisher = this.props.type !== 'publisherPage' ? closeMenu : this.deactivateSearch
+    const { publishers } = this.props
     const queryMatcher = new RegExp(this.state.query, 'i')
     const filteredPublishers = publishers.filter(publisher => publisher.name.match(queryMatcher))
-    return filteredPublishers.map((publisher) => <PublishersListItem onSelectPublisher={onSelectPublisher} key={publisher.id} publisher={publisher} />)
+    return filteredPublishers.map((publisher) => <PublishersListItem onSelectPublisher={this.deactivateSearch} key={publisher.id} publisher={publisher} />)
   }
 
   handleSearchTerm (e) {
@@ -76,8 +83,7 @@ class PublishersList extends Component {
 
 PublishersList.propTypes = {
   type: PropTypes.string,
-  publishers: PropTypes.array.isRequired,
-  closeMenu: PropTypes.func
+  publishers: PropTypes.array.isRequired
 }
 
 export default PublishersList
