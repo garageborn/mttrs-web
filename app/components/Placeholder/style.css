@@ -2,14 +2,15 @@
 @value notSmall, medium, large from "../../styles/media-queries.css";
 
 .container {
-  padding-top: 12.25rem;
+  padding-top: 10rem;
 }
 
 .containerPublisher {
-  padding-top: 2.2rem;
+  padding-top: 0;
 }
 
 .wrapper {
+  margin-top: 0.675rem;
   @media medium {
     padding: 0 1em;
   }

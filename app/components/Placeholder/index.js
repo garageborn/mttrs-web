@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import Item from './item'
+import StoryListHeader from '../StoryListHeader'
 import styles from './style.css'
 
 const Placeholder = ({pageType}) => {
@@ -9,6 +10,7 @@ const Placeholder = ({pageType}) => {
   }
   return (
     <div className={containerStyles}>
+      <StoryListHeader type='placeholder'/>
       <div className={styles.wrapper}>
         <Item />
         <Item />
