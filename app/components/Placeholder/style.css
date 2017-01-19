@@ -1,11 +1,16 @@
 @import "../../styles/mixins.css";
 @value notSmall, medium, large from "../../styles/media-queries.css";
 
-.placeholder {
-  padding-top: 200px;
+.container {
+  padding-top: 10rem;
+}
+
+.containerPublisher {
+  padding-top: 0;
 }
 
 .wrapper {
+  margin-top: 0.675rem;
   @media medium {
     padding: 0 1em;
   }
