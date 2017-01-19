@@ -7,9 +7,9 @@ class StoryList extends Component {
   getClassNames () {
     const { type } = this.props
     if (type !== 'publisher') return styles.container
-    return styles.containerNotPublisher
+    return styles.containerPublisher
   }
-  
+
   render () {
     const {date, stories} = this.props
     return (

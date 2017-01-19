@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import Item from './item'
 import styles from './style.css'
 
-const Placeholder = () => {
+const Placeholder = ({pageType}) => {
+  let containerStyles = styles.container
+  if (pageType === 'publisher') {
+    containerStyles = styles.containerPublisher
+  }
   return (
-    <div className={styles.placeholder}>
+    <div className={containerStyles}>
       <div className={styles.wrapper}>
         <Item />
         <Item />
@@ -15,6 +19,10 @@ const Placeholder = () => {
       </div>
     </div>
   )
+}
+
+Placeholder.propTypes = {
+  pageType: PropTypes.string
 }
 
 export default Placeholder

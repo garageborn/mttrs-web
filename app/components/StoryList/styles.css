@@ -32,10 +32,18 @@
   }
 }
 
-.containerNotPublisher {
+.containerPublisher {
   composes: container;
-  
+
   &:first-of-type {
     margin-top: 0;
+
+    @media medium {
+      padding-top: 0;
+    }
+
+    @media large {
+      padding-top: 0;
+    }
   }
 }
