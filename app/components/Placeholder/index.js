@@ -10,6 +10,8 @@ const Placeholder = () => {
         <Item />
         <Item />
         <Item />
+        <Item />
+        <Item />
       </div>
     </div>
   )
