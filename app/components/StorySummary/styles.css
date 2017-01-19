@@ -1,7 +1,7 @@
 @value notSmall from "../../styles/media-queries.css";
 
 .container {
-  lost-center: 55.5em
+  lost-center: 45.5em
 }
 
 .triangle {
@@ -40,6 +40,12 @@
   border: 1px solid #DDDDDD;
 }
 
+.boxNotExpanded {
+  composes: box;
+  max-height: 10rem;
+  overflow: hidden;
+}
+
 .headline {
   color: #666666;
   font-size: 1rem;
@@ -52,7 +58,8 @@
   font-size: 0.875rem;
   line-height: 1.4375rem;
   opacity: 0.95;
-  color: #666
+  color: #666;
+  padding-bottom: 1rem;
 }
 
 .footer {
@@ -61,8 +68,7 @@
   left: 0;
   right: 0;
   width: 100%;
-  margin-top: -1rem;
-  z-index: 2;
+  z-index: 1;
 }
 
 .footerWithGradient {
@@ -86,6 +92,8 @@
   color: #2D2D2B;
   cursor: pointer;
   height: 2rem;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .buttonText {

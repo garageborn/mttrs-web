@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react'
+import ReactDOM from 'react-dom'
 import styles from './styles.css'
 
 const charsTreshold = 200
@@ -12,12 +13,25 @@ class StorySummary extends Component {
     }
   }
 
+  componentWillUpdate (nextProps, nextState) {
+    let summaryElement = ReactDOM.findDOMNode(this)
+    let storyElement = summaryElement.parentNode
+    let willChangeExpandedState = (this.state.isExpanded !== nextState.isExpanded)
+    if (willChangeExpandedState) {
+      this.handleScroll(storyElement)
+    }
+  }
+
+  handleScroll (storyElement) {
+    if (window.scrollY < storyElement.offsetTop) return
+    return window.scrollTo(0, storyElement.offsetTop)
+  }
+
   bigSummary () {
     return this.props.story.summary.length > charsTreshold
   }
 
   summary (story) {
-    if (this.bigSummary() && !this.state.isExpanded) return story.summary.slice(0, 200)
     return story.summary
   }
 
@@ -55,6 +69,11 @@ class StorySummary extends Component {
     })
   }
 
+  getBoxStyles () {
+    if (this.state.isExpanded) return styles.box
+    return styles.boxNotExpanded
+  }
+
   render () {
     const { story } = this.props
     return (
@@ -63,7 +82,7 @@ class StorySummary extends Component {
           <div className={styles.outerTriangle} />
           <div className={styles.innerTriangle} />
         </div>
-        <div className={styles.box}>
+        <div className={this.getBoxStyles()}>
           <div className={styles.headlineContainer}>
             👔
           <span className={styles.headline}>{story.headline.toUpperCase()}</span>
