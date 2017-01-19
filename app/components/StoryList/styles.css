@@ -11,7 +11,7 @@
 
   &:first-of-type {
     margin-top: 7.5em;
-    
+
     h2 {
       padding-bottom: 0.625rem;
     }
@@ -34,5 +34,8 @@
 
 .containerNotPublisher {
   composes: container;
-  margin-top: 0;
+  
+  &:first-of-type {
+    margin-top: 0;
+  }
 }
