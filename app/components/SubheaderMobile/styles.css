@@ -7,6 +7,11 @@
   align-items: center;
 }
 
+::-webkit-:host:not(:root:root), .container,
+::-webkit-:-webkit-full-screen:host:not(:root:root), .container {
+  width: 92px;
+}
+
 .text {
   color: #FFF;
   font-size: 0.75rem;
