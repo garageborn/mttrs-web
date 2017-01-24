@@ -1,6 +1,6 @@
 apps:
   - name: pageserver
-  cwd: '/home/garageborn/mttrs-web/current'
+    cwd: '/home/garageborn/mttrs-web/current'
     script: './server/page-server/entry.js'
     instances: 1
     exec_mode: fork
