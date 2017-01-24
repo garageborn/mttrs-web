@@ -2,14 +2,18 @@ namespace :build do
   desc 'Build client assets'
   task :client do
     on roles(:app) do
-      execute(:node, 'production-build-client')
+      within fetch(:release_path) do
+        execute(:npm, :run, 'production-build-client')
+      end
     end
   end
 
   desc 'Build server assets'
   task :server do
     on roles(:app) do
-      execute(:node, 'production-build-server')
+      within fetch(:release_path) do
+        execute(:npm, :run, 'production-build-server')
+      end
     end
   end
 
