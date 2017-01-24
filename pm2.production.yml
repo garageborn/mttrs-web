@@ -1,0 +1,17 @@
+apps:
+  - name: pageserver
+    script: './server/page-server/entry.js'
+    instances: 1
+    exec_mode: cluster
+    combine_logs: true
+    error_file: './log/pageserver.error.log'
+    out_file: './log/pageserver.out.log'
+    pid_file: './tmp/pids/pageserver.pid'
+
+  - name: webserver
+    script: './server/web-server/entry.js'
+    instances: 1
+    exec_mode: cluster
+    error_file: './log/webserver.error.log'
+    out_file: './log/webserver.out.log'
+    pid_file: './tmp/pids/webserver.pid'
