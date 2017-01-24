@@ -1,10 +1,9 @@
 namespace :pm2 do
   desc 'Restart app'
-  task :restart do
-    p '--------------restart'
+  task :reload do
     on roles(:app) do
       within fetch(:release_path) do
-        execute(:pm2, :restart, fetch(:pm2_file))
+        execute(:pm2, :reload, fetch(:pm2_file))
       end
     end
   end
@@ -36,7 +35,7 @@ namespace :pm2 do
     end
   end
 
-  before 'deploy:publishing', 'pm2:restart'
+  before 'deploy:publishing', 'pm2:reload'
 end
 
 namespace :load do
