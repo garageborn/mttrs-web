@@ -1,0 +1,19 @@
+apps:
+  - name: pageserver
+    cwd: '/home/garageborn/mttrs-web/current'
+    script: './server/page-server/entry.js'
+    instances: 1
+    exec_mode: fork
+    combine_logs: true
+    error_file: './log/pageserver.error.log'
+    out_file: './log/pageserver.out.log'
+    pid_file: './tmp/pids/pageserver.pid'
+
+  - name: webserver
+    cwd: '/home/garageborn/mttrs-web/current'
+    script: './server/web-server/entry.js'
+    instances: 1
+    exec_mode: fork
+    error_file: './log/webserver.error.log'
+    out_file: './log/webserver.out.log'
+    pid_file: './tmp/pids/webserver.pid'

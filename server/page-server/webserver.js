@@ -1,7 +1,7 @@
 import http from 'http'
 import express from 'express'
 import Log from '../common/log'
-const log = Log('webpage renderer')
+const log = Log('pageserver.app')
 import RequestHandler from './requestHandler'
 
 // The server code must export a function

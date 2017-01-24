@@ -1,3 +1,3 @@
 import log from '../common/log'
 
-export default log('webapp web server')
+export default log('webserver.app')
