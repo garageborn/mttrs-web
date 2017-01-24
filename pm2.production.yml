@@ -2,6 +2,7 @@ apps:
   - name: pageserver
     script: '/home/garageborn/mttrs-web/current/server/page-server/entry.js'
     instances: 1
+    exec_mode: fork
     combine_logs: true
     error_file: '/home/garageborn/mttrs-web/current/log/pageserver.error.log'
     out_file: '/home/garageborn/mttrs-web/current/log/pageserver.out.log'
@@ -10,6 +11,7 @@ apps:
   - name: webserver
     script: '/home/garageborn/mttrs-web/current/server/web-server/entry.js'
     instances: 1
+    exec_mode: fork
     error_file: '/home/garageborn/mttrs-web/current/log/webserver.error.log'
     out_file: '/home/garageborn/mttrs-web/current/log/webserver.out.log'
     pid_file: '/home/garageborn/mttrs-web/current/tmp/pids/webserver.pid'
