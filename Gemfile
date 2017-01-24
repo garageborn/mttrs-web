@@ -10,7 +10,6 @@ gem 'httparty', '0.13.7'
 gem 'rake', '11.3.0'
 
 gem 'capistrano-bundler', '1.2.0', require: false
-gem 'capistrano-pm2', '0.0.4', require: false
 gem 'capistrano-rbenv', '2.1.0', require: false
 gem 'capistrano-yarn', '2.0.2', require: false
 gem 'capistrano', '3.7.1'
