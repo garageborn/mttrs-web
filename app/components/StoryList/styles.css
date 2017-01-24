@@ -10,6 +10,8 @@
   }
 
   &:first-of-type {
+    margin-top: 7.5em;
+
     h2 {
       padding-bottom: 0.625rem;
     }
@@ -26,6 +28,22 @@
   &:not(:first-of-type) {
     h2 {
       padding: 1rem 0;
+    }
+  }
+}
+
+.containerPublisher {
+  composes: container;
+
+  &:first-of-type {
+    margin-top: 0;
+
+    @media medium {
+      padding-top: 0;
+    }
+
+    @media large {
+      padding-top: 0;
     }
   }
 }

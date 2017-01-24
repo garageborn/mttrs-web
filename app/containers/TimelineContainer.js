@@ -24,8 +24,8 @@ class TimelineContainer extends Component {
   }
 
   render () {
-    const { data } = this.props
-    if (data.loading) return <Placeholder />
+    const { data, type } = this.props
+    if (data.loading) return <Placeholder pageType={type} />
 
     return (
       <main ref={this.timelineContainerRef}>
@@ -60,10 +60,11 @@ class TimelineContainer extends Component {
   }
 
   renderStoryList (item) {
-    const {options} = this.props
+    const {options, type} = this.props
     if (!item.stories.length) return
     return (
       <StoryList
+        type={type}
         key={item.date}
         date={item.date}
         stories={item.stories}
@@ -74,6 +75,7 @@ class TimelineContainer extends Component {
 }
 
 TimelineContainer.propTypes = {
+  type: PropTypes.string,
   data: PropTypes.object.isRequired,
   options: PropTypes.shape({
     renderCategory: PropTypes.bool

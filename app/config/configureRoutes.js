@@ -5,12 +5,14 @@ import _flattenDeep from 'lodash/flattenDeep'
 import Home from '../pages/Home'
 import Category from '../pages/Category'
 import Publisher from '../pages/Publisher'
+import Publishers from '../pages/Publishers'
 import Link from '../pages/Link'
 
 const defaultRoutes = () => {
   return [
     <Route path='/' component={Home} />,
-    <Route path='/link/:slug' component={Link} />
+    <Route path='/link/:slug' component={Link} />,
+    <Route path='/publishers' component={Publishers} />
   ]
 }
 

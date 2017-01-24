@@ -3,7 +3,7 @@ import gql from 'graphql-tag'
 
 const Query = gql`
   query($slug: String!) {
-    category(slug: $slug) { id name slug color icon_id }
+    category(slug: $slug) { id name slug color image_id }
   }
 `
 

@@ -19,9 +19,9 @@ class PublisherIcon extends Component {
 
   get categoryLogo () {
     const { category } = this.props
-    if (!category.icon_id) return
+    if (!category.image_id) return
     const options = { secure: true, height: 50, width: 50, radius: 'max' }
-    const uri = cloudinary.id(category.icon_id, options)
+    const uri = cloudinary.id(category.image_id, options)
     return uri
   }
 }
@@ -29,7 +29,7 @@ class PublisherIcon extends Component {
 PublisherIcon.propTypes = {
   category: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    icon_id: PropTypes.string.isRequired
+    image_id: PropTypes.string.isRequired
   }).isRequired,
   size: PropTypes.string.isRequired
 }

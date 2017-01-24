@@ -10,7 +10,8 @@ class PublisherIcon extends Component {
     return classNames({
       [styles.image]: true,
       [styles.imageSmall]: size === 'small',
-      [styles.imageBig]: size === 'big'
+      [styles.imageBig]: size === 'big',
+      [styles.imageHuge]: size === 'huge'
     })
   }
 
@@ -24,7 +25,7 @@ class PublisherIcon extends Component {
   get publisherLogo () {
     const { publisher } = this.props
     if (!publisher.icon_id) return
-    const options = { secure: true, height: 50, width: 50, radius: 'max' }
+    const options = { secure: true, height: 55, width: 5, radius: 'max' }
     const uri = cloudinary.id(publisher.icon_id, options)
     return uri
   }

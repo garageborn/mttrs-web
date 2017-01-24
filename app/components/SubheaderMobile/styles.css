@@ -5,11 +5,21 @@
   flex-flow: row;
   justify-content: space-around;
   align-items: center;
+
+  /*
+    Due a Flexbox bug on iOS Safari, we need to set a `width` to `.container`
+    With the hack bellow, we target only Safari 10.
+    Via: http://stackoverflow.com/a/25975282/7228290
+  */
+  @media screen and (min-color-index: 0) and (-webkit-min-device-pixel-ratio: 0) {
+    width: 92px;
+  }
 }
 
 .text {
   color: #FFF;
   font-size: 0.75rem;
+  font-weight: 300;
   text-decoration: none;
   margin: 0 .75em;
 }
