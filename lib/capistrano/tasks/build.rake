@@ -4,7 +4,7 @@ namespace :build do
     on roles(:app) do
       within fetch(:release_path) do
         execute(:npm, :run, 'production-build-client')
-        execute(:ln, '-sf', 'build/assets', 'public/assets')
+        execute(:ln, '-sf', "#{ fetch(:release_path) }/build/assets", "#{ fetch(:release_path) }/public/assets")
       end
     end
   end
