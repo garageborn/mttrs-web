@@ -4,6 +4,7 @@ namespace :build do
     on roles(:app) do
       within fetch(:release_path) do
         execute(:npm, :run, 'production-build-client')
+        execute(:mv, 'build/assets', 'public/assets')
       end
     end
   end
