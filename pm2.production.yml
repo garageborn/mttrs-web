@@ -1,17 +1,19 @@
 apps:
   - name: pageserver
-    script: '/home/garageborn/mttrs-web/current/server/page-server/entry.js'
+    script: './server/page-server/entry.js'
+    cwd: '/home/garageborn/mttrs-web/current'
     instances: 1
     exec_mode: cluster
     combine_logs: true
-    error_file: '/home/garageborn/mttrs-web/current/log/pageserver.error.log'
-    out_file: '/home/garageborn/mttrs-web/current/log/pageserver.out.log'
-    pid_file: '/home/garageborn/mttrs-web/current/tmp/pids/pageserver.pid'
+    error_file: './log/pageserver.error.log'
+    out_file: './log/pageserver.out.log'
+    pid_file: './tmp/pids/pageserver.pid'
 
   - name: webserver
-    script: '/home/garageborn/mttrs-web/current/server/web-server/entry.js'
+    script: './server/web-server/entry.js'
+    cwd: '/home/garageborn/mttrs-web/current'
     instances: 1
     exec_mode: cluster
-    error_file: '/home/garageborn/mttrs-web/current/log/webserver.error.log'
-    out_file: '/home/garageborn/mttrs-web/current/log/webserver.out.log'
-    pid_file: '/home/garageborn/mttrs-web/current/tmp/pids/webserver.pid'
+    error_file: './log/webserver.error.log'
+    out_file: './log/webserver.out.log'
+    pid_file: './tmp/pids/webserver.pid'
