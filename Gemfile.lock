@@ -109,7 +109,6 @@ DEPENDENCIES
   capistrano-bundler (= 1.2.0)
   capistrano-rbenv (= 2.1.0)
   capistrano-yarn (= 2.0.2)
-  httparty (= 0.13.7)
   pronto (= 0.7.1)
   pronto-eslint_npm (= 0.7.1)
   pronto-flay (= 0.7.0)
@@ -118,4 +117,4 @@ DEPENDENCIES
   slackistrano (= 3.1.0)
 
 BUNDLED WITH
-   1.13.7
+   1.14.3
