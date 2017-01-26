@@ -2,7 +2,7 @@ import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
 const defaultVariables = {
-  days: 7,
+  days: 5,
   offset: 0,
   perDay: 10,
   categorySlug: '',
