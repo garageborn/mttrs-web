@@ -75,6 +75,6 @@
 .publisher {
   @mixin animated-background;
 
-  width: 130px;
+  width: 50%;
   height: 15px;
 }
