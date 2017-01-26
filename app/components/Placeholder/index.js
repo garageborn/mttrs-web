@@ -10,7 +10,7 @@ const Placeholder = ({pageType}) => {
   }
   return (
     <div className={containerStyles}>
-      <StoryListHeader type='placeholder'/>
+      <StoryListHeader type='placeholder' />
       <div className={styles.wrapper}>
         <Item />
         <Item />
