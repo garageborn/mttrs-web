@@ -3,39 +3,18 @@ import { Link } from 'react-router'
 import { injectIntl, defineMessages } from 'react-intl'
 import _capitalize from 'lodash/capitalize'
 import PublisherIcon from '../PublisherIcon'
-import StoryLinksModal from '../StoryLinksModal'
 import styles from './styles.css'
 
 const messages = defineMessages({
-  from: {
-    id: 'from',
-    defaultMessage: 'From'
-  },
-
-  and: {
-    id: 'and',
-    defaultMessage: 'and'
-  },
-
-  other: {
-    id: 'other',
-    defaultMessage: 'other'
-  },
-
-  others: {
-    id: 'others',
-    defaultMessage: 'others'
-  }
+  from: { id: 'from' },
+  and: { id: 'and' },
+  other: { id: 'other' },
+  others: { id: 'others' }
 })
 
 class StoryInfo extends Component {
-  constructor () {
-    super()
-    this.handleStoryLinks = this.handleStoryLinks.bind(this)
-  }
-
   renderPublishers () {
-    if (this.props.otherLinks.length === 0) return this.renderMainPublisherName()
+    if (this.props.otherLinksCount === 0) return this.renderMainPublisherName()
     return this.renderPublishersText()
   }
 
@@ -49,45 +28,39 @@ class StoryInfo extends Component {
   }
 
   renderOtherLinks () {
-    const { formatMessage } = this.props.intl
-    let otherString = formatMessage(messages.other)
-    if (this.props.otherLinks.length > 1) otherString = formatMessage(messages.others)
-    return <a onClick={this.handleStoryLinks}>{this.props.otherLinks.length} {otherString}</a>
+    const { story, otherLinksCount, intl, handleStoryLinks } = this.props
+    let otherString = intl.formatMessage(messages.other)
+    if (otherLinksCount > 1) otherString = intl.formatMessage(messages.others)
+    return (
+      <a onClick={() => handleStoryLinks(story)}>
+        {otherLinksCount} {otherString}
+      </a>
+    )
   }
 
   renderPublisherIcon () {
     return <PublisherIcon size='small' publisher={this.props.mainLink.publisher} />
   }
 
-  handleStoryLinks () {
-    const { story, handleStoryLinks } = this.props
-    handleStoryLinks(
-      'storyLinks',
-      <StoryLinksModal
-        story={story}
-        mainLink={this.props.mainLink}
-        otherLinks={this.props.otherLinks}
-      />
-    )
-  }
-
   render () {
     const { formatMessage } = this.props.intl
     let from = formatMessage(messages.from)
     return (
-      <div className={styles.text}>{_capitalize(from)}&nbsp;{this.renderPublisherIcon()}&nbsp;{this.renderPublishers()}</div>
+      <div className={styles.text}>
+        {_capitalize(from)}&nbsp;{this.renderPublisherIcon()}&nbsp;{this.renderPublishers()}
+      </div>
     )
   }
 }
 
 StoryInfo.propTypes = {
-  story: PropTypes.object.isRequired,
-  mainLink: PropTypes.object.isRequired,
-  otherLinks: PropTypes.array,
   handleStoryLinks: PropTypes.func.isRequired,
   intl: PropTypes.shape({
     formatMessage: PropTypes.func.isRequired
-  }).isRequired
+  }).isRequired,
+  mainLink: PropTypes.object.isRequired,
+  otherLinksCount: PropTypes.number.isRequired,
+  story: PropTypes.object.isRequired
 }
 
 export default injectIntl(StoryInfo)

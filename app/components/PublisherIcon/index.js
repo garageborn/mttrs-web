@@ -4,7 +4,6 @@ import * as cloudinary from '../../utils/Cloudinary'
 import styles from './styles.css'
 
 class PublisherIcon extends Component {
-
   getImageClass () {
     const { size } = this.props
     return classNames({
@@ -18,7 +17,11 @@ class PublisherIcon extends Component {
   render () {
     return (
       <div className={styles.container}>
-        <img className={this.getImageClass()} src={this.publisherLogo} alt={this.props.publisher.name} />
+        <img
+          className={this.getImageClass()}
+          src={this.publisherLogo}
+          alt={this.props.publisher.name}
+        />
       </div>
     )
   }

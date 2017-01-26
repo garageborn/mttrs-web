@@ -8,11 +8,13 @@ class StoryLinkContainer extends Component {
     super()
     this.closeModal = this.closeModal.bind(this)
   }
+
   closeModal () {
     const { dispatch, story } = this.props
     dispatch(UIActions.closeModal())
     dispatch(StorageActions.addVisitedStory(story))
   }
+
   render () {
     let {story, key, type, storyLink} = this.props
     return (

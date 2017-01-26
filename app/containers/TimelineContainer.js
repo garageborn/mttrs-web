@@ -1,18 +1,21 @@
 import React, {Component, PropTypes} from 'react'
+import { connect } from 'react-redux'
 import withQuery from './TimelineContainer.gql'
 import StoryList from '../components/StoryList'
 import Placeholder from '../components/Placeholder'
 import Spinner from '../components/Spinner'
 import injectSettings from '../config/injectSettings'
+import StoryLinksModalContainer from './StoryLinksModalContainer'
+import { UIActions } from '../actions/index'
 
 class TimelineContainer extends Component {
   constructor () {
     super()
     this.timelineContainerRef = this.timelineContainerRef.bind(this)
     this.handleScroll = this.handleScroll.bind(this)
-    this.state = {
-      loading: false
-    }
+    this.handleStoryLinks = this.handleStoryLinks.bind(this)
+
+    this.state = { loading: false }
   }
 
   componentDidMount () {
@@ -59,22 +62,35 @@ class TimelineContainer extends Component {
     })
   }
 
+  handleStoryLinks (story) {
+    const { dispatch, data } = this.props
+    const modal = (
+      <StoryLinksModalContainer
+        story={story}
+        publisherSlug={data.variables.publisherSlug}
+      />
+    )
+    dispatch(UIActions.openModal('storyLinks', modal))
+  }
+
   renderStoryList (item) {
     const {options, type} = this.props
     if (!item.stories.length) return
     return (
       <StoryList
-        type={type}
-        key={item.date}
         date={item.date}
-        stories={item.stories}
+        handleStoryLinks={this.handleStoryLinks}
+        key={item.date}
         options={options}
+        stories={item.stories}
+        type={type}
       />
     )
   }
 }
 
 TimelineContainer.propTypes = {
+  dispatch: PropTypes.func.isRequired,
   type: PropTypes.string,
   data: PropTypes.object.isRequired,
   options: PropTypes.shape({
@@ -89,5 +105,6 @@ TimelineContainer.defaultProps = {
   queryVariables: {}
 }
 
-const TimelineContainerWithQuery = withQuery(TimelineContainer)
+const TimelineWithRedux = connect()(TimelineContainer)
+const TimelineContainerWithQuery = withQuery(TimelineWithRedux)
 export default injectSettings(TimelineContainerWithQuery)

@@ -2,12 +2,11 @@ import React, {Component, PropTypes} from 'react'
 import { connect } from 'react-redux'
 import Story from '../components/Story'
 import StorySummary from '../components/StorySummary'
-import { UIActions, StorageActions } from '../actions/index'
+import { StorageActions } from '../actions/index'
 
 class StoryContainer extends Component {
   constructor () {
     super()
-    this.handleStoryLinks = this.handleStoryLinks.bind(this)
     this.handleVisitedStory = this.handleVisitedStory.bind(this)
   }
 
@@ -23,16 +22,12 @@ class StoryContainer extends Component {
           story={story}
           options={options}
           isVisited={isVisited}
-          handleStoryLinks={this.handleStoryLinks}
+          handleStoryLinks={this.props.handleStoryLinks}
           handleVisitedStory={this.handleVisitedStory}
         />
-        {this.renderResume(story)}
+        {this.renderSummary()}
       </div>
     )
-  }
-
-  handleStoryLinks (modalType, content) {
-    this.props.dispatch(UIActions.openModal(modalType, content))
   }
 
   handleVisitedStory () {
@@ -40,21 +35,21 @@ class StoryContainer extends Component {
     dispatch(StorageActions.addVisitedStory(story))
   }
 
-  renderResume (story) {
+  renderSummary () {
+    const {story} = this.props
     if (!story.summary) return
-    return (
-      <StorySummary story={story} />
-    )
+    return <StorySummary story={story} />
   }
 }
 
 StoryContainer.propTypes = {
-  story: PropTypes.object.isRequired,
+  dispatch: PropTypes.func.isRequired,
+  handleStoryLinks: PropTypes.func.isRequired,
+  isVisited: PropTypes.bool.isRequired,
   options: PropTypes.shape({
     renderCategory: PropTypes.bool
   }),
-  dispatch: PropTypes.func.isRequired,
-  isVisited: PropTypes.bool.isRequired
+  story: PropTypes.object.isRequired
 }
 
 StoryContainer.defaultProps = {

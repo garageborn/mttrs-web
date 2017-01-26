@@ -4,11 +4,7 @@ import styles from './styles.css'
 import StoryCategory from '../StoryCategory'
 
 const StoryContent = ({
-  story,
   mainLink,
-  otherLinks,
-  totalSocial,
-  handleStoryLinks,
   handleVisitedStory,
   shouldRenderCategory,
   category
@@ -26,11 +22,7 @@ const StoryContent = ({
 }
 
 StoryContent.propTypes = {
-  story: PropTypes.object.isRequired,
   mainLink: PropTypes.object.isRequired,
-  otherLinks: PropTypes.array,
-  totalSocial: PropTypes.number,
-  handleStoryLinks: PropTypes.func.isRequired,
   handleVisitedStory: PropTypes.func.isRequired,
   shouldRenderCategory: PropTypes.bool.isRequired,
   category: PropTypes.object.isRequired

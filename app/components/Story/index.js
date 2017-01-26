@@ -7,27 +7,22 @@ import styles from './styles.css'
 
 class Story extends Component {
   render () {
-    const {story, handleVisitedStory, handleStoryLinks} = this.props
+    const { story, handleVisitedStory, handleStoryLinks, options } = this.props
     return (
       <div key={story.id} className={this.storyContainerClass()}>
         <div className={styles.story}>
           <StoryImage story={story} handleVisitedStory={handleVisitedStory} />
           <StoryContent
-            story={story}
             mainLink={this.mainLink}
-            otherLinks={this.otherLinks}
-            totalSocial={story.total_social}
-            handleStoryLinks={handleStoryLinks}
             handleVisitedStory={handleVisitedStory}
-            shouldRenderCategory={this.props.options.renderCategory}
+            shouldRenderCategory={options.renderCategory}
             category={this.category}
           />
         </div>
         <StoryMetadata
           story={story}
-          source='story'
           mainLink={this.mainLink}
-          otherLinks={this.otherLinks}
+          otherLinksCount={this.otherLinksCount}
           totalSocial={story.total_social}
           handleStoryLinks={handleStoryLinks}
         />
@@ -46,8 +41,8 @@ class Story extends Component {
     return this.props.story.main_link
   }
 
-  get otherLinks () {
-    return this.props.story.other_links
+  get otherLinksCount () {
+    return this.props.story.other_links_count
   }
 
   get category () {
@@ -56,13 +51,13 @@ class Story extends Component {
 }
 
 Story.propTypes = {
-  story: PropTypes.object.isRequired,
+  handleStoryLinks: PropTypes.func.isRequired,
+  handleVisitedStory: PropTypes.func.isRequired,
+  isVisited: PropTypes.bool.isRequired,
   options: PropTypes.shape({
     renderCategory: PropTypes.bool
   }),
-  handleStoryLinks: PropTypes.func.isRequired,
-  handleVisitedStory: PropTypes.func.isRequired,
-  isVisited: PropTypes.bool.isRequired
+  story: PropTypes.object.isRequired
 }
 
 Story.defaultProps = {
