@@ -27,13 +27,7 @@ const Query = gql`
           image_source_url
           publisher { name slug icon_id }
         }
-        other_links(publisher_slug: $publisherSlug, popular: true) {
-          id
-          title
-          slug
-          total_social
-          publisher { name slug icon_id }
-        }
+        other_links_count
       }
     }
   }

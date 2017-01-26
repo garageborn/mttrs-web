@@ -5,14 +5,14 @@ import styles from './styles.css'
 
 class StoryMetadata extends Component {
   render () {
-    let {story, mainLink, otherLinks, totalSocial, handleStoryLinks} = this.props
+    let {story, mainLink, otherLinksCount, totalSocial, handleStoryLinks} = this.props
 
     return (
       <div className={styles.container}>
         <StoryInfo
           story={story}
           mainLink={mainLink}
-          otherLinks={otherLinks}
+          otherLinksCount={otherLinksCount}
           handleStoryLinks={handleStoryLinks}
         />
         <SocialCount totalSocial={totalSocial} />
@@ -24,7 +24,7 @@ class StoryMetadata extends Component {
 StoryMetadata.propTypes = {
   story: PropTypes.object.isRequired,
   mainLink: PropTypes.object.isRequired,
-  otherLinks: PropTypes.array.isRequired,
+  otherLinksCount: PropTypes.number.isRequired,
   totalSocial: PropTypes.number.isRequired,
   handleStoryLinks: PropTypes.func.isRequired
 }

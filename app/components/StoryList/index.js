@@ -21,16 +21,22 @@ class StoryList extends Component {
   }
 
   renderStory (story) {
-    return <StoryContainer key={story.id} story={story} options={this.props.options} />
+    return <StoryContainer
+      key={story.id}
+      story={story}
+      options={this.props.options}
+      handleStoryLinks={this.props.handleStoryLinks}
+    />
   }
 }
 
 StoryList.propTypes = {
-  stories: PropTypes.array.isRequired,
   date: PropTypes.any.isRequired,
+  handleStoryLinks: PropTypes.func.isRequired,
   options: PropTypes.shape({
     renderCategory: PropTypes.bool
   }),
+  stories: PropTypes.array.isRequired,
   type: PropTypes.string.isRequired
 }
 
