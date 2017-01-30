@@ -1,24 +1,25 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import StoryInfo from '../StoryInfo'
 import SocialCount from '../SocialCount'
 import styles from './styles.css'
 
-class StoryMetadata extends Component {
-  render () {
-    let {story, mainLink, otherLinksCount, totalSocial, handleStoryLinks} = this.props
-
-    return (
-      <div className={styles.container}>
-        <StoryInfo
-          story={story}
-          mainLink={mainLink}
-          otherLinksCount={otherLinksCount}
-          handleStoryLinks={handleStoryLinks}
-        />
-        <SocialCount totalSocial={totalSocial} />
-      </div>
-    )
-  }
+const StoryMetadata = ({story, mainLink, otherLinksCount, totalSocial, handleStoryLinks}) => {
+  return (
+    <div className={styles.container}>
+      <StoryInfo
+        story={story}
+        mainLink={mainLink}
+        otherLinksCount={otherLinksCount}
+        handleStoryLinks={handleStoryLinks}
+      />
+      <SocialCount
+        story={story}
+        otherLinksCount={otherLinksCount}
+        handleStoryLinks={handleStoryLinks}
+        totalSocial={totalSocial}
+      />
+    </div>
+  )
 }
 
 StoryMetadata.propTypes = {
