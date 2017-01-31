@@ -8,6 +8,7 @@ import PublishersListContainer from '../containers/PublishersListContainer'
 import TimelineContainer from '../containers/TimelineContainer'
 import withQuery from './Publisher.gql'
 import { UIActions } from '../actions/index'
+import LogoSocial from '../assets/social.png'
 
 const messages = defineMessages({
   pageTitle: { id: 'publisher.pageTitle' }
@@ -60,8 +61,11 @@ class Publisher extends Component {
       title: formattedMessage,
       description: formattedDescription,
       metas: [
-        { name: 'og:title', content: formattedMessage },
-        { name: 'og:description', content: formattedDescription }
+        { property: 'og:title', content: formattedMessage },
+        { property: 'og:description', content: formattedDescription },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:image', content: LogoSocial },
+        { property: 'og:site', content: 'Mttrs' }
       ]
     }
   }

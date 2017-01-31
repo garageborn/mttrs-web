@@ -6,6 +6,7 @@ import TimelineContainer from '../containers/TimelineContainer'
 import withQuery from './Category.gql'
 import Layout from './Layout'
 import { UIActions } from '../actions/index'
+import LogoSocial from '../assets/social.png'
 
 const messages = defineMessages({
   pageTitle: { id: 'category.pageTitle' }
@@ -57,8 +58,11 @@ class Category extends Component {
       title: formattedMessage,
       description: formattedDescription,
       metas: [
-        { name: 'og:title', content: formattedMessage },
-        { name: 'og:description', content: formattedDescription }
+        { property: 'og:title', content: formattedMessage },
+        { property: 'og:description', content: formattedDescription },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:image', content: LogoSocial },
+        { property: 'og:site', content: 'Mttrs' }
       ]
     }
   }

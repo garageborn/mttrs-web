@@ -55,7 +55,7 @@ Layout.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   children: PropTypes.node,
-  metas: PropTypes.object
+  metas: PropTypes.array
 }
 
 export default injectSettings(Layout)

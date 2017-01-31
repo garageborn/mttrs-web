@@ -27,17 +27,26 @@ class Link extends Component {
 
   helmet () {
     const { formatMessage } = this.props.intl
-    const { title } = this.props.data.link
+    const { link } = this.props.data
 
-    const formattedMessage = formatMessage(messages.pageTitle, { title })
-    const formattedDescription = formatMessage(messages.pageDescription, { title })
+    const formattedMessage = formatMessage(messages.pageTitle, { title: link.title })
+    const formattedDescription = formatMessage(messages.pageDescription, { title: link.title })
 
     return {
       title: formattedMessage,
       description: formattedDescription,
       metas: [
-        { name: 'og:title', content: formattedMessage },
-        { name: 'og:description', content: formattedDescription }
+        { property: 'og:title', content: formattedMessage },
+        { property: 'og:description', content: formattedDescription },
+        { property: 'og:type', content: 'article' },
+        { property: 'og:image', content: link.image_source_url },
+        { property: 'og:site', content: 'Mttrs' },
+        { property: 'twitter:card', content: 'summary' },
+        { property: 'twitter:site', content: '@mttrs_app' },
+        { property: 'twitter:title', content: formattedMessage },
+        { property: 'twitter:image', content: link.image_source_url },
+        { property: 'twitter:image:alt', content: formattedDescription },
+        { property: 'twitter:description', content: formattedDescription }
       ]
     }
   }
