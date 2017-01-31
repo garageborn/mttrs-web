@@ -21,12 +21,14 @@ class StoryList extends Component {
   }
 
   renderStory (story) {
-    return <StoryContainer
-      key={story.id}
-      story={story}
-      options={this.props.options}
-      handleStoryLinks={this.props.handleStoryLinks}
-    />
+    return (
+      <StoryContainer
+        key={story.id}
+        story={story}
+        options={this.props.options}
+        handleStoryLinks={this.props.handleStoryLinks}
+      />
+    )
   }
 }
 

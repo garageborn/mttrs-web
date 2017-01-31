@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import { injectIntl, defineMessages } from 'react-intl'

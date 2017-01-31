@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
-import styles from './styles.css'
 import { linkPath } from '../../utils/RoutesHelper'
+import styles from './styles.css'
 
-const StoryTitle = ({mainLink, handleVisitedStory}) => {
+const StoryTitle = ({mainLink}) => {
   return (
     <Link to={linkPath(mainLink.slug)} target='_blank'>
       <h3 className={styles.title}>
@@ -14,8 +14,7 @@ const StoryTitle = ({mainLink, handleVisitedStory}) => {
 }
 
 StoryTitle.propTypes = {
-  mainLink: PropTypes.object.isRequired,
-  handleVisitedStory: PropTypes.func.isRequired
+  mainLink: PropTypes.object.isRequired
 }
 
 export default StoryTitle
