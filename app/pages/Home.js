@@ -27,20 +27,27 @@ class Home extends Component {
 
   render () {
     return (
-      <Layout {...this.meta()}>
+      <Layout {...this.helmet()}>
         <Header />
-        <TimelineContainer type='home'/>
+        <TimelineContainer type='home' />
         {this.renderModal()}
       </Layout>
     )
   }
 
-  meta () {
+  helmet () {
     const { formatMessage } = this.props.intl
 
+    const formattedMessage = formatMessage(messages.pageTitle)
+    const formattedDescription = formatMessage(messages.pageDescription)
+
     return {
-      title: formatMessage(messages.pageTitle),
-      description: formatMessage(messages.pageDescription) // todo
+      title: formattedMessage,
+      description: formattedDescription,
+      metas: [
+        { name: 'og:title', content: formattedMessage },
+        { name: 'og:description', content: formattedDescription }
+      ]
     }
   }
 

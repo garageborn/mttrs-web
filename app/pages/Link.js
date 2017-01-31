@@ -19,19 +19,26 @@ class Link extends Component {
 
   render () {
     return (
-      <Layout {...this.meta()}>
+      <Layout {...this.helmet()}>
         <LoadingRequestLink />
       </Layout>
     )
   }
 
-  meta () {
+  helmet () {
     const { formatMessage } = this.props.intl
     const { title } = this.props.data.link
 
+    const formattedMessage = formatMessage(messages.pageTitle, { title })
+    const formattedDescription = formatMessage(messages.pageDescription, { title })
+
     return {
-      title: formatMessage(messages.pageTitle, { title }),
-      description: formatMessage(messages.pageDescription, { title })
+      title: formattedMessage,
+      description: formattedDescription,
+      metas: [
+        { name: 'og:title', content: formattedMessage },
+        { name: 'og:description', content: formattedDescription }
+      ]
     }
   }
 

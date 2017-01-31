@@ -29,7 +29,7 @@ class Publisher extends Component {
   render () {
     const queryVariables = { publisherSlug: this.props.slug }
     return (
-      <Layout {...this.meta()}>
+      <Layout {...this.helmet()}>
         <Header />
         <PublishersListContainer />
         <CurrentPublisher publisher={this.props.data.publisher} />
@@ -47,14 +47,22 @@ class Publisher extends Component {
     this.props.dispatch(UIActions.updateSection(section))
   }
 
-  meta () {
+  helmet () {
     const { publisher, loading } = this.props.data
     const { formatMessage } = this.props.intl
+
     if (loading) return {}
 
+    const formattedMessage = formatMessage(messages.pageTitle, { name: publisher.name })
+    const formattedDescription = publisher.name
+
     return {
-      title: formatMessage(messages.pageTitle, { name: publisher.name }),
-      description: publisher.name // todo
+      title: formattedMessage,
+      description: formattedDescription,
+      metas: [
+        { name: 'og:title', content: formattedMessage },
+        { name: 'og:description', content: formattedDescription }
+      ]
     }
   }
 }

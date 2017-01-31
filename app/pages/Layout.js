@@ -34,6 +34,7 @@ class Layout extends Component {
       { charset: 'utf-8' },
       { name: 'description', content: this.props.description },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      ...this.props.metas,
       ...favicons.meta
     ]
   }
@@ -53,7 +54,8 @@ class Layout extends Component {
 Layout.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
+  metas: PropTypes.object
 }
 
 export default injectSettings(Layout)
