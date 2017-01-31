@@ -1,11 +1,10 @@
 import React, { PropTypes } from 'react'
 import StoryTitle from '../StoryTitle'
-import styles from './styles.css'
 import StoryCategory from '../StoryCategory'
+import styles from './styles.css'
 
 const StoryContent = ({
   mainLink,
-  handleVisitedStory,
   shouldRenderCategory,
   category
 }) => {
@@ -15,7 +14,7 @@ const StoryContent = ({
   }
   return (
     <div className={styles.container}>
-      <StoryTitle mainLink={mainLink} handleVisitedStory={handleVisitedStory} />
+      <StoryTitle mainLink={mainLink} />
       {renderCategory()}
     </div>
   )
@@ -23,7 +22,6 @@ const StoryContent = ({
 
 StoryContent.propTypes = {
   mainLink: PropTypes.object.isRequired,
-  handleVisitedStory: PropTypes.func.isRequired,
   shouldRenderCategory: PropTypes.bool.isRequired,
   category: PropTypes.object.isRequired
 }
