@@ -34,11 +34,16 @@ class Publishers extends Component {
     this.props.dispatch(UIActions.updateSection(section))
   }
 
-  meta () {
+  helmet () {
     const { formatMessage } = this.props.intl
 
+    const formattedMessage = formatMessage(messages.pageTitle, { name: 'Publishers' })
+
     return {
-      title: formatMessage(messages.pageTitle, { name: 'Publishers' })
+      title: formattedMessage,
+      metas: [
+        { property: 'og:title', content: formattedMessage }
+      ]
     }
   }
 }
