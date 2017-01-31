@@ -39,8 +39,8 @@ const allRoutes = ({ categories, publishers }) => {
 
 const routesQuery = gql`
   query {
-    categories { slug }
-    publishers { slug }
+    categories(with_stories: true) { slug }
+    publishers(with_stories: true) { slug }
   }
 `
 

@@ -1,7 +1,16 @@
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
-const Query = gql`query { publishers(order_by_name: true) { id name slug icon_id }  }`
+const Query = gql`
+query {
+  publishers(with_stories: true, order_by_name: true) {
+    icon_id 
+    id
+    name
+    slug
+  }
+}
+`
 
 export default function (MenuPublishersContainer) {
   return graphql(Query)(MenuPublishersContainer)
