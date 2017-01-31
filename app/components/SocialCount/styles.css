@@ -4,3 +4,14 @@
   color: $mttrsGray;
   font-size: $mttrsFontSmall;
 }
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.icon {
+  position: relative;
+  top: 0.125rem;
+  width: 0.625rem;
+  height: auto;
+}
