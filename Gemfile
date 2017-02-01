@@ -12,6 +12,6 @@ group :development do
   gem 'capistrano-bundler', '1.2.0', require: false
   gem 'capistrano-rbenv', '2.1.0', require: false
   gem 'capistrano-yarn', '2.0.2', require: false
-  gem 'capistrano', '3.7.1'
+  gem 'capistrano', '3.7.2'
   gem 'slackistrano', '3.1.0', require: false
 end
