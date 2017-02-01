@@ -1,5 +1,6 @@
-import ApolloClient, { createNetworkInterface } from 'apollo-client'
+import ApolloClient from 'apollo-client'
 import * as ENDPOINTS from '../constants/APIEndpoints'
+import createNetworkInterface from '../utils/ApolloNetworkInterface'
 
 const tenantMiddleware = (options) => {
   return {
@@ -18,8 +19,11 @@ const skipCacheMiddleware = (options) => {
         return definition.operation === 'mutation'
       })
 
-      if (!req.options.headers) req.options.headers = {}
-      req.options.headers['X-Skip-Cache'] = hasMutation
+      if (hasMutation) {
+        req.options.method = 'POST'
+      } else {
+        req.options.method = 'GET'
+      }
 
       next()
     }
