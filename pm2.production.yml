@@ -2,7 +2,7 @@ apps:
   - name: pageserver
     cwd: '/home/garageborn/mttrs-web/current'
     script: './server/page-server/entry.js'
-    instances: 1
+    instances: 2
     exec_mode: fork
     combine_logs: true
     error_file: './log/pageserver.error.log'
@@ -12,7 +12,7 @@ apps:
   - name: webserver
     cwd: '/home/garageborn/mttrs-web/current'
     script: './server/web-server/entry.js'
-    instances: 1
+    instances: 2
     exec_mode: fork
     error_file: './log/webserver.error.log'
     out_file: './log/webserver.out.log'

@@ -19,19 +19,35 @@ class Link extends Component {
 
   render () {
     return (
-      <Layout {...this.meta()}>
+      <Layout {...this.helmet()}>
         <LoadingRequestLink />
       </Layout>
     )
   }
 
-  meta () {
+  helmet () {
     const { formatMessage } = this.props.intl
-    const { title } = this.props.data.link
+    const { link } = this.props.data
+
+    const formattedMessage = formatMessage(messages.pageTitle, { title: link.title })
+    const formattedDescription = formatMessage(messages.pageDescription, { title: link.title })
 
     return {
-      title: formatMessage(messages.pageTitle, { title }),
-      description: formatMessage(messages.pageDescription, { title })
+      title: formattedMessage,
+      description: formattedDescription,
+      metas: [
+        { property: 'og:title', content: formattedMessage },
+        { property: 'og:description', content: formattedDescription },
+        { property: 'og:type', content: 'article' },
+        { property: 'og:image', content: link.image_source_url },
+        { property: 'og:site', content: 'Mttrs' },
+        { property: 'twitter:card', content: 'summary' },
+        { property: 'twitter:site', content: '@mttrs_app' },
+        { property: 'twitter:title', content: formattedMessage },
+        { property: 'twitter:image', content: link.image_source_url },
+        { property: 'twitter:image:alt', content: formattedDescription },
+        { property: 'twitter:description', content: formattedDescription }
+      ]
     }
   }
 

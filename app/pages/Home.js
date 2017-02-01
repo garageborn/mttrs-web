@@ -8,6 +8,7 @@ import TimelineContainer from '../containers/TimelineContainer'
 import CloseModal from '../components/CloseModal'
 import modalStyles from '../styles/modal.css'
 import { UIActions } from '../actions/index'
+import LogoSocial from '../assets/social.png'
 
 const messages = defineMessages({
   pageTitle: { id: 'home.pageTitle' },
@@ -27,20 +28,30 @@ class Home extends Component {
 
   render () {
     return (
-      <Layout {...this.meta()}>
+      <Layout {...this.helmet()}>
         <Header />
-        <TimelineContainer type='home'/>
+        <TimelineContainer type='home' />
         {this.renderModal()}
       </Layout>
     )
   }
 
-  meta () {
+  helmet () {
     const { formatMessage } = this.props.intl
 
+    const formattedMessage = formatMessage(messages.pageTitle)
+    const formattedDescription = formatMessage(messages.pageDescription)
+
     return {
-      title: formatMessage(messages.pageTitle),
-      description: formatMessage(messages.pageDescription) // todo
+      title: formattedMessage,
+      description: formattedDescription,
+      metas: [
+        { property: 'og:title', content: formattedMessage },
+        { property: 'og:description', content: formattedDescription },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:image', content: LogoSocial },
+        { property: 'og:site', content: 'Mttrs' }
+      ]
     }
   }
 
