@@ -1,12 +1,9 @@
 @import "../../styles/variables.css";
-@value notSmall, large from "../../styles/media-queries.css";
+@value notSmall, medium, large from "../../styles/media-queries.css";
 
 .container {
   display: flex;
   flex-direction: column;
-  @media notSmall {
-    lost-center: 45.5em;
-  }
 }
 
 .disclaimer {
@@ -22,11 +19,13 @@
   width: 100%;
 
   @media notSmall {
-    margin: 6.25rem 0 0.875rem
+    lost-center: 34.90em;
+    margin-top: 6.25rem;
+    margin-bottom: 0.875rem;
   }
 
   @media large {
-    margin: 8.25rem 0 0.875rem
+    margin-top: 8.25rem;
   }
 }
 
@@ -34,7 +33,14 @@
   position: relative;
   flex: 1;
   z-index: 1;
-  background-color: white;
-  box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.2);
-  border: 1px solid #DADADA
+  lost-utility: clearfix;
+
+  @media notSmall {
+    lost-center: 71.25rem;
+    width: 71.25rem;
+  }
+
+  @media medium {
+    lost-center: 34.90rem;
+  }
 }

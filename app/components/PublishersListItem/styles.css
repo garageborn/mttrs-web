@@ -1,8 +1,17 @@
 @import "../../styles/variables.css";
+@value large from "../../styles/media-queries.css";
 
 .container {
+  background-color: #FFF;
+  margin-bottom: 1.25rem;
+  box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.2);
+
   &:hover {
     background: $mttrsBackgroundColor;
+  }
+
+  @media large {
+    lost-column: 1/4;
   }
 }
 
@@ -11,10 +20,13 @@
   display: flex;
   align-items: center;
   height: 4.85rem;
-  padding: 0 0.5325rem;
   font-size: 0.875rem;
-  border-bottom: 1px solid $mttrsBackgroundColor;
-  margin: 0 0.65625rem;
+  margin: 0 1.875rem;
+
+  @media large {
+    margin-left: 0.625rem;
+    margin-right: 0;
+  }
 
   > div {
     margin-right: 0.75em;
