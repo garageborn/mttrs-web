@@ -8,6 +8,7 @@ import PublishersListContainer from '../containers/PublishersListContainer'
 import TimelineContainer from '../containers/TimelineContainer'
 import withQuery from './Publisher.gql'
 import { UIActions } from '../actions/index'
+import LogoSocial from '../assets/social.png'
 
 const messages = defineMessages({
   pageTitle: { id: 'publisher.pageTitle' }
@@ -29,7 +30,7 @@ class Publisher extends Component {
   render () {
     const queryVariables = { publisherSlug: this.props.slug }
     return (
-      <Layout {...this.meta()}>
+      <Layout {...this.helmet()}>
         <Header />
         <PublishersListContainer />
         <CurrentPublisher publisher={this.props.data.publisher} />
@@ -47,14 +48,25 @@ class Publisher extends Component {
     this.props.dispatch(UIActions.updateSection(section))
   }
 
-  meta () {
+  helmet () {
     const { publisher, loading } = this.props.data
     const { formatMessage } = this.props.intl
+
     if (loading) return {}
 
+    const formattedMessage = formatMessage(messages.pageTitle, { name: publisher.name })
+    const formattedDescription = publisher.name
+
     return {
-      title: formatMessage(messages.pageTitle, { name: publisher.name }),
-      description: publisher.name // todo
+      title: formattedMessage,
+      description: formattedDescription,
+      metas: [
+        { property: 'og:title', content: formattedMessage },
+        { property: 'og:description', content: formattedDescription },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:image', content: LogoSocial },
+        { property: 'og:site', content: 'Mttrs' }
+      ]
     }
   }
 }
