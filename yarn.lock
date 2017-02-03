@@ -1643,13 +1643,7 @@ date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
 
-debug@*, debug@^2.1.1, debug@^2.2.0, debug@~2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-2.2.0.tgz#f87057e995b1a1f6ae6a4960664137bc56f039da"
-  dependencies:
-    ms "0.7.1"
-
-debug@^2.6.0:
+debug@*, debug@^2.1.1, debug@^2.2.0, debug@^2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.0.tgz#bc596bcabe7617f11d9fa15361eded5608b8499b"
   dependencies:
@@ -1658,6 +1652,12 @@ debug@^2.6.0:
 debug@~0.7.4:
   version "0.7.4"
   resolved "https://registry.yarnpkg.com/debug/-/debug-0.7.4.tgz#06e1ea8082c2cb14e39806e22e2f6f757f92af39"
+
+debug@~2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-2.2.0.tgz#f87057e995b1a1f6ae6a4960664137bc56f039da"
+  dependencies:
+    ms "0.7.1"
 
 decamelize@^1.0.0, decamelize@^1.1.2:
   version "1.2.0"
@@ -4338,7 +4338,7 @@ postcss-loader@^1.2.0:
 
 postcss-media-minmax@^2.1.0:
   version "2.1.2"
-  resolved "https://registry.yarnpkg.com/postcss-media-minmax/-/postcss-media-minmax-2.1.2.tgz#444c5cf8926ab5e4fd8a2509e9297e751649cdf8"
+  resolved "http://registry.npmjs.org/postcss-media-minmax/-/postcss-media-minmax-2.1.2.tgz#444c5cf8926ab5e4fd8a2509e9297e751649cdf8"
   dependencies:
     postcss "^5.0.4"
 
@@ -5115,9 +5115,9 @@ redux-devtools@^3.3.1:
     lodash "^4.2.0"
     redux-devtools-instrument "^1.0.1"
 
-redux-segment@1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/redux-segment/-/redux-segment-1.6.1.tgz#813d0734ae7b5de14e863202afd20c24de79022e"
+redux-segment@1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/redux-segment/-/redux-segment-1.5.0.tgz#34e223f1e3742b11ed5a81e53510d183706495b4"
 
 redux-thunk@^2.1.0:
   version "2.2.0"
