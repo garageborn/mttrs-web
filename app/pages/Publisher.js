@@ -28,7 +28,7 @@ class Publisher extends Component {
   }
 
   render () {
-    const queryVariables = { publisherSlug: this.props.slug }
+    const queryVariables = { publisherSlug: this.props.slug, type: 'publisher' }
     return (
       <Layout {...this.helmet()}>
         <Header />
