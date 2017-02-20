@@ -1,31 +1,30 @@
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
+import _isArray from 'lodash/isArray'
 
 const defaultVariables = {
-  days: 2,
-  offset: 0,
-  perDay: 16,
+  cursor: null,
+  limit: 16,
   categorySlug: '',
   publisherSlug: ''
 }
 
 const Query = gql`
-  query($days: Int!, $offset: Int, $timezone: String, $type: String!, $perDay: Int!, $categorySlug: String, $publisherSlug: String) {
-    timeline(days: $days, offset: $offset, timezone: $timezone, type: $type) {
+  query($cursor: Int, $timezone: String, $type: String, $limit: Int!, $categorySlug: String, $publisherSlug: String) {
+    timeline(cursor: $cursor, timezone: $timezone, type: $type, limit: $limit, category_slug: $categorySlug, publisher_slug: $publisherSlug) {
       date
-      stories(limit: $perDay, popular: true, category_slug: $categorySlug, publisher_slug: $publisherSlug) {
+      stories {
         id
         total_social
         headline
         summary
         main_category { name color slug }
         main_link(publisher_slug: $publisherSlug) {
-          id
           title
+          url
           slug
-          total_social
           image_source_url
-          publisher { name slug icon_id }
+          publisher { name icon_id slug }
         }
         other_links_count
       }
@@ -45,6 +44,11 @@ const infiniteScroll = ({ fetchMore, variables, timeline }) => {
   })
 }
 
+const timelineToItems = (timeline) => {
+  if (!timeline) return []
+  return _isArray(timeline) ? timeline : [timeline]
+}
+
 export default function (TimelineContainer) {
   return graphql(Query, {
     options (props) {
@@ -57,9 +61,15 @@ export default function (TimelineContainer) {
       }
     },
     props ({data}) {
+      const { error, loading, timeline, variables } = data
+      const items = timelineToItems(timeline)
+
       return {
         data: {
-          ...data,
+          loading,
+          error,
+          variables,
+          items,
           infiniteScroll: infiniteScroll.bind(this, data)
         }
       }
