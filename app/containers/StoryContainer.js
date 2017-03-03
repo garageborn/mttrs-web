@@ -1,7 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import { connect } from 'react-redux'
 import Story from '../components/Story'
-import StorySummary from '../components/StorySummary'
 import { StorageActions } from '../actions/index'
 
 class StoryContainer extends Component {
@@ -25,7 +24,6 @@ class StoryContainer extends Component {
           handleStoryLinks={this.props.handleStoryLinks}
           handleVisitedStory={this.handleVisitedStory}
         />
-        {this.renderSummary()}
       </div>
     )
   }
@@ -33,12 +31,6 @@ class StoryContainer extends Component {
   handleVisitedStory () {
     const {dispatch, story} = this.props
     dispatch(StorageActions.addVisitedStory(story))
-  }
-
-  renderSummary () {
-    const {story} = this.props
-    if (!story.summary) return
-    return <StorySummary story={story} />
   }
 }
 

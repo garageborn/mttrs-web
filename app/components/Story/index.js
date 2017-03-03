@@ -3,6 +3,7 @@ import className from 'classnames'
 import StoryImage from '../StoryImage'
 import StoryContent from '../StoryContent'
 import StoryMetadata from '../StoryMetadata'
+import StorySummary from '../StorySummary'
 import styles from './styles.css'
 
 class Story extends Component {
@@ -18,6 +19,7 @@ class Story extends Component {
             category={this.category}
           />
         </div>
+        {this.renderSummary()}
         <StoryMetadata
           story={story}
           mainLink={this.mainLink}
@@ -27,6 +29,12 @@ class Story extends Component {
         />
       </div>
     )
+  }
+
+  renderSummary () {
+    const {story} = this.props
+    if (!story.summary) return
+    return <StorySummary story={story} />
   }
 
   storyContainerClass () {

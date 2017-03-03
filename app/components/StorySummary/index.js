@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import ReactDOM from 'react-dom'
+import icon from './assets/icon-mttrs.png'
 import styles from './styles.css'
 
 const charsTreshold = 200
@@ -78,14 +79,14 @@ class StorySummary extends Component {
     const { story } = this.props
     return (
       <div className={styles.container}>
-        <div className={styles.triangleContainer}>
-          <div className={styles.outerTriangle} />
-          <div className={styles.innerTriangle} />
-        </div>
         <div className={this.getBoxStyles()}>
           <div className={styles.headlineContainer}>
-            👔
-          <span className={styles.headline}>{story.headline.toUpperCase()}</span>
+            <div className={styles.logoContainer}>
+              <img src={icon} alt='mttrs' />
+            </div>
+            <div>
+              <p className={styles.headline}>{story.headline.toUpperCase()}</p>
+            </div>
           </div>
           <div className={styles.text}>{this.summary(story)}</div>
           {this.showFooter()}
