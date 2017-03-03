@@ -1,7 +1,8 @@
 @value notSmall from "../../styles/media-queries.css";
 
 .container {
-  lost-center: 45.5em;
+  lost-center: calc((728 / 16)em);
+  margin-bottom: calc((10 / 16)rem);
 }
 
 .triangle {
@@ -44,6 +45,15 @@
   composes: box;
   max-height: 10rem;
   overflow: hidden;
+}
+
+.headlineContainer {
+  display: flex;
+  flex-flow: row
+}
+
+.logoContainer {
+  margin: calc((10 / 16)rem) calc((5 / 16)rem) 0 0;
 }
 
 .headline {
