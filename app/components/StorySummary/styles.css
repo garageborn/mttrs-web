@@ -1,8 +1,8 @@
 @value notSmall from "../../styles/media-queries.css";
 
 .container {
-  lost-center: 45.5em;
-  margin-bottom: 0.625rem;
+  lost-center: calc((728 / 16)em);
+  margin-bottom: calc((10 / 16)rem);
 }
 
 .triangle {
@@ -53,8 +53,7 @@
 }
 
 .logoContainer {
-  margin-top: 0.625rem;
-  margin-right: 0.3125rem;
+  margin: calc((10 / 16)rem) calc((5 / 16)rem) 0 0;
 }
 
 .headline {
