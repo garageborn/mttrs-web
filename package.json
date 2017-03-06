@@ -47,7 +47,6 @@
     "postcss-mixins": "^5.4.1",
     "postcss-modules-values": "^1.2.2",
     "postcss-nested": "^1.0.0",
-    "postcss-simple-vars": "^3.0.0",
     "precss": "^1.4.0",
     "pretty-error": "^2.0.2",
     "print-error": "^0.1.8",
