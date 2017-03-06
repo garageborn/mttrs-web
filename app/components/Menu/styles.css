@@ -1,8 +1,6 @@
-@import "../../styles/variables.css";
-
 .container {
   position: fixed;
-  background-color: $mttrsBackgroundColor;
+  background-color: var(--mttrsBackgroundColor);
   width: 100%;
   height: 100vh;
   top: 5rem;
@@ -13,7 +11,7 @@
 
 .selector {
   position: fixed;
-  background-color: $mttrsBlue;
+  background-color: var(--mttrsBlue);
   width: 100%;
   height: 4.5em;
   z-index: 2;

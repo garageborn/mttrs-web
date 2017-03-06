@@ -1,8 +1,6 @@
-@import "../../styles/variables.css";
-
 .text {
-  color: $mttrsGray;
-  font-size: $mttrsFontSmall;
+  color: var(--mttrsGray);
+  font-size: var(--mttrsFontSmall);
 }
 
 .cursorPointer {

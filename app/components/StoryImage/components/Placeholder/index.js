@@ -17,7 +17,7 @@ const placeholders = [
 
 class Placeholder extends Component {
   render () {
-    return <img className={styles.image} src={this.getPlaceholder()} />
+    return <img className={styles.image} src={this.getPlaceholder()} alt='' />
   }
 
   getPlaceholder () {

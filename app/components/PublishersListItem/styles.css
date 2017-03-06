@@ -1,29 +1,26 @@
-@import "../../styles/variables.css";
-@value large from "../../styles/media-queries.css";
-
 .container {
   background-color: #FFF;
   margin-bottom: 1.25rem;
   box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.2);
 
   &:hover {
-    background: $mttrsBackgroundColor;
+    background: var(--mttrsBackgroundColor);
   }
 
-  @media large {
+  @media (--large) {
     lost-column: 1/4;
   }
 }
 
 .publisher {
-  color: $mttrsGray;
+  color: var(--mttrsGray);
   display: flex;
   align-items: center;
   height: 4.85rem;
   font-size: 0.875rem;
   margin: 0 1.875rem;
 
-  @media large {
+  @media (--large) {
     margin-left: 0.625rem;
     margin-right: 0;
   }

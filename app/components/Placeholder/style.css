@@ -1,5 +1,4 @@
 @import "../../styles/mixins.css";
-@value notSmall, medium, large from "../../styles/media-queries.css";
 
 .container {
   padding-top: 10rem;
@@ -11,11 +10,11 @@
 
 .wrapper {
   margin-top: 0.675rem;
-  @media medium {
+  @media (--medium) {
     padding: 0 1em;
   }
 
-  @media notSmall {
+  @media (--notSmall) {
     lost-center: 45.5em;
   }
 }
@@ -30,7 +29,7 @@
   box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.20);
   position: relative;
 
-  @media notSmall {
+  @media (--notSmall) {
     padding: .5em 1em;
   }
 }
@@ -63,7 +62,7 @@
   height: 15px;
   margin-bottom: 20px;
 
-  @media medium {
+  @media (--medium) {
     width: 60%;
   }
 

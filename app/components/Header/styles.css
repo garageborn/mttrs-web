@@ -1,19 +1,16 @@
-@import "../../styles/variables.css";
-@value notSmall, medium, large from "../../styles/media-queries.css";
-
 .header {
-  background: $mttrsDark;
+  background: var(--mttrsDark);
   position: fixed;
   width: 100%;
   height: 80px;
   top: 0;
   z-index: 2;
 
-  @media medium {
+  @media (--medium) {
     height: 100px;
   }
 
-  @media large {
+  @media (--large) {
     height: 120px;
   }
 }

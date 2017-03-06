@@ -1,9 +1,7 @@
-@import "../../styles/variables.css";
-
 .title {
   font-size: 1rem;
   font-weight: 600;
-  color: $mttrsGray;
+  color: var(--mttrsGray);
   text-align: center;
   text-transform: uppercase;
   margin: 0;

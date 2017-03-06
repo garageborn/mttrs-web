@@ -1,6 +1,3 @@
-@import "../../styles/variables.css";
-@value notSmall, medium, large from "../../styles/media-queries.css";
-
 .container {
   display: flex;
   flex-direction: column;
@@ -18,13 +15,13 @@
   margin-top: 5.55rem;
   width: 100%;
 
-  @media notSmall {
+  @media (--notSmall) {
     lost-center: 34.90em;
     margin-top: 6.25rem;
     margin-bottom: 0.875rem;
   }
 
-  @media large {
+  @media (--large) {
     margin-top: 8.25rem;
   }
 }
@@ -35,7 +32,7 @@
   z-index: 1;
   lost-utility: clearfix;
 
-  @media notSmall {
+  @media (--notSmall) {
     lost-center: 71.25rem;
     width: 71.25rem;
   }

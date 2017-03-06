@@ -1,6 +1,3 @@
-@import "../../styles/variables.css";
-@value notSmall, medium, large from "../../styles/media-queries.css";
-
 .active {
   .name {
     opacity: 1;
@@ -9,11 +6,11 @@
   .color {
     height: 10px;
 
-    @media medium {
+    @media (--medium) {
       height: 20px;
     }
 
-    @media large {
+    @media (--large) {
       height: 25px;
     }
   }
@@ -26,11 +23,11 @@
   font-weight: 300;
   text-align: center;
 
-  @media medium {
+  @media (--medium) {
     font-size: 0.75rem;
   }
 
-  @media large {
+  @media (--large) {
     width: 7.125rem;
     font-size: 0.9375rem;
   }
@@ -52,11 +49,11 @@
     width: 100%;
     height: 10px;
 
-    @media medium {
+    @media (--medium) {
       height: 20px;
     }
 
-    @media large {
+    @media (--large) {
       height: 25px;
     }
   }
@@ -69,11 +66,11 @@
     .color {
       height: 10px;
 
-      @media medium {
+      @media (--medium) {
         height: 20px;
       }
 
-      @media large {
+      @media (--large) {
         height: 25px;
       }
     }
@@ -87,11 +84,11 @@
     display: block;
   }
 
-  @media medium {
+  @media (--medium) {
     margin-bottom: 0.2em;
   }
 
-  @media large {
+  @media (--large) {
     margin-bottom: 0.3em;
   }
 }

@@ -1,13 +1,11 @@
-@import "../../styles/variables.css";
-
 .text {
   display: flex;
   align-items: center;
-  font-size: $mttrsFontSmall;
+  font-size: var(--mttrsFontSmall);
   font-weight: 300;
-  color: $mttrsGray;
+  color: var(--mttrsGray);
   a {
-    color: $mttrsDarkGray;
+    color: var(--mttrsDarkGray);
     cursor: pointer;
   }
 }
