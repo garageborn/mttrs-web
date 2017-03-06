@@ -1,11 +1,9 @@
-@value notSmall, medium, large from "../../styles/media-queries.css";
-
 .container {
-  @media medium {
+  @media (--medium) {
     padding: 0 1em;
   }
 
-  @media large {
+  @media (--large) {
     lost-center: 60em;
   }
 
@@ -16,11 +14,11 @@
       padding-bottom: 0.625rem;
     }
 
-    @media medium {
+    @media (--medium) {
       padding-top: 1em;
     }
 
-    @media large {
+    @media (--large) {
       padding-top: 2.5em;
     }
   }
@@ -38,11 +36,11 @@
   &:first-of-type {
     margin-top: 0;
 
-    @media medium {
+    @media (--medium) {
       padding-top: 0;
     }
 
-    @media large {
+    @media (--large) {
       padding-top: 0;
     }
   }

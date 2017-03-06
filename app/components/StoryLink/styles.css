@@ -1,4 +1,3 @@
-@import "../../styles/variables.css";
 @import "../../styles/mixins.css";
 
 .container {
@@ -46,7 +45,7 @@
 
 .publisherName {
   font-size: 1.3rem;
-  color: $mttrsGray;
+  color: var(--mttrsGray);
   margin: 0 .5em;
   cursor: pointer;
 }

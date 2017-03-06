@@ -1,6 +1,3 @@
-@import "../../styles/variables.css";
-@value notSmall, medium, large from "../../styles/media-queries.css";
-
 .container {
   display: flex;
   flex-direction: row;
@@ -10,20 +7,20 @@
   width: 100%;
   height: 28px;
 
-  @media notSmall {
+  @media (--notSmall) {
     position: relative;
   }
 }
 
 .button {
-  border: 2px solid $mttrsIndigoBlue;
-  background-color: $mttrsBlue;
+  border: 2px solid var(--mttrsIndigoBlue);
+  background-color: var(--mttrsBlue);
   color: #FFF;
   width: 110px;
   height: 28px;
   font-size: 0.875rem;
   letter-spacing: 1;
-  border: 2px solid $mttrsIndigoBlue;
+  border: 2px solid var(--mttrsIndigoBlue);
   cursor: pointer;
   outline: 0;
 
@@ -39,5 +36,5 @@
 }
 
 .buttonActive {
-  background-color: $mttrsIndigoBlue;
+  background-color: var(--mttrsIndigoBlue);
 }

@@ -1,11 +1,9 @@
-@import "../../styles/variables.css";
-
 .container {
   lost-center: 45.5em;
 }
 
 .publisher {
-  color: $mttrsGray;
+  color: var(--mttrsGray);
   display: flex;
   align-items: center;
   height: 4.85rem;

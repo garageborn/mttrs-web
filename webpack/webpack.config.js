@@ -6,12 +6,20 @@ import precss from 'precss'
 import mqpacker from 'css-mqpacker'
 import nested from 'postcss-nested'
 import atImport from 'postcss-import'
-import simpleVars from 'postcss-simple-vars'
+import { properties, mediaQueries } from '../app/utils/variables'
+
+const cssNextConfig = {
+  browsers: ['last 2 versions'],
+  features: {
+    customProperties: { variables: properties },
+    customMedia: { extensions: mediaQueries }
+  }
+}
 
 // project folder
-var Root = path.resolve(__dirname, '..')
+const Root = path.resolve(__dirname, '..')
 
-var configuration = {
+const configuration = {
   // resolve all relative paths from the project root folder
   context: Root,
 
@@ -71,10 +79,9 @@ var configuration = {
 
   postcss: function (webpack) {
     return [
+      cssnext(cssNextConfig),
       atImport,
       precss,
-      cssnext({ browsers: ['last 2 versions'] }),
-      simpleVars,
       lost,
       nested,
       mqpacker

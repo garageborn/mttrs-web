@@ -1,5 +1,3 @@
-@value notSmall from "../../styles/media-queries.css";
-
 .container {
   lost-center: calc((728 / 16)em);
   margin-bottom: calc((10 / 16)rem);
