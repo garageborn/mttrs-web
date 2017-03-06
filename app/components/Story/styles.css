@@ -4,13 +4,13 @@
   display: flex;
   flex-flow: column;
   background-color: white;
-  margin: 0.625em 0;
-  padding: .7rem .7rem .3rem;
+  margin: calc((10 / 16)em) 0;
+  padding: calc((11 /16)rem) calc((11 /16)rem) calc((5 / 16)rem);
   box-shadow: -1px 2px 3px rgba(0,0,0,0.20);
   position: relative;
-  border-radius: 0.125em;
+  border-radius: 2px;
   @media notSmall {
-    lost-center: calc(620 / 16)rem;
+    lost-center: calc((620 / 16)rem);
   }
 }
 
