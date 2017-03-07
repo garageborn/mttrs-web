@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
 import styles from './styles.css'
 
-const MenuTrigger = ({ color }) => (
-  <div className={styles.trigger}>
+const MenuTrigger = ({ color, toggleMenu }) => (
+  <div onClick={toggleMenu} className={styles.trigger}>
     <span className={styles.square} style={{ backgroundColor: color }} />
     <span className={styles.square} />
     <span className={styles.square} />

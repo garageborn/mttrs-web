@@ -19,7 +19,7 @@ class MenuContainer extends Component {
   }
 
   renderMenu () {
-    const {UIReducer} = this.props
+    const { UIReducer } = this.props
     if (!UIReducer.menu.isOpen) return null
     return (
       <Menu key='mobileMenu' closeMenu={this.closeMenu} isOpen={UIReducer.menu.isOpen} />

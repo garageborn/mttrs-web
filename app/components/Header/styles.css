@@ -8,6 +8,7 @@
   width: 100%;
   height: 60px;
   top: 0;
+  border-bottom: 2px solid;
   z-index: 2;
 }
 
@@ -35,6 +36,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  @media (--notSmall) {
+    display: none;
+  }
 }
 
 .category {
