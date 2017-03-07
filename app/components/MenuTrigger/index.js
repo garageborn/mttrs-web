@@ -1,0 +1,16 @@
+import React, { PropTypes } from 'react'
+import styles from './styles.css'
+
+const MenuTrigger = ({ color }) => (
+  <div className={styles.trigger}>
+    <span className={styles.square} style={{ backgroundColor: color }} />
+    <span className={styles.square} />
+    <span className={styles.square} />
+  </div>
+)
+
+MenuTrigger.propTypes = {
+  color: PropTypes.string
+}
+
+export default MenuTrigger

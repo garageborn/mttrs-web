@@ -1,0 +1,22 @@
+.trigger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 3px 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #DADADA;
+
+  @media (--large) {
+    display: none;
+  }
+}
+
+.square {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background-color: #DADADA;
+}
