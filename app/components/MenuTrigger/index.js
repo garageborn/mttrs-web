@@ -10,7 +10,8 @@ const MenuTrigger = ({ color, toggleMenu }) => (
 )
 
 MenuTrigger.propTypes = {
-  color: PropTypes.string
+  color: PropTypes.string.isRequired,
+  toggleMenu: PropTypes.func.isRequired
 }
 
 export default MenuTrigger

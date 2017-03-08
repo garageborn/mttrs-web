@@ -16,31 +16,30 @@ const messages = defineMessages({
   }
 })
 
-const MenuCategories = ({categories, closeMenu, intl}) => {
-  return (
-    <div className={styles.container}>
-      <div className={styles.categories}>
-        <Link
-          to='/'
-          onClick={closeMenu}
-          className={styles.category}
-          style={{backgroundColor: '#FF5606'}}
-        >
-          {intl.formatMessage(messages.topStories)}
-        </Link>
-        {categories.map((category) => <MenuCategoriesItem closeMenu={closeMenu} key={category.id} category={category} />)}
-        <Link
-          to='/publishers'
-          onClick={closeMenu}
-          className={styles.category}
-          style={{backgroundColor: '#999'}}
-        >
-          {intl.formatMessage(messages.publishers)}
-        </Link>
-      </div>
-    </div>
-  )
-}
+const MenuCategories = ({ categories, closeMenu, intl }) => (
+  <div className={styles.container}>
+    <p>Categorias</p>
+    <ul className={styles.categories}>
+      {/* <Link
+        to='/'
+        onClick={closeMenu}
+        className={styles.category}
+        style={{backgroundColor: '#FF5606'}}
+      >
+        {intl.formatMessage(messages.topStories)}
+      </Link> */}
+      {categories.map((category) => <MenuCategoriesItem closeMenu={closeMenu} key={category.id} category={category} />)}
+    </ul>
+    {/* <Link
+      to='/publishers'
+      onClick={closeMenu}
+      className={styles.category}
+      style={{backgroundColor: '#999'}}
+    >
+      {intl.formatMessage(messages.publishers)}
+    </Link> */}
+  </div>
+)
 
 MenuCategories.propTypes = {
   categories: PropTypes.array.isRequired,

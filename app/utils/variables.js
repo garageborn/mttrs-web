@@ -7,6 +7,7 @@ export const properties = {
   mttrsDarkestColor: '#333',
   mttrsBackgroundColor: '#F1F1F1',
   mttrsGray: '#999',
+  mttrsOtherGray: '#DADADA',
   mttrsDarkGray: '#666',
   mttrsFontSmall: '0.8rem',
   menuCategoriesHeaderHeight: '100px',
