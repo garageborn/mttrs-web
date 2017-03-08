@@ -42,13 +42,6 @@
   }
 }
 
-.category {
-  color: var(--mttrsGray);
-  font-size: calc((14 / 16)rem);
-  font-weight: 500;
-  margin-left: 10px;
-}
-
 .slogan {
   display: none;
 

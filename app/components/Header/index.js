@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import { injectIntl, defineMessages } from 'react-intl'
 import Logo from '../Logo'
+import HeaderTitle from '../HeaderTitle'
 import MenuTrigger from '../MenuTrigger'
 import { properties } from '../../utils/variables'
 import { rootPath } from '../../utils/RoutesHelper'
@@ -57,7 +58,7 @@ class Header extends Component {
       <header className={styles.header} style={{ borderColor: this.sectionColor }}>
         <div className={styles.trigger}>
           <MenuTrigger toggleMenu={this.toggleMenu} color={this.sectionColor} />
-          <p className={styles.category} style={{color: this.sectionColor}}>{this.section}</p>
+          <HeaderTitle title={this.section} color={this.sectionColor} />
         </div>
         <Link to={rootPath} className={styles.logo}>
           <Logo />
