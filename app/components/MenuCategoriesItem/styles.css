@@ -40,6 +40,10 @@
   }
 
   &:hover {
+    .category {
+      color: #FFF;
+    }
+
     .marker {
       width: 15px;
     }
@@ -50,6 +54,7 @@
   display: inline-block;
   font-size: calc((14 / 16)rem);
   color: var(--mttrsOtherGray);
+  transition: all .15s ease-in-out;
 }
 
 .marker {

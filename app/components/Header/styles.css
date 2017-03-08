@@ -8,7 +8,7 @@
   width: 100%;
   height: 60px;
   top: 0;
-  border-bottom: 2px solid;
+  border-bottom: 2px solid var(--mttrsGray);
   z-index: 2;
 }
 
@@ -43,6 +43,7 @@
 }
 
 .category {
+  color: var(--mttrsGray);
   font-size: calc((14 / 16)rem);
   font-weight: 500;
   margin-left: 10px;

@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import { properties } from '../../utils/variables'
 import styles from './styles.css'
 
 const MenuTrigger = ({ color, toggleMenu }) => (
@@ -12,6 +13,10 @@ const MenuTrigger = ({ color, toggleMenu }) => (
 MenuTrigger.propTypes = {
   color: PropTypes.string.isRequired,
   toggleMenu: PropTypes.func.isRequired
+}
+
+MenuTrigger.defaultProps = {
+  color: properties.mttrsGray
 }
 
 export default MenuTrigger
