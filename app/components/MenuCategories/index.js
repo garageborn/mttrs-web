@@ -10,6 +10,10 @@ const messages = defineMessages({
     id: 'header.topStories'
   },
 
+  categories: {
+    id: 'categories'
+  },
+
   publishers: {
     id: 'menu.publishers'
   }
@@ -19,7 +23,7 @@ class MenuCategories extends Component {
   render () {
     return (
       <div className={styles.container}>
-        <p>Categorias</p>
+        <p className={styles.title}>{this.props.intl.formatMessage(messages.categories)}</p>
         <div className={styles.categories}>
           {this.topStories}
           {this.categories}

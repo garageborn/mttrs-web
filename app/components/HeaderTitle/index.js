@@ -6,8 +6,8 @@ const HeaderTitle = ({ title, color }) => (
 )
 
 HeaderTitle.propTypes = {
-  title: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired
+  title: PropTypes.string,
+  color: PropTypes.string
 }
 
 export default HeaderTitle

@@ -3,12 +3,10 @@ import { Link } from 'react-router'
 import styles from './styles.css'
 
 const MenuCategoriesItem = ({ to, name, color, closeMenu }) => (
-  <div className={styles.item}>
-    <Link to={to} onClick={closeMenu} className={styles.category} activeClassName={styles.active}>
-      {name}
-    </Link>
+  <Link to={to} onClick={closeMenu} className={styles.item} activeClassName={styles.active}>
+    <span className={styles.category}>{name}</span>
     <div className={styles.marker} style={{backgroundColor: color}} />
-  </div>
+  </Link>
 )
 
 MenuCategoriesItem.propTypes = {

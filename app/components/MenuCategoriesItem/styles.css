@@ -1,36 +1,10 @@
-/*.category {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #FFF;
-  width: 7.5rem;
-  height: 1.5625rem;
-  margin-bottom: 15px;
-  font-size: 0.875rem;
-}*/
-
-/*.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}*/
-
-/*.active {
-  .title {
-    color: #FFF !important;
-  }
-  img {
-    filter: brightness(10)
-  }
-}*/
-
 .item {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  width: 100%;
   padding: calc((2 / 16)rem) 0;
   margin: 2px 0;
   list-style: none;
@@ -64,4 +38,12 @@
   width: 5px;
   height: 100%;
   transition: all .15s ease-in-out;
+}
+
+.active {
+  cursor: default;
+
+  .marker {
+    width: 15px;
+  }
 }
