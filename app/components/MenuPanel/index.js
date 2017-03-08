@@ -1,21 +1,12 @@
-import React, { PropTypes, Component } from 'react'
+import React, { PropTypes } from 'react'
 import MenuCategoriesContainer from '../../containers/MenuCategoriesContainer'
 import styles from './styles.css'
 
-class MenuPanel extends Component {
-  render () {
-    return (
-      <div className={styles.container}>
-        {this.renderPanel()}
-      </div>
-    )
-  }
-
-  renderPanel () {
-    const { closeMenu } = this.props
-    return <MenuCategoriesContainer closeMenu={closeMenu} />
-  }
-}
+const MenuPanel = ({ closeMenu }) => (
+  <div className={styles.container}>
+    <MenuCategoriesContainer closeMenu={closeMenu} />
+  </div>
+)
 
 MenuPanel.propTypes = {
   closeMenu: PropTypes.func.isRequired
