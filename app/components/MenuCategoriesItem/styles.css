@@ -30,10 +30,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  list-style: none;
   text-align: center;
   padding: calc((2 / 16)rem) 0;
   margin: 2px 0;
+  list-style: none;
 
   @media (--notSmall) {
     text-align: left;

@@ -1,4 +1,5 @@
 .trigger {
+  background-color: initial;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,7 +8,13 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 1px solid #DADADA;
+  border: 1px solid var(--mttrsOtherGray);
+  outline: 0;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--mttrsBackgroundColor);
+  }
 
   @media (--large) {
     display: none;
@@ -18,5 +25,5 @@
   display: inline-block;
   width: 4px;
   height: 4px;
-  background-color: #DADADA;
+  background-color: var(--mttrsOtherGray);
 }
