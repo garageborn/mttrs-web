@@ -1,24 +1,20 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
-import { categoryPath } from '../../utils/RoutesHelper'
 import styles from './styles.css'
 
-const MenuCategoriesItem = ({ category, closeMenu }) => (
-  <li className={styles.item}>
-    <Link
-      onClick={closeMenu}
-      to={categoryPath(category.slug)}
-      className={styles.category}
-      activeClassName={styles.active}
-    >
-      {category.name}
+const MenuCategoriesItem = ({ to, name, color, closeMenu }) => (
+  <div className={styles.item}>
+    <Link to={to} onClick={closeMenu} className={styles.category} activeClassName={styles.active}>
+      {name}
     </Link>
-    <div className={styles.marker} style={{backgroundColor: category.color}} />
-  </li>
+    <div className={styles.marker} style={{backgroundColor: color}} />
+  </div>
 )
 
 MenuCategoriesItem.propTypes = {
-  category: PropTypes.object.isRequired,
+  to: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
   closeMenu: PropTypes.func.isRequired
 }
 
