@@ -1,5 +1,0 @@
-.container {
-  padding-top: 3.125em;
-  height: calc(100% - var(--menuCategoriesHeaderHeight));
-  overflow-y: scroll;
-}

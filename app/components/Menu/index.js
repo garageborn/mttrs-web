@@ -1,17 +1,14 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
+import MenuMttrsDownload from '../MenuMttrsDownload'
 import MenuCategoriesContainer from '../../containers/MenuCategoriesContainer'
 import styles from './styles.css'
 
-class Menu extends Component {
-  render () {
-    const { closeMenu } = this.props
-    return (
-      <div className={styles.container}>
-        <MenuCategoriesContainer closeMenu={closeMenu} />
-      </div>
-    )
-  }
-}
+const Menu = ({ closeMenu }) => (
+  <div className={styles.container}>
+    <MenuCategoriesContainer closeMenu={closeMenu} />
+    <MenuMttrsDownload />
+  </div>
+)
 
 Menu.propTypes = {
   closeMenu: PropTypes.func.isRequired
