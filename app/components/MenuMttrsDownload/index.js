@@ -21,10 +21,10 @@ const messages = defineMessages({
 const MenuMttrsDownload = ({ intl }) => (
   <div className={styles.container}>
     <p className={styles.slogan}>{intl.formatMessage(messages.slogan)}</p>
-    <a href='#'>
+    <a href='#' target='_blank'>
       <img className={styles.badge} src={android} alt={intl.formatMessage(messages.android)} />
     </a>
-    <a href='#'>
+    <a href='#' target='_blank'>
       <img className={styles.badge} src={ios} alt={intl.formatMessage(messages.ios)} />
     </a>
   </div>

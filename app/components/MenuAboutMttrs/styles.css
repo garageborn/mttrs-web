@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    font-size: 12px;
+    color: var(--mttrsGray);
+    margin-right: 5px;
+  }
+
+  svg {
+    margin-left: 5px;
+  }
+}
