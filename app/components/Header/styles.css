@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 calc(50% - 45vw);
+  padding: 0 30px;
   width: 100%;
   height: 60px;
   top: 0;
@@ -39,16 +39,5 @@
 
   @media (--large) {
     display: none;
-  }
-}
-
-.slogan {
-  display: none;
-
-  @media (--large) {
-    display: block;
-    font-size: calc((14 / 16)rem);
-    font-weight: 300;
-    color: var(--mttrsGray);
   }
 }

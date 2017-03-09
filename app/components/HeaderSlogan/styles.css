@@ -1,0 +1,10 @@
+.slogan {
+  display: none;
+
+  @media (--large) {
+    display: block;
+    font-size: calc((14 / 16)rem);
+    font-weight: 300;
+    color: var(--mttrsGray);
+  }
+}

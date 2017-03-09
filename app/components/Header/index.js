@@ -4,6 +4,7 @@ import { injectIntl, defineMessages } from 'react-intl'
 import Logo from '../Logo'
 import HeaderTitle from '../HeaderTitle'
 import MenuTrigger from '../MenuTrigger'
+import HeaderSlogan from '../HeaderSlogan'
 import { properties } from '../../utils/variables'
 import { rootPath } from '../../utils/RoutesHelper'
 import styles from './styles.css'
@@ -61,9 +62,7 @@ class Header extends Component {
         <Link to={rootPath} className={styles.logo}>
           <Logo />
         </Link>
-        <div className={styles.slogan}>
-          <p>Seu tempo é precioso. Leia as notícias que realmente importam no dia a dia.</p>
-        </div>
+        <HeaderSlogan />
       </header>
     )
   }
