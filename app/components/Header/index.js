@@ -1,12 +1,10 @@
 import React, { Component, PropTypes } from 'react'
-import { Link } from 'react-router'
 import { injectIntl, defineMessages } from 'react-intl'
-import Logo from '../Logo'
+import HeaderLogo from '../HeaderLogo'
 import HeaderTitle from '../HeaderTitle'
 import MenuTrigger from '../MenuTrigger'
 import HeaderSlogan from '../HeaderSlogan'
 import { properties } from '../../utils/variables'
-import { rootPath } from '../../utils/RoutesHelper'
 import styles from './styles.css'
 
 const messages = defineMessages({
@@ -59,11 +57,7 @@ class Header extends Component {
           <MenuTrigger toggleMenu={this.toggleMenu} color={this.sectionColor} />
           <HeaderTitle title={this.section} color={this.sectionColor} />
         </div>
-        <div className={styles.logo}>
-          <Link to={rootPath}>
-            <Logo />
-          </Link>
-        </div>
+        <HeaderLogo />
         <HeaderSlogan />
       </header>
     )

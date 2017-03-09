@@ -1,6 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
+  padding-left: var(--menuWidth);
 }
 
 .disclaimer {
@@ -22,7 +23,7 @@
   }
 
   @media (--large) {
-    margin-top: 8.25rem;
+    margin-top: 5.25rem;
   }
 }
 

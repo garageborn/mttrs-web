@@ -11,7 +11,8 @@ export const properties = {
   mttrsDarkGray: '#666',
   mttrsFontSmall: '0.8rem',
   menuCategoriesHeaderHeight: '100px',
-  menuPublishersHeaderHeight: '100px'
+  menuPublishersHeaderHeight: '100px',
+  menuWidth: '240px'
 }
 
 export const mediaQueries = {

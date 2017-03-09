@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import Modal from 'react-modal'
 import { injectIntl, defineMessages } from 'react-intl'
 import Layout from './Layout'
-import Header from '../components/Header'
 import HeaderContainer from '../containers/HeaderContainer'
 import TimelineContainer from '../containers/TimelineContainer'
 import CloseModal from '../components/CloseModal'
@@ -31,7 +30,6 @@ class Home extends Component {
     const queryVariables = { type: 'home' }
     return (
       <Layout {...this.helmet()}>
-        {/* <Header /> */}
         <HeaderContainer />
         <TimelineContainer type='home' queryVariables={queryVariables} />
         {this.renderModal()}
