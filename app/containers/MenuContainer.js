@@ -10,6 +10,7 @@ class MenuContainer extends Component {
     super()
     this.closeMenu = this.closeMenu.bind(this)
   }
+
   render () {
     return (
       <ReactCSSTransitionGroup transitionName={menuAnimations} transitionAppear transitionEnter transitionAppearTimeout={330} transitionEnterTimeout={330} transitionLeaveTimeout={330}>

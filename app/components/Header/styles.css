@@ -37,7 +37,7 @@
   flex-direction: row;
   align-items: center;
 
-  @media (--notSmall) {
+  @media (--large) {
     display: none;
   }
 }

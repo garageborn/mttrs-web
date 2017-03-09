@@ -9,4 +9,8 @@
   color: white;
   z-index: 1;
   overflow-y: scroll;
+
+  @media (--notSmall) {
+    width: 220px;
+  }
 }
