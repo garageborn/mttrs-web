@@ -11,6 +11,6 @@
   overflow-y: scroll;
 
   @media (--notSmall) {
-    width: 220px;
+    width: 240px;
   }
 }

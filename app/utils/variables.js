@@ -16,6 +16,7 @@ export const properties = {
 
 export const mediaQueries = {
   notSmall: '(min-width: 48.125em)',
+  notDesktop: '(max-width: 71.25em)',
   medium: '(min-width: 48.125em) and (max-width: 71.25em)',
   large: '(min-width: 71.25em)'
 }

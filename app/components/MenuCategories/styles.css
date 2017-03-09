@@ -24,13 +24,13 @@
 }
 
 .title {
-  font-size: calc((10 / 16)rem);
+  font-size: calc((12 / 16)rem);
   text-transform: uppercase;
   text-align: center;
   color: var(--mttrsGray);
 
   @media (--notSmall) {
     text-align: left;
-    padding-left: 30px;
+    padding-left: 35px;
   }
 }

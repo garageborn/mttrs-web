@@ -21,6 +21,10 @@
   font-size: calc((12 / 16)rem);
   color: var(--mttrsGray);
   padding: 30px calc(50% - 80px) 0;
+
+  @media (--notSmall) {
+    padding-left: 35px;
+  }
 }
 
 .link {
@@ -34,6 +38,6 @@
   margin: 0 auto 10px auto;
 
   @media (--notSmall) {
-    margin: 0 0 10px 30px;
+    margin: 0 0 10px 35px;
   }
 }

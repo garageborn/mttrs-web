@@ -10,7 +10,7 @@
   list-style: none;
 
   @media (--notSmall) {
-    padding-left: 30px;
+    padding-left: 35px;
     justify-content: flex-start;
   }
 
@@ -27,9 +27,13 @@
 
 .category {
   display: inline-block;
-  font-size: calc((14 / 16)rem);
+  font-size: 1rem;
   color: var(--mttrsOtherGray);
   transition: all .15s ease-in-out;
+
+  @media (--notSmall) {
+    font-size: calc((14 / 16)rem);
+  }
 }
 
 .marker {
