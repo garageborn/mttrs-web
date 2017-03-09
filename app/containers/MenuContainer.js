@@ -16,7 +16,7 @@ class MenuContainer extends Component {
   render () {
     return (
       <div>
-        <MediaQuery query={mediaQueries.notDesktop} maxDeviceWidth={1140}>
+        <MediaQuery query={mediaQueries.notLarge} maxDeviceWidth={1140}>
           <ReactCSSTransitionGroup transitionName={menuAnimations} transitionAppear transitionEnter transitionAppearTimeout={330} transitionEnterTimeout={330} transitionLeaveTimeout={330}>
             {this.renderMenu()}
           </ReactCSSTransitionGroup>
