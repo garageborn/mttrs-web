@@ -44,6 +44,10 @@
 .active {
   cursor: default;
 
+  .category {
+    color: inherit;
+  }
+
   .marker {
     width: 15px;
   }
