@@ -2,6 +2,10 @@
   padding: 0 calc(50% - 45vw);
   text-align: center;
 
+  @media (--notSmall) {
+    text-align: left;
+  }
+
   &:after {
     display: block;
     content: '';
@@ -19,9 +23,17 @@
   padding: 30px calc(50% - 80px) 0;
 }
 
+.link {
+  lost-utility: clearfix;
+}
+
 .badge {
   display: block;
   width: 120px;
   height: auto;
   margin: 0 auto 10px auto;
+
+  @media (--notSmall) {
+    margin: 0 0 10px 30px;
+  }
 }

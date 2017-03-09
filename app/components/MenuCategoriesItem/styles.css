@@ -10,7 +10,8 @@
   list-style: none;
 
   @media (--notSmall) {
-    text-align: left;
+    padding-left: 30px;
+    justify-content: flex-start;
   }
 
   &:hover {
