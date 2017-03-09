@@ -6,8 +6,6 @@ import HeaderTitle from '../HeaderTitle'
 import MenuTrigger from '../MenuTrigger'
 import { properties } from '../../utils/variables'
 import { rootPath } from '../../utils/RoutesHelper'
-import SubHeaderContainer from '../../containers/SubHeaderContainer'
-import NavContainer from '../../containers/NavContainer'
 import styles from './styles.css'
 
 const messages = defineMessages({
@@ -66,10 +64,6 @@ class Header extends Component {
         <div className={styles.slogan}>
           <p>Seu tempo é precioso. Leia as notícias que realmente importam no dia a dia.</p>
         </div>
-        {/* <div>
-          <SubHeaderContainer />
-          <NavContainer />
-        </div> */}
       </header>
     )
   }
