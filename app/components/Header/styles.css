@@ -25,6 +25,10 @@
       width: 120px;
     }
   }
+
+  @media (--large) {
+    width: 210px;
+  }
 }
 
 .trigger {

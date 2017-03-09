@@ -59,9 +59,11 @@ class Header extends Component {
           <MenuTrigger toggleMenu={this.toggleMenu} color={this.sectionColor} />
           <HeaderTitle title={this.section} color={this.sectionColor} />
         </div>
-        <Link to={rootPath} className={styles.logo}>
-          <Logo />
-        </Link>
+        <div className={styles.logo}>
+          <Link to={rootPath}>
+            <Logo />
+          </Link>
+        </div>
         <HeaderSlogan />
       </header>
     )
