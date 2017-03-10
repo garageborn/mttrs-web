@@ -26,18 +26,3 @@
     padding-left: 35px;
   }
 }
-
-.link {
-  lost-utility: clearfix;
-}
-
-.badge {
-  display: block;
-  width: 120px;
-  height: auto;
-  margin: 0 auto 10px auto;
-
-  @media (--notSmall) {
-    margin: 0 0 10px 35px;
-  }
-}

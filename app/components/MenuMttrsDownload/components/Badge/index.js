@@ -1,0 +1,45 @@
+import React, { PropTypes } from 'react'
+import { injectIntl, defineMessages } from 'react-intl'
+import injectSettings from '../../../../config/injectSettings'
+import iosEN from './assets/ios-en.svg'
+import iosPT from './assets/ios-pt.svg'
+import androidEN from './assets/android-en.png'
+import androidPT from './assets/android-pt.png'
+import styles from './styles.css'
+
+const messages = defineMessages({
+  ios: { id: 'mttrs.download.ios' },
+  android: { id: 'mttrs.download.android' }
+})
+
+const badges = {
+  ios: { en: iosEN, pt: iosPT },
+  android: { en: androidEN, pt: androidPT }
+}
+
+const Badge = ({ intl, url, type, settings }) => {
+  let alt = intl.formatMessage(messages[type])
+  let badge = badges[type][settings.language]
+
+  return (
+    <a href={url} className={styles.link} target='_blank'>
+      <img className={styles.badge} src={badge} alt={alt} />
+    </a>
+  )
+}
+
+Badge.propTypes = {
+  intl: PropTypes.shape({
+    formatMessage: PropTypes.func.isRequired
+  }).isRequired,
+  settings: PropTypes.object.isRequired,
+  type: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
+}
+
+Badge.defaultProps = {
+  type: 'android'
+}
+
+const intlBadge = injectIntl(Badge)
+export default injectSettings(intlBadge)
