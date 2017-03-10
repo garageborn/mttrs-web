@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { injectIntl, defineMessages } from 'react-intl'
-import Header from '../components/Header'
+import HeaderContainer from '../containers/HeaderContainer'
 import TimelineContainer from '../containers/TimelineContainer'
 import withQuery from './Category.gql'
 import Layout from './Layout'
@@ -30,7 +30,8 @@ class Category extends Component {
     const options = {renderCategory: false}
     return (
       <Layout {...this.helmet()} route={this.props.route}>
-        <Header />
+        <HeaderContainer />
+        <HeaderContainer />
         <TimelineContainer type='category' queryVariables={queryVariables} options={options} />
       </Layout>
     )

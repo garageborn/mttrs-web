@@ -1,19 +1,36 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  height: calc(100% - var(--menuCategoriesHeaderHeight));
   padding-top: 1.5rem;
-  overflow-y: scroll;
 }
 
-.category {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #FFF;
-  width: 7.5rem;
-  height: 1.5625rem;
-  margin-bottom: 15px;
-  font-size: 0.875rem;
+.categories {
+  position: relative;
+  width: 100%;
+
+  &:after {
+    display: block;
+    content: '';
+    height: 1px;
+    width: 180px;
+    margin: 5px auto;
+    background-color: var(--mttrsGray);
+    opacity: 0.5;
+  }
+
+  @media (--notSmall) {
+    padding-left: calc(50% - 45vw);
+  }
+}
+
+.title {
+  font-size: calc((12 / 16)rem);
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--mttrsGray);
+
+  @media (--notSmall) {
+    text-align: left;
+    padding-left: 35px;
+  }
 }

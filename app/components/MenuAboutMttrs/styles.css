@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    font-size: 12px;
+    color: var(--mttrsGray);
+    margin-right: 2px;
+    cursor: pointer;
+  }
+
+  svg {
+    cursor: pointer;
+    margin-left: 2px;
+  }
+
+  &:hover {
+    p {
+      color: #FFF;
+    }
+
+    svg {
+      g,
+      polygon,
+      path:first-of-type {
+        fill: #FFF;
+      }
+    }
+  }
+}

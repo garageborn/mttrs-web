@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import ReactDOM from 'react-dom'
-import Icon from './assets/icon.svg'
+import Icon from './assets/icon.inline.svg'
 import styles from './styles.css'
 
 const charsTreshold = 200
@@ -85,7 +85,7 @@ class StorySummary extends Component {
               <Icon />
             </div>
             <div>
-              <p className={styles.headline}>{story.headline.toUpperCase()}</p>
+              <p className={styles.headline}>{story.headline}</p>
             </div>
           </div>
           <div className={styles.text}>{this.summary(story)}</div>

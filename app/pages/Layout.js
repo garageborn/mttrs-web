@@ -19,15 +19,21 @@ class Layout extends Component {
         <Helmet {...this.helmet()} />
         {this.props.children}
         <ModalContainer />
-        <MenuContainer />
+        {this.menuContainer}
       </div>
     )
   }
 
-  handleRoute(nextProps) {
-    if (!window)
+  handleRoute (nextProps) {
+    if (!window) return
     if (this.props.route.path === nextProps.route.path) return
-    return window.scrollTo(0,0)
+    return window.scrollTo(0, 0)
+  }
+
+  get menuContainer () {
+    if (this.props.type === 'link') return
+
+    return <MenuContainer />
   }
 
   helmet () {
@@ -65,11 +71,13 @@ class Layout extends Component {
 }
 
 Layout.propTypes = {
+  settings: PropTypes.object,
   title: PropTypes.string,
   description: PropTypes.string,
   children: PropTypes.node,
   metas: PropTypes.array,
-  route: PropTypes.object
+  route: PropTypes.object,
+  type: PropTypes.string
 }
 
 export default injectSettings(Layout)

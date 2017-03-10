@@ -19,7 +19,7 @@ class Link extends Component {
 
   render () {
     return (
-      <Layout {...this.helmet()}>
+      <Layout {...this.helmet()} type='link'>
         <LoadingRequestLink />
       </Layout>
     )

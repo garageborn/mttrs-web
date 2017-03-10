@@ -1,3 +1,4 @@
+/* global _server_ */
 import { StorageActions } from '../actions/index'
 
 export default class ExposeWindowMethods {

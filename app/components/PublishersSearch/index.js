@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { injectIntl, defineMessages } from 'react-intl'
-import Loupe from '../../assets/loupeClear.svg'
+import Loupe from './assets/loupeClear.inline.svg'
 import styles from './styles.css'
 
 const messages = defineMessages({

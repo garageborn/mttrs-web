@@ -64,14 +64,14 @@ const configuration = {
         ]
       },
       {
-        test: /\.(jpg|png|ico|gif)$/,
+        test: /\.jpe?g$|\.gif$|\.png$|^(?!.*\.inline\.svg$).*\.svg$/,
         loaders:
         [
           'url-loader?limit=1' // Any png-image or woff-font below or equal to 10K will be converted to inline base64 instead
         ]
       },
       {
-        test: /\.svg$/,
+        test: /\.inline.svg$/,
         loader: 'babel!svg-react'
       }
     ]
