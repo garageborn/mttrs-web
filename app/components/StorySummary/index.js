@@ -85,7 +85,7 @@ class StorySummary extends Component {
               <Icon />
             </div>
             <div>
-              <p className={styles.headline}>{story.headline.toUpperCase()}</p>
+              <p className={styles.headline}>{story.headline}</p>
             </div>
           </div>
           <div className={styles.text}>{this.summary(story)}</div>
