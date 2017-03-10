@@ -65,7 +65,7 @@ class Layout extends Component {
 }
 
 Layout.contextTypes = {
-  router: React.PropTypes.func.isRequired
+  router: React.PropTypes.object
 }
 
 Layout.propTypes = {
