@@ -9,6 +9,10 @@ import favicons from '../utils/Favicons'
 import _isNil from 'lodash/isNil'
 
 class Layout extends Component {
+  componentDidMount () {
+    this.context.router.listen(location => window.scrollTo(0, 0))
+  }
+
   render () {
     return (
       <div>
@@ -58,6 +62,10 @@ class Layout extends Component {
   get scripts () {
     return [...sentry, ...segment]
   }
+}
+
+Layout.contextTypes = {
+  router: React.PropTypes.object
 }
 
 Layout.propTypes = {
