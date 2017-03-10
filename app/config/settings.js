@@ -1,3 +1,4 @@
+/* global _server_ _development_ */
 import { TENANTS } from '../constants/Tenants'
 import moment from 'moment-timezone'
 import jstz from 'jstz'

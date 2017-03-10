@@ -9,12 +9,17 @@
   "link.pageTitle": "{title} | mttrs",
   "publisher.pageTitle": "{name} | mttrs",
   "publishers.search": "Encontre o seu editor favorito...",
-  "selector.categories": "Categorias",
-  "selector.publishers": "Editores",
+  "categories": "Categorias",
+  "publishers": "Sites",
   "spinner.loading": "Carregando...",
   "request.link": "Abrindo o link...",
   "and": "e",
   "from": "Via",
   "other": "outro",
-  "others": "outros"
+  "others": "outros",
+  "mttrs.slogan": "Seu tempo é precioso. Leia as notícias que realmente importam no dia a dia.",
+  "mttrs.download.slogan": "Tenha o seu resumo de notícias sempre a mão.",
+  "mttrs.download.android": "Disponível do Google Play",
+  "mttrs.download.ios": "Baixar na App Store",
+  "mttrs.about.understand": "Entenda o"
 }

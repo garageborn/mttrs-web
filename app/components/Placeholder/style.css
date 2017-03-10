@@ -1,7 +1,13 @@
 @import "../../styles/mixins.css";
 
 .container {
-  padding-top: 10rem;
+  padding-top: calc((88 / 16)rem);
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media (--large) {
+    padding-left: var(--menuWidth);
+  }
 }
 
 .containerPublisher {
@@ -13,10 +19,6 @@
   @media (--medium) {
     padding: 0 1em;
   }
-
-  @media (--notSmall) {
-    lost-center: 45.5em;
-  }
 }
 
 .story {
@@ -24,13 +26,16 @@
   flex-flow: row;
   background-color: white;
   padding: 0 1em;
-  margin: 0.9375em 0;
+  margin: calc((15 / 16)em) 0;
   height: 128px;
   box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.20);
   position: relative;
 
   @media (--notSmall) {
-    padding: .5em 1em;
+    padding: 8px 16px;
+    width: calc((620 / 16)rem);
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

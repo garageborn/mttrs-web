@@ -15,9 +15,15 @@ class Layout extends Component {
         <Helmet {...this.helmet()} />
         {this.props.children}
         <ModalContainer />
-        <MenuContainer />
+        {this.menuContainer}
       </div>
     )
+  }
+
+  get menuContainer () {
+    if (this.props.type === 'link') return
+
+    return <MenuContainer />
   }
 
   helmet () {
@@ -55,10 +61,12 @@ class Layout extends Component {
 }
 
 Layout.propTypes = {
+  settings: PropTypes.object,
   title: PropTypes.string,
   description: PropTypes.string,
   children: PropTypes.node,
-  metas: PropTypes.array
+  metas: PropTypes.array,
+  type: PropTypes.string
 }
 
 export default injectSettings(Layout)

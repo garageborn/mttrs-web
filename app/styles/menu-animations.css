@@ -1,10 +1,18 @@
 .enter {
   transform: translateY(-100%);
+
+  @media (--medium) {
+    transform: translateX(-100%);
+  }
 }
 
 .enterActive {
   transform: translateY(0px);
   transition: all 330ms cubic-bezier(.07,.4,.81,.91);
+
+  @media (--medium) {
+    transform: translateX(0px);
+  }
 }
 
 .appear {
@@ -17,9 +25,17 @@
 
 .leave {
   transform: translateY(0);
+
+  @media (--medium) {
+    transform: translateX(0px);
+  }
 }
 
 .leaveActive {
   transform: translateY(-100%);
   transition: all 230ms cubic-bezier(.07,.4,.81,.91);
+
+  @media (--medium) {
+    transform: translateX(-100%);
+  }
 }

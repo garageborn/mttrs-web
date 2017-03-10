@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react'
+/* eslint-disable react/prefer-stateless-function */
+import React, { Component, PropTypes } from 'react'
 
 export default function injectSettings (WrappedComponent) {
   class InjectSettings extends Component {

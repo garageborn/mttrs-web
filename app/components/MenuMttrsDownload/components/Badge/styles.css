@@ -1,0 +1,26 @@
+.link {
+  lost-utility: clearfix;
+}
+
+.badge {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+}
+
+.ios {
+  width: 120px;
+
+  @media (--notSmall) {
+    margin: 0 0 5px 35px;
+  }
+}
+
+.android {
+  width: 135px;
+  margin-bottom: 5px;
+
+  @media (--notSmall) {
+    margin: 0 0 0 26px;
+  }
+}

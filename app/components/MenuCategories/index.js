@@ -1,45 +1,77 @@
-import React, { PropTypes } from 'react'
-import { Link } from 'react-router'
+import React, { Component, PropTypes } from 'react'
 import { injectIntl, defineMessages } from 'react-intl'
+import { categoryPath } from '../../utils/RoutesHelper'
+import { properties } from '../../utils/variables'
 import MenuCategoriesItem from '../MenuCategoriesItem'
 import styles from './styles.css'
 
 const messages = defineMessages({
   topStories: {
-    id: 'header.topStories',
-    defaultMessage: 'Top Stories'
+    id: 'header.topStories'
+  },
+
+  categories: {
+    id: 'categories'
   },
 
   publishers: {
-    id: 'menu.publishers',
-    defaultMessage: 'Publishers'
+    id: 'menu.publishers'
   }
 })
 
-const MenuCategories = ({categories, closeMenu, intl}) => {
-  return (
-    <div className={styles.container}>
-      <div className={styles.categories}>
-        <Link
-          to='/'
-          onClick={closeMenu}
-          className={styles.category}
-          style={{backgroundColor: '#FF5606'}}
-        >
-          {intl.formatMessage(messages.topStories)}
-        </Link>
-        {categories.map((category) => <MenuCategoriesItem closeMenu={closeMenu} key={category.id} category={category} />)}
-        <Link
-          to='/publishers'
-          onClick={closeMenu}
-          className={styles.category}
-          style={{backgroundColor: '#999'}}
-        >
-          {intl.formatMessage(messages.publishers)}
-        </Link>
+class MenuCategories extends Component {
+  render () {
+    return (
+      <div className={styles.container}>
+        <p className={styles.title}>{this.props.intl.formatMessage(messages.categories)}</p>
+        <div className={styles.categories}>
+          {this.topStories}
+          {this.categories}
+        </div>
+        {this.publishers}
       </div>
-    </div>
-  )
+    )
+  }
+
+  get topStories () {
+    const { intl, closeMenu } = this.props
+
+    return (
+      <MenuCategoriesItem
+        to='/'
+        name={intl.formatMessage(messages.topStories)}
+        color={properties.mttrsOrange}
+        closeMenu={closeMenu}
+      />
+    )
+  }
+
+  get categories () {
+    const { categories, closeMenu } = this.props
+
+    return categories.map(category =>
+      <MenuCategoriesItem
+        to={categoryPath(category.slug)}
+        key={category.id}
+        name={category.name}
+        color={category.color}
+        closeMenu={closeMenu}
+      />
+    )
+  }
+
+  get publishers () {
+    const { intl, closeMenu } = this.props
+
+    return (
+      <MenuCategoriesItem
+        to='/publishers'
+        name={intl.formatMessage(messages.publishers)}
+        color={properties.mttrsGray}
+        closeMenu={closeMenu}
+      />
+    )
+  }
 }
 
 MenuCategories.propTypes = {

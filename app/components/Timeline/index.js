@@ -1,12 +1,13 @@
 import React, { Component, PropTypes } from 'react'
 import StoryList from '../StoryList'
+import styles from './styles.css'
 
 class Timeline extends Component {
   render () {
     const { items } = this.props.data
     if (!items || !items.length) return null
 
-    return <div>{ this.renderTimeline() }</div>
+    return <div className={styles.container}>{this.renderTimeline()}</div>
   }
 
   renderTimeline () {

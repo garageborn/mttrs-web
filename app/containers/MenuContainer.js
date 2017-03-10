@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import MediaQuery from 'react-responsive'
 import { connect } from 'react-redux'
 import { UIActions } from '../actions/index'
+import { mediaQueries } from '../utils/variables'
 import Menu from '../components/Menu'
 import menuAnimations from '../styles/menu-animations.css'
 
@@ -10,19 +12,27 @@ class MenuContainer extends Component {
     super()
     this.closeMenu = this.closeMenu.bind(this)
   }
+
   render () {
     return (
-      <ReactCSSTransitionGroup transitionName={menuAnimations} transitionAppear transitionEnter transitionAppearTimeout={330} transitionEnterTimeout={330} transitionLeaveTimeout={330}>
-        {this.renderMenu()}
-      </ReactCSSTransitionGroup>
+      <div>
+        <MediaQuery query={mediaQueries.notLarge} maxDeviceWidth={1140}>
+          <ReactCSSTransitionGroup transitionName={menuAnimations} transitionAppear transitionEnter transitionAppearTimeout={330} transitionEnterTimeout={330} transitionLeaveTimeout={330}>
+            {this.renderMenu()}
+          </ReactCSSTransitionGroup>
+        </MediaQuery>
+        <MediaQuery query={mediaQueries.large} minDeviceWidth={1140}>
+          <Menu closeMenu={this.closeMenu} />
+        </MediaQuery>
+      </div>
     )
   }
 
   renderMenu () {
-    const {UIReducer} = this.props
+    const { UIReducer } = this.props
     if (!UIReducer.menu.isOpen) return null
     return (
-      <Menu key='mobileMenu' closeMenu={this.closeMenu} isOpen={UIReducer.menu.isOpen} />
+      <Menu closeMenu={this.closeMenu} isOpen={UIReducer.menu.isOpen} />
     )
   }
 

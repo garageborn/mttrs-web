@@ -1,0 +1,12 @@
+.slogan {
+  display: none;
+
+  @media (--large) {
+    display: block;
+    flex-grow: 1;
+    font-size: calc((14 / 16)rem);
+    font-weight: 300;
+    color: var(--mttrsGray);
+    text-align: center;
+  }
+}

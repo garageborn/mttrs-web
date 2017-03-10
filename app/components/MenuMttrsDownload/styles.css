@@ -1,0 +1,28 @@
+.container {
+  padding: 0 calc(50% - 45vw);
+  text-align: center;
+
+  @media (--notSmall) {
+    text-align: left;
+  }
+
+  &:after {
+    display: block;
+    content: '';
+    height: 1px;
+    width: 180px;
+    margin: 30px auto 20px;
+    background-color: var(--mttrsGray);
+    opacity: 0.5;
+  }
+}
+
+.slogan {
+  font-size: calc((12 / 16)rem);
+  color: var(--mttrsGray);
+  padding: 30px calc(50% - 80px) 0;
+
+  @media (--notSmall) {
+    padding-left: 35px;
+  }
+}

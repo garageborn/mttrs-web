@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Layout from './Layout'
 import { injectIntl, defineMessages } from 'react-intl'
-import Header from '../components/Header'
+import HeaderContainer from '../containers/HeaderContainer'
 import CurrentPublisher from '../components/CurrentPublisher'
 import PublishersListContainer from '../containers/PublishersListContainer'
 import TimelineContainer from '../containers/TimelineContainer'
@@ -31,7 +31,7 @@ class Publisher extends Component {
     const queryVariables = { publisherSlug: this.props.slug, type: 'publisher' }
     return (
       <Layout {...this.helmet()}>
-        <Header />
+        <HeaderContainer />
         <PublishersListContainer />
         <CurrentPublisher publisher={this.props.data.publisher} />
         <TimelineContainer type='publisher' queryVariables={queryVariables} />
