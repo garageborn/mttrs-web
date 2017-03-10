@@ -20,7 +20,7 @@ class Settings {
 
   fromServer (request) {
     this.tenant = request.headers.host
-    this.timezone = request.headers['x-timezone']
+    this.timezone = request.headers['x-timezone'] || request.headers['x-geoip-timezone']
     this.apolloClient = configureApollo({ ssrMode: true, tenant: this.tenant })
     this.store = configureStore({}, this.apolloClient)
   }
