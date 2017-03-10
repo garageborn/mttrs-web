@@ -86,7 +86,7 @@ class TimelineContainer extends Component {
     this.setState({ loadingMore: true })
     return infiniteScroll().then(() => this.setState({ loadingMore: false }))
   }
-  
+
   get timelineContainer () {
     return this.refs.timelineContainer
   }
