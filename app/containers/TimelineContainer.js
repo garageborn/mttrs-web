@@ -21,14 +21,7 @@ class TimelineContainer extends Component {
 
   componentDidMount () {
     if (!window) return
-    this.resetScroll()
     window.addEventListener('scroll', this.handleScroll)
-  }
-
-  componentWillReceiveProps (nextProps) {
-    if (this.props.data.variables !== nextProps.data.variables) {
-      this.resetScroll()
-    }
   }
 
   componentWillUnmount () {
@@ -93,11 +86,7 @@ class TimelineContainer extends Component {
     this.setState({ loadingMore: true })
     return infiniteScroll().then(() => this.setState({ loadingMore: false }))
   }
-
-  resetScroll () {
-    return window.scrollTo(0, 0)
-  }
-
+  
   get timelineContainer () {
     return this.refs.timelineContainer
   }
