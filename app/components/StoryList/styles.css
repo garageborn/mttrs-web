@@ -1,14 +1,12 @@
 .container {
+  padding: 0 15px;
+
   @media (--medium) {
     padding: 0 1em;
   }
 
-  @media (--large) {
-    lost-center: 60em;
-  }
-
   &:first-of-type {
-    margin-top: 7.5em;
+    margin-top: 5.5em;
 
     h2 {
       padding-bottom: 0.625rem;
@@ -19,6 +17,7 @@
     }
 
     @media (--large) {
+      margin-top: 3.5em;
       padding-top: 2.5em;
     }
   }

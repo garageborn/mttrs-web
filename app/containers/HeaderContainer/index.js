@@ -1,21 +1,23 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import elementClass from 'element-class'
-import { UIActions } from '../actions/index'
-import SubHeader from '../components/SubHeader'
+import { UIActions } from '../../actions/index'
+import Header from '../../components/Header'
 
-class SubHeaderContainer extends Component {
+class HeaderContainer extends Component {
   constructor () {
     super()
+
     this.openMenu = this.openMenu.bind(this)
     this.closeMenu = this.closeMenu.bind(this)
   }
+
   render () {
     return (
-      <SubHeader
+      <Header
+        menu={this.props.menu}
         openMenu={this.openMenu}
         closeMenu={this.closeMenu}
-        menu={this.props.menu}
         section={this.props.section}
       />
     )
@@ -32,17 +34,15 @@ class SubHeaderContainer extends Component {
   }
 }
 
-SubHeaderContainer.propTypes = {
+HeaderContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
   menu: PropTypes.object,
   section: PropTypes.object
 }
 
-let mapStateToProps = (state, ownProps) => {
-  return {
-    menu: state.UIReducer.menu,
-    section: state.UIReducer.section
-  }
-}
+let mapStateToProps = (state) => ({
+  menu: state.UIReducer.menu,
+  section: state.UIReducer.section
+})
 
-export default connect(mapStateToProps)(SubHeaderContainer)
+export default connect(mapStateToProps)(HeaderContainer)

@@ -1,3 +1,4 @@
+/* global _server_ _development_ */
 import { TENANTS } from '../constants/Tenants'
 import moment from 'moment-timezone'
 import jstz from 'jstz'
@@ -19,7 +20,7 @@ class Settings {
 
   fromServer (request) {
     this.tenant = request.headers.host
-    this.timezone = request.headers['x-timezone']
+    this.timezone = request.headers['x-timezone'] || request.headers['x-geoip-timezone']
     this.apolloClient = configureApollo({ ssrMode: true, tenant: this.tenant })
     this.store = configureStore({}, this.apolloClient)
   }

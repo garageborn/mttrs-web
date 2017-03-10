@@ -1,9 +1,8 @@
 import React from 'react'
-import LogoMttrs from '../../assets/logo-mttrs.png'
-import styles from './styles.css'
+import LogoMttrs from './assets/logo.inline.svg'
 
 const Logo = () => {
-  return <img className={styles.logo} src={LogoMttrs} alt='mttrs' />
+  return <LogoMttrs />
 }
 
 export default Logo

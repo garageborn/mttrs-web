@@ -5,7 +5,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: calc((20 / 16)rem);
   padding-bottom: 3rem;
+
+  @media (--large) {
+    padding-left: var(--menuWidth);
+  }
 }
 
 @keyframes spin {
