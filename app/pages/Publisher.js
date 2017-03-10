@@ -30,7 +30,7 @@ class Publisher extends Component {
   render () {
     const queryVariables = { publisherSlug: this.props.slug, type: 'publisher' }
     return (
-      <Layout {...this.helmet()}>
+      <Layout {...this.helmet()} route={this.props.route}>
         <Header />
         <PublishersListContainer />
         <CurrentPublisher publisher={this.props.data.publisher} />
@@ -80,7 +80,8 @@ Publisher.propTypes = {
     publisher: PropTypes.object,
     loading: PropTypes.bool
   }),
-  dispatch: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired,
+  route: PropTypes.object.isRequired
 }
 
 let mapStateToProps = (state, ownProps) => {

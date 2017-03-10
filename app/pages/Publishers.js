@@ -17,7 +17,7 @@ class Publishers extends Component {
 
   render () {
     return (
-      <Layout {...this.helmet()}>
+      <Layout {...this.helmet()} route={this.props.route}>
         <Header />
         <PublishersListContainer type='publishers' />
       </Layout>
@@ -52,7 +52,8 @@ Publishers.propTypes = {
   dispatch: PropTypes.func.isRequired,
   intl: PropTypes.shape({
     formatMessage: PropTypes.function
-  })
+  }),
+  route: PropTypes.object.isRequired,
 }
 
 const PublishersWithIntl = injectIntl(Publishers)

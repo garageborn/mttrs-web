@@ -29,7 +29,7 @@ class Category extends Component {
     const queryVariables = { categorySlug: this.props.slug, type: 'category' }
     const options = {renderCategory: false}
     return (
-      <Layout {...this.helmet()}>
+      <Layout {...this.helmet()} route={this.props.route}>
         <Header />
         <TimelineContainer type='category' queryVariables={queryVariables} options={options} />
       </Layout>
@@ -77,7 +77,8 @@ Category.propTypes = {
     category: PropTypes.object,
     loading: PropTypes.bool
   }),
-  dispatch: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired,
+  route: PropTypes.object.isRequired
 }
 
 let mapStateToProps = (state, ownProps) => {

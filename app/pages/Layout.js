@@ -9,6 +9,10 @@ import favicons from '../utils/Favicons'
 import _isNil from 'lodash/isNil'
 
 class Layout extends Component {
+  componentWillReceiveProps (nextProps) {
+    this.handleRoute(nextProps)
+  }
+
   render () {
     return (
       <div>
@@ -18,6 +22,12 @@ class Layout extends Component {
         <MenuContainer />
       </div>
     )
+  }
+
+  handleRoute(nextProps) {
+    if (!window)
+    if (this.props.route.path === nextProps.route.path) return
+    return window.scrollTo(0,0)
   }
 
   helmet () {
@@ -58,7 +68,8 @@ Layout.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   children: PropTypes.node,
-  metas: PropTypes.array
+  metas: PropTypes.array,
+  route: PropTypes.object
 }
 
 export default injectSettings(Layout)

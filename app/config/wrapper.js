@@ -60,8 +60,6 @@ class Wrapper {
   fromClient (routes) {
     const history = syncHistoryWithStore(browserHistory, this.settings.store)
 
-    history.listen(location => window.scrollTo(0, 0))
-
     return (
       <SettingsProvider settings={this.settings}>
         <ApolloProvider store={this.settings.store} client={this.settings.apolloClient}>
