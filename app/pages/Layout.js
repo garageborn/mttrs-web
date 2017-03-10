@@ -9,8 +9,8 @@ import favicons from '../utils/Favicons'
 import _isNil from 'lodash/isNil'
 
 class Layout extends Component {
-  componentWillReceiveProps (nextProps) {
-    this.handleRoute(nextProps)
+  componentDidMount () {
+    this.context.router.listen(location => window.scrollTo(0, 0))
   }
 
   render () {
@@ -22,12 +22,6 @@ class Layout extends Component {
         {this.menuContainer}
       </div>
     )
-  }
-
-  handleRoute (nextProps) {
-    if (!window) return
-    if (this.props.route.path === nextProps.route.path) return
-    return window.scrollTo(0, 0)
   }
 
   get menuContainer () {
@@ -70,13 +64,16 @@ class Layout extends Component {
   }
 }
 
+Layout.contextTypes = {
+  router: React.PropTypes.func.isRequired
+}
+
 Layout.propTypes = {
   settings: PropTypes.object,
   title: PropTypes.string,
   description: PropTypes.string,
   children: PropTypes.node,
   metas: PropTypes.array,
-  route: PropTypes.object,
   type: PropTypes.string
 }
 

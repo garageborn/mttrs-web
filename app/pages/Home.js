@@ -29,7 +29,7 @@ class Home extends Component {
   render () {
     const queryVariables = { type: 'home' }
     return (
-      <Layout {...this.helmet()} route={this.props.route}>
+      <Layout {...this.helmet()}>
         <HeaderContainer />
         <TimelineContainer type='home' queryVariables={queryVariables} />
         {this.renderModal()}
@@ -96,8 +96,7 @@ Home.propTypes = {
       isOpen: PropTypes.bool.isRequired
     })
   }),
-  dispatch: PropTypes.func.isRequired,
-  route: PropTypes.object.isRequired
+  dispatch: PropTypes.func.isRequired
 }
 
 let mapStateToProps = (state, ownProps) => {
