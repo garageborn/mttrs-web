@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import className from 'classnames'
 import { injectIntl, defineMessages } from 'react-intl'
 import injectSettings from '../../../../config/injectSettings'
 import iosEN from './assets/ios-en.svg'
@@ -21,9 +22,15 @@ const Badge = ({ intl, url, type, settings }) => {
   let alt = intl.formatMessage(messages[type])
   let badge = badges[type][settings.language]
 
+  let badgeClassName = className({
+    [styles.badge]: true,
+    [styles.ios]: type === 'ios',
+    [styles.android]: type === 'android'
+  })
+
   return (
     <a href={url} className={styles.link} target='_blank'>
-      <img className={styles.badge} src={badge} alt={alt} />
+      <img className={badgeClassName} src={badge} alt={alt} />
     </a>
   )
 }

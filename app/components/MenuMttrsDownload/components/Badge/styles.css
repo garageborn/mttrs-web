@@ -4,11 +4,23 @@
 
 .badge {
   display: block;
-  width: 120px;
   height: auto;
-  margin: 0 auto 10px auto;
+  margin: 0 auto;
+}
+
+.ios {
+  width: 120px;
 
   @media (--notSmall) {
-    margin: 0 0 10px 35px;
+    margin: 0 0 5px 35px;
+  }
+}
+
+.android {
+  width: 135px;
+  margin-bottom: 5px;
+
+  @media (--notSmall) {
+    margin: 0 0 0 26px;
   }
 }
