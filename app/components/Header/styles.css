@@ -23,6 +23,14 @@
   align-items: center;
   z-index: 2;
 
+  @media (--safari) {
+    height: 100%;
+  }
+
+  @media (--medium) {
+    position: absolute;
+  }
+
   @media (--large) {
     display: none;
   }
