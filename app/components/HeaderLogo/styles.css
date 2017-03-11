@@ -27,6 +27,5 @@
   @media (--large) {
     position: relative;
     width: var(--menuWidth);
-    top: 2px;
   }
 }
