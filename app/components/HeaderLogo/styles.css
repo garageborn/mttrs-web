@@ -14,9 +14,19 @@
     }
   }
 
+  position: relative;
+  top: 5px;
+
+  @media (--medium) {
+    position: relative;
+    width: 100%;
+    top: 2px;
+    text-align: center;
+  }
+
   @media (--large) {
     position: relative;
-    top: 2px;
     width: var(--menuWidth);
+    top: 2px;
   }
 }

@@ -20,7 +20,7 @@
     }
 
     .marker {
-      width: 15px;
+      width: 8px;
     }
   }
 }
@@ -40,7 +40,7 @@
   position: absolute;
   display: block;
   right: 0;
-  width: 5px;
+  width: 4px;
   height: 100%;
   transition: all .15s ease-in-out;
 }
@@ -51,6 +51,6 @@
   }
 
   .marker {
-    width: 15px;
+    width: 12px;
   }
 }

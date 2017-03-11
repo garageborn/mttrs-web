@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   padding: 3px 0;
   width: 30px;
   height: 30px;
@@ -21,9 +21,17 @@
   }
 }
 
+_::-webkit-:host:not(:root:root), .trigger {
+  padding-top: 5px;
+}
+
 .square {
   display: inline-block;
   width: 4px;
   height: 4px;
   background-color: var(--mttrsOtherGray);
+
+  &:nth-child(2) {
+    margin: 3px 0;
+  }
 }

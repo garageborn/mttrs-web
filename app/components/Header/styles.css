@@ -1,6 +1,6 @@
 .header {
   position: fixed;
-  background: #FFF;
+  background-color: #FFF;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,8 +21,17 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  z-index: 2;
+
+  @media (--medium) {
+    position: absolute;
+  }
 
   @media (--large) {
     display: none;
   }
+}
+
+_::-webkit-:host:not(:root:root), .trigger {
+  height: 100%;
 }
