@@ -18,8 +18,9 @@ class Link extends Component {
   }
 
   render () {
+    const renderOptions = { showHeader: false, showModal: false, showMenu: false }
     return (
-      <Layout {...this.helmet()} type='link'>
+      <Layout {...this.helmet()} {...renderOptions}>
         <LoadingRequestLink />
       </Layout>
     )

@@ -11,7 +11,8 @@ class ModalContainer extends Component {
     this.closeModal = this.closeModal.bind(this)
   }
   render () {
-    const {UIReducer} = this.props
+    if (!this.props.showModal) return null
+    const { UIReducer } = this.props
     return (
       <div>
         <Modal
@@ -45,7 +46,8 @@ ModalContainer.propTypes = {
       isOpen: PropTypes.bool.isRequired
     }).isRequired
   }).isRequired,
-  dispatch: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired,
+  showModal: PropTypes.bool.isRequired
 }
 
 let mapStateToProps = (state) => {
