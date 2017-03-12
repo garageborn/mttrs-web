@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Layout from './Layout'
 import { injectIntl, defineMessages } from 'react-intl'
-import HeaderContainer from '../containers/HeaderContainer'
 import PublishersListContainer from '../containers/PublishersListContainer'
 import { UIActions } from '../actions/index'
 
@@ -18,7 +17,6 @@ class Publishers extends Component {
   render () {
     return (
       <Layout {...this.helmet()}>
-        <HeaderContainer />
         <PublishersListContainer type='publishers' />
       </Layout>
     )
