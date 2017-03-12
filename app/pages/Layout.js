@@ -15,7 +15,7 @@ class Layout extends Component {
   }
 
   render () {
-    const { showHeader, showModal, showMenu } = this.props.renderOptions
+    const { showHeader, showModal, showMenu } = this.props
     return (
       <div>
         <Helmet {...this.helmet()} />
@@ -71,19 +71,15 @@ Layout.propTypes = {
   description: PropTypes.string,
   children: PropTypes.node,
   metas: PropTypes.array,
-  renderOptions: PropTypes.shape({
-    showHeader: PropTypes.bool,
-    showModal: PropTypes.bool,
-    showMenu: PropTypes.bool
-  })
+  showHeader: PropTypes.bool,
+  showModal: PropTypes.bool,
+  showMenu: PropTypes.bool
 }
 
 Layout.defaultProps = {
-  renderOptions: {
-    showHeader: true,
-    showModal: true,
-    showMenu: true
-  }
+  showHeader: true,
+  showModal: true,
+  showMenu: true
 }
 
 export default injectSettings(Layout)
