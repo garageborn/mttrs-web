@@ -1,7 +1,16 @@
 .container {
   display: flex;
   flex-direction: column;
-  padding-left: var(--menuWidth);
+  padding: 0 15px;
+
+  @media (--medium) {
+    padding: 0 calc(50% - 400px);
+  }
+
+  @media (--large) {
+    padding-left: var(--menuWidth);
+    padding-right: 0;
+  }
 }
 
 .disclaimer {
@@ -13,12 +22,12 @@
 .search {
   position: relative;
   background-color: transparent;
-  margin-top: 5.55rem;
+  margin-top: 4.55rem;
   width: 100%;
 
   @media (--notSmall) {
     lost-center: 34.90em;
-    margin-top: 6.25rem;
+    margin-top: 4.25rem;
     margin-bottom: 0.875rem;
   }
 
@@ -33,12 +42,8 @@
   z-index: 1;
   lost-utility: clearfix;
 
-  @media (--notSmall) {
+  @media (--large) {
     lost-center: 71.25rem;
     width: 71.25rem;
-  }
-
-  @media medium {
-    lost-center: 34.90rem;
   }
 }
