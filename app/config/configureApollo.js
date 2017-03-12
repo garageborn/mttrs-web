@@ -6,8 +6,7 @@ const tenantMiddleware = (options) => {
   return {
     applyMiddleware: (req, next) => {
       if (!req.options.headers) req.options.headers = {}
-      // req.options.headers['X-Tenant'] = options.tenant
-      req.options.headers['X-Tenant'] = 'mttrs_br'
+      req.options.headers['X-Tenant'] = options.tenant
       next()
     }
   }
