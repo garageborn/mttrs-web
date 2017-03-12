@@ -9,6 +9,7 @@ export const properties = {
   mttrsGray: '#999',
   mttrsOtherGray: '#DADADA',
   mttrsDarkGray: '#666',
+  mttrsBase: '16',
   mttrsFontSmall: '0.8rem',
   menuCategoriesHeaderHeight: '100px',
   menuPublishersHeaderHeight: '100px',

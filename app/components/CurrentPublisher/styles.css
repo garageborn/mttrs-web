@@ -1,5 +1,14 @@
 .container {
-  lost-center: 45.5em;
+  padding: 0 15px;
+
+  @media (--medium) {
+    padding: 0 calc(50% - 400px);
+  }
+
+  @media (--large) {
+    padding-left: var(--menuWidth);
+    padding-right: 0;
+  }
 }
 
 .publisher {
@@ -10,6 +19,7 @@
   padding: 0 0.5325rem;
   font-size: 0.875rem;
   margin: 0 0.65625rem;
+  lost-center: calc((620 / var(--mttrsBase))rem);
 
   > div {
     margin-right: 0.75em;
