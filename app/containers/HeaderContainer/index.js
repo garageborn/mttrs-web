@@ -13,6 +13,7 @@ class HeaderContainer extends Component {
   }
 
   render () {
+    if (!this.props.showHeader) return null
     return (
       <Header
         menu={this.props.menu}
@@ -36,6 +37,7 @@ class HeaderContainer extends Component {
 
 HeaderContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  showHeader: PropTypes.bool.isRequired,
   menu: PropTypes.object,
   section: PropTypes.object
 }

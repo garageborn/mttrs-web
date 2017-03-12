@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
+import HeaderContainer from '../containers/HeaderContainer'
 import ModalContainer from '../containers/ModalContainer'
 import MenuContainer from '../containers/MenuContainer'
 import injectSettings from '../config/injectSettings'
@@ -14,20 +15,16 @@ class Layout extends Component {
   }
 
   render () {
+    const { showHeader, showModal, showMenu } = this.props.renderOptions
     return (
       <div>
         <Helmet {...this.helmet()} />
+        <HeaderContainer showHeader={showHeader} />
         {this.props.children}
-        <ModalContainer />
-        {this.menuContainer}
+        <ModalContainer showModal={showModal} />
+        <MenuContainer showMenu={showMenu} />
       </div>
     )
-  }
-
-  get menuContainer () {
-    if (this.props.type === 'link') return
-
-    return <MenuContainer />
   }
 
   helmet () {
@@ -74,7 +71,19 @@ Layout.propTypes = {
   description: PropTypes.string,
   children: PropTypes.node,
   metas: PropTypes.array,
-  type: PropTypes.string
+  renderOptions: PropTypes.shape({
+    showHeader: PropTypes.bool,
+    showModal: PropTypes.bool,
+    showMenu: PropTypes.bool
+  })
+}
+
+Layout.defaultProps = {
+  renderOptions: {
+    showHeader: true,
+    showModal: true,
+    showMenu: true
+  }
 }
 
 export default injectSettings(Layout)

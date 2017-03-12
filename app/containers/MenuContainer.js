@@ -14,6 +14,7 @@ class MenuContainer extends Component {
   }
 
   render () {
+    if (!this.props.showMenu) return null
     return (
       <div>
         <MediaQuery query={mediaQueries.notLarge} maxDeviceWidth={1140}>
@@ -48,7 +49,8 @@ MenuContainer.propTypes = {
       isOpen: PropTypes.bool.isRequired
     }).isRequired
   }).isRequired,
-  dispatch: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired,
+  showMenu: PropTypes.bool.isRequired
 }
 
 let mapStateToProps = (state, ownProps) => {
