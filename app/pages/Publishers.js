@@ -16,7 +16,7 @@ class Publishers extends Component {
 
   render () {
     return (
-      <Layout {...this.helmet()}>
+      <Layout {...this.helmet()} showModal={false}>
         <PublishersListContainer type='publishers' />
       </Layout>
     )

@@ -11,6 +11,7 @@
 }
 
 .containerPublisher {
+  composes: container;
   padding-top: 0;
 }
 
