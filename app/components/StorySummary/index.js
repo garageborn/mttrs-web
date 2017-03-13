@@ -45,7 +45,7 @@ class StorySummary extends Component {
     if (this.state.isExpanded) {
       return (
         <div className={styles.footer}>
-          <div onClick={this.toggleExpandSummary} className={styles.button}>
+          <div className={styles.button}>
             <div className={styles.buttonText}>show less</div>
             <div className={styles.showLessTriangle} />
           </div>
@@ -55,7 +55,7 @@ class StorySummary extends Component {
       return (
         <div className={styles.footerWithGradient}>
           <div className={styles.gradient} />
-          <div onClick={this.toggleExpandSummary} className={styles.button}>
+          <div className={styles.button}>
             <div className={styles.buttonText}>show more</div>
             <div className={styles.showMoreTriangle} />
           </div>
@@ -78,7 +78,7 @@ class StorySummary extends Component {
   render () {
     const { story } = this.props
     return (
-      <div className={styles.container}>
+      <div onClick={this.toggleExpandSummary} className={styles.container}>
         <div className={this.getBoxStyles()}>
           <div className={styles.headlineContainer}>
             <div className={styles.logoContainer}>

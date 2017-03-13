@@ -1,10 +1,10 @@
 .text {
   color: var(--mttrsGray);
   font-size: var(--mttrsFontSmall);
-}
-
-.cursorPointer {
   cursor: pointer;
+  &:hover, &:active {
+    text-decoration: underline;
+  }
 }
 
 .icon {
