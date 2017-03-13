@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import className from 'classnames'
+import { Link } from 'react-router'
+import { linkPath } from '../../utils/RoutesHelper'
 import StoryImage from '../StoryImage'
 import StoryContent from '../StoryContent'
 import StoryMetadata from '../StoryMetadata'
@@ -11,14 +13,18 @@ class Story extends Component {
     const { story, handleStoryLinks, options } = this.props
     return (
       <div key={story.id} className={this.storyContainerClass()}>
-        <div className={styles.story}>
+        <Link
+          className={styles.story}
+          to={linkPath(this.mainLink.slug)}
+          target='_blank'
+        >
           <StoryImage story={story} mainLink={this.mainLink} />
           <StoryContent
             mainLink={this.mainLink}
             shouldRenderCategory={options.renderCategory}
             category={this.category}
           />
-        </div>
+        </Link>
         {this.renderSummary()}
         <StoryMetadata
           story={story}
