@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react'
+import { Link } from 'react-router'
+import { categoryPath } from '../../utils/RoutesHelper'
 import styles from './styles.css'
 
 const StoryCategory = ({category}) => {
@@ -7,7 +9,7 @@ const StoryCategory = ({category}) => {
   }
   return (
     <div className={styles.text}>
-      in <span style={style} className={styles.label}>{category.name}</span>
+      in <Link to={categoryPath(category.slug)} style={style} className={styles.label}>{category.name}</Link>
     </div>
   )
 }

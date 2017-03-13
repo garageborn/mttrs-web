@@ -1,6 +1,8 @@
+/* eslint-disable react/jsx-no-bind */
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import LazyLoad from 'react-lazy-load'
+import classNames from 'classnames'
 import * as cloudinary from '../../utils/Cloudinary'
 import { linkPath } from '../../utils/RoutesHelper'
 import Placeholder from './components/Placeholder'
@@ -35,8 +37,16 @@ class StoryImage extends Component {
 
   render () {
     return (
-      <aside className={styles.container}>
-        {this.renderImage}
+      <aside className={this.containerStyles}>
+        <Link
+          to={linkPath(this.mainLink.slug)}
+          className={styles.link}
+          target='_blank'
+          onMouseOver={() => this.props.handleMouseOver(true)}
+          onMouseOut={() => this.props.handleMouseOver(false)}
+        >
+          {this.renderImage}
+        </Link>
       </aside>
     )
   }
@@ -44,25 +54,26 @@ class StoryImage extends Component {
   get renderImage () {
     if (this.state.status === 'error') return <Placeholder story={this.props.story} />
     return (
-      <Link
-        to={linkPath(this.mainLink.slug)}
-        className={styles.link}
-        target='_blank'
-      >
-        <LazyLoad height={90} width={120} offset={300}>
-          <img
-            onError={this.handleImageError}
-            className={styles.image}
-            alt={this.mainLink.title}
-            src={this.getSource()}
-          />
-        </LazyLoad>
-      </Link>
+      <LazyLoad height={90} width={120} offset={300}>
+        <img
+          onError={this.handleImageError}
+          className={styles.image}
+          alt={this.mainLink.title}
+          src={this.getSource()}
+        />
+      </LazyLoad>
     )
   }
 
   get mainLink () {
     return this.props.story.main_link
+  }
+
+  get containerStyles () {
+    return classNames({
+      [styles.container]: true,
+      [styles.active]: this.props.active
+    })
   }
 }
 
@@ -70,7 +81,9 @@ StoryImage.propTypes = {
   story: PropTypes.shape({
     main_link: PropTypes.object.isRequired
   }).isRequired,
-  mainLink: PropTypes.object.isRequired
+  mainLink: PropTypes.object.isRequired,
+  handleMouseOver: PropTypes.func.isRequired,
+  active: PropTypes.bool.isRequired
 }
 
 export default StoryImage

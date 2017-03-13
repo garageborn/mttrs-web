@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import className from 'classnames'
-import StoryImage from '../StoryImage'
-import StoryContent from '../StoryContent'
+import StoryMainContent from '../StoryMainContent'
 import StoryMetadata from '../StoryMetadata'
 import StorySummary from '../StorySummary'
 import styles from './styles.css'
@@ -11,14 +10,12 @@ class Story extends Component {
     const { story, handleStoryLinks, options } = this.props
     return (
       <div key={story.id} className={this.storyContainerClass()}>
-        <div className={styles.story}>
-          <StoryImage story={story} mainLink={this.mainLink} />
-          <StoryContent
-            mainLink={this.mainLink}
-            shouldRenderCategory={options.renderCategory}
-            category={this.category}
-          />
-        </div>
+        <StoryMainContent
+          story={story}
+          mainLink={this.mainLink}
+          shouldRenderCategory={options.renderCategory}
+          category={this.category}
+        />
         {this.renderSummary()}
         <StoryMetadata
           story={story}

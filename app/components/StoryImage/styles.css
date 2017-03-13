@@ -1,9 +1,14 @@
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex: 1;
-  padding: 0 .7rem .7rem 0;
+  cursor: pointer;
+  margin-bottom: calc((6 / 16)rem);
+  border: calc((4 / 16)rem) solid transparent;
+  transition: border 250ms cubic-bezier(.07,.4,.81,.91);
+}
+
+.active, .container:hover, .container:active {
+  border: calc((4 / 16)rem) solid var(--mttrsBackgroundColor);
 }
 
 .link {
@@ -13,6 +18,7 @@
 .image {
   height: 90px;
   width: 120px;
+  cursor: pointer;
 }
 
 :global {
