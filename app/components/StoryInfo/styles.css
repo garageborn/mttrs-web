@@ -15,7 +15,7 @@
 .link {
   composes: container;
   cursor: pointer;
-  &:hover, &:active {
+  &:active, &:hover {
     & .publisherName {
       text-decoration: underline;
     }
@@ -27,7 +27,7 @@
 
 .otherLinks {
   cursor: pointer;
-  &:hover, &:active {
+  &:active, &:hover {
     text-decoration: underline;
   }
 }

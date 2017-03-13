@@ -2,7 +2,7 @@
   color: var(--mttrsGray);
   font-size: var(--mttrsFontSmall);
   cursor: pointer;
-  &:hover, &:active {
+  &:active, &:hover {
     text-decoration: underline;
   }
 }
