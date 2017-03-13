@@ -13,10 +13,6 @@
   }
   @media (--notSmall) {
     lost-center: calc((620 / 16)rem);
-    &:hover {
-      transition: box-shadow 250ms cubic-bezier(.07,.4,.81,.91);
-      box-shadow: 0 8px 8px rgba(0,0,0,0.20);
-    }
   }
 }
 

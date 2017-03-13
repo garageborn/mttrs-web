@@ -17,7 +17,7 @@
   }
 }
 
-.active, .title:hover, .title:active {
+.active, .title:active, .title:hover {
   background-color: var(--mttrsBackgroundColor)
 }
 
