@@ -1,7 +1,12 @@
 import React, { Component, PropTypes } from 'react'
+import { injectIntl, defineMessages } from 'react-intl'
 import PublishersListItem from '../PublishersListItem'
 import PublishersSearch from '../PublishersSearch'
 import styles from './styles.css'
+
+const messages = defineMessages({
+  searchPlaceholder: { id: 'search.placeholder' }
+})
 
 class PublishersList extends Component {
   constructor () {
@@ -55,7 +60,8 @@ class PublishersList extends Component {
   }
 
   renderSearchDisclaimer () {
-    return <p className={styles.disclaimer}>Search for publishers</p>
+    const { intl } = this.props
+    return <p className={styles.disclaimer}>{intl.formatMessage(messages.searchPlaceholder)}</p>
   }
 
   renderPublishersList () {
@@ -83,7 +89,10 @@ class PublishersList extends Component {
 
 PublishersList.propTypes = {
   type: PropTypes.string,
-  publishers: PropTypes.array.isRequired
+  publishers: PropTypes.array.isRequired,
+  intl: PropTypes.shape({
+    formatMessage: PropTypes.func.isRequired
+  }).isRequired
 }
 
-export default PublishersList
+export default injectIntl(PublishersList)
