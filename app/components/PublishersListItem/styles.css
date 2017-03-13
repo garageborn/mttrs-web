@@ -1,6 +1,6 @@
 .container {
   background-color: #FFF;
-  margin-bottom: 1.25rem;
+  margin-bottom: calc((14 / var(--mttrsBase))rem);
   border: 1px solid var(--mttrsOtherGray);
   lost-column: 1/2;
 
@@ -10,6 +10,7 @@
 
   @media (--notSmall) {
     box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.2);
+    margin-bottom: calc((20 / var(--mmttrsBase))rem);
   }
 
   @media (--large) {
