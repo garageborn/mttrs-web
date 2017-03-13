@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import ReactDOM from 'react-dom'
-import Icon from './assets/icon.inline.svg'
+import icon from './assets/icon.svg'
 import styles from './styles.css'
 
 const charsTreshold = 200
@@ -82,7 +82,7 @@ class StorySummary extends Component {
         <div className={this.getBoxStyles()}>
           <div className={styles.headlineContainer}>
             <div className={styles.logoContainer}>
-              <Icon />
+              <img src={icon} alt='mttrs' />
             </div>
             <div>
               <p className={styles.headline}>{story.headline}</p>

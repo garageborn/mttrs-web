@@ -1,8 +1,8 @@
 import React from 'react'
-import LogoMttrs from './assets/logo.inline.svg'
+import logo from './assets/logo.svg'
 
 const Logo = () => {
-  return <LogoMttrs />
+  return <img src={logo} alt='mttrs' />
 }
 
 export default Logo
