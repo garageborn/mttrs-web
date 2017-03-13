@@ -48,5 +48,5 @@ Badge.defaultProps = {
   type: 'android'
 }
 
-const intlBadge = injectIntl(Badge)
-export default injectSettings(intlBadge)
+const BadgeWithIntl = injectIntl(Badge)
+export default injectSettings(BadgeWithIntl)
