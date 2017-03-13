@@ -12,6 +12,16 @@ const tenantMiddleware = (options) => {
   }
 }
 
+const timezoneMiddleware = (options) => {
+  return {
+    applyMiddleware: (req, next) => {
+      if (!req.options.headers) req.options.headers = {}
+      req.options.headers['X-Timezone'] = options.timezone
+      next()
+    }
+  }
+}
+
 const skipCacheMiddleware = (options) => {
   return {
     applyMiddleware: (req, next) => {
@@ -37,6 +47,7 @@ export default function configureApollo (options = {}) {
 
   networkInterface.use([
     tenantMiddleware(options),
+    timezoneMiddleware(options),
     skipCacheMiddleware(options)
   ])
 

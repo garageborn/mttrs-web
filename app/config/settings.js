@@ -21,14 +21,14 @@ class Settings {
   fromServer (request) {
     this.tenant = request.headers.host
     this.timezone = request.headers['x-timezone'] || request.headers['x-geoip-timezone']
-    this.apolloClient = configureApollo({ ssrMode: true, tenant: this.tenant })
+    this.apolloClient = configureApollo({ ssrMode: true, tenant: this.tenant, timezone: this.timezone })
     this.store = configureStore({}, this.apolloClient)
   }
 
   fromClient (window) {
     this.tenant = window.location.host
     this.timezone = jstz.determine().name()
-    this.apolloClient = configureApollo({ tenant: this.tenant })
+    this.apolloClient = configureApollo({ tenant: this.tenant, timezone: this.timezone })
     this.store = configureStore(window.__INITIAL_STATE__, this.apolloClient)
   }
 
