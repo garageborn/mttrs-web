@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import elementClass from 'element-class'
 import { UIActions } from '../actions/index'
 import Menu from '../components/Menu'
 
@@ -16,8 +17,8 @@ class MenuContainer extends Component {
   }
 
   closeMenu () {
-    const { dispatch } = this.props
-    dispatch(UIActions.closeMenu())
+    elementClass(document.body).remove('overflowHidden')
+    this.props.dispatch(UIActions.closeMenu())
   }
 }
 

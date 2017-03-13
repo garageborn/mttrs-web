@@ -43,7 +43,12 @@
   lost-utility: clearfix;
 
   @media (--large) {
-    lost-center: 71.25rem;
-    width: 71.25rem;
+    lost-center: calc((820 / var(--mttrsBase))em);
+    width: calc((820 / var(--mttrsBase))em);
+  }
+
+  @media (--xLarge) {
+    lost-center: calc((1140 / var(--mttrsBase))em);
+    width: calc((1140 / var(--mttrsBase))em);
   }
 }
