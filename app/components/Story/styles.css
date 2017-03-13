@@ -7,6 +7,10 @@
   box-shadow: 0px 2px 3px rgba(0,0,0,0.20);
   position: relative;
   border-radius: 2px;
+  transition: box-shadow 250ms cubic-bezier(.07,.4,.81,.91);
+  &:hover, &:active {
+    box-shadow: 0 8px 8px rgba(0,0,0,0.20);
+  }
   @media (--notSmall) {
     lost-center: calc((620 / 16)rem);
     &:hover {
@@ -14,11 +18,6 @@
       box-shadow: 0 8px 8px rgba(0,0,0,0.20);
     }
   }
-}
-
-.story {
-  display: flex;
-  flex-flow: row;
 }
 
 .read {

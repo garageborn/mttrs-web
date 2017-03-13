@@ -6,7 +6,9 @@ import styles from './styles.css'
 const StoryContent = ({
   mainLink,
   shouldRenderCategory,
-  category
+  category,
+  handleMouseOver,
+  active
 }) => {
   const renderCategory = () => {
     if (shouldRenderCategory === false) return
@@ -14,7 +16,11 @@ const StoryContent = ({
   }
   return (
     <div className={styles.container}>
-      <StoryTitle mainLink={mainLink} />
+      <StoryTitle
+        handleMouseOver={handleMouseOver}
+        mainLink={mainLink}
+        active={active}
+      />
       {renderCategory()}
     </div>
   )
@@ -23,7 +29,9 @@ const StoryContent = ({
 StoryContent.propTypes = {
   mainLink: PropTypes.object.isRequired,
   shouldRenderCategory: PropTypes.bool.isRequired,
-  category: PropTypes.object.isRequired
+  category: PropTypes.object.isRequired,
+  handleMouseOver: PropTypes.func.isRequired,
+  active: PropTypes.bool.isRequired
 }
 
 export default StoryContent
