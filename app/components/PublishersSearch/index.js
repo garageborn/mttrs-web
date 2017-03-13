@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { injectIntl, defineMessages } from 'react-intl'
-import Loupe from './assets/loupeClear.inline.svg'
+import loupe from './assets/loupeClear.svg'
 import styles from './styles.css'
 
 const messages = defineMessages({
@@ -25,7 +25,7 @@ const PublishersSearch = ({fromPublishersPage, handleFocus, deactivateSearch, is
   return (
     <div className={styles.outerBorder}>
       <div className={styles.search}>
-        <Loupe />
+        <img src={loupe} alt='' />
         <input
           onChange={handleSearchTerm}
           className={styles.input}
