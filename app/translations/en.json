@@ -9,6 +9,7 @@
   "link.pageTitle": "{title} | mttrs",
   "publisher.pageTitle": "{name} | mttrs",
   "publishers.search": "Find your favorite publisher...",
+  "search.placeholder": "Search for publishers",
   "categories": "Categories",
   "publishers": "Publishers",
   "spinner.loading": "Loading...",

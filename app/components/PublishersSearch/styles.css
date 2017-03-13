@@ -1,12 +1,11 @@
 .search {
   display: flex;
   align-items: center;
-  height: 2.5625rem;
+  height: calc((41 / var(--mttrsBase))rem);
   border-radius: 4px;
   border-radius: 0px;
-  border: 1px solid #F1F1F1;
-  background-color: #DADADA;
-  box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.2);
+  border: 1px solid var(--mttrsBackgroundColor);
+  background-color: var(--mttrsOtherGray);
 
   img {
     margin-left: 1em;
@@ -19,11 +18,11 @@
   outline: 0;
   width: 100%;
   font-size: .9rem;
-  color: #999;
+  color: var(--mttrsGray);
+  background-color: var(--mttrsOtherGray);
 
-  background-color: #DADADA;
   &::placeholder {
-    color: white;
+    color: var(--mttrsGray);
   }
 }
 
@@ -31,14 +30,14 @@
   margin: 0.34375rem auto 0.875rem;
   @media (--notSmall) {
     margin: 0;
-    border: 1px solid #F1F1F1;
+    border: 1px solid var(--mttrsBackgroundColor);
   }
 }
 
 .close {
   font-size: .8em;
-  background-color: #999;
-  color: white;
+  background-color: var(--mttrsGray);
+  color: #FFF;
   cursor: pointer;
   padding: .1rem .3rem;
   margin-right: .5rem;
