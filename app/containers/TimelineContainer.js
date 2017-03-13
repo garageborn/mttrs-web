@@ -33,8 +33,6 @@ class TimelineContainer extends Component {
     const { data, type } = this.props
     if (data.loading) return <Placeholder pageType={type} />
 
-    console.log('render', data)
-
     return (
       <main ref={'timelineContainer'}>
         {this.renderTimeline()}

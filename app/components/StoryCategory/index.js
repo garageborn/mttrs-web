@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
-import { linkPath } from '../../utils/RoutesHelper'
+import { categoryPath } from '../../utils/RoutesHelper'
 import styles from './styles.css'
 
 const StoryCategory = ({category}) => {
@@ -9,7 +9,7 @@ const StoryCategory = ({category}) => {
   }
   return (
     <div className={styles.text}>
-      in <Link to={linkPath(category.slug)} style={style} className={styles.label}>{category.name}</Link>
+      in <Link to={categoryPath(category.slug)} style={style} className={styles.label}>{category.name}</Link>
     </div>
   )
 }
