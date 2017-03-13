@@ -21,11 +21,20 @@ class StoryInfo extends Component {
 
   renderPublishersText () {
     const { formatMessage } = this.props.intl
-    return <p>{this.renderMainPublisherName()} {formatMessage(messages.and)} {this.renderOtherLinks()}</p>
+    return (
+      <div className={styles.content}>{this.renderMainPublisherName()}&nbsp;{formatMessage(messages.and)}&nbsp;{this.renderOtherLinks()}</div>
+    )
   }
 
   renderMainPublisherName () {
-    return <Link to={this.props.mainLink.publisher.slug}>{this.props.mainLink.publisher.name}</Link>
+    return (
+      <Link className={styles.link} to={this.props.mainLink.publisher.slug}>
+        {this.renderPublisherIcon()}&nbsp;
+        <span className={styles.publisherName}>
+          {this.props.mainLink.publisher.name}
+        </span>
+      </Link>
+    )
   }
 
   renderOtherLinks () {
@@ -33,9 +42,9 @@ class StoryInfo extends Component {
     let otherString = intl.formatMessage(messages.other)
     if (otherLinksCount > 1) otherString = intl.formatMessage(messages.others)
     return (
-      <a onClick={() => handleStoryLinks(story)}>
+      <span className={styles.otherLinks} onClick={() => handleStoryLinks(story)}>
         {otherLinksCount} {otherString}
-      </a>
+      </span>
     )
   }
 
@@ -46,9 +55,10 @@ class StoryInfo extends Component {
   render () {
     const { formatMessage } = this.props.intl
     let from = formatMessage(messages.from)
+
     return (
-      <div className={styles.text}>
-        {_capitalize(from)}&nbsp;{this.renderPublisherIcon()}&nbsp;{this.renderPublishers()}
+      <div className={styles.container}>
+        {_capitalize(from)}&nbsp;{this.renderPublishers()}
       </div>
     )
   }

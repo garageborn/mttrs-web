@@ -1,11 +1,33 @@
-.text {
+.container {
   display: flex;
   align-items: center;
   font-size: var(--mttrsFontSmall);
   font-weight: 300;
   color: var(--mttrsGray);
-  a {
-    color: var(--mttrsDarkGray);
-    cursor: pointer;
+  cursor: default
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  composes: container;
+  cursor: pointer;
+  &:hover, &:active {
+    & .publisherName {
+      text-decoration: underline;
+    }
+    & > div {
+      border-color: var(--mttrsGray)
+    }
+  }
+}
+
+.otherLinks {
+  cursor: pointer;
+  &:hover, &:active {
+    text-decoration: underline;
   }
 }
