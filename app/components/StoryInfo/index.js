@@ -2,12 +2,10 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import { injectIntl, defineMessages } from 'react-intl'
-import _capitalize from 'lodash/capitalize'
 import PublisherIcon from '../PublisherIcon'
 import styles from './styles.css'
 
 const messages = defineMessages({
-  from: { id: 'from' },
   and: { id: 'and' },
   other: { id: 'other' },
   others: { id: 'others' }
@@ -53,12 +51,9 @@ class StoryInfo extends Component {
   }
 
   render () {
-    const { formatMessage } = this.props.intl
-    let from = formatMessage(messages.from)
-
     return (
       <div className={styles.container}>
-        {_capitalize(from)}&nbsp;{this.renderPublishers()}
+        {this.renderPublishers()}
       </div>
     )
   }

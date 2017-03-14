@@ -22,5 +22,10 @@
   "mttrs.download.slogan": "Tenha o seu resumo de notícias sempre a mão.",
   "mttrs.download.android": "Disponível do Google Play",
   "mttrs.download.ios": "Baixar na App Store",
-  "mttrs.about.understand": "Entenda o"
+  "mttrs.about.understand": "Entenda o",
+  "today": "Hoje",
+  "yesterday": "Ontem",
+  "lastWeek": "Na última semana",
+  "lastMonth": "No último mês",
+  "dateFormat": "D [de] MMMM"
 }
