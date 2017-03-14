@@ -9,7 +9,7 @@ const StoryCategory = ({category}) => {
   }
   return (
     <div className={styles.text}>
-      in <Link to={categoryPath(category.slug)} style={style} className={styles.label}>{category.name}</Link>
+      <Link to={categoryPath(category.slug)} style={style} className={styles.label}>{category.name}</Link>
     </div>
   )
 }
