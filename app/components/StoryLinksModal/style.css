@@ -1,15 +1,9 @@
-.container {
-  position: absolute;
-  width: 100%;
-  overflow: hidden;
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  @media (--large) {
-    /*padding-left: var(--menuWidth);*/
+  p {
+    color: var(--mttrsGray);
   }
-}
-
-.content {
-  /*lost-center: calc((680 / 16)rem);
-  background: #FFF;
-  overflow-y: auto;*/
 }

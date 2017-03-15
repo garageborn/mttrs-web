@@ -11,18 +11,16 @@ class StoryLinksModal extends Component {
   render () {
     if (this.props.data.loading) {
       return (
-        <div className={styles.container}>
-          {this.props.intl.formatMessage(messages.loading)}
+        <div className={styles.loading}>
+          <p>{this.props.intl.formatMessage(messages.loading)}</p>
         </div>
       )
     }
 
     return (
       <div className={styles.container}>
-        <section className={styles.content}>
-          {this.renderMainLink()}
-          {this.renderOtherLinks()}
-        </section>
+        {this.renderMainLink()}
+        {this.renderOtherLinks()}
       </div>
     )
   }
