@@ -5,10 +5,6 @@ import CloseModal from '../components/CloseModal'
 import modalStyles from '../styles/modal.css'
 import { UIActions } from '../actions/index'
 
-function getParent () {
-  return document.querySelector('#timeline')
-}
-
 class ModalContainer extends Component {
   constructor () {
     super()
@@ -26,7 +22,6 @@ class ModalContainer extends Component {
           className={modalStyles.modal}
           overlayClassName={modalStyles.overlay}
           onRequestClose={this.closeModal}
-          parentSelector={getParent}
         >
           {UIReducer.modal.content}
         </Modal>
