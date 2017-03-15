@@ -49,3 +49,15 @@
   margin: 0 .5em;
   cursor: pointer;
 }
+
+.restrictContent {
+  display: flex;
+  align-items: center;
+  color: var(--mttrsGray);
+
+  span {
+    font-size: calc((10 / var(--mttrsBase))rem);
+    font-style: italic;
+    font-weight: 300;
+  }
+}

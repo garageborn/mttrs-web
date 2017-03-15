@@ -16,7 +16,7 @@ class StoryLinkContainer extends Component {
   }
 
   render () {
-    let {story, key, type, storyLink} = this.props
+    let { story, key, type, storyLink } = this.props
     return (
       <StoryLink
         key={key}

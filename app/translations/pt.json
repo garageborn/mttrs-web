@@ -27,5 +27,6 @@
   "lastWeek": "Na última semana",
   "lastMonth": "No último mês",
   "dateFormat": "D [de] MMMM",
-  "storyPublishers.others": " {itemCount, plural, one {mais #} other {mais #}}"
+  "storyPublishers.others": " {itemCount, plural, one {mais #} other {mais #}}",
+  "restrict.content": "somente para assinantes"
 }
