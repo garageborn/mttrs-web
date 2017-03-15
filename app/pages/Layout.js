@@ -57,7 +57,7 @@ class Layout extends Component {
   }
 
   get scripts () {
-    return [...sentry, ...segment]
+    return [...sentry, segment]
   }
 }
 
