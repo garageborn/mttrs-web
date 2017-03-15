@@ -4,7 +4,7 @@ import StoryLinkContainer from '../../containers/StoryLinkContainer'
 import styles from './style.css'
 
 const messages = defineMessages({
-  loading: { id: 'spinner.loading' }
+  loading: { id: 'loading' }
 })
 
 class StoryLinksModal extends Component {
