@@ -38,10 +38,10 @@ class StoryInfo extends Component {
 
   renderOtherLinks () {
     const { story, otherLinksCount, intl, handleStoryLinks } = this.props
-    // let otherString = intl.formatMessage(messages.other)
-    // if (otherLinksCount > 1) otherString = intl.formatMessage(messages.others)
     const othersText = intl.formatMessage(messages.others, {itemCount: otherLinksCount})
+
     if (!otherLinksCount) return
+
     return (
       <span className={styles.otherLinks} onClick={() => handleStoryLinks(story)}>
         {othersText}
