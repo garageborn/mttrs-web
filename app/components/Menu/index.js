@@ -15,7 +15,8 @@ const Menu = ({ closeMenu, isOpen }) => {
     <div className={menuClasses}>
       <MenuCategoriesContainer closeMenu={closeMenu} />
       <MenuMttrsDownload />
-      <MenuAboutMttrs />
+      {/* // Hide for now */}
+      {/* <MenuAboutMttrs /> */}
     </div>
   )
 }

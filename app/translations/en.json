@@ -15,7 +15,6 @@
   "loading": "Loading...",
   "request.link": "Requesting link...",
   "and": "and",
-  "from": "from",
   "other": "other",
   "others": "others",
   "mttrs.slogan": "Your reading time well spent. Read the news that really matters.",
@@ -27,5 +26,6 @@
   "yesterday": "Yesterday",
   "lastWeek": "Last Week",
   "lastMonth": "Last Month",
-  "dateFormat": "MMMM D"
+  "dateFormat": "MMMM D",
+  "storyPublishers.others": " {itemCount, plural, one {# other} other {# others}}"
 }

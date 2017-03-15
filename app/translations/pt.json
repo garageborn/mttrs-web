@@ -15,9 +15,8 @@
   "loading": "Carregando...",
   "request.link": "Abrindo o link...",
   "and": "e",
-  "from": "Via",
-  "other": "outro",
-  "others": "outros",
+  "other": "mais",
+  "others": "mais",
   "mttrs.slogan": "Seu tempo é precioso. Leia as notícias que realmente importam.",
   "mttrs.download.slogan": "Tenha o seu resumo de notícias sempre a mão.",
   "mttrs.download.android": "Disponível do Google Play",
@@ -27,5 +26,6 @@
   "yesterday": "Ontem",
   "lastWeek": "Na última semana",
   "lastMonth": "No último mês",
-  "dateFormat": "D [de] MMMM"
+  "dateFormat": "D [de] MMMM",
+  "storyPublishers.others": " {itemCount, plural, one {mais #} other {mais #}}"
 }
