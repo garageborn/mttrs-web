@@ -1,20 +1,28 @@
 import React, { Component, PropTypes } from 'react'
+import { injectIntl, defineMessages } from 'react-intl'
 import StoryLinkContainer from '../../containers/StoryLinkContainer'
 import styles from './style.css'
+
+const messages = defineMessages({
+  loading: { id: 'spinner.loading' }
+})
 
 class StoryLinksModal extends Component {
   render () {
     if (this.props.data.loading) {
       return (
         <div className={styles.container}>
-          loading....
+          {this.props.intl.formatMessage(messages.loading)}
         </div>
       )
     }
+
     return (
       <div className={styles.container}>
-        { this.renderMainLink() }
-        { this.renderOtherLinks() }
+        <section className={styles.content}>
+          {this.renderMainLink()}
+          {this.renderOtherLinks()}
+        </section>
       </div>
     )
   }
@@ -34,7 +42,10 @@ class StoryLinksModal extends Component {
 }
 
 StoryLinksModal.propTypes = {
+  intl: PropTypes.shape({
+    formatMessage: PropTypes.func.isRequired
+  }).isRequired,
   data: PropTypes.object.isRequired
 }
 
-export default StoryLinksModal
+export default injectIntl(StoryLinksModal)

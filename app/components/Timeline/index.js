@@ -7,7 +7,7 @@ class Timeline extends Component {
     const { items } = this.props.data
     if (!items || !items.length) return null
 
-    return <div className={styles.container}>{this.renderTimeline()}</div>
+    return <div className={styles.container} id='timeline'>{this.renderTimeline()}</div>
   }
 
   renderTimeline () {

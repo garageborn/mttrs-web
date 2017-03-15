@@ -47,11 +47,24 @@
   border-radius: 4px;
   outline: none;
   padding: 0;
+  z-index: 4;
 
   @media (--notSmall) {
-    lost-center: 45.5em;
+    lost-center: calc((680 / var(--mttrsBase))rem);
     top: 140px;
   }
+
+  @media (--large) {
+    margin-left: calc(50% - 230px);
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  background: red;
 }
 
 .overlay {
@@ -60,5 +73,5 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--mttrsGray);
+  background-color: rgba(0, 0, 0, 0.5);
 }

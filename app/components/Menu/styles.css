@@ -7,7 +7,7 @@
   top: 60px;
   left: 0;
   color: white;
-  z-index: 1;
+  z-index: 5;
   overflow-y: auto;
   transition: transform 300ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
   transform: translateY(-100%);

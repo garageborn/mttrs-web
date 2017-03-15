@@ -1,0 +1,15 @@
+.container {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+
+  @media (--large) {
+    /*padding-left: var(--menuWidth);*/
+  }
+}
+
+.content {
+  /*lost-center: calc((680 / 16)rem);
+  background: #FFF;
+  overflow-y: auto;*/
+}
