@@ -1,12 +1,15 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
 .button {
   position: fixed;
   bottom: 1rem;
-  left: 48%;
   background-color: white;
   height: 2em;
   width: 2em;
   border-radius: 50%;
-  text-align: center;
   padding: .4em;
   font-size: 1.3rem;
   cursor: pointer;
@@ -14,4 +17,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (--large) {
+    left: 0;
+    margin-left: calc(50% + 99px);
+  }
 }

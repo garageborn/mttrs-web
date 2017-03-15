@@ -24,9 +24,9 @@ const StorySocialCount = ({story, otherLinksCount, totalSocial, handleStoryLinks
 }
 
 StorySocialCount.propTypes = {
-  story: PropTypes.object.isRequired,
-  otherLinksCount: PropTypes.number.isRequired,
-  handleStoryLinks: PropTypes.func.isRequired,
+  story: PropTypes.object,
+  otherLinksCount: PropTypes.number,
+  handleStoryLinks: PropTypes.func,
   totalSocial: PropTypes.number.isRequired
 }
 

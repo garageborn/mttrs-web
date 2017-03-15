@@ -12,7 +12,7 @@
   "search.placeholder": "Busca",
   "categories": "Categorias",
   "publishers": "Sites",
-  "spinner.loading": "Carregando...",
+  "loading": "Carregando...",
   "request.link": "Abrindo o link...",
   "and": "e",
   "from": "Via",

@@ -1,11 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import Modal from 'react-modal'
 import { injectIntl, defineMessages } from 'react-intl'
 import Layout from './Layout'
 import TimelineContainer from '../containers/TimelineContainer'
 import CloseModal from '../components/CloseModal'
-import modalStyles from '../styles/modal.css'
 import { UIActions } from '../actions/index'
 import LogoSocial from '../assets/social.png'
 
@@ -30,7 +28,6 @@ class Home extends Component {
     return (
       <Layout {...this.helmet()}>
         <TimelineContainer type='home' queryVariables={queryVariables} />
-        {this.renderModal()}
       </Layout>
     )
   }
@@ -52,25 +49,6 @@ class Home extends Component {
         { property: 'og:site', content: 'Mttrs' }
       ]
     }
-  }
-
-  renderModal () {
-    const {UIReducer} = this.props
-    return (
-      <div>
-        <Modal
-          isOpen={UIReducer.modal.isOpen}
-          contentLabel='Modal'
-          className={modalStyles.modal}
-          overlayClassName={modalStyles.overlay}
-
-          onRequestClose={this.closeModal}
-        >
-          {UIReducer.modal.content}
-        </Modal>
-        {this.renderCloseButton()}
-      </div>
-    )
   }
 
   renderCloseButton () {

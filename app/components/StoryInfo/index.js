@@ -20,7 +20,9 @@ class StoryInfo extends Component {
   renderPublishersText () {
     const { formatMessage } = this.props.intl
     return (
-      <div className={styles.content}>{this.renderMainPublisherName()}&nbsp;{formatMessage(messages.and)}&nbsp;{this.renderOtherLinks()}</div>
+      <div className={styles.content}>
+        {this.renderMainPublisherName()}&nbsp;{formatMessage(messages.and)}&nbsp;{this.renderOtherLinks()}
+      </div>
     )
   }
 

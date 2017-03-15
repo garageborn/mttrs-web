@@ -12,7 +12,7 @@
   "search.placeholder": "Search for publishers",
   "categories": "Categories",
   "publishers": "Publishers",
-  "spinner.loading": "Loading...",
+  "loading": "Loading...",
   "request.link": "Requesting link...",
   "and": "and",
   "from": "from",

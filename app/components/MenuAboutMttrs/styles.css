@@ -3,6 +3,11 @@
   align-items: center;
   justify-content: center;
 
+  @media (--notSmall) {
+    justify-content: flex-start;
+    padding-left: 35px;
+  }
+
   p {
     font-size: 12px;
     color: var(--mttrsGray);
