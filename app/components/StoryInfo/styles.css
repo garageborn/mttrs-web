@@ -31,3 +31,8 @@
     text-decoration: underline;
   }
 }
+
+.restrictContent {
+  display: flex;
+  justify-content: space-between;
+}
