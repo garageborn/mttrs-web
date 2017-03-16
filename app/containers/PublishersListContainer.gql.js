@@ -7,6 +7,7 @@ query {
     icon_id
     id
     name
+    display_name
     slug
   }
 }

@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { injectIntl, defineMessages } from 'react-intl'
+import _isNull from 'lodash/isNull'
 import PublishersListItem from '../PublishersListItem'
 import PublishersSearch from '../PublishersSearch'
 import styles from './styles.css'
@@ -73,10 +74,19 @@ class PublishersList extends Component {
     )
   }
 
+  matchDisplayName (publisher, queryMatcher) {
+    if (_isNull(publisher.display_name)) return
+    return publisher.display_name.match(queryMatcher)
+  }
+
   renderPublishers () {
     const { publishers } = this.props
     const queryMatcher = new RegExp(this.state.query, 'i')
-    const filteredPublishers = publishers.filter(publisher => publisher.name.match(queryMatcher))
+    const filteredPublishers = publishers.filter(publisher => {
+      return this.matchDisplayName(publisher, queryMatcher) ||
+        publisher.name.match(queryMatcher) ||
+        publisher.slug.match(queryMatcher)
+    })
     return filteredPublishers.map((publisher) => <PublishersListItem onSelectPublisher={this.deactivateSearch} key={publisher.id} publisher={publisher} />)
   }
 

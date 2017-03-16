@@ -17,7 +17,9 @@ const StoryLink = ({ story, type, storyLink, closeModal }) => {
       <div>
         <Link onClick={closeModal} className={styles.primary} to={storyLink.publisher.slug}>
           <PublisherIcon size='big' publisher={storyLink.publisher} />
-          <h2 className={styles.publisherName}>{storyLink.publisher.name}</h2>
+          <h2 className={styles.publisherName}>
+            {storyLink.publisher.display_name || storyLink.publisher.name}
+          </h2>
           {storyLink.publisher.restrict_content && <RestrictContentLabel />}
         </Link>
       </div>

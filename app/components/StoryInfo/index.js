@@ -41,11 +41,12 @@ class StoryInfo extends Component {
   }
 
   renderMainPublisherName () {
+    const { publisher } = this.props.mainLink
     return (
-      <Link className={styles.link} to={this.props.mainLink.publisher.slug}>
+      <Link className={styles.link} to={publisher.slug}>
         {this.renderPublisherIcon()}&nbsp;
         <span className={styles.publisherName}>
-          {this.props.mainLink.publisher.name}
+          {publisher.display_name || publisher.name}
         </span>
       </Link>
     )
