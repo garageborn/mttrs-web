@@ -2,6 +2,7 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import { injectIntl, defineMessages } from 'react-intl'
+import RestrictContentLabel from '../RestrictContentLabel'
 import PublisherIcon from '../PublisherIcon'
 import styles from './styles.css'
 
@@ -11,8 +12,22 @@ const messages = defineMessages({
 })
 
 class StoryInfo extends Component {
+  renderRestrictContentLabel () {
+    const { publisher } = this.props.mainLink
+    return publisher.restrict_content && <RestrictContentLabel />
+  }
+
+  renderPublisherWithRestrictContent () {
+    return (
+      <div className={styles.restrictContent}>
+        {this.renderMainPublisherName()}
+        {this.renderRestrictContentLabel()}
+      </div>
+    )
+  }
+
   renderPublishers () {
-    if (this.props.otherLinksCount === 0) return this.renderMainPublisherName()
+    if (this.props.otherLinksCount === 0) return this.renderPublisherWithRestrictContent()
     return this.renderPublishersText()
   }
 
@@ -54,7 +69,6 @@ class StoryInfo extends Component {
   }
 
   render () {
-    console.log(this.props)
     return (
       <div className={styles.container}>
         {this.renderPublishers()}

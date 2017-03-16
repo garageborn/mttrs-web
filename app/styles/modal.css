@@ -41,7 +41,7 @@
   left: 10px;
   right: 10px;
   bottom: 70px;
-  background: #fff;
+  background-color: var(--mttrsBackgroundColor);
   overflow: auto;
   overflow-scrolling: touch;
   border-radius: 4px;
@@ -57,14 +57,6 @@
   @media (--large) {
     margin-left: calc(50% - 230px);
   }
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  height: 100px;
-  width: 100%;
-  background: red;
 }
 
 .overlay {
