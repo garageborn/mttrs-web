@@ -14,7 +14,7 @@ const messages = defineMessages({
 class StoryInfo extends Component {
   renderRestrictContentLabel () {
     const { publisher } = this.props.mainLink
-    return publisher.restrict_content && <RestrictContentLabel />
+    if (publisher.restrict_content) return <RestrictContentLabel />
   }
 
   renderPublisherName () {
