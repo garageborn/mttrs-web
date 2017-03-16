@@ -17,7 +17,7 @@ class StoryInfo extends Component {
     return publisher.restrict_content && <RestrictContentLabel />
   }
 
-  renderPublisherWithRestrictContent () {
+  renderPublisherName () {
     return (
       <div className={styles.restrictContent}>
         {this.renderMainPublisherName()}
@@ -27,7 +27,7 @@ class StoryInfo extends Component {
   }
 
   renderPublishers () {
-    if (this.props.otherLinksCount === 0) return this.renderPublisherWithRestrictContent()
+    if (this.props.otherLinksCount === 0) return this.renderPublisherName()
     return this.renderPublishersText()
   }
 
