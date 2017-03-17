@@ -14,17 +14,15 @@ class StoryContainer extends Component {
   }
 
   render () {
-    const {story, options, isVisited} = this.props
+    const { story, options, isVisited } = this.props
     return (
-      <div>
-        <Story
-          story={story}
-          options={options}
-          isVisited={isVisited}
-          handleStoryLinks={this.props.handleStoryLinks}
-          handleVisitedStory={this.handleVisitedStory}
-        />
-      </div>
+      <Story
+        story={story}
+        options={options}
+        isVisited={isVisited}
+        handleStoryLinks={this.props.handleStoryLinks}
+        handleVisitedStory={this.handleVisitedStory}
+      />
     )
   }
 

@@ -9,7 +9,7 @@ class Story extends Component {
   render () {
     const { story, handleStoryLinks, options } = this.props
     return (
-      <div key={story.id} className={this.storyContainerClass()}>
+      <div key={story.id} className={this.storyContainerClass()} itemScope>
         <StoryMainContent
           story={story}
           mainLink={this.mainLink}
