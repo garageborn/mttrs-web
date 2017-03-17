@@ -12,8 +12,6 @@ class Story extends Component {
       <li
         key={story.id}
         className={this.storyContainerClass()}
-        itemScope
-        itemType='http://schema.org/NewsArticle'
       >
         <StoryMainContent
           story={story}

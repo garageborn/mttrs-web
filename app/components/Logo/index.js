@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from './assets/logo.svg'
 
-const Logo = () => <img src={logo} alt='mttrs' itemProp='logo' />
+const Logo = () => <img src={logo} alt='mttrs' />
 
 export default Logo
