@@ -9,7 +9,10 @@ class Story extends Component {
   render () {
     const { story, handleStoryLinks, options } = this.props
     return (
-      <div key={story.id} className={this.storyContainerClass()}>
+      <li
+        key={story.id}
+        className={this.storyContainerClass()}
+      >
         <StoryMainContent
           story={story}
           mainLink={this.mainLink}
@@ -24,7 +27,7 @@ class Story extends Component {
           totalSocial={story.total_social}
           handleStoryLinks={handleStoryLinks}
         />
-      </div>
+      </li>
     )
   }
 

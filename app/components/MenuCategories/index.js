@@ -24,10 +24,14 @@ class MenuCategories extends Component {
     return (
       <div className={styles.container}>
         <p className={styles.title}>{this.props.intl.formatMessage(messages.categories)}</p>
-        <div className={styles.categories}>
+        <ul
+          className={styles.categories}
+          itemScope
+          itemType='http://www.schema.org/SiteNavigationElement'
+        >
           {this.topStories}
           {this.categories}
-        </div>
+        </ul>
         {this.publishers}
       </div>
     )
@@ -35,6 +39,7 @@ class MenuCategories extends Component {
 
   get topStories () {
     const { intl, closeMenu } = this.props
+    let li = React.createElement('li')
 
     return (
       <MenuCategoriesItem
@@ -42,12 +47,16 @@ class MenuCategories extends Component {
         name={intl.formatMessage(messages.topStories)}
         color={properties.mttrsOrange}
         closeMenu={closeMenu}
+        component={li}
+        itemPropName='name'
+        itemPropUrl='url'
       />
     )
   }
 
   get categories () {
     const { categories, closeMenu } = this.props
+    let li = React.createElement('li')
 
     return categories.map(category =>
       <MenuCategoriesItem
@@ -56,12 +65,16 @@ class MenuCategories extends Component {
         name={category.name}
         color={category.color}
         closeMenu={closeMenu}
+        component={li}
+        itemPropName='name'
+        itemPropUrl='url'
       />
     )
   }
 
   get publishers () {
     const { intl, closeMenu } = this.props
+    let div = React.createElement('div')
 
     return (
       <MenuCategoriesItem
@@ -69,6 +82,7 @@ class MenuCategories extends Component {
         name={intl.formatMessage(messages.publishers)}
         color={properties.mttrsGray}
         closeMenu={closeMenu}
+        component={div}
       />
     )
   }

@@ -76,7 +76,7 @@ export default class Html extends Component {
           {head}
         </head>
 
-        <body>
+        <body itemScope itemType='http://schema.org/WebPage'>
           {/* support adding arbitrary markup to body start */}
           {bodyStart}
 

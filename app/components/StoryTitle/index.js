@@ -17,8 +17,9 @@ const StoryTitle = ({mainLink, handleMouseOver, active}) => {
       target='_blank'
       onMouseOver={() => handleMouseOver(true)}
       onMouseOut={() => handleMouseOver(false)}
+      itemProp='url'
     >
-      <h1 className={textClass}>{mainLink.title}</h1>
+      <h1 className={textClass} itemProp='name'>{mainLink.title}</h1>
     </Link>
   )
 }
