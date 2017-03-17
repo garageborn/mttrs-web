@@ -52,7 +52,12 @@ class Header extends Component {
 
   render () {
     return (
-      <header className={styles.header} style={{ borderColor: this.sectionColor }}>
+      <header
+        className={styles.header}
+        style={{ borderColor: this.sectionColor }}
+        itemScope
+        itemType='http://schema.org/WPHeader'
+      >
         <div className={styles.trigger}>
           <MenuTrigger toggleMenu={this.toggleMenu} color={this.sectionColor} />
           <HeaderTitle title={this.section} color={this.sectionColor} />
