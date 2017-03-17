@@ -34,7 +34,7 @@ class StoryInfo extends Component {
   renderPublishersText () {
     const { formatMessage } = this.props.intl
     return (
-      <div className={styles.content}>
+      <div className={styles.content} itemScope itemType='http://schema.org/Thing'>
         {this.renderMainPublisherName()}&nbsp;{formatMessage(messages.and)}&nbsp;{this.renderOtherLinks()}
       </div>
     )
@@ -43,9 +43,9 @@ class StoryInfo extends Component {
   renderMainPublisherName () {
     const { publisher } = this.props.mainLink
     return (
-      <Link className={styles.link} to={publisher.slug}>
+      <Link className={styles.link} to={publisher.slug} itemProp='url'>
         {this.renderPublisherIcon()}&nbsp;
-        <span className={styles.publisherName}>
+        <span className={styles.publisherName} itemProp='name'>
           {publisher.display_name || publisher.name}
         </span>
       </Link>

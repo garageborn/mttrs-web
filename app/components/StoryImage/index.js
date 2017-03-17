@@ -37,13 +37,14 @@ class StoryImage extends Component {
 
   render () {
     return (
-      <aside className={this.containerStyles}>
+      <aside className={this.containerStyles} itemScope itemType='http://schema.org/ImageObject'>
         <Link
           to={linkPath(this.mainLink.slug)}
           className={styles.link}
           target='_blank'
           onMouseOver={() => this.props.handleMouseOver(true)}
           onMouseOut={() => this.props.handleMouseOver(false)}
+          itemProp='url'
         >
           {this.renderImage}
         </Link>
@@ -60,6 +61,7 @@ class StoryImage extends Component {
           className={styles.image}
           alt={this.mainLink.title}
           src={this.getSource()}
+          itemProp='image'
         />
       </LazyLoad>
     )

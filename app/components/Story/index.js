@@ -9,7 +9,12 @@ class Story extends Component {
   render () {
     const { story, handleStoryLinks, options } = this.props
     return (
-      <div key={story.id} className={this.storyContainerClass()} itemScope>
+      <li
+        key={story.id}
+        className={this.storyContainerClass()}
+        itemScope
+        itemType='http://schema.org/NewsArticle'
+      >
         <StoryMainContent
           story={story}
           mainLink={this.mainLink}
@@ -24,7 +29,7 @@ class Story extends Component {
           totalSocial={story.total_social}
           handleStoryLinks={handleStoryLinks}
         />
-      </div>
+      </li>
     )
   }
 

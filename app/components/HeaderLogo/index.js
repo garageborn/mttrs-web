@@ -5,8 +5,8 @@ import Logo from '../Logo'
 import styles from './styles.css'
 
 const HeaderLogo = () => (
-  <div className={styles.logo}>
-    <Link to={rootPath}>
+  <div className={styles.logo} itemScope itemType='http://schema.org/Organization'>
+    <Link to={rootPath} itemProp='url'>
       <Logo />
     </Link>
   </div>

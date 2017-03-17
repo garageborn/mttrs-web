@@ -15,7 +15,9 @@ class StoryList extends Component {
     return (
       <div className={this.getClassNames()}>
         <StoryListHeader date={date} />
-        {stories.map((story) => this.renderStory(story))}
+        <ul>
+          {stories.map((story) => this.renderStory(story))}
+        </ul>
       </div>
     )
   }
