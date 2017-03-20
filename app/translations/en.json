@@ -28,5 +28,7 @@
   "lastMonth": "Last Month",
   "dateFormat": "MMMM D",
   "storyPublishers.others": " {itemCount, plural, one {# other} other {# others}}",
-  "restrict.content": "only for subscribers"
+  "restrict.content": "only for subscribers",
+  "summary.showMore": "show more",
+  "summary.showLess": "show less"
 }
