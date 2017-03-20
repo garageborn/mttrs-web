@@ -26,10 +26,9 @@ class Category extends Component {
 
   render () {
     const queryVariables = { categorySlug: this.props.slug, type: 'category' }
-    const options = { renderCategory: false }
     return (
       <Layout {...this.helmet()}>
-        <TimelineContainer type='category' queryVariables={queryVariables} options={options} />
+        <TimelineContainer type='category' queryVariables={queryVariables} />
       </Layout>
     )
   }

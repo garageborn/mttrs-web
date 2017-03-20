@@ -7,6 +7,7 @@ const StoryCategory = ({category}) => {
   let style = {
     color: category.color
   }
+
   return (
     <div className={styles.text}>
       <Link to={categoryPath(category.slug)} style={style} className={styles.label}>{category.name}</Link>

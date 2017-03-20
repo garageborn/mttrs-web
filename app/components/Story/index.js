@@ -7,7 +7,7 @@ import styles from './styles.css'
 
 class Story extends Component {
   render () {
-    const { story, handleStoryLinks, options } = this.props
+    const { story, handleStoryLinks } = this.props
     return (
       <li
         key={story.id}
@@ -16,7 +16,6 @@ class Story extends Component {
         <StoryMainContent
           story={story}
           mainLink={this.mainLink}
-          shouldRenderCategory={options.renderCategory}
           category={this.category}
         />
         {this.renderSummary()}
@@ -60,9 +59,6 @@ class Story extends Component {
 Story.propTypes = {
   handleStoryLinks: PropTypes.func.isRequired,
   isVisited: PropTypes.bool.isRequired,
-  options: PropTypes.shape({
-    renderCategory: PropTypes.bool
-  }),
   story: PropTypes.object.isRequired
 }
 

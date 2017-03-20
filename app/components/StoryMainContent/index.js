@@ -15,7 +15,7 @@ class StoryMainContent extends Component {
   }
 
   render () {
-    let { story, mainLink, shouldRenderCategory, category } = this.props
+    let { story, mainLink, category } = this.props
 
     return (
       <div className={styles.container} >
@@ -28,7 +28,6 @@ class StoryMainContent extends Component {
         <StoryContent
           handleMouseOver={this.handleMouseOver}
           mainLink={mainLink}
-          shouldRenderCategory={shouldRenderCategory}
           category={category}
           active={this.state.active}
         />
@@ -44,7 +43,6 @@ class StoryMainContent extends Component {
 StoryMainContent.propTypes = {
   story: PropTypes.object.isRequired,
   mainLink: PropTypes.object.isRequired,
-  shouldRenderCategory: PropTypes.bool.isRequired,
   category: PropTypes.object.isRequired
 }
 
