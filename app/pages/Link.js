@@ -35,10 +35,10 @@ class Link extends Component {
 
     return {
       title: formattedMessage,
-      description: formattedDescription,
+      description: link.story.summary || formattedDescription,
       metas: [
         { property: 'og:title', content: formattedMessage },
-        { property: 'og:description', content: formattedDescription },
+        { property: 'og:description', content: link.story.summary || formattedDescription },
         { property: 'og:type', content: 'article' },
         { property: 'og:image', content: link.image_source_url },
         { property: 'og:site', content: 'Mttrs' },
@@ -46,8 +46,8 @@ class Link extends Component {
         { property: 'twitter:site', content: '@mttrs_app' },
         { property: 'twitter:title', content: formattedMessage },
         { property: 'twitter:image', content: link.image_source_url },
-        { property: 'twitter:image:alt', content: formattedDescription },
-        { property: 'twitter:description', content: formattedDescription }
+        { property: 'twitter:image:alt', content: formattedMessage },
+        { property: 'twitter:description', content: link.story.summary || formattedDescription }
       ]
     }
   }
