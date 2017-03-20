@@ -7,16 +7,14 @@ import styles from './styles.css'
 
 class Story extends Component {
   render () {
-    const { story, handleStoryLinks } = this.props
+    const { story, handleStoryLinks, isVisited } = this.props
     return (
-      <li
-        key={story.id}
-        className={this.storyContainerClass()}
-      >
+      <li key={story.id} className={styles.container}>
         <StoryMainContent
           story={story}
           mainLink={this.mainLink}
           category={this.category}
+          isVisited={isVisited}
         />
         {this.renderSummary()}
         <StoryMetadata
@@ -25,22 +23,16 @@ class Story extends Component {
           otherLinksCount={this.otherLinksCount}
           totalSocial={story.total_social}
           handleStoryLinks={handleStoryLinks}
+          isVisited={isVisited}
         />
       </li>
     )
   }
 
   renderSummary () {
-    const {story} = this.props
+    const { story, isVisited } = this.props
     if (!story.summary) return
-    return <StorySummary story={story} />
-  }
-
-  storyContainerClass () {
-    return className({
-      [styles.container]: true,
-      [styles.read]: this.props.isVisited
-    })
+    return <StorySummary story={story} isVisited={isVisited} />
   }
 
   get mainLink () {

@@ -15,7 +15,3 @@
     lost-center: calc((620 / 16)rem);
   }
 }
-
-.read {
-  opacity: 0.5;
-}

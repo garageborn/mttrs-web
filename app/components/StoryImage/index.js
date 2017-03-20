@@ -83,7 +83,6 @@ StoryImage.propTypes = {
   story: PropTypes.shape({
     main_link: PropTypes.object.isRequired
   }).isRequired,
-  mainLink: PropTypes.object.isRequired,
   handleMouseOver: PropTypes.func.isRequired,
   active: PropTypes.bool.isRequired
 }

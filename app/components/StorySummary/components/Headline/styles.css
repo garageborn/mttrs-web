@@ -1,0 +1,15 @@
+.headline {
+  color: #666666;
+  font-size: calc((14 / var(--mttrsBase))rem);
+  font-weight: 500;
+  margin-top: 5px;
+  padding-left: 5px;
+
+  @media (--notSmall) {
+    font-size: 1rem;
+  }
+}
+
+.isVisited {
+  opacity: 0.7;
+}

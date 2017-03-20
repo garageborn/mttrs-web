@@ -1,15 +1,12 @@
 import React, { PropTypes, Component } from 'react'
 import { findDOMNode } from 'react-dom'
-import { injectIntl, defineMessages } from 'react-intl'
-import icon from './assets/icon.svg'
+import Headline from './components/Headline'
+import Logo from './components/Logo'
+import Summary from './components/Summary'
+import Footer from './components/Footer'
 import styles from './styles.css'
 
 const charsTreshold = 200
-
-const messages = defineMessages({
-  showMore: { id: 'summary.showMore' },
-  showLess: { id: 'summary.showLess' }
-})
 
 class StorySummary extends Component {
   constructor () {
@@ -43,37 +40,9 @@ class StorySummary extends Component {
   }
 
   showFooter () {
+    const { isVisited } = this.props
     if (!this.bigSummary()) return
-    return this.renderFooter()
-  }
-
-  renderFooter () {
-    const { intl } = this.props
-
-    if (this.state.isExpanded) {
-      return (
-        <div className={styles.footer}>
-          <div className={styles.button}>
-            <div className={styles.buttonText}>
-              {intl.formatMessage(messages.showLess)}
-            </div>
-            <div className={styles.showLessTriangle} />
-          </div>
-        </div>
-      )
-    } else {
-      return (
-        <div className={styles.footerWithGradient}>
-          <div className={styles.gradient} />
-          <div className={styles.button}>
-            <div className={styles.buttonText}>
-              {intl.formatMessage(messages.showMore)}
-            </div>
-            <div className={styles.showMoreTriangle} />
-          </div>
-        </div>
-      )
-    }
+    return <Footer isVisited={isVisited} isSummaryExpanded={this.state.isExpanded} />
   }
 
   toggleExpandSummary () {
@@ -88,19 +57,15 @@ class StorySummary extends Component {
   }
 
   render () {
-    const { story } = this.props
+    const { story, isVisited } = this.props
     return (
       <div onClick={this.toggleExpandSummary} className={styles.container}>
         <div className={this.getBoxStyles()}>
           <div className={styles.headlineContainer}>
-            <div className={styles.logoContainer}>
-              <img src={icon} alt='mttrs' />
-            </div>
-            <div>
-              <p className={styles.headline}>{story.headline}</p>
-            </div>
+            <Logo isVisited={isVisited} />
+            <Headline isVisited={isVisited} headline={story.headline} />
           </div>
-          <div className={styles.text}>{this.summary(story)}</div>
+          <Summary isVisited={isVisited}>{this.summary(story)}</Summary>
           {this.showFooter()}
         </div>
       </div>
@@ -109,10 +74,8 @@ class StorySummary extends Component {
 }
 
 StorySummary.propTypes = {
-  intl: PropTypes.shape({
-    formatMessage: PropTypes.func.isRequired
-  }).isRequired,
-  story: PropTypes.object.isRequired
+  story: PropTypes.object.isRequired,
+  isVisited: PropTypes.bool.isRequired
 }
 
-export default injectIntl(StorySummary)
+export default StorySummary
