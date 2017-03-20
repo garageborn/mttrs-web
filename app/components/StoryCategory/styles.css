@@ -12,3 +12,7 @@
     text-decoration: underline;
   }
 }
+
+.isVisited {
+  opacity: 0.5;
+}

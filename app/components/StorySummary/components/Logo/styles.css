@@ -1,0 +1,7 @@
+.container {
+  margin: calc((10 / 16)rem) calc((5 / 16)rem) 0 0;
+}
+
+.isVisited {
+  opacity: 0.7;
+}

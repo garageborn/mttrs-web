@@ -21,6 +21,10 @@
   cursor: pointer;
 }
 
+.visited {
+  opacity: 0.7;
+}
+
 :global {
   .LazyLoad {
     background-image: url(../../assets/mttrs-loading.gif);
