@@ -40,7 +40,6 @@ class Publishers extends Component {
     return {
       title: formattedMessage,
       metas: [
-        { property: 'og:site_name', content: 'mttrs' },
         { property: 'og:title', content: formattedMessage }
       ]
     }
