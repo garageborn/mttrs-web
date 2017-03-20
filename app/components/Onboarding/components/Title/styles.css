@@ -1,0 +1,9 @@
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mttrsGray);
+  font-weight: 500;
+  font-size: calc((24 / 16)rem);
+  text-align: center;
+}

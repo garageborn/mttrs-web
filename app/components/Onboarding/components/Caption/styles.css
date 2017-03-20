@@ -1,0 +1,8 @@
+.container {
+  margin: 1.5rem;
+}
+
+.text {
+  color: var(--mttrsGray);
+  text-align: center;
+}

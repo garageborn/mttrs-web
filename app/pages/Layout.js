@@ -1,21 +1,28 @@
 import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
+import { connect } from 'react-redux'
+import _isNil from 'lodash/isNil'
+import Onboarding from '../components/Onboarding'
 import HeaderContainer from '../containers/HeaderContainer'
 import ModalContainer from '../containers/ModalContainer'
 import MenuContainer from '../containers/MenuContainer'
 import injectSettings from '../config/injectSettings'
+import { UIActions } from '../actions/index'
 import sentry from '../utils/Sentry'
 import segment from '../utils/Segment'
 import favicons from '../utils/Favicons'
-import _isNil from 'lodash/isNil'
 
 class Layout extends Component {
   componentDidMount () {
     this.context.router.listen(location => window.scrollTo(0, 0))
   }
 
+  componentWillReceiveProps (nextProps) {
+    this.handleOnboarding(nextProps)
+  }
+
   render () {
-    const { showHeader, showModal, showMenu } = this.props
+    const { showHeader, showMenu, showModal } = this.props
     return (
       <div>
         <Helmet {...this.helmet()} />
@@ -24,6 +31,19 @@ class Layout extends Component {
         <ModalContainer showModal={showModal} />
         <MenuContainer showMenu={showMenu} />
       </div>
+    )
+  }
+
+  handleOnboarding (nextProps) {
+    if (!nextProps.showOnboarding) return
+    if (this.props.showOnboarding === nextProps.showOnboarding) return
+    return (
+      this.props.dispatch(
+        UIActions.openModal(
+          'onboarding',
+          React.createElement(Onboarding)
+        )
+      )
     )
   }
 
@@ -82,4 +102,8 @@ Layout.defaultProps = {
   showMenu: true
 }
 
-export default injectSettings(Layout)
+const mapStateToprops = state => ({
+  showOnboarding: state.UIReducer.showOnboarding
+})
+
+export default connect(mapStateToprops)(injectSettings(Layout))

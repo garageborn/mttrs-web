@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Modal from 'react-modal'
+import classNames from 'classnames'
 import CloseModal from '../components/CloseModal'
-import modalStyles from '../styles/modal.css'
+import styles from '../styles/modal.css'
 import { UIActions } from '../actions/index'
 
 class ModalContainer extends Component {
@@ -10,6 +11,8 @@ class ModalContainer extends Component {
     super()
     this.closeModal = this.closeModal.bind(this)
   }
+
+
 
   render () {
     if (!this.props.showModal) return null
@@ -19,8 +22,8 @@ class ModalContainer extends Component {
         <Modal
           isOpen={UIReducer.modal.isOpen}
           contentLabel='Modal'
-          className={modalStyles.modal}
-          overlayClassName={modalStyles.overlay}
+          className={this.classNames}
+          overlayClassName={styles.overlay}
           onRequestClose={this.closeModal}
         >
           {UIReducer.modal.content}
@@ -28,6 +31,14 @@ class ModalContainer extends Component {
         {this.renderCloseButton()}
       </div>
     )
+  }
+
+  get classNames () {
+    let { type } = this.props.UIReducer.modal
+    return classNames({
+      [styles.modal]: true,
+      [styles[type]]: true
+    })
   }
 
   renderCloseButton () {
@@ -45,6 +56,7 @@ class ModalContainer extends Component {
 ModalContainer.propTypes = {
   UIReducer: PropTypes.shape({
     modal: PropTypes.shape({
+      type: PropTypes.string,
       isOpen: PropTypes.bool.isRequired
     }).isRequired
   }).isRequired,

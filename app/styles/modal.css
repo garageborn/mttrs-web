@@ -48,15 +48,6 @@
   outline: none;
   padding: 0;
   z-index: 4;
-
-  @media (--notSmall) {
-    lost-center: calc((680 / var(--mttrsBase))rem);
-    top: 140px;
-  }
-
-  @media (--large) {
-    margin-left: calc(50% - 230px);
-  }
 }
 
 .overlay {
@@ -66,4 +57,19 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.onboarding {
+  border-radius: 10px;
+}
+
+.storyLinks {
+  @media (--notSmall) {
+    lost-center: calc((680 / var(--mttrsBase))rem);
+    top: 140px;
+  }
+
+  @media (--large) {
+    margin-left: calc(50% - 230px);
+  }
 }
