@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { injectIntl, defineMessages } from 'react-intl'
 import { connect } from 'react-redux'
-import _isNull from 'lodash/isNull'
 import withQuery from './Link.gql'
 import Layout from './Layout'
 import { StorageActions } from '../actions/index'
