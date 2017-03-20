@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { injectIntl, defineMessages } from 'react-intl'
 import { connect } from 'react-redux'
+import _isNull from 'lodash/isNull'
 import withQuery from './Link.gql'
 import Layout from './Layout'
 import { StorageActions } from '../actions/index'
@@ -35,10 +36,10 @@ class Link extends Component {
 
     return {
       title: formattedMessage,
-      description: formattedDescription,
+      description: link.story.summary || formattedDescription,
       metas: [
         { property: 'og:title', content: formattedMessage },
-        { property: 'og:description', content: formattedDescription },
+        { property: 'og:description', content: link.story.summary || formattedDescription },
         { property: 'og:type', content: 'article' },
         { property: 'og:image', content: link.image_source_url },
         { property: 'og:site', content: 'Mttrs' },
@@ -46,8 +47,8 @@ class Link extends Component {
         { property: 'twitter:site', content: '@mttrs_app' },
         { property: 'twitter:title', content: formattedMessage },
         { property: 'twitter:image', content: link.image_source_url },
-        { property: 'twitter:image:alt', content: formattedDescription },
-        { property: 'twitter:description', content: formattedDescription }
+        { property: 'twitter:image:alt', content: formattedMessage },
+        { property: 'twitter:description', content: link.story.summary || formattedDescription }
       ]
     }
   }
