@@ -28,5 +28,7 @@
   "lastMonth": "No último mês",
   "dateFormat": "D [de] MMMM",
   "storyPublishers.others": " {itemCount, plural, one {mais #} other {mais #}}",
-  "restrict.content": "somente para assinantes"
+  "restrict.content": "somente para assinantes",
+  "summary.showMore": "ver mais",
+  "summary.showLess": "ver menos"
 }

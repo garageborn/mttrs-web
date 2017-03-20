@@ -1,9 +1,15 @@
 import React, { PropTypes, Component } from 'react'
-import ReactDOM from 'react-dom'
+import { findDOMNode } from 'react-dom'
+import { injectIntl, defineMessages } from 'react-intl'
 import icon from './assets/icon.svg'
 import styles from './styles.css'
 
 const charsTreshold = 200
+
+const messages = defineMessages({
+  showMore: { id: 'summary.showMore' },
+  showLess: { id: 'summary.showLess' }
+})
 
 class StorySummary extends Component {
   constructor () {
@@ -15,7 +21,7 @@ class StorySummary extends Component {
   }
 
   componentWillUpdate (nextProps, nextState) {
-    let summaryElement = ReactDOM.findDOMNode(this)
+    let summaryElement = findDOMNode(this)
     let storyElement = summaryElement.parentNode
     let willChangeExpandedState = (this.state.isExpanded !== nextState.isExpanded)
     if (willChangeExpandedState) {
@@ -42,11 +48,15 @@ class StorySummary extends Component {
   }
 
   renderFooter () {
+    const { intl } = this.props
+
     if (this.state.isExpanded) {
       return (
         <div className={styles.footer}>
           <div className={styles.button}>
-            <div className={styles.buttonText}>show less</div>
+            <div className={styles.buttonText}>
+              {intl.formatMessage(messages.showLess)}
+            </div>
             <div className={styles.showLessTriangle} />
           </div>
         </div>
@@ -56,7 +66,9 @@ class StorySummary extends Component {
         <div className={styles.footerWithGradient}>
           <div className={styles.gradient} />
           <div className={styles.button}>
-            <div className={styles.buttonText}>show more</div>
+            <div className={styles.buttonText}>
+              {intl.formatMessage(messages.showMore)}
+            </div>
             <div className={styles.showMoreTriangle} />
           </div>
         </div>
@@ -97,7 +109,10 @@ class StorySummary extends Component {
 }
 
 StorySummary.propTypes = {
+  intl: PropTypes.shape({
+    formatMessage: PropTypes.func.isRequired
+  }).isRequired,
   story: PropTypes.object.isRequired
 }
 
-export default StorySummary
+export default injectIntl(StorySummary)

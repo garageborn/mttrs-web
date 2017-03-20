@@ -10,6 +10,33 @@
   }
 }
 
+.triangle {
+  width: 0;
+  height: 0;
+  background: transparent;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 8px solid;
+  position: absolute;
+}
+
+.triangleContainer {
+  position: absolute;
+  z-index: 1;
+  margin-left: calc((15 / var(--mttrsBase))rem);
+}
+
+.outerTriangle {
+  composes: triangle;
+  border-bottom-color: #DDDDDD;
+}
+
+.innerTriangle {
+  composes: triangle;
+  margin-top: 1px;
+  border-bottom-color: #F7F7F8;
+}
+
 .box {
   position: relative;
   margin: calc((6 / 16)rem);
@@ -43,11 +70,11 @@
 }
 
 .text {
-  font-size: 0.875rem;
-  line-height: 1.4375rem;
+  font-size: calc((14 / var(--mttrsBase))rem);
+  line-height: calc((23 / var(--mttrsBase))rem);
   opacity: 0.95;
   color: #666;
-  padding-bottom: 1rem;
+  padding-bottom: calc((25 / var(--mttrsBase))rem);
 }
 
 .footer {
@@ -60,11 +87,11 @@
 
 .footerWithGradient {
   composes: footer;
-  height: 4rem;
+  height: calc((64 / var(--mttrsBase))rem);
 }
 
 .gradient {
-  height: 2rem;
+  height: calc((32 / var(--mttrsBase))rem);
   background: linear-gradient(-180deg, rgba(247, 247, 248, 0.2) 0%, #F7F7F8 100%);
 }
 
@@ -74,15 +101,34 @@
   align-items: center;
   flex-flow: row;
   background: #F7F7F8;
-  font-size: 0.8125rem;
+  font-size: calc((13 / var(--mttrsBase))rem);
   font-weight: 500;
   color: #2D2D2B;
   cursor: pointer;
-  height: 2rem;
+  height: calc((32 / var(--mttrsBase))rem);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
 .buttonText {
   margin-right: 0.5rem;
+}
+
+.expandButtonTriangle {
+  composes: triangle;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  margin: 7px 3px;
+  position: relative;
+}
+
+.showMoreTriangle {
+  composes: expandButtonTriangle;
+  border-bottom: 0px;
+  border-top: 5px solid #2D2D2B;
+}
+
+.showLessTriangle {
+  composes: expandButtonTriangle;
+  border-bottom: 5px solid #2D2D2B;
 }
