@@ -3,6 +3,7 @@ import Carousel from 'nuka-carousel'
 import Slide from './components/Slide'
 import SlideImage from './components/SlideImage'
 import SlideContent from './components/SlideContent'
+import Dots from './components/Dots'
 import Title from './components/Title'
 import Logo from '../Logo'
 import Caption from './components/Caption'
@@ -50,7 +51,17 @@ class Onboarding extends React.Component {
     {
       component: () => this.rightComponent,
       position: 'CenterRight'
+    },
+    {
+      component: () => this.dots,
+      position: 'BottomCenter'
     }]
+  }
+
+  get dots () {
+    if (!this.carousel) return null
+    let { state } = this.carousel
+    return <Dots count={state.slideCount} active={state.currentSlide} />
   }
 
   get leftComponent () {
