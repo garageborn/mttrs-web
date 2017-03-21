@@ -1,9 +1,11 @@
 .text {
   display: flex;
-  align-items: center;
-  justify-content: center;
   color: var(--mttrsGray);
   font-weight: 500;
   font-size: calc((24 / 16)rem);
-  text-align: center;
+  margin: calc((30 / 16)rem) 0 0 calc((24 / 16)rem);
+  @media (--notSmall) {
+    align-items: center;
+    justify-content: center;
+  }
 }

@@ -4,5 +4,7 @@
 
 .text {
   color: var(--mttrsGray);
-  text-align: center;
+  @media (--notSmall) {
+    text-align: center;
+  }
 }

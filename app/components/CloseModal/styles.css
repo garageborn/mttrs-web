@@ -12,7 +12,7 @@
   position: fixed;
   padding: .4em;
   cursor: pointer;
-  z-index: 5;
+  z-index: 11;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,17 +35,20 @@
 
 .onboardingButton {
   composes: button;
-  right: calc((29 / 16)rem);
-  bottom: calc((25 / 16)rem);
-  padding: calc((8 / 16)rem) calc((18 / 16)rem);
-  width: calc((90 / 16)rem);
   text-transform: uppercase;
   color: white;
-  background-color: var(--mttrsGray);
+  bottom: 1rem;
+  left: calc((24 / 16)rem);
+  color: var(--mttrsOtherGray);
 
   @media (--large) {
+    background-color: var(--mttrsGray);
     left: 0;
     margin-left: calc(65%);
-    bottom: 18vh
+    bottom: 18vh;
+    right: calc((29 / 16)rem);
+    bottom: calc((25 / 16)rem);
+    padding: calc((8 / 16)rem) calc((18 / 16)rem);
+    width: calc((90 / 16)rem);
   }
 }

@@ -21,7 +21,7 @@ class ModalContainer extends Component {
           isOpen={UIReducer.modal.isOpen}
           contentLabel='Modal'
           className={this.classNames}
-          overlayClassName={styles.overlay}
+          overlayClassName={this.overlayClassNames}
           onRequestClose={this.closeModal}
         >
           {UIReducer.modal.content}
@@ -29,6 +29,14 @@ class ModalContainer extends Component {
         {this.renderCloseButton()}
       </div>
     )
+  }
+
+  get overlayClassNames () {
+    let { type } = this.props.UIReducer.modal
+    return classNames({
+      [styles.overlay]: true,
+      [styles.onboardingOverlay]: type === 'onboarding'
+    })
   }
 
   get classNames () {

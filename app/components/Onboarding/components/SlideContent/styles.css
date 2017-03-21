@@ -1,4 +1,6 @@
 .container {
+  text-align: left;
+  background-color: white;
   @media (--notSmall) {
     margin-top: calc((30 / 16)rem);
   }
