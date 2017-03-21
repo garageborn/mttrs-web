@@ -4,7 +4,8 @@
   padding: 0 15px;
 
   @media (--medium) {
-    padding: 0 calc(50% - 400px);
+    padding-left: calc(50% - 400px);
+    padding-right: calc(50% - 400px);
   }
 
   @media (--large) {
@@ -51,4 +52,16 @@
     lost-center: calc((1140 / var(--mttrsBase))em);
     width: calc((1140 / var(--mttrsBase))em);
   }
+}
+
+.loading {
+  composes: container;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: calc((100 / var(--mttrsBase))rem);
+  color: var(--mttrsDarkGray);
+  font-size: calc((14 / var(--mttrsBase))rem);
+  font-weight: 300;
 }

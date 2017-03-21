@@ -6,6 +6,7 @@ import PublishersSearch from '../PublishersSearch'
 import styles from './styles.css'
 
 const messages = defineMessages({
+  loading: { id: 'loading' },
   searchPlaceholder: { id: 'search.placeholder' }
 })
 
@@ -30,6 +31,8 @@ class PublishersList extends Component {
   }
 
   render () {
+    if (this.props.loading) return this.loading
+
     return (
       <div className={styles.container}>
         <div className={styles.search}>
@@ -44,6 +47,13 @@ class PublishersList extends Component {
         </div>
         {this.renderPublishersList()}
       </div>
+    )
+  }
+
+  get loading () {
+    const { intl } = this.props
+    return (
+      <div className={styles.loading}>{intl.formatMessage(messages.loading)}</div>
     )
   }
 
@@ -102,7 +112,8 @@ PublishersList.propTypes = {
   publishers: PropTypes.array.isRequired,
   intl: PropTypes.shape({
     formatMessage: PropTypes.func.isRequired
-  }).isRequired
+  }).isRequired,
+  loading: PropTypes.bool.isRequired
 }
 
 export default injectIntl(PublishersList)
