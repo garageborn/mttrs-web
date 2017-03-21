@@ -1,25 +1,51 @@
-.container {
+.storyLinksContainer {
   display: flex;
   justify-content: center;
 }
 
+.onboardingContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .button {
   position: fixed;
-  bottom: 1rem;
-  background-color: white;
-  height: 2em;
-  width: 2em;
-  border-radius: 50%;
   padding: .4em;
-  font-size: 1.3rem;
   cursor: pointer;
   z-index: 5;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.storyLinksButton {
+  composes: button;
+  font-size: 1.3rem;
+  bottom: 1rem;
+  background-color: white;
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
 
   @media (--large) {
     left: 0;
     margin-left: calc(50% + 99px);
+  }
+}
+
+.onboardingButton {
+  composes: button;
+  right: calc((29 / 16)rem);
+  bottom: calc((25 / 16)rem);
+  padding: calc((8 / 16)rem) calc((18 / 16)rem);
+  width: calc((90 / 16)rem);
+  text-transform: uppercase;
+  color: white;
+  background-color: var(--mttrsGray);
+
+  @media (--large) {
+    left: 0;
+    margin-left: calc(65%);
+    bottom: 18vh
   }
 }

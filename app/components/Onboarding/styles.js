@@ -1,3 +1,3 @@
 export const carousel = {
-  height: '70vh'
+  height: '64vh'
 }

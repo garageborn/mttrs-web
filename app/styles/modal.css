@@ -61,6 +61,11 @@
 
 .onboarding {
   border-radius: 10px;
+  height: 74vh;
+  @media (--notSmall) {
+    lost-center: calc((680 / var(--mttrsBase))rem);
+    height: 64vh;
+  }
 }
 
 .storyLinks {

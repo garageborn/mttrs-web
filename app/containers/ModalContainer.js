@@ -12,8 +12,6 @@ class ModalContainer extends Component {
     this.closeModal = this.closeModal.bind(this)
   }
 
-
-
   render () {
     if (!this.props.showModal) return null
     const { UIReducer } = this.props
@@ -45,7 +43,16 @@ class ModalContainer extends Component {
     const { UIReducer } = this.props
 
     if (!UIReducer.modal.isOpen) return
-    return <CloseModal shoudldShowButton={UIReducer.modal.isOpen} closeModal={this.closeModal} />
+
+    console.log(UIReducer.modal.type)
+
+    return (
+      <CloseModal
+        shoudldShowButton={UIReducer.modal.isOpen}
+        closeModal={this.closeModal}
+        type={UIReducer.modal.type}
+      />
+    )
   }
 
   closeModal () {

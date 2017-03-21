@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react'
+import styles from './styles.css'
 
 const SlideContent = ({ children }) => (
-  <div>
+  <div className={styles.container}>
     {children}
   </div>
 )
