@@ -30,5 +30,6 @@
   "storyPublishers.others": " {itemCount, plural, one {# other} other {# others}}",
   "restrict.content": "only for subscribers",
   "summary.showMore": "show more",
-  "summary.showLess": "show less"
+  "summary.showLess": "show less",
+  "close": "close"
 }
