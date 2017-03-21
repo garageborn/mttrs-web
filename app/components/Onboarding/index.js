@@ -8,8 +8,35 @@ import Title from './components/Title'
 import Logo from '../Logo'
 import Caption from './components/Caption'
 import Button from './components/Button'
-import slide1 from './assets/slide1.svg'
 import { carousel } from './styles'
+
+let slides = [
+  {
+    image: require('./assets/1.png'),
+    title: `Welcome To`,
+    caption: 'Your reading time well spent. Read the news that really matters.'
+  },
+  {
+    image: require('./assets/2.png'),
+    title: `Top News`,
+    caption: 'Find the top stories of the day, ordered by the social indexes of the Internet. If its in the mouths of the people, youll find it here.'
+  },
+  {
+    image: require('./assets/3.png'),
+    title: `News summaries`,
+    caption: 'Understand the main message of each news in seconds. Summaries are carefully written by our staff.'
+  },
+  {
+    image: require('./assets/4.png'),
+    title: `Your interest in a click`,
+    caption: 'Focus on the information and do not waste time reading the same news several times. If desired, find the publication of your preferred publisher.'
+  },
+  {
+    image: require('./assets/5.png'),
+    title: `News articles in your hands`,
+    caption: 'Waiting in line, on the way to work, after lunch or even in the bathroom. At any time or place you keep updated.'
+  },
+]
 
 class Onboarding extends React.Component {
   constructor () {
@@ -21,22 +48,25 @@ class Onboarding extends React.Component {
   render () {
     return (
       <Carousel ref={this.ref} decorators={this.decorators} style={carousel}>
-        <Slide>
-          <SlideImage source={slide1} />
-          <SlideContent>
-            <Title>Welcome To &nbsp; <Logo /></Title>
-            <Caption>Your reading time well spent. Read the news that really matters.</Caption>
-          </SlideContent>
-        </Slide>
-        <Slide>
-          <SlideImage source={slide1} />
-          <SlideContent>
-            <Title>Welcome To &nbsp; <Logo /></Title>
-            <Caption>Your reading time well spent. Read the news that really matters.</Caption>
-          </SlideContent>
-        </Slide>
+        {slides.map((slide, idx) => {
+          return (
+            <Slide>
+              <SlideImage source={slide.image} />
+              <SlideContent>
+                {this.renderTitle(slide, idx)}
+                <Caption>{slide.caption}</Caption>
+              </SlideContent>
+            </Slide>
+          )
+        }
+      )}
       </Carousel>
     )
+  }
+
+  renderTitle (slide, idx) {
+    if (!idx) return <Title>{slide.title}&nbsp; <Logo /></Title>
+    return <Title>{slide.title}</Title>
   }
 
   ref (component) {
