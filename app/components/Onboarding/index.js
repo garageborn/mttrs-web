@@ -1,66 +1,15 @@
 import React, { PropTypes } from 'react'
 import Carousel from 'nuka-carousel'
 import { StorageActions } from '../../actions/index'
-import Slide from './components/Slide'
-import SlideImage from './components/SlideImage'
-import SlideContent from './components/SlideContent'
 import Dots from './components/Dots'
-import Title from './components/Title'
-import Logo from '../Logo'
-import Caption from './components/Caption'
 import Button from './components/Button'
+import First from './pages/01-First'
+import Second from './pages/02-Second'
+import Third from './pages/03-Third'
+import Fourth from './pages/04-Fourth'
+import Fifth from './pages/05-Fifth'
+import Sixth from './pages/06-Sixth'
 import { carousel } from './styles'
-
-let slides = [
-  {
-    images: {
-      small: require('./assets/1.png'),
-      notSmall: require('./assets/1-ns.png')
-    },
-    title: `Welcome To`,
-    caption: 'Your reading time well spent. Read the news that really matters.'
-  },
-  {
-    images: {
-      small: require('./assets/2.png'),
-      notSmall: require('./assets/2-ns.png')
-    },
-    title: `Top News`,
-    caption: 'Find the top stories of the day, ordered by the social indexes of the Internet. If its in the mouths of the people, youll find it here.'
-  },
-  {
-    images: {
-      small: require('./assets/3.png'),
-      notSmall: require('./assets/3-ns.png')
-    },
-    title: `News summaries`,
-    caption: 'Understand the main message of each news in seconds. Summaries are carefully written by our staff.'
-  },
-  {
-    images: {
-      small: require('./assets/4.png'),
-      notSmall: require('./assets/4-ns.png')
-    },
-    title: `Keep focus`,
-    caption: 'Focus on the information and do not waste time reading the same news several times. If desired, find the publication of your preferred publisher.'
-  },
-  {
-    images: {
-      small: require('./assets/5.png'),
-      notSmall: require('./assets/5-ns.png')
-    },
-    title: `Your interest in a click`,
-    caption: 'All news are separated into categories. Find everything organized and read about the subjects that interest you most.'
-  },
-  {
-    images: {
-      small: require('./assets/6.png'),
-      notSmall: require('./assets/6-ns.png')
-    },
-    title: `News articles in your hands`,
-    caption: 'Waiting in line, on the way to work, after lunch or even in the bathroom. At any time or place you keep updated.'
-  },
-]
 
 class Onboarding extends React.Component {
   constructor () {
@@ -72,26 +21,15 @@ class Onboarding extends React.Component {
 
   render () {
     return (
-      <Carousel ref={this.ref} decorators={this.decorators} style={carousel}>
-        {slides.map((slide, idx) => {
-          return (
-            <Slide>
-              <SlideImage source={slide.images} />
-              <SlideContent>
-                {this.renderTitle(slide, idx)}
-                <Caption>{slide.caption}</Caption>
-              </SlideContent>
-            </Slide>
-          )
-        }
-      )}
+      <Carousel ref={this.ref} width='100%' decorators={this.decorators} style={carousel}>
+        <First />
+        <Second />
+        <Third />
+        <Fourth />
+        <Fifth />
+        <Sixth />
       </Carousel>
     )
-  }
-
-  renderTitle (slide, idx) {
-    if (!idx) return <Title>{slide.title}&nbsp; <Logo /></Title>
-    return <Title>{slide.title}</Title>
   }
 
   ref (component) {
@@ -138,7 +76,7 @@ class Onboarding extends React.Component {
   }
 
   finishOnboarding () {
-    return dispatch(StorageActions.handleOnboardingFinish())
+    return this.props.dispatch(StorageActions.handleOnboardingFinish())
   }
 
   handleSlide (direction) {
