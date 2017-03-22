@@ -41,13 +41,12 @@
   left: calc((24 / var(--mttrsBase))rem);
   color: var(--mttrsOtherGray);
 
-  @media (--large) {
+  @media (--notSmall) {
     background-color: var(--mttrsGray);
     left: 0;
-    margin-left: calc(65%);
-    bottom: 18vh;
+    margin-left: calc(50vw + (220 / var(--mttrsBase))rem);
     right: calc((29 / var(--mttrsBase))rem);
-    bottom: calc((25 / var(--mttrsBase))rem);
+    bottom: calc(50vh - (380 / var(--mttrsBase))rem);
     padding: calc((8 / var(--mttrsBase))rem) calc((18 / var(--mttrsBase))rem);
     width: calc((90 / var(--mttrsBase))rem);
   }

@@ -1,3 +1,5 @@
 export const carousel = {
-  height: '100%'
+  height: '650px',
+  maxWidth: '695px',
+  overflow: 'hidden'
 }
