@@ -10,7 +10,7 @@ const SlideImage = ({ source }) => (
 )
 
 SlideImage.propTypes = {
-  source: React.PropTypes.string.isRequired
+  source: PropTypes.string.isRequired
 }
 
 export default SlideImage

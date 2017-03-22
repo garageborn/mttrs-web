@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind, no-return-assign */
 import React, { PropTypes } from 'react'
 import Carousel from 'nuka-carousel'
 import { StorageActions } from '../../actions/index'
@@ -85,6 +86,7 @@ class Onboarding extends React.Component {
 }
 
 Onboarding.propTypes = {
+  dispatch: PropTypes.func.isRequired
 }
 
 export default Onboarding

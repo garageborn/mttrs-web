@@ -10,7 +10,7 @@ const Caption = ({ children }) => (
 )
 
 Caption.propTypes = {
-  children: React.PropTypes.string.isRequired
+  children: PropTypes.string.isRequired
 }
 
 export default Caption
