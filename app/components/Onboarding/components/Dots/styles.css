@@ -3,6 +3,5 @@
   justify-content: space-around;
   align-items: center;
   width: calc((80 / var(--mttrsBase))rem);
-  position: fixed;
-  bottom: 1rem;
+  margin-bottom: calc((30 / var(--mttrsBase))rem);
 }
