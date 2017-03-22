@@ -28,5 +28,17 @@
   "lastMonth": "No último mês",
   "dateFormat": "D [de] MMMM",
   "storyPublishers.others": " {itemCount, plural, one {mais #} other {mais #}}",
-  "restrict.content": "somente para assinantes"
+  "restrict.content": "somente para assinantes",
+  "onboarding.first.title": "Bem-vindo ao",
+  "onboarding.first.caption": "Seu tempo é precioso. Leia as notícias que realmente importam no dia a dia.",
+  "onboarding.second.title": "Notícias em destaque",
+  "onboarding.second.caption": "Encontre as principais notícias do dia, ordenadas pelos índices sociais da Internet. Se está na boca do povo, você encontra aqui.",
+  "onboarding.third.title": "Resumo de notícias",
+  "onboarding.third.caption": "Entenda a mensagem principal de cada notícia em segundos. Os resumos são escritos cuidadosamente por nossa equipe.",
+  "onboarding.fourth.title": "Mantenha o foco",
+  "onboarding.fourth.caption": "Concentre-se na informação e não perca tempo lendo várias vezes a mesma notícia. Se desejar, encontre a publicação do seu site preferido.",
+  "onboarding.fifth.title": "Seu interesse a um clique",
+  "onboarding.fifth.caption": "Todas as notícias são separadas em categorias. Encontre tudo organizado e leia sobre os assuntos que mais lhe interessam.",
+  "onboarding.sixth.title": "Resumo de notícias sempre a mão",
+  "onboarding.sixth.caption": "Na espera da fila, no caminho para o trabalho, após o almoço ou até mesmo no banheiro. a qualquer hora e lugar você fica atualizado."
 }
