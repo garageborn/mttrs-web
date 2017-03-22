@@ -3,7 +3,7 @@
   height: 51px;
   border-radius: 25px;
   background-color: white;
-  margin: calc((10 / 16)rem);
+  margin: calc((10 / var(--mttrsBase))rem);
   box-shadow: 0 2px 2px 0 rgba(153,153,153,0.5);
   border: 1px solid #DADADA;
   display: flex;

@@ -38,7 +38,7 @@
   text-transform: uppercase;
   color: white;
   bottom: 1rem;
-  left: calc((24 / 16)rem);
+  left: calc((24 / var(--mttrsBase))rem);
   color: var(--mttrsOtherGray);
 
   @media (--large) {
@@ -46,9 +46,9 @@
     left: 0;
     margin-left: calc(65%);
     bottom: 18vh;
-    right: calc((29 / 16)rem);
-    bottom: calc((25 / 16)rem);
-    padding: calc((8 / 16)rem) calc((18 / 16)rem);
-    width: calc((90 / 16)rem);
+    right: calc((29 / var(--mttrsBase))rem);
+    bottom: calc((25 / var(--mttrsBase))rem);
+    padding: calc((8 / var(--mttrsBase))rem) calc((18 / var(--mttrsBase))rem);
+    width: calc((90 / var(--mttrsBase))rem);
   }
 }

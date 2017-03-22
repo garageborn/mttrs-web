@@ -2,8 +2,8 @@
   display: flex;
   flex-flow: column;
   background-color: white;
-  margin: calc((10 / 16)em) 0;
-  padding: calc((6 / 16)rem);
+  margin: calc((10 / var(--mttrsBase))em) 0;
+  padding: calc((6 / var(--mttrsBase))rem);
   box-shadow: 0px 2px 3px rgba(0,0,0,0.20);
   position: relative;
   border-radius: 2px;
@@ -12,7 +12,7 @@
     box-shadow: 0 8px 8px rgba(0,0,0,0.20);
   }
   @media (--notSmall) {
-    lost-center: calc((620 / 16)rem);
+    lost-center: calc((620 / var(--mttrsBase))rem);
   }
 }
 

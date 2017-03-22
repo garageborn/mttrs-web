@@ -2,13 +2,13 @@
   display: flex;
   flex: 1;
   cursor: pointer;
-  margin-bottom: calc((6 / 16)rem);
-  border: calc((4 / 16)rem) solid transparent;
+  margin-bottom: calc((6 / var(--mttrsBase))rem);
+  border: calc((4 / var(--mttrsBase))rem) solid transparent;
   transition: border 250ms cubic-bezier(.07,.4,.81,.91);
 }
 
 .active, .container:hover, .container:active {
-  border: calc((4 / 16)rem) solid var(--mttrsBackgroundColor);
+  border: calc((4 / var(--mttrsBase))rem) solid var(--mttrsBackgroundColor);
 }
 
 .link {

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: calc((80 / 16)rem);
+  width: calc((80 / var(--mttrsBase))rem);
   position: fixed;
   bottom: 1rem;
 }

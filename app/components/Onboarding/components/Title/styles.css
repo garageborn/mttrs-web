@@ -2,8 +2,8 @@
   display: flex;
   color: var(--mttrsGray);
   font-weight: 500;
-  font-size: calc((24 / 16)rem);
-  margin: calc((30 / 16)rem) 0 0 calc((24 / 16)rem);
+  font-size: calc((24 / var(--mttrsBase))rem);
+  margin: calc((30 / var(--mttrsBase))rem) 0 0 calc((24 / var(--mttrsBase))rem);
   @media (--notSmall) {
     align-items: center;
     justify-content: center;

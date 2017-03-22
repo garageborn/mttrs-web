@@ -24,7 +24,7 @@
 }
 
 .title {
-  font-size: calc((12 / 16)rem);
+  font-size: calc((12 / var(--mttrsBase))rem);
   text-transform: uppercase;
   text-align: center;
   color: var(--mttrsGray);

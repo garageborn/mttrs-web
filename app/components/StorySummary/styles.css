@@ -1,6 +1,6 @@
 .container {
-  lost-center: calc((728 / 16)em);
-  margin-bottom: calc((10 / 16)rem);
+  lost-center: calc((728 / var(--mttrsBase))em);
+  margin-bottom: calc((10 / var(--mttrsBase))rem);
   cursor: pointer;
 
   &:hover {
@@ -12,9 +12,9 @@
 
 .box {
   position: relative;
-  margin: calc((6 / 16)rem);
+  margin: calc((6 / var(--mttrsBase))rem);
   border-radius: 5px;
-  padding: calc((10 / 16)rem);
+  padding: calc((10 / var(--mttrsBase))rem);
   background-color: #F7F7F8;
   border: 1px solid #DDDDDD;
 }
@@ -31,7 +31,7 @@
 }
 
 .logoContainer {
-  margin: calc((10 / 16)rem) calc((5 / 16)rem) 0 0;
+  margin: calc((10 / var(--mttrsBase))rem) calc((5 / var(--mttrsBase))rem) 0 0;
 }
 
 .headline {

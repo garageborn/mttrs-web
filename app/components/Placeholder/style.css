@@ -1,7 +1,7 @@
 @import "../../styles/mixins.css";
 
 .container {
-  padding-top: calc((88 / 16)rem);
+  padding-top: calc((88 / var(--mttrsBase))rem);
   padding-left: 15px;
   padding-right: 15px;
 
@@ -27,14 +27,14 @@
   flex-flow: row;
   background-color: white;
   padding: 0 1em;
-  margin: calc((15 / 16)em) 0;
+  margin: calc((15 / var(--mttrsBase))em) 0;
   height: 128px;
   box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.20);
   position: relative;
 
   @media (--notSmall) {
     padding: 8px 16px;
-    width: calc((620 / 16)rem);
+    width: calc((620 / var(--mttrsBase))rem);
     margin-left: auto;
     margin-right: auto;
   }
