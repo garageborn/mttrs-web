@@ -3,6 +3,7 @@ import { injectIntl, defineMessages } from 'react-intl'
 import _isNull from 'lodash/isNull'
 import PublishersListItem from '../PublishersListItem'
 import PublishersSearch from '../PublishersSearch'
+import PublisherSuggestionContainer from '../../containers/PublisherSuggestionContainer'
 import styles from './styles.css'
 
 const messages = defineMessages({
@@ -30,6 +31,17 @@ class PublishersList extends Component {
     }
   }
 
+  renderView () {
+    const { publishers } = this.props
+    if (!publishers.length) return this.renderSuggestionView()
+
+    return this.renderPublishersList()
+  }
+
+  renderSuggestionView () {
+    return <PublisherSuggestionContainer publisher={this.state.query} />
+  }
+
   render () {
     if (this.props.loading) return this.loading
 
@@ -45,7 +57,7 @@ class PublishersList extends Component {
             fromPublishersPage={this.props.type === 'publishers'}
           />
         </div>
-        {this.renderPublishersList()}
+        {this.renderView()}
       </div>
     )
   }

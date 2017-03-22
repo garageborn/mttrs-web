@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.text {
+  color: var(--mttrsDark);
+  font-weight: 500;
+}
+
+.title {
+  composes: text;
+  font-size: calc((18 / var(--mttrsBase))rem);
+  margin-bottom: calc((10 / var(--mttrsBase))rem);
+}
+
+.subTitle {
+  font-size: calc((13 / var(--mttrsBase))rem);
+  font-weight: 300;
+  color: var(--mttrsGray);
+}
+
+.icon {
+  margin: calc((30 / var(--mttrsBase))rem) 0 calc((10 / var(--mttrsBase))rem) 0;
+}
+
+.publisher {
+  composes: text;
+  font-size: calc((24 / var(--mttrsBase))rem);
+}

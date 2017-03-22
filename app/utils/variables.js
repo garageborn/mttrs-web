@@ -1,4 +1,5 @@
 export const properties = {
+  white: '#FFF',
   mttrsDark: '#2D2D2B',
   mttrsBlue: '#262C5B',
   mttrsOrange: '#FF5606',

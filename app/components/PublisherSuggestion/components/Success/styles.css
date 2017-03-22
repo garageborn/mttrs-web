@@ -1,0 +1,4 @@
+.text {
+  font-size: calc((13 / var(--mttrsBase))rem);
+  color: var(--mttrsOrange);
+}
