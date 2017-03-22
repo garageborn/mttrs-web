@@ -4,7 +4,7 @@ import Modal from 'react-modal'
 import classNames from 'classnames'
 import CloseModal from '../components/CloseModal'
 import styles from '../styles/modal.css'
-import { UIActions } from '../actions/index'
+import { UIActions, StorageActions } from '../actions/index'
 
 class ModalContainer extends Component {
   constructor () {
@@ -52,8 +52,6 @@ class ModalContainer extends Component {
 
     if (!UIReducer.modal.isOpen) return
 
-    console.log(UIReducer.modal.type)
-
     return (
       <CloseModal
         shoudldShowButton={UIReducer.modal.isOpen}
@@ -64,7 +62,10 @@ class ModalContainer extends Component {
   }
 
   closeModal () {
-    this.props.dispatch(UIActions.closeModal())
+    if (this.props.UIReducer.modal.type === 'onboarding') {
+      return this.props.dispatch(StorageActions.handleOnboardingFinish())
+    }
+    return this.props.dispatch(UIActions.closeModal())
   }
 }
 

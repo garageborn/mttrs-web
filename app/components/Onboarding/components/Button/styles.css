@@ -11,3 +11,7 @@
   align-items: center;
   cursor: pointer;
 }
+
+.check {
+  background-color: #FF5606;
+}

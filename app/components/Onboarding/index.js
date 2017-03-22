@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import Carousel from 'nuka-carousel'
+import { StorageActions } from '../../actions/index'
 import Slide from './components/Slide'
 import SlideImage from './components/SlideImage'
 import SlideContent from './components/SlideContent'
@@ -65,6 +66,7 @@ class Onboarding extends React.Component {
   constructor () {
     super()
     this.handleSlide = this.handleSlide.bind(this)
+    this.finishOnboarding = this.finishOnboarding.bind(this)
     this.ref = this.ref.bind(this)
   }
 
@@ -126,8 +128,17 @@ class Onboarding extends React.Component {
     let { carousel } = this
     if (!carousel) return null
     let actualSlide = carousel.state.currentSlide + 1
-    if (carousel.state.slideCount === actualSlide) return null
-    return <Button type='right' onClick={() => this.handleSlide('nextSlide')} />
+    let type = 'right'
+    let onClick = () => this.handleSlide('nextSlide')
+    if (carousel.state.slideCount === actualSlide) {
+      type = 'check'
+      onClick = () => this.finishOnboarding()
+    }
+    return <Button type={type} onClick={onClick} />
+  }
+
+  finishOnboarding () {
+    return dispatch(StorageActions.handleOnboardingFinish())
   }
 
   handleSlide (direction) {
