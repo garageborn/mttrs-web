@@ -12,27 +12,50 @@ import { carousel } from './styles'
 
 let slides = [
   {
-    image: require('./assets/1.png'),
+    images: {
+      small: require('./assets/1.png'),
+      notSmall: require('./assets/1-ns.png')
+    },
     title: `Welcome To`,
     caption: 'Your reading time well spent. Read the news that really matters.'
   },
   {
-    image: require('./assets/2.png'),
+    images: {
+      small: require('./assets/2.png'),
+      notSmall: require('./assets/2-ns.png')
+    },
     title: `Top News`,
     caption: 'Find the top stories of the day, ordered by the social indexes of the Internet. If its in the mouths of the people, youll find it here.'
   },
   {
-    image: require('./assets/3.png'),
+    images: {
+      small: require('./assets/3.png'),
+      notSmall: require('./assets/3-ns.png')
+    },
     title: `News summaries`,
     caption: 'Understand the main message of each news in seconds. Summaries are carefully written by our staff.'
   },
   {
-    image: require('./assets/4.png'),
-    title: `Your interest in a click`,
+    images: {
+      small: require('./assets/4.png'),
+      notSmall: require('./assets/4-ns.png')
+    },
+    title: `Keep focus`,
     caption: 'Focus on the information and do not waste time reading the same news several times. If desired, find the publication of your preferred publisher.'
   },
   {
-    image: require('./assets/5.png'),
+    images: {
+      small: require('./assets/5.png'),
+      notSmall: require('./assets/5-ns.png')
+    },
+    title: `Your interest in a click`,
+    caption: 'All news are separated into categories. Find everything organized and read about the subjects that interest you most.'
+  },
+  {
+    images: {
+      small: require('./assets/6.png'),
+      notSmall: require('./assets/6-ns.png')
+    },
     title: `News articles in your hands`,
     caption: 'Waiting in line, on the way to work, after lunch or even in the bathroom. At any time or place you keep updated.'
   },
@@ -51,7 +74,7 @@ class Onboarding extends React.Component {
         {slides.map((slide, idx) => {
           return (
             <Slide>
-              <SlideImage source={slide.image} />
+              <SlideImage source={slide.images} />
               <SlideContent>
                 {this.renderTitle(slide, idx)}
                 <Caption>{slide.caption}</Caption>
