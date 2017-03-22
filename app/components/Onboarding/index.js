@@ -21,7 +21,7 @@ class Onboarding extends React.Component {
 
   render () {
     return (
-      <Carousel ref={this.ref} width='100%' decorators={this.decorators} style={carousel}>
+      <Carousel ref={this.ref} edgeEasing='linear' width='100%' decorators={this.decorators} style={carousel}>
         <First />
         <Second />
         <Third />

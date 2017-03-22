@@ -7,6 +7,7 @@
   font-size: calc((14 / var(--mttrsBase))rem);
   color: var(--mttrsGray);
   @media (--notSmall) {
+    margin: 0 calc((80 / var(--mttrsBase))rem);
     text-align: center;
   }
 }

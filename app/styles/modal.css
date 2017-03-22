@@ -66,13 +66,12 @@
   right: 0;
   left: 0;
   background-color: white;
-  /*height: 74vh;*/
   @media (--notSmall) {
     position: relative;
     lost-center: calc((680 / var(--mttrsBase))rem);
     border-radius: 10px;
-    min-height: 500px;
-    max-height: 720px;
+    height: 600px;
+    width: 720px;
   }
 }
 

@@ -42,12 +42,14 @@
   color: var(--mttrsOtherGray);
 
   @media (--notSmall) {
-    background-color: var(--mttrsGray);
+    background-color: transparent;
+    border: 1px solid var(--mttrsOtherGray);
     left: 0;
-    margin-left: calc(50vw + (220 / var(--mttrsBase))rem);
+    margin-left: calc(50vw + (240 / var(--mttrsBase))rem);
     right: calc((29 / var(--mttrsBase))rem);
-    bottom: calc(50vh - (380 / var(--mttrsBase))rem);
+    bottom: calc(50vh - (350 / var(--mttrsBase))rem);
     padding: calc((8 / var(--mttrsBase))rem) calc((18 / var(--mttrsBase))rem);
     width: calc((90 / var(--mttrsBase))rem);
+    height: calc((35 / var(--mttrsBase))rem);
   }
 }

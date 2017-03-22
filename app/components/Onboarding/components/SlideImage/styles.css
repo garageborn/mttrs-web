@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: flex-end;
   @media (--notSmall) {
-    height: 45vh;
+    height: 450px;
     min-height: 350px;
     max-height: 380px;
   }
