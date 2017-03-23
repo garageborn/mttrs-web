@@ -3,7 +3,7 @@ import styles from './styles.css'
 
 let text = {
   onboarding: 'skip',
-  storyLinks: '✕'
+  storyLinks: '\u00D7'
 }
 
 let classes = {

@@ -10,7 +10,6 @@
 
 .button {
   position: fixed;
-  padding: .4em;
   cursor: pointer;
   z-index: 11;
   display: flex;
@@ -20,12 +19,17 @@
 
 .storyLinksButton {
   composes: button;
-  font-size: 1.3rem;
+  font-size: calc((38 / var(--mttrsBase))rem);
   bottom: 1rem;
   background-color: white;
-  height: 2em;
-  width: 2em;
+  height: calc((48 / var(--mttrsBase))rem);
+  width: calc((48 / var(--mttrsBase))rem);
   border-radius: 50%;
+
+  > span {
+    position: relative;
+    bottom: 3;
+  }
 
   @media (--large) {
     left: 0;
