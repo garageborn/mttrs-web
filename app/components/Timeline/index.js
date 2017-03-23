@@ -17,14 +17,13 @@ class Timeline extends Component {
   }
 
   renderStoryList (item) {
-    const { handleStoryLinks, options, type } = this.props
+    const { handleStoryLinks, type } = this.props
     if (!item.stories.length) return null
     return (
       <StoryList
         date={item.date}
         handleStoryLinks={handleStoryLinks}
         key={item.date}
-        options={options}
         stories={item.stories}
         type={type}
       />
@@ -35,10 +34,7 @@ class Timeline extends Component {
 Timeline.propTypes = {
   data: PropTypes.object.isRequired,
   handleStoryLinks: PropTypes.func.isRequired,
-  type: PropTypes.string,
-  options: PropTypes.shape({
-    renderCategory: PropTypes.bool
-  })
+  type: PropTypes.string
 }
 
 export default Timeline

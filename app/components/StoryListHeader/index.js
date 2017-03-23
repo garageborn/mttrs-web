@@ -9,7 +9,11 @@ const messages = defineMessages({
 
 const StoryListHeader = ({ date, type, intl }) => {
   if (type === 'placeholder') {
-    return <h2 className={styles.title}>{intl.formatMessage(messages.today)}</h2>
+    return (
+      <h2 className={styles.title} itemScope itemType='http://schema.org/Date'>
+        {intl.formatMessage(messages.today)}
+      </h2>
+    )
   }
 
   let h2 = <h2 />

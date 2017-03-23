@@ -3,8 +3,8 @@
   "header.tagline": "Leia o que importa",
   "header.topStories": "Destaques",
   "menu.publishers": "Sites",
-  "home.pageDescription": "mttrs",
-  "home.pageTitle": "mttrs",
+  "home.pageDescription": "Seu tempo é muito precioso. Dedique apenas 15 minutos ao dia para saber as notícias que realmente importam.",
+  "home.pageTitle": "mttrs - Resumo de notícias",
   "link.pageDescription": "{title} | mttrs",
   "link.pageTitle": "{title} | mttrs",
   "publisher.pageTitle": "{name} | mttrs",
@@ -40,5 +40,7 @@
   "onboarding.fifth.title": "Seu interesse a um clique",
   "onboarding.fifth.caption": "Todas as notícias são separadas em categorias. Encontre tudo organizado e leia sobre os assuntos que mais lhe interessam.",
   "onboarding.sixth.title": "Resumo de notícias sempre a mão",
-  "onboarding.sixth.caption": "Na espera da fila, no caminho para o trabalho, após o almoço ou até mesmo no banheiro. a qualquer hora e lugar você fica atualizado."
+  "onboarding.sixth.caption": "Na espera da fila, no caminho para o trabalho, após o almoço ou até mesmo no banheiro. a qualquer hora e lugar você fica atualizado.",
+  "summary.showMore": "ver mais",
+  "summary.showLess": "ver menos"
 }

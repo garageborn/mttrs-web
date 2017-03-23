@@ -3,8 +3,8 @@
   "header.tagline": "Read What Matters",
   "header.topStories": "Highlights",
   "menu.publishers": "Publishers",
-  "home.pageDescription": "mttrs",
-  "home.pageTitle": "mttrs",
+  "home.pageDescription": "Your time is precious. Just take 15 minutes a day to find out the news that matters.",
+  "home.pageTitle": "mttrs - News summaries",
   "link.pageDescription": "{title} | mttrs",
   "link.pageTitle": "{title} | mttrs",
   "publisher.pageTitle": "{name} | mttrs",
@@ -40,5 +40,7 @@
   "onboarding.fifth.title": "Your interest in a click",
   "onboarding.fifth.caption": "All news are separated into categories. Find everything organized and read about the subjects that interest you most.",
   "onboarding.sixth.title": "News articles in your hands",
-  "onboarding.sixth.caption": "Waiting in line, on the way to work, after lunch or even in the bathroom. At any time or place you keep updated."
+  "onboarding.sixth.caption": "Waiting in line, on the way to work, after lunch or even in the bathroom. At any time or place you keep updated.",
+  "summary.showMore": "show more",
+  "summary.showLess": "show less"
 }

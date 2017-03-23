@@ -15,7 +15,3 @@
     lost-center: calc((620 / var(--mttrsBase))rem);
   }
 }
-
-.read {
-  opacity: 0.5;
-}
