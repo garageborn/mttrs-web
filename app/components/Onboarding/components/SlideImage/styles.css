@@ -1,0 +1,17 @@
+.container {
+  height: 65vh;
+  background-color: var(--mttrsBackgroundColor);
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  @media (--notSmall) {
+    height: 450px;
+    min-height: 350px;
+    max-height: 380px;
+  }
+}
+
+.image {
+  width: 100%;
+}

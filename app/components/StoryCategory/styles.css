@@ -1,6 +1,6 @@
 .text {
-  font-size: calc((10 / 16)rem);
-  margin: calc((7 / 16)rem) 0 0 calc((10 / 16)rem);
+  font-size: calc((10 / var(--mttrsBase))rem);
+  margin: calc((7 / var(--mttrsBase))rem) 0 0 calc((10 / var(--mttrsBase))rem);
   color: #999;
 }
 

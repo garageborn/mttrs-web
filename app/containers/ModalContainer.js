@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Modal from 'react-modal'
+import classNames from 'classnames'
 import CloseModal from '../components/CloseModal'
-import modalStyles from '../styles/modal.css'
-import { UIActions } from '../actions/index'
+import styles from '../styles/modal.css'
+import { UIActions, StorageActions } from '../actions/index'
 
 class ModalContainer extends Component {
   constructor () {
@@ -19,8 +20,8 @@ class ModalContainer extends Component {
         <Modal
           isOpen={UIReducer.modal.isOpen}
           contentLabel='Modal'
-          className={modalStyles.modal}
-          overlayClassName={modalStyles.overlay}
+          className={this.classNames}
+          overlayClassName={this.overlayClassNames}
           onRequestClose={this.closeModal}
         >
           {UIReducer.modal.content}
@@ -30,21 +31,48 @@ class ModalContainer extends Component {
     )
   }
 
+  get overlayClassNames () {
+    let { type } = this.props.UIReducer.modal
+    return classNames({
+      [styles.overlay]: true,
+      [styles.onboardingOverlay]: type === 'onboarding'
+    })
+  }
+
+  get classNames () {
+    let { type } = this.props.UIReducer.modal
+    return classNames({
+      [styles.modal]: true,
+      [styles[type]]: true
+    })
+  }
+
   renderCloseButton () {
     const { UIReducer } = this.props
 
     if (!UIReducer.modal.isOpen) return
-    return <CloseModal shoudldShowButton={UIReducer.modal.isOpen} closeModal={this.closeModal} />
+
+    return (
+      <CloseModal
+        shoudldShowButton={UIReducer.modal.isOpen}
+        closeModal={this.closeModal}
+        type={UIReducer.modal.type}
+      />
+    )
   }
 
   closeModal () {
-    this.props.dispatch(UIActions.closeModal())
+    if (this.props.UIReducer.modal.type === 'onboarding') {
+      return this.props.dispatch(StorageActions.handleOnboardingFinish())
+    }
+    return this.props.dispatch(UIActions.closeModal())
   }
 }
 
 ModalContainer.propTypes = {
   UIReducer: PropTypes.shape({
     modal: PropTypes.shape({
+      type: PropTypes.string,
       isOpen: PropTypes.bool.isRequired
     }).isRequired
   }).isRequired,

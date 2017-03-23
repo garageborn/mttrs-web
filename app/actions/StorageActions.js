@@ -1,6 +1,8 @@
 import _uniq from 'lodash/uniq'
 import _flatten from 'lodash/flatten'
-import {REQUEST_VISITED_STORIES, VISITED_STORIES_RECEIVED} from '../constants/ActionTypes'
+import { REQUEST_VISITED_STORIES, VISITED_STORIES_RECEIVED,
+  SHOW_ONBOARDING, CLOSE_MODAL } from '../constants/ActionTypes'
+import localForage from 'localforage'
 
 export const requestVisitedStories = () => ({
   type: REQUEST_VISITED_STORIES
@@ -10,6 +12,30 @@ export const receiveVisitedStories = (visitedStories) => ({
   type: VISITED_STORIES_RECEIVED,
   visitedStories
 })
+
+export const showOnboarding = () => ({
+  type: SHOW_ONBOARDING
+})
+
+export const hideOnboarding = () => ({
+  type: CLOSE_MODAL
+})
+
+export function getOnboardingStatus () {
+  return (dispatch, getState) => {
+    return localForage.getItem('onboardingShown', (error, onboardingShown) => {
+      if (error || onboardingShown) return
+      return dispatch(showOnboarding())
+    })
+  }
+}
+
+export function handleOnboardingFinish () {
+  return (dispatch, getState) => {
+    localForage.setItem('onboardingShown', true)
+    return dispatch(hideOnboarding())
+  }
+}
 
 export function getVisitedStories () {
   return (dispatch, getState) => {

@@ -37,26 +37,11 @@
 
 .modal {
   position: fixed;
-  top: 100px;
-  left: 10px;
-  right: 10px;
-  bottom: 70px;
-  background-color: var(--mttrsBackgroundColor);
   overflow: auto;
   overflow-scrolling: touch;
-  border-radius: 4px;
   outline: none;
   padding: 0;
   z-index: 4;
-
-  @media (--notSmall) {
-    lost-center: calc((680 / var(--mttrsBase))rem);
-    top: 140px;
-  }
-
-  @media (--large) {
-    margin-left: calc(50% - 230px);
-  }
 }
 
 .overlay {
@@ -66,4 +51,43 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.onboardingOverlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10
+}
+
+.onboarding {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: white;
+  @media (--notSmall) {
+    position: relative;
+    lost-center: calc((680 / var(--mttrsBase))rem);
+    border-radius: 10px;
+    height: 600px;
+    width: 720px;
+  }
+}
+
+.storyLinks {
+  background-color: var(--mttrsBackgroundColor);
+  top: 100px;
+  left: 10px;
+  right: 10px;
+  bottom: 70px;
+  border-radius: 4px;
+  @media (--notSmall) {
+    lost-center: calc((680 / var(--mttrsBase))rem);
+    top: 140px;
+  }
+
+  @media (--large) {
+    margin-left: calc(50% - 230px);
+  }
 }

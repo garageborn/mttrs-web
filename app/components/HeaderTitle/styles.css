@@ -1,6 +1,6 @@
 .title {
   color: var(--mttrsGray);
-  font-size: calc((14 / 16)rem);
+  font-size: calc((14 / var(--mttrsBase))rem);
   font-weight: 500;
   margin-left: 10px;
 }

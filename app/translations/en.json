@@ -29,6 +29,18 @@
   "dateFormat": "MMMM D",
   "storyPublishers.others": " {itemCount, plural, one {# other} other {# others}}",
   "restrict.content": "only for subscribers",
+  "onboarding.first.title": "Welcome to",
+  "onboarding.first.caption": "Your reading time well spent. Read the news that really matters.",
+  "onboarding.second.title": "Top News",
+  "onboarding.second.caption": "Find the top stories of the day, ordered by the social indexes of the Internet. If its in the mouths of the people, youll find it here.",
+  "onboarding.third.title": "News Summaries",
+  "onboarding.third.caption": "Understand the main message of each news in seconds. Summaries are carefully written by our staff.",
+  "onboarding.fourth.title": "Keep focus",
+  "onboarding.fourth.caption": "Focus on the information and do not waste time reading the same news several times. If desired, find the publication of your preferred publisher.",
+  "onboarding.fifth.title": "Your interest in a click",
+  "onboarding.fifth.caption": "All news are separated into categories. Find everything organized and read about the subjects that interest you most.",
+  "onboarding.sixth.title": "News articles in your hands",
+  "onboarding.sixth.caption": "Waiting in line, on the way to work, after lunch or even in the bathroom. At any time or place you keep updated.",
   "summary.showMore": "show more",
   "summary.showLess": "show less"
 }

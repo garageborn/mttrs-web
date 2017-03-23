@@ -41,6 +41,7 @@
     "moment-timezone": "^0.5.11",
     "normalize.css": "^5.0.0",
     "npm-run-all": "^4.0.2",
+    "nuka-carousel": "^2.0.4",
     "postcss-cssnext": "^2.9.0",
     "postcss-import": "^9.0.0",
     "postcss-loader": "^1.3.3",
