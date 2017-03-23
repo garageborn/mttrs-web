@@ -15,25 +15,25 @@
 }
 
 .disclaimer {
-  font-size: 0.75rem;
-  margin: 1.2rem 0 .2rem 1.15625rem;
+  font-size: calc((12 / var(--mttrsBase))rem);
+  margin: calc((20 / var(--mttrsBase))rem) 0 0.2rem calc((19 / var(--mttrsBase))rem);
   color: #999999;
 }
 
 .search {
   position: relative;
   background-color: transparent;
-  margin-top: 4.55rem;
+  margin-top: calc((72 / var(--mttrsBase))rem);
   width: 100%;
 
   @media (--notSmall) {
     lost-center: 34.90em;
-    margin-top: 4.25rem;
-    margin-bottom: 0.875rem;
+    margin-top: calc((68 / var(--mttrsBase))rem);
+    margin-bottom: calc((14 / var(--mttrsBase))rem);
   }
 
   @media (--large) {
-    margin-top: 5.25rem;
+    margin-top: calc((84 / var(--mttrsBase))rem);
   }
 }
 

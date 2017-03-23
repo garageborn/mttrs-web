@@ -1,6 +1,6 @@
 .button {
   border: 0;
-  padding: 10px 20px;
+  padding: calc((10 / var(--mttrsBase))rem) calc((20 / var(--mttrsBase))rem);
   border-radius: 2px;
   text-transform: uppercase;
   text-align: center;
