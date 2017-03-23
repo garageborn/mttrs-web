@@ -19,6 +19,7 @@ class PublisherSuggestionContainer extends Component {
         publisher={this.props.publisher}
         sendSuggestion={this.sendSuggestion}
         status={this.state.status}
+        onSuccessBack={this.props.onSuccessBack}
       />
     )
   }

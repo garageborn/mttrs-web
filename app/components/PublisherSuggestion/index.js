@@ -21,8 +21,8 @@ class PublisherSuggestion extends Component {
   }
 
   renderStatus () {
-    if (this.props.status === 'success') return <Success />
-    if (this.props.status === 'error') return <Error />
+    if (this.props.status === 'success') return <Success onBack={this.props.onSuccessBack} />
+    if (this.props.status === 'error') return <Error onErrorRefresh={this.onButtonClick} />
 
     const { intl } = this.props
     const { white, mttrsOrange } = properties
@@ -62,7 +62,8 @@ PublisherSuggestion.propTypes = {
   }).isRequired,
   sendSuggestion: PropTypes.func,
   publisher: PropTypes.string,
-  status: PropTypes.string.isRequired
+  status: PropTypes.string.isRequired,
+  onSuccessBack: PropTypes.func.isRequired
 }
 
 export default injectIntl(PublisherSuggestion)

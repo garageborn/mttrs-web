@@ -37,5 +37,6 @@
   "publisher.suggestion.sendButton": "Enviar",
   "publisher.suggestion.success": "Sugestão de site enviada.\nObrigado por contribuir.",
   "publisher.suggestion.error": "Oops! Algo deu errado. :(",
-  "publisher.suggestion.refreshButton": "Atualizar"
+  "publisher.suggestion.refreshButton": "Atualizar",
+  "back": "voltar"
 }

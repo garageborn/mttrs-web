@@ -11,14 +11,14 @@ const messages = defineMessages({
 
 const { white, mttrsOrange } = properties
 
-const Error = ({ intl }) => (
+const Error = ({ intl, onErrorRefresh }) => (
   <div className={styles.container}>
     <div className={styles.message}>
       <p className={styles.text}>
         {intl.formatMessage(messages.error)}
       </p>
     </div>
-    <Button textColor={white} backgroundColor={mttrsOrange}>
+    <Button onClick={onErrorRefresh} textColor={white} backgroundColor={mttrsOrange}>
       {intl.formatMessage(messages.refreshButton)}
     </Button>
   </div>
@@ -27,7 +27,8 @@ const Error = ({ intl }) => (
 Error.propTypes = {
   intl: PropTypes.shape({
     formatMessage: PropTypes.func.isRequired
-  }).isRequired
+  }).isRequired,
+  onErrorRefresh: PropTypes.func.isRequired
 }
 
 export default injectIntl(Error)

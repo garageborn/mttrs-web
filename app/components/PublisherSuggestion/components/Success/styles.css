@@ -2,3 +2,9 @@
   font-size: calc((13 / var(--mttrsBase))rem);
   color: var(--mttrsOrange);
 }
+
+.back {
+  cursor: pointer;
+  color: var(--mttrsGray);
+  text-decoration: underline;
+}

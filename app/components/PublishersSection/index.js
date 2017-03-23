@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import React, { Component, PropTypes } from 'react'
 import { injectIntl, defineMessages } from 'react-intl'
 import _isNull from 'lodash/isNull'
@@ -46,7 +47,12 @@ class PublishersSection extends Component {
   }
 
   renderSuggestionView () {
-    return <PublisherSuggestionContainer publisher={this.state.query} />
+    return (
+      <PublisherSuggestionContainer
+        publisher={this.state.query}
+        onSuccessBack={() => window.location.reload()}
+      />
+    )
   }
 
   render () {
