@@ -28,11 +28,10 @@ class Category extends Component {
   render () {
     const queryVariables = { categorySlug: this.props.slug, type: 'category' }
     return (
-      <Modal>
-        <Layout {...this.helmet()}>
-          <TimelineContainer type='category' queryVariables={queryVariables} />
-        </Layout>
-      </Modal>
+      <Layout {...this.helmet()}>
+        <TimelineContainer type='category' queryVariables={queryVariables} />
+        <Modal />
+      </Layout>
     )
   }
 

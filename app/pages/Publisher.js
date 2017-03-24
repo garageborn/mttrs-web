@@ -30,13 +30,12 @@ class Publisher extends Component {
   render () {
     const queryVariables = { publisherSlug: this.props.slug, type: 'publisher' }
     return (
-      <Modal>
-        <Layout {...this.helmet()}>
-          <PublishersListContainer />
-          <CurrentPublisher publisher={this.props.data.publisher} />
-          <TimelineContainer type='publisher' queryVariables={queryVariables} />
-        </Layout>
-      </Modal>
+      <Layout {...this.helmet()}>
+        <PublishersListContainer />
+        <CurrentPublisher publisher={this.props.data.publisher} />
+        <TimelineContainer type='publisher' queryVariables={queryVariables} />
+        <Modal />
+      </Layout>
     )
   }
 

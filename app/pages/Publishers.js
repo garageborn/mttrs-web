@@ -17,11 +17,10 @@ class Publishers extends Component {
 
   render () {
     return (
-      <Modal>
-        <Layout {...this.helmet()} showModal={false}>
-          <PublishersListContainer type='publishers' />
-        </Layout>
-      </Modal>
+      <Layout {...this.helmet()} showModal={false}>
+        <PublishersListContainer type='publishers' />
+        <Modal />
+      </Layout>
     )
   }
 

@@ -27,11 +27,10 @@ class Home extends Component {
   render () {
     const queryVariables = { type: 'home' }
     return (
-      <Modal>
-        <Layout {...this.helmet()}>
-          <TimelineContainer type='home' queryVariables={queryVariables} />
-        </Layout>
-      </Modal>
+      <Layout {...this.helmet()}>
+        <TimelineContainer type='home' queryVariables={queryVariables} />
+        <Modal />
+      </Layout>
     )
   }
 
