@@ -4,7 +4,7 @@ import styles from './styles.css'
 
 const Dots = ({ count, active }) => {
   const renderDots = (count, active) => (
-    [...Array(count)].map((value, idx) => (<Dot active={active === idx} />))
+    [...Array(count)].map((value, idx) => (<Dot key={idx} active={active === idx} />))
   )
 
   return (

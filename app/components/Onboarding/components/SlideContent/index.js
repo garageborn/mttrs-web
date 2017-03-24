@@ -8,7 +8,7 @@ const SlideContent = ({ children }) => (
 )
 
 SlideContent.propTypes = {
-  children: PropTypes.string.isRequired
+  children: PropTypes.any.isRequired
 }
 
 export default SlideContent
