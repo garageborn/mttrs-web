@@ -6,7 +6,6 @@ import { UIActions } from '../actions/index'
 
 class ModalWrapper extends Component {
   componentWillReceiveProps (nextProps) {
-    console.log(nextProps)
     this.handleOnboarding(nextProps)
   }
 
