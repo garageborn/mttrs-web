@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-bind, no-return-assign */
 import React, { PropTypes } from 'react'
+import { connect } from 'react-redux'
 import Carousel from 'nuka-carousel'
 import { StorageActions } from '../../actions/index'
 import Dots from './components/Dots'
@@ -89,4 +90,6 @@ Onboarding.propTypes = {
   dispatch: PropTypes.func.isRequired
 }
 
-export default Onboarding
+
+
+export default connect()(Onboarding)
