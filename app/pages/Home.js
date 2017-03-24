@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { injectIntl, defineMessages } from 'react-intl'
 import Layout from './Layout'
+import Modal from './Modal'
 import TimelineContainer from '../containers/TimelineContainer'
 import CloseModal from '../components/CloseModal'
 import { UIActions } from '../actions/index'
@@ -26,9 +27,11 @@ class Home extends Component {
   render () {
     const queryVariables = { type: 'home' }
     return (
-      <Layout {...this.helmet()}>
-        <TimelineContainer type='home' queryVariables={queryVariables} />
-      </Layout>
+      <Modal>
+        <Layout {...this.helmet()}>
+          <TimelineContainer type='home' queryVariables={queryVariables} />
+        </Layout>
+      </Modal>
     )
   }
 
