@@ -15,25 +15,27 @@ const messages = defineMessages({
   }
 })
 
-let images = {
-  small: require('./assets/6.png'),
-  notSmall: require('./assets/6-ns.png')
+const Sixth = ({ intl }) => {
+  let images = {
+    small: require(`./assets/${intl.locale}-6.png`),
+    notSmall: require(`./assets/${intl.locale}-6-ns.png`)
+  }
+
+  return (
+    <Slide>
+      <SlideImage source={images} />
+      <SlideContent>
+        <Title>{intl.formatMessage(messages.title)}</Title>
+        <Caption>{intl.formatMessage(messages.caption)}</Caption>
+      </SlideContent>
+    </Slide>
+  )
 }
 
-const First = ({ intl }) => (
-  <Slide>
-    <SlideImage source={images} />
-    <SlideContent>
-      <Title>{intl.formatMessage(messages.title)}</Title>
-      <Caption>{intl.formatMessage(messages.caption)}</Caption>
-    </SlideContent>
-  </Slide>
-)
-
-First.propTypes = {
+Sixth.propTypes = {
   intl: PropTypes.shape({
     formatMessage: PropTypes.func.isRequired
   }).isRequired
 }
 
-export default injectIntl(First)
+export default injectIntl(Sixth)
