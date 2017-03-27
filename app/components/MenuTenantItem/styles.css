@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (--notSmall) {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+
+.image {
+  margin-left: calc((10 / var(--mttrsBase))rem);
+}
+
+.text {
+  font-size: calc((12 / var(--mttrsBase))rem);
+  color: var(--mttrsGray);
+
+  &:hover {
+    color: #FFF;
+  }
+
+  @media (--notSmall) {
+    width: calc((100 / var(--mttrsBase))rem);
+    justify-content: space-between;
+    display: flex;
+  }
+}
+
+.link {
+  composes: text;
+  cursor: pointer;
+}
