@@ -3,8 +3,8 @@ import styles from './styles.css'
 import image from './assets/image.svg'
 
 let urls = {
-  mttrs_br: 'http://www.mttrs.com.br',
-  mttrs_us: 'http://www.mtt.rs'
+  mttrs_br: 'https://mttrs.com.br',
+  mttrs_us: 'https://mtt.rs'
 }
 
 const MenuTenantItem = ({ tenant, currentTenant, children }) => {
