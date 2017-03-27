@@ -11,9 +11,13 @@
   overflow-y: auto;
   transition: transform 300ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
   transform: translateY(-100%);
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
 
   @media (--notSmall) {
     width: 240px;
+    justify-content: space-between;
   }
 
   @media (--medium) {

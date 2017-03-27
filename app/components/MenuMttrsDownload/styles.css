@@ -20,9 +20,10 @@
 .slogan {
   font-size: calc((12 / var(--mttrsBase))rem);
   color: var(--mttrsGray);
-  padding: 30px calc(50% - 80px) 0;
+  padding: 0 calc(50% - 80px) 0;
 
   @media (--notSmall) {
     padding-left: 35px;
+    padding-top: calc((30 / var(--mttrsBase))rem);
   }
 }
