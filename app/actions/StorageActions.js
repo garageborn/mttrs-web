@@ -23,6 +23,7 @@ export const hideOnboarding = () => ({
 
 export function getOnboardingStatus () {
   return (dispatch, getState) => {
+    if (_server_) return
     return localForage.getItem('onboardingShown', (error, onboardingShown) => {
       if (error || onboardingShown) return
       return dispatch(showOnboarding())
@@ -43,7 +44,6 @@ export function getVisitedStories () {
     if (isVisitedStoriesLoaded(getState)) return
     if (isVisitedStoriesFetching(getState)) return
 
-    const localForage = require('localforage')
     dispatch(requestVisitedStories())
     return localForage.getItem('visitedStories', (error, stories) => {
       if (error) return
@@ -56,7 +56,6 @@ export function addVisitedStory (story) {
   return (dispatch, getState) => {
     if (isVisitedStory(getState, story)) return
 
-    const localForage = require('localforage')
     let storyId = parseInt(story.id)
     let stories = _uniq(_flatten([visitedStories(getState).items, storyId]))
     localForage.setItem('visitedStories', stories)

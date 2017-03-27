@@ -1,7 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Config from './config'
+import { StorageActions } from './actions/index'
+
 const config = new Config({window})
+
+config.settings.store.dispatch(StorageActions.getOnboardingStatus())
 
 const render = (routes) => {
   ReactDOM.render(

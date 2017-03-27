@@ -2,7 +2,6 @@ import React, { Component, Children, PropTypes } from 'react'
 import { ApolloProvider } from 'react-apollo'
 import { Router, RouterContext, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
-import { StorageActions } from '../actions/index'
 import IntlProvider from '../config/IntlProvider'
 
 class SettingsProvider extends Component {
@@ -61,8 +60,6 @@ class Wrapper {
   fromClient (routes) {
     const history = syncHistoryWithStore(browserHistory, this.settings.store)
 
-    this.getOnboardingStatus()
-
     return (
       <SettingsProvider settings={this.settings}>
         <ApolloProvider store={this.settings.store} client={this.settings.apolloClient}>
@@ -72,10 +69,6 @@ class Wrapper {
         </ApolloProvider>
       </SettingsProvider>
     )
-  }
-
-  getOnboardingStatus () {
-    return this.settings.store.dispatch(StorageActions.getOnboardingStatus())
   }
 }
 
