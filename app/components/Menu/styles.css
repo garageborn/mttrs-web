@@ -14,10 +14,12 @@
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
+  cursor: default;
 
   @media (--notSmall) {
     width: 240px;
     justify-content: space-between;
+    padding-top: calc((14 / var(--mttrsBase))rem);
   }
 
   @media (--medium) {

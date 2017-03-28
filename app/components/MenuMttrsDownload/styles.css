@@ -24,6 +24,5 @@
 
   @media (--notSmall) {
     padding-left: 35px;
-    padding-top: calc((30 / var(--mttrsBase))rem);
   }
 }

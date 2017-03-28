@@ -16,6 +16,7 @@
 .text {
   font-size: calc((12 / var(--mttrsBase))rem);
   color: var(--mttrsGray);
+  margin: 0 0 calc((5 / var(--mttrsBase))rem);
 
   &:hover {
     color: #FFF;
