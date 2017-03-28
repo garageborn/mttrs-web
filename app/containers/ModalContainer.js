@@ -62,7 +62,7 @@ class ModalContainer extends Component {
   }
 
   closeModal () {
-    return this.props.dispatch(UIActions.closeModal())
+    return this.props.dispatch(UIActions.handleCloseModal())
   }
 }
 

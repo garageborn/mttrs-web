@@ -6,14 +6,16 @@ export const openModal = (modalType, content) => ({
   content
 })
 
-export function closeModal () {
+export function handleCloseModal () {
   return (dispatch, getState) => {
-    if (getState().UIReducer.type === 'onboarding') dispatch(StorageActions.handleOnboardingFinish())
-    return {
-      type: CLOSE_MODAL
-    }
+    if (getState().UIReducer.modal.type === 'onboarding') return dispatch(StorageActions.handleOnboardingFinish())
+    return dispatch(closeModal())
   }
 }
+
+export const closeModal = () => ({
+  type: CLOSE_MODAL
+})
 
 export const openMenu = () => ({
   type: OPEN_MENU
