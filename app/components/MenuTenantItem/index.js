@@ -31,7 +31,7 @@ const MenuTenantItem = ({ tenant, currentTenant, children }) => {
 MenuTenantItem.propTypes = {
   tenant: PropTypes.string.isRequired,
   currentTenant: PropTypes.string.isRequired,
-  children: PropTypes.isRequired
+  children: PropTypes.any.isRequired
 }
 
 export default MenuTenantItem
