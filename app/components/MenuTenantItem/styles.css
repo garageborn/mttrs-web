@@ -22,7 +22,7 @@
   }
 
   @media (--notSmall) {
-    width: calc((100 / var(--mttrsBase))rem);
+    width: calc((150 / var(--mttrsBase))rem);
     justify-content: space-between;
     display: flex;
   }
