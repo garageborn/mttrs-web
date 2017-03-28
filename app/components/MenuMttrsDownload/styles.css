@@ -1,5 +1,6 @@
 .container {
-  padding: 0 calc(50% - 45vw);
+  /* DOESN'T WORK ON IE AND APPARENTLY DOESN'T AFFECT ANYTHING ELSE */
+  /*padding: 0 calc(50% - 45vw);*/
   text-align: center;
 
   @media (--notSmall) {
