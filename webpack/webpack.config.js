@@ -6,6 +6,7 @@ import precss from 'precss'
 import mqpacker from 'css-mqpacker'
 import nested from 'postcss-nested'
 import atImport from 'postcss-import'
+import flexBugsFixes from 'postcss-flexbugs-fixes'
 import { properties, mediaQueries } from '../app/utils/variables'
 
 const cssNextConfig = {
@@ -84,7 +85,8 @@ const configuration = {
       precss,
       lost,
       nested,
-      mqpacker
+      mqpacker,
+      flexBugsFixes
     ]
   },
 
