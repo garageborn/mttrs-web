@@ -28,7 +28,7 @@
 
 .category {
   display: inline-block;
-  font-size: calc((14 / var(--mttrBase))rem);
+  font-size: calc((14 / var(--mttrsBase))rem);
   color: var(--mttrsOtherGray);
   transition: all .15s ease-in-out;
 

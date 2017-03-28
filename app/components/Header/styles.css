@@ -25,6 +25,7 @@
 
   @media (--medium) {
     position: absolute;
+    top: 4px;
   }
 
   @media (--large) {
