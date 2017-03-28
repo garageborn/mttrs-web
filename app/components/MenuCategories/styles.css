@@ -19,7 +19,7 @@
   }
 
   @media (--notSmall) {
-    padding-left: calc(50% - 45vw);
+    /*padding-left: calc(50% - 45vw);*/
   }
 }
 
