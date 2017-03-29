@@ -66,12 +66,12 @@
   right: 0;
   left: 0;
   background-color: white;
+
   @media (--notSmall) {
     position: relative;
-    lost-center: calc((680 / var(--mttrsBase))rem);
     border-radius: 10px;
     height: 600px;
-    width: 720px;
+    width: 680px;
   }
 }
 
