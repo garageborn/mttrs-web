@@ -62,10 +62,7 @@ class ModalContainer extends Component {
   }
 
   closeModal () {
-    if (this.props.UIReducer.modal.type === 'onboarding') {
-      return this.props.dispatch(StorageActions.handleOnboardingFinish())
-    }
-    return this.props.dispatch(UIActions.closeModal())
+    return this.props.dispatch(UIActions.handleCloseModal())
   }
 }
 

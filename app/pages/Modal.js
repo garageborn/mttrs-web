@@ -2,12 +2,16 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import ModalContainer from '../containers/ModalContainer'
 import Onboarding from '../components/Onboarding'
-import { UIActions } from '../actions/index'
+import { UIActions, StorageActions } from '../actions/index'
 
 class ModalWrapper extends Component {
+  componentWillMount () {
+    if (this.props.shown) return
+    this.props.dispatch(StorageActions.getOnboardingStatus())
+  }
   componentWillReceiveProps (nextProps) {
     // TEMPORARY
-    // this.handleOnboarding(nextProps)
+    this.handleOnboarding(nextProps)
   }
 
   render () {
@@ -45,6 +49,7 @@ ModalWrapper.defaultProps = {
 }
 
 const mapStateToprops = state => ({
+  shown: state.StorageReducer.onboarding.shown,
   showOnboarding: state.UIReducer.showOnboarding
 })
 

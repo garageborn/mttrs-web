@@ -1,11 +1,22 @@
-import {REQUEST_VISITED_STORIES, VISITED_STORIES_RECEIVED} from '../constants/ActionTypes'
+import {
+  REQUEST_VISITED_STORIES,
+  VISITED_STORIES_RECEIVED,
+  ONBOARDING_SHOWN
+} from '../constants/ActionTypes'
 
 let defaultState = {
+  onboarding: { shown: false },
   visitedStories: { isFetching: false, isLoaded: false, items: [] }
 }
 
 export default function (state = defaultState, action) {
   switch (action.type) {
+    case ONBOARDING_SHOWN:
+      return {
+        onboarding: {
+          shown: true
+        }
+      }
     case REQUEST_VISITED_STORIES:
       return {
         ...state,
