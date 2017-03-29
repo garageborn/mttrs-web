@@ -13,6 +13,7 @@ export default function (state = defaultState, action) {
   switch (action.type) {
     case ONBOARDING_SHOWN:
       return {
+        ...state,
         onboarding: {
           shown: true
         }
