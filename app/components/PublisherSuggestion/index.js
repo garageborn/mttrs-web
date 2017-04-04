@@ -27,9 +27,10 @@ class PublisherSuggestion extends Component {
     const { intl } = this.props
     const { white, mttrsOrange } = properties
     let label = intl.formatMessage(messages.sendButton)
+    let skin = { backgroundColor: mttrsOrange, color: white }
 
     return (
-      <Button onClick={this.onButtonClick} textColor={white} backgroundColor={mttrsOrange}>
+      <Button onClick={this.onButtonClick} skin={skin}>
         {label}
       </Button>
     )

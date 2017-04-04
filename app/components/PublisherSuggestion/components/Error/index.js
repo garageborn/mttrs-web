@@ -10,6 +10,7 @@ const messages = defineMessages({
 })
 
 const { white, mttrsOrange } = properties
+let skin = { backgroundColor: mttrsOrange, color: white }
 
 const Error = ({ intl, onErrorRefresh }) => (
   <div className={styles.container}>
@@ -18,7 +19,7 @@ const Error = ({ intl, onErrorRefresh }) => (
         {intl.formatMessage(messages.error)}
       </p>
     </div>
-    <Button onClick={onErrorRefresh} textColor={white} backgroundColor={mttrsOrange}>
+    <Button onClick={onErrorRefresh} skin={skin}>
       {intl.formatMessage(messages.refreshButton)}
     </Button>
   </div>

@@ -107,6 +107,7 @@ class PublishersSection extends Component {
 
   filteredPublishers () {
     const { publishers } = this.props
+    if (!publishers) return
     const queryMatcher = new RegExp(this.state.query, 'i')
     let filteredPublishers = publishers.filter(publisher => {
       return this.matchDisplayName(publisher, queryMatcher) ||
