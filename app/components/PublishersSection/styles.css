@@ -36,15 +36,3 @@
     margin-top: calc((84 / var(--mttrsBase))rem);
   }
 }
-
-.loading {
-  composes: container;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-top: calc((100 / var(--mttrsBase))rem);
-  color: var(--mttrsDarkGray);
-  font-size: calc((14 / var(--mttrsBase))rem);
-  font-weight: 300;
-}
