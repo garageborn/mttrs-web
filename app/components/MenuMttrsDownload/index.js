@@ -8,7 +8,11 @@ const messages = defineMessages({
   slogan: { id: 'mttrs.download.slogan' }
 })
 
-const androidUrl = lang => `https://play.google.com/store/apps/details?id=garageborn.mttrs&hl=${lang}`
+const androidUrl = lang => {
+  let baseUrl = 'https://play.google.com/store/apps/details'
+  let query = `?id=garageborn.mttrs&hl=${lang}&referrer=utm_source%3Dweb%26utm_medium%3Dmenu`
+  return `${ baseUrl }${ query }`
+}
 
 const MenuMttrsDownload = ({ intl, settings }) => (
   <div className={styles.container}>
