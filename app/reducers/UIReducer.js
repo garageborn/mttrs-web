@@ -1,4 +1,5 @@
-import { OPEN_MODAL, CLOSE_MODAL, OPEN_MENU, CLOSE_MENU, UPDATE_SECTION } from '../constants/ActionTypes'
+import { OPEN_MODAL, CLOSE_MODAL, OPEN_MENU, CLOSE_MENU,
+  SHOW_ONBOARDING, UPDATE_SECTION } from '../constants/ActionTypes'
 
 let defaultState = {
   modal: {
@@ -12,7 +13,8 @@ let defaultState = {
   section: {
     type: '',
     model: {}
-  }
+  },
+  showOnboarding: false
 }
 
 export default function (state = defaultState, action) {
@@ -23,7 +25,7 @@ export default function (state = defaultState, action) {
         modal: {
           ...state.modal,
           isOpen: true,
-          modalType: action.modalType,
+          type: action.modalType,
           content: action.content
         }
       }
@@ -56,6 +58,12 @@ export default function (state = defaultState, action) {
       return {
         ...state,
         section: action.section
+      }
+    }
+    case SHOW_ONBOARDING: {
+      return {
+        ...state,
+        showOnboarding: true
       }
     }
     default:

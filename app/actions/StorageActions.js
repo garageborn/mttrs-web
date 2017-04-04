@@ -1,6 +1,13 @@
 import _uniq from 'lodash/uniq'
 import _flatten from 'lodash/flatten'
-import {REQUEST_VISITED_STORIES, VISITED_STORIES_RECEIVED} from '../constants/ActionTypes'
+import {
+  REQUEST_VISITED_STORIES,
+  VISITED_STORIES_RECEIVED,
+  SHOW_ONBOARDING,
+  CLOSE_MODAL,
+  ONBOARDING_SHOWN
+ } from '../constants/ActionTypes'
+import localForage from 'localforage'
 
 export const requestVisitedStories = () => ({
   type: REQUEST_VISITED_STORIES
@@ -11,13 +18,42 @@ export const receiveVisitedStories = (visitedStories) => ({
   visitedStories
 })
 
+export const showOnboarding = () => ({
+  type: SHOW_ONBOARDING
+})
+
+export const hideOnboarding = () => ({
+  type: CLOSE_MODAL
+})
+
+export const onboardingShown = () => ({
+  type: ONBOARDING_SHOWN
+})
+
+export function getOnboardingStatus () {
+  return (dispatch, getState) => {
+    if (_server_) return
+    return localForage.getItem('onboardingShown', (error, shown) => {
+      if (error) return
+      if (shown) return dispatch(onboardingShown())
+      return dispatch(showOnboarding())
+    })
+  }
+}
+
+export function handleOnboardingFinish () {
+  return (dispatch, getState) => {
+    localForage.setItem('onboardingShown', true)
+    return dispatch(hideOnboarding())
+  }
+}
+
 export function getVisitedStories () {
   return (dispatch, getState) => {
     if (_server_) return
     if (isVisitedStoriesLoaded(getState)) return
     if (isVisitedStoriesFetching(getState)) return
 
-    const localForage = require('localforage')
     dispatch(requestVisitedStories())
     return localForage.getItem('visitedStories', (error, stories) => {
       if (error) return
@@ -30,7 +66,6 @@ export function addVisitedStory (story) {
   return (dispatch, getState) => {
     if (isVisitedStory(getState, story)) return
 
-    const localForage = require('localforage')
     let storyId = parseInt(story.id)
     let stories = _uniq(_flatten([visitedStories(getState).items, storyId]))
     localForage.setItem('visitedStories', stories)

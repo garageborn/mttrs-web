@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+
+  @media (--notSmall) {
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 35px;
+  }
+}
+
+.title {
+  font-size: calc((9 / var(--mttrsBase))rem);
+  text-transform: uppercase;
+  color: var(--mttrsGray);
+}
+
+.list {
+  display: flex;
+  flex-flow: column;
+
+  p {
+    font-size: 12px;
+    color: var(--mttrsGray);
+    margin-right: 2px;
+    cursor: pointer;
+  }
+}

@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  padding-top: 1.5rem;
+  margin-bottom: calc((16 / var(--mttrsBase))rem);
 }
 
 .categories {
@@ -19,12 +19,12 @@
   }
 
   @media (--notSmall) {
-    padding-left: calc(50% - 45vw);
+    /*padding-left: calc(50% - 45vw);*/
   }
 }
 
 .title {
-  font-size: calc((12 / 16)rem);
+  font-size: calc((9 / var(--mttrsBase))rem);
   text-transform: uppercase;
   text-align: center;
   color: var(--mttrsGray);

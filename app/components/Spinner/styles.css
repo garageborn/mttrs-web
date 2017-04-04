@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: calc((20 / 16)rem);
+  padding-top: calc((20 / var(--mttrsBase))rem);
   padding-bottom: 3rem;
 
   @media (--large) {

@@ -1,5 +1,6 @@
 .container {
-  padding: 0 calc(50% - 45vw);
+  /* DOESN'T WORK ON IE AND APPARENTLY DOESN'T AFFECT ANYTHING ELSE */
+  /*padding: 0 calc(50% - 45vw);*/
   text-align: center;
 
   @media (--notSmall) {
@@ -18,9 +19,9 @@
 }
 
 .slogan {
-  font-size: calc((12 / 16)rem);
+  font-size: calc((12 / var(--mttrsBase))rem);
   color: var(--mttrsGray);
-  padding: 30px calc(50% - 80px) 0;
+  padding: 0 calc(50% - 80px) 0;
 
   @media (--notSmall) {
     padding-left: 35px;

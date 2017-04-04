@@ -15,7 +15,7 @@ const StorySocialCount = ({story, otherLinksCount, totalSocial, handleStoryLinks
     <div onClick={() => handleStoryLinksModal()}>
       <img
         className={styles.icon}
-        src={require('../../assets/icon-social-count.png')}
+        src={require('./assets/image.png')}
         alt={socialCountAlt}
       />&nbsp;
       <span className={styles.text}>{count}</span>

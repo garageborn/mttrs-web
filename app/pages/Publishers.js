@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Layout from './Layout'
+import Modal from './Modal'
 import { injectIntl, defineMessages } from 'react-intl'
 import PublishersSectionContainer from '../containers/PublishersSectionContainer'
 import { UIActions } from '../actions/index'
@@ -18,6 +19,7 @@ class Publishers extends Component {
     return (
       <Layout {...this.helmet()} showModal={false}>
         <PublishersSectionContainer type='publishers' />
+        <Modal />
       </Layout>
     )
   }

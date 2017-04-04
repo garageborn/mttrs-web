@@ -5,9 +5,10 @@
   justify-content: center;
   text-align: center;
   width: 100%;
-  padding: calc((2 / 16)rem) 0;
+  padding: calc((2 / var(--mttrsBase))rem) 0;
   margin: 2px 0;
   list-style: none;
+  font-weight: 300;
 
   @media (--notSmall) {
     padding-left: 35px;
@@ -27,12 +28,12 @@
 
 .category {
   display: inline-block;
-  font-size: 1rem;
+  font-size: calc((14 / var(--mttrsBase))rem);
   color: var(--mttrsOtherGray);
   transition: all .15s ease-in-out;
 
   @media (--notSmall) {
-    font-size: calc((14 / 16)rem);
+    font-size: calc((14 / var(--mttrsBase))rem);
   }
 }
 

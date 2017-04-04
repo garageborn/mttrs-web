@@ -2,8 +2,8 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { injectIntl, defineMessages } from 'react-intl'
 import Layout from './Layout'
+import Modal from './Modal'
 import TimelineContainer from '../containers/TimelineContainer'
-import CloseModal from '../components/CloseModal'
 import { UIActions } from '../actions/index'
 import LogoSocial from '../assets/social.png'
 
@@ -13,11 +13,6 @@ const messages = defineMessages({
 })
 
 class Home extends Component {
-  constructor () {
-    super()
-    this.closeModal = this.closeModal.bind(this)
-  }
-
   componentWillMount () {
     const section = { type: 'home' }
     this.props.dispatch(UIActions.updateSection(section))
@@ -28,6 +23,7 @@ class Home extends Component {
     return (
       <Layout {...this.helmet()}>
         <TimelineContainer type='home' queryVariables={queryVariables} />
+        <Modal />
       </Layout>
     )
   }
@@ -49,17 +45,6 @@ class Home extends Component {
         { property: 'og:site', content: 'Mttrs' }
       ]
     }
-  }
-
-  renderCloseButton () {
-    const {UIReducer} = this.props
-
-    if (!UIReducer.modal.isOpen) return
-    return <CloseModal shoudldShowButton={UIReducer.modal.isOpen} closeModal={this.closeModal} />
-  }
-
-  closeModal () {
-    this.props.dispatch(UIActions.closeModal())
   }
 }
 

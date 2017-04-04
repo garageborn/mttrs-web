@@ -2148,7 +2148,7 @@ exenv@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.0.tgz#3835f127abf075bfe082d0aed4484057c78e3c89"
 
-exenv@^1.2.1:
+exenv@^1.2.0, exenv@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.1.tgz#75de1c8dee02e952b102aa17f8875973e0df14f9"
 
@@ -3327,6 +3327,13 @@ koa@^2.0.0:
     type-is "^1.5.5"
     vary "^1.0.0"
 
+kw-react-tween-state@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/kw-react-tween-state/-/kw-react-tween-state-0.1.5.tgz#744088988d35f14ccc2ca36af96bc09ece7ab78b"
+  dependencies:
+    raf "^3.1.0"
+    tween-functions "^1.0.1"
+
 latest-version@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/latest-version/-/latest-version-1.0.1.tgz#72cfc46e3e8d1be651e1ebb54ea9f6ea96f374bb"
@@ -3866,6 +3873,14 @@ nth-check@~1.0.1:
   dependencies:
     boolbase "~1.0.0"
 
+nuka-carousel@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/nuka-carousel/-/nuka-carousel-2.0.4.tgz#eabd24f2785b6d07503542af64155ee5ceccd7ad"
+  dependencies:
+    exenv "^1.2.0"
+    kw-react-tween-state "^0.1.5"
+    object-assign "^4.1.0"
+
 num2fraction@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/num2fraction/-/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
@@ -4062,9 +4077,13 @@ pbkdf2-compat@2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/pbkdf2-compat/-/pbkdf2-compat-2.0.1.tgz#b6e0c8fa99494d94e0511575802a59a5c142f288"
 
-performance-now@^0.2.0:
+performance-now@^0.2.0, performance-now@~0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-0.2.0.tgz#33ef30c5c77d4ea21c5a53869d91b56d8f2555e5"
+
+picturefill@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/picturefill/-/picturefill-3.0.2.tgz#fa3d35fffbef5ab5300fe2ad9dca8f2e36cba27b"
 
 pify@^2.0.0, pify@^2.3.0:
   version "2.3.0"
@@ -4327,6 +4346,12 @@ postcss-filter-plugins@^2.0.0:
   dependencies:
     postcss "^5.0.4"
     uniqid "^4.0.0"
+
+postcss-flexbugs-fixes@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/postcss-flexbugs-fixes/-/postcss-flexbugs-fixes-2.1.0.tgz#e1048faa9e3b500159208a8efbd8ed147625a268"
+  dependencies:
+    postcss "^5.0.0"
 
 postcss-font-variant@^2.0.0:
   version "2.0.1"
@@ -4812,6 +4837,12 @@ querystring-es3@^0.2.0:
 querystring@0.2.0, querystring@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
+
+raf@^3.1.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/raf/-/raf-3.3.0.tgz#93845eeffc773f8129039f677f80a36044eee2c3"
+  dependencies:
+    performance-now "~0.2.0"
 
 random-bytes@~1.0.0:
   version "1.0.0"
@@ -5840,6 +5871,10 @@ tunnel-agent@^0.6.0:
   resolved "https://registry.yarnpkg.com/tunnel-agent/-/tunnel-agent-0.6.0.tgz#27a5dea06b36b04a0a9966774b290868f0fc40fd"
   dependencies:
     safe-buffer "^5.0.1"
+
+tween-functions@^1.0.1:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/tween-functions/-/tween-functions-1.2.0.tgz#1ae3a50e7c60bb3def774eac707acbca73bbc3ff"
 
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"

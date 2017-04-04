@@ -1,0 +1,17 @@
+.container {
+  width: 51px;
+  height: 51px;
+  border-radius: 25px;
+  background-color: white;
+  margin: calc((10 / var(--mttrsBase))rem);
+  box-shadow: 0 2px 2px 0 rgba(153,153,153,0.5);
+  border: 1px solid var(--mttrsOtherGray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.check {
+  background-color: #FF5606;
+}

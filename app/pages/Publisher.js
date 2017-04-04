@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Layout from './Layout'
+import Modal from './Modal'
 import { injectIntl, defineMessages } from 'react-intl'
 import CurrentPublisher from '../components/CurrentPublisher'
 import PublishersSectionContainer from '../containers/PublishersSectionContainer'
@@ -33,6 +34,7 @@ class Publisher extends Component {
         <PublishersSectionContainer />
         <CurrentPublisher publisher={this.props.data.publisher} />
         <TimelineContainer type='publisher' queryVariables={queryVariables} />
+        <Modal />
       </Layout>
     )
   }
