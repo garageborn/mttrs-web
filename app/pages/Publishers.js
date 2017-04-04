@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Layout from './Layout'
 import Modal from './Modal'
 import { injectIntl, defineMessages } from 'react-intl'
-import PublishersListContainer from '../containers/PublishersListContainer'
+import PublishersSectionContainer from '../containers/PublishersSectionContainer'
 import { UIActions } from '../actions/index'
 
 const messages = defineMessages({
@@ -18,7 +18,7 @@ class Publishers extends Component {
   render () {
     return (
       <Layout {...this.helmet()} showModal={false}>
-        <PublishersListContainer type='publishers' />
+        <PublishersSectionContainer type='publishers' />
         <Modal />
       </Layout>
     )

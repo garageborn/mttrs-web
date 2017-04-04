@@ -4,13 +4,18 @@ import loupe from './assets/loupeClear.svg'
 import styles from './styles.css'
 
 const messages = defineMessages({
-  searchPublishers: {
-    id: 'publishers.search',
-    defaultMessage: 'Find your favorite publisher...'
-  }
+  close: { id: 'close' },
+  searchPublishers: { id: 'publishers.search' }
 })
 
-const PublishersSearch = ({fromPublishersPage, handleFocus, deactivateSearch, isActive, handleSearchTerm, intl}) => {
+const PublishersSearch = ({
+  fromPublishersPage,
+  handleFocus,
+  deactivateSearch,
+  isActive,
+  handleSearchTerm,
+  intl
+}) => {
   let renderClose = <div />
   if (isActive && !fromPublishersPage) {
     renderClose = (
@@ -18,10 +23,11 @@ const PublishersSearch = ({fromPublishersPage, handleFocus, deactivateSearch, is
         className={styles.close}
         onClick={deactivateSearch}
       >
-        close
+        {intl.formatMessage(messages.close)}
       </div>
     )
   }
+
   return (
     <div className={styles.outerBorder}>
       <div className={styles.search}>
