@@ -11,14 +11,6 @@ const messages = defineMessages({
 })
 
 class PublishersSection extends Component {
-  componentWillMount () {
-    if (this.props.type === 'publishers') {
-      this.setState({
-        isSearchActive: true
-      })
-    }
-  }
-
   renderView () {
     if (!this.props.publishers.length) return this.renderSuggestionView()
     return this.renderPublishersList()
