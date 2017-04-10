@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import Modal from 'react-modal'
 import classNames from 'classnames'
 import CloseModal from '../components/CloseModal'
+import { UIActions } from '../actions/index'
 import styles from '../styles/modal.css'
-import { UIActions, StorageActions } from '../actions/index'
 
 class ModalContainer extends Component {
   constructor () {
