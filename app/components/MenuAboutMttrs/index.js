@@ -9,8 +9,8 @@ const messages = defineMessages({
   }
 })
 
-const MenuAboutMttrs = ({ intl }) => (
-  <div className={styles.container}>
+const MenuAboutMttrs = ({ intl, openOnboarding }) => (
+  <div className={styles.container} onClick={openOnboarding} role='button'>
     <p>{intl.formatMessage(messages.understand)}</p>
     <Icon />
   </div>
@@ -19,7 +19,8 @@ const MenuAboutMttrs = ({ intl }) => (
 MenuAboutMttrs.propTypes = {
   intl: PropTypes.shape({
     formatMessage: PropTypes.func.isRequired
-  }).isRequired
+  }).isRequired,
+  openOnboarding: PropTypes.func.isRequired
 }
 
 export default injectIntl(MenuAboutMttrs)

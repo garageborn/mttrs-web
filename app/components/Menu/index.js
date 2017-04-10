@@ -6,7 +6,7 @@ import MenuMttrsDownload from '../MenuMttrsDownload'
 import MenuCategoriesContainer from '../../containers/MenuCategoriesContainer'
 import styles from './styles.css'
 
-const Menu = ({ closeMenu, isOpen }) => {
+const Menu = ({ closeMenu, isOpen, openOnboarding }) => {
   let menuClasses = className({
     [styles.container]: true,
     [styles.menuOpen]: isOpen
@@ -18,13 +18,14 @@ const Menu = ({ closeMenu, isOpen }) => {
       <div>
         <MenuTenant />
         <MenuMttrsDownload />
-        {/* <MenuAboutMttrs /> */}
+        <MenuAboutMttrs openOnboarding={openOnboarding} />
       </div>
     </div>
   )
 }
 
 Menu.propTypes = {
+  openOnboarding: PropTypes.func.isRequired,
   closeMenu: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired
 }
