@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 import { connect } from 'react-redux'
 import withQuery from './TimelineContainer.gql'
+import TagsContainer from './TagsContainer'
 import Timeline from '../components/Timeline'
 import Placeholder from '../components/Placeholder'
 import Spinner from '../components/Spinner'
@@ -35,6 +36,7 @@ class TimelineContainer extends Component {
 
     return (
       <main ref={'timelineContainer'}>
+        {this.renderTags()}
         {this.renderTimeline()}
         {this.renderSpinner()}
       </main>
@@ -55,6 +57,14 @@ class TimelineContainer extends Component {
   renderSpinner () {
     if (!this.state.loadingMore) return
     return <Spinner />
+  }
+
+  renderTags () {
+    const { queryVariables, type } = this.props
+    if (type !== 'category') return null
+    return (
+      <TagsContainer slug={queryVariables.categorySlug} />
+    )
   }
 
   handleScroll () {
@@ -98,7 +108,10 @@ TimelineContainer.propTypes = {
   data: PropTypes.object.isRequired,
   options: PropTypes.shape({
     renderCategory: PropTypes.bool
-  })
+  }),
+  queryVariables: PropTypes.shape({
+    categorySlug: PropTypes.string
+  }).isRequired
 }
 
 TimelineContainer.defaultProps = {
