@@ -6,7 +6,8 @@ const defaultVariables = {
   cursor: null,
   limit: 16,
   categorySlug: '',
-  publisherSlug: ''
+  publisherSlug: '',
+  tagSlug: ''
 }
 
 const Query = gql`

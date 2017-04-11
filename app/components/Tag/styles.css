@@ -8,6 +8,7 @@
 	border: calc((1 / var(--mttrsBase))rem) solid;
   border-color: transparent;
   font-size: calc((14 / var(--mttrsBase))rem);
+  flex-shrink: 0
 }
 
 .active {
