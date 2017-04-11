@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { injectIntl, defineMessages } from 'react-intl'
 import TimelineContainer from '../containers/TimelineContainer'
+import TagsContainer from '../containers/TagsContainer'
 import withQuery from './Category.gql'
 import Layout from './Layout'
 import Modal from './Modal'
@@ -26,9 +27,15 @@ class Category extends Component {
   }
 
   render () {
-    const queryVariables = { categorySlug: this.props.slug, type: 'category' }
+    let { tagSlug, slug } = this.props
+    const queryVariables = {
+      tagSlug: this.props.tagSlug,
+      categorySlug: this.props.slug,
+      type: 'category'
+    }
     return (
       <Layout {...this.helmet()}>
+        <TagsContainer activeTag={tagSlug} slug={slug} />
         <TimelineContainer type='category' queryVariables={queryVariables} />
         <Modal />
       </Layout>
@@ -72,6 +79,7 @@ Category.propTypes = {
     formatMessage: PropTypes.function
   }),
   slug: PropTypes.string.isRequired,
+  tagSlug: PropTypes.string,
   data: PropTypes.shape({
     category: PropTypes.object,
     loading: PropTypes.bool
@@ -81,7 +89,8 @@ Category.propTypes = {
 
 let mapStateToProps = (state, ownProps) => {
   return {
-    slug: ownProps.route.slug
+    slug: ownProps.route.slug,
+    tagSlug: ownProps.route.tagSlug
   }
 }
 

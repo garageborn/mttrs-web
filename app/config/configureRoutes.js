@@ -16,6 +16,12 @@ const defaultRoutes = () => {
   ]
 }
 
+const tagsRoutes = (tags) => {
+  return tags.map((tag) => {
+    return <Route path={`/${tag.category.slug}/${tag.slug}`} component={Category} slug={tag.category.slug} tagSlug={tag.slug} />
+  })
+}
+
 const categoriesRoutes = (categories) => {
   return categories.map((category) => {
     return <Route path={`/${category.slug}`} component={Category} slug={category.slug} />
@@ -28,9 +34,10 @@ const publishersRoutes = (publishers) => {
   })
 }
 
-const allRoutes = ({ categories, publishers }) => {
+const allRoutes = ({ categories, publishers, tags }) => {
   let routes = [
     defaultRoutes(),
+    tagsRoutes(tags),
     categoriesRoutes(categories),
     publishersRoutes(publishers)
   ]
@@ -40,6 +47,7 @@ const allRoutes = ({ categories, publishers }) => {
 const routesQuery = gql`
   query {
     categories(with_stories: true) { slug }
+    tags(with_stories: true) { slug category { slug } }
     publishers(with_stories: true) { slug }
   }
 `

@@ -1,0 +1,16 @@
+.container {
+  position: relative;
+  top: calc((65 / var(--mttrsBase))rem);
+  height: calc((65 / var(--mttrsBase))rem);
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overflow-scrolling: touch;
+  background-color: #E5E5E5;
+  &::scrollbar {
+    display: none;
+  };
+}

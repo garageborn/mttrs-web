@@ -10,8 +10,8 @@ const defaultVariables = {
 }
 
 const Query = gql`
-  query($cursor: Int, $timezone: String, $type: String, $limit: Int!, $categorySlug: String, $publisherSlug: String) {
-    timeline(cursor: $cursor, timezone: $timezone, type: $type, limit: $limit, category_slug: $categorySlug, publisher_slug: $publisherSlug) {
+  query($cursor: Int, $timezone: String, $type: String, $limit: Int!, $categorySlug: String, $publisherSlug: String, $tagSlug: String) {
+    timeline(cursor: $cursor, timezone: $timezone, type: $type, limit: $limit, category_slug: $categorySlug, publisher_slug: $publisherSlug, tag_slug: $tagSlug) {
       date
       stories {
         id
