@@ -2,7 +2,7 @@
   font-size: calc((13 / var(--mttrsBase))rem);
   opacity: 0.95;
   color: #666;
-  padding-bottom: calc((25 / var(--mttrsBase))rem);
+  padding-bottom: calc((10 / var(--mttrsBase))rem);
 
   @media (--notSmall) {
     font-size: calc((14 / var(--mttrsBase))rem);
