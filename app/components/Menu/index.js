@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
 import className from 'classnames'
-import MenuAboutMttrs from '../MenuAboutMttrs'
 import MenuTenant from '../MenuTenant'
 import MenuMttrsDownload from '../MenuMttrsDownload'
+import MenuAboutMttrsContainer from '../../containers/MenuAboutMttrsContainer'
 import MenuCategoriesContainer from '../../containers/MenuCategoriesContainer'
 import styles from './styles.css'
 
@@ -18,7 +18,7 @@ const Menu = ({ closeMenu, isOpen }) => {
       <div>
         <MenuTenant />
         <MenuMttrsDownload />
-        {/* <MenuAboutMttrs /> */}
+        <MenuAboutMttrsContainer />
       </div>
     </div>
   )

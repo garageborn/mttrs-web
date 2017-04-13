@@ -1,0 +1,5 @@
+.text {
+  font-size: calc((13 / var(--mttrsBase))rem);
+  color: var(--mttrsOrange);
+  margin-bottom: calc((25 / var(--mttrsBase))rem);
+}

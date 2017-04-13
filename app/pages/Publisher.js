@@ -4,7 +4,7 @@ import Layout from './Layout'
 import Modal from './Modal'
 import { injectIntl, defineMessages } from 'react-intl'
 import CurrentPublisher from '../components/CurrentPublisher'
-import PublishersListContainer from '../containers/PublishersListContainer'
+import PublishersSectionContainer from '../containers/PublishersSectionContainer'
 import TimelineContainer from '../containers/TimelineContainer'
 import withQuery from './Publisher.gql'
 import { UIActions } from '../actions/index'
@@ -31,7 +31,7 @@ class Publisher extends Component {
     const queryVariables = { publisherSlug: this.props.slug, type: 'publisher' }
     return (
       <Layout {...this.helmet()}>
-        <PublishersListContainer />
+        <PublishersSectionContainer />
         <CurrentPublisher publisher={this.props.data.publisher} />
         <TimelineContainer type='publisher' queryVariables={queryVariables} />
         <Modal />

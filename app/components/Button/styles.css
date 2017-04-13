@@ -1,0 +1,12 @@
+.button {
+  border: 0;
+  padding: calc((10 / var(--mttrsBase))rem) calc((20 / var(--mttrsBase))rem);
+  border-radius: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

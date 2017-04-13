@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="80px" viewBox="0 0 64 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Screens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.449999988">
+        <g id="Publishers-Suggestions-01" transform="translate(-802.000000, -263.000000)" fill-rule="nonzero" fill="#999999">
+            <g id="ic_find_in_page_black_24px" transform="translate(802.000000, 263.000000)">
+                <path d="M64,70.36 L64,24 L40,0 L8,0 C3.6,0 0.04,3.6 0.04,8 L0,72 C0,76.4 3.56,80 7.96,80 L56,80 C57.8,80 59.4,79.4 60.76,78.4 L43.04,60.68 C39.84,62.76 36.08,64 32,64 C20.96,64 12,55.04 12,44 C12,32.96 20.96,24 32,24 C43.04,24 52,32.96 52,44 C52,48.08 50.76,51.84 48.68,55 L64,70.36 Z M20,44 C20,50.64 25.36,56 32,56 C38.64,56 44,50.64 44,44 C44,37.36 38.64,32 32,32 C25.36,32 20,37.36 20,44 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -90,6 +90,4 @@ Onboarding.propTypes = {
   dispatch: PropTypes.func.isRequired
 }
 
-
-
 export default connect()(Onboarding)

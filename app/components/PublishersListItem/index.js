@@ -4,7 +4,7 @@ import { publisherPath } from '../../utils/RoutesHelper'
 import PublisherIcon from '../PublisherIcon'
 import styles from './styles.css'
 
-const PublishersListItem = ({publisher, onSelectPublisher}) => {
+const PublishersListItem = ({ publisher, onSelectPublisher }) => {
   return (
     <li className={styles.container}>
       <Link
