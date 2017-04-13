@@ -28,7 +28,7 @@
   "lastMonth": "Last Month",
   "dateFormat": "MMMM D",
   "storyPublishers.others": " {itemCount, plural, one {# other} other {# others}}",
-  "restrict.content": "only for subscribers",
+  "restrict.content": "paywall",
   "onboarding.first.title": "Welcome to",
   "onboarding.first.caption": "Your reading time well spent. Read the news that really matters.",
   "onboarding.second.title": "Top News",
