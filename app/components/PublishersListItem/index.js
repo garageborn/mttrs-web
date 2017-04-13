@@ -13,8 +13,8 @@ const PublishersListItem = ({publisher, onSelectPublisher}) => {
         key={publisher.id}
         className={styles.publisher}
       >
-        <PublisherIcon publisher={publisher} size='huge' />
-        {publisher.name}
+        <PublisherIcon publisher={publisher} size='small' />
+        {publisher.display_name || publisher.name}
       </Link>
     </li>
   )

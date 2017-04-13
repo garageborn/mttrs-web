@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  align-items: center;
+  color: var(--mttrsGray);
+  margin-left: 10px;
+  border-left: thin solid var(--mttrsGray);
+}
+
+.label {
+  font-size: calc((10 / var(--mttrsBase))rem);
+  font-style: italic;
+  font-weight: 300;
+  margin-left: 10px;
+}

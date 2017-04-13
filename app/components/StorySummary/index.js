@@ -1,6 +1,9 @@
 import React, { PropTypes, Component } from 'react'
-import ReactDOM from 'react-dom'
-import icon from './assets/icon.svg'
+import { findDOMNode } from 'react-dom'
+import Headline from './components/Headline'
+import Logo from './components/Logo'
+import Summary from './components/Summary'
+import Footer from './components/Footer'
 import styles from './styles.css'
 
 const charsTreshold = 200
@@ -15,7 +18,7 @@ class StorySummary extends Component {
   }
 
   componentWillUpdate (nextProps, nextState) {
-    let summaryElement = ReactDOM.findDOMNode(this)
+    let summaryElement = findDOMNode(this)
     let storyElement = summaryElement.parentNode
     let willChangeExpandedState = (this.state.isExpanded !== nextState.isExpanded)
     if (willChangeExpandedState) {
@@ -37,31 +40,9 @@ class StorySummary extends Component {
   }
 
   showFooter () {
+    const { isVisited } = this.props
     if (!this.bigSummary()) return
-    return this.renderFooter()
-  }
-
-  renderFooter () {
-    if (this.state.isExpanded) {
-      return (
-        <div className={styles.footer}>
-          <div onClick={this.toggleExpandSummary} className={styles.button}>
-            <div className={styles.buttonText}>show less</div>
-            <div className={styles.showLessTriangle} />
-          </div>
-        </div>
-      )
-    } else {
-      return (
-        <div className={styles.footerWithGradient}>
-          <div className={styles.gradient} />
-          <div onClick={this.toggleExpandSummary} className={styles.button}>
-            <div className={styles.buttonText}>show more</div>
-            <div className={styles.showMoreTriangle} />
-          </div>
-        </div>
-      )
-    }
+    return <Footer isVisited={isVisited} isSummaryExpanded={this.state.isExpanded} />
   }
 
   toggleExpandSummary () {
@@ -76,19 +57,15 @@ class StorySummary extends Component {
   }
 
   render () {
-    const { story } = this.props
+    const { story, isVisited } = this.props
     return (
-      <div className={styles.container}>
+      <div onClick={this.toggleExpandSummary} className={styles.container}>
         <div className={this.getBoxStyles()}>
           <div className={styles.headlineContainer}>
-            <div className={styles.logoContainer}>
-              <img src={icon} alt='Matters' />
-            </div>
-            <div>
-              <p className={styles.headline}>{story.headline}</p>
-            </div>
+            <Logo isVisited={isVisited} />
+            <Headline isVisited={isVisited} headline={story.headline} />
           </div>
-          <div className={styles.text}>{this.summary(story)}</div>
+          <Summary isVisited={isVisited}>{this.summary(story)}</Summary>
           {this.showFooter()}
         </div>
       </div>
@@ -97,7 +74,8 @@ class StorySummary extends Component {
 }
 
 StorySummary.propTypes = {
-  story: PropTypes.object.isRequired
+  story: PropTypes.object.isRequired,
+  isVisited: PropTypes.bool.isRequired
 }
 
 export default StorySummary

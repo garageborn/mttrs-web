@@ -1,4 +1,6 @@
 .container {
+  position: relative;
+
   @media (--large) {
     padding-left: var(--menuWidth);
   }

@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Config from './config'
+
 const config = new Config({window})
 
 const render = (routes) => {

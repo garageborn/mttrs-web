@@ -2,40 +2,66 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import { injectIntl, defineMessages } from 'react-intl'
-import _capitalize from 'lodash/capitalize'
+import RestrictContentLabel from '../RestrictContentLabel'
 import PublisherIcon from '../PublisherIcon'
 import styles from './styles.css'
 
 const messages = defineMessages({
-  from: { id: 'from' },
   and: { id: 'and' },
-  other: { id: 'other' },
-  others: { id: 'others' }
+  others: { id: 'storyPublishers.others' }
 })
 
 class StoryInfo extends Component {
+  renderRestrictContentLabel () {
+    const { publisher } = this.props.mainLink
+    if (publisher.restrict_content) return <RestrictContentLabel />
+  }
+
+  renderPublisherName () {
+    return (
+      <div className={styles.restrictContent}>
+        {this.renderMainPublisherName()}
+        {this.renderRestrictContentLabel()}
+      </div>
+    )
+  }
+
   renderPublishers () {
-    if (this.props.otherLinksCount === 0) return this.renderMainPublisherName()
+    if (this.props.otherLinksCount === 0) return this.renderPublisherName()
     return this.renderPublishersText()
   }
 
   renderPublishersText () {
     const { formatMessage } = this.props.intl
-    return <p>{this.renderMainPublisherName()} {formatMessage(messages.and)} {this.renderOtherLinks()}</p>
+    return (
+      <div className={styles.content}>
+        {this.renderMainPublisherName()}&nbsp;{formatMessage(messages.and)}&nbsp;{this.renderOtherLinks()}
+      </div>
+    )
   }
 
   renderMainPublisherName () {
-    return <Link to={this.props.mainLink.publisher.slug}>{this.props.mainLink.publisher.name}</Link>
+    const { publisher } = this.props.mainLink
+    return (
+      <Link className={styles.link} to={publisher.slug}>
+        {this.renderPublisherIcon()}&nbsp;
+        <span className={styles.publisherName}>
+          {publisher.display_name || publisher.name}
+        </span>
+      </Link>
+    )
   }
 
   renderOtherLinks () {
     const { story, otherLinksCount, intl, handleStoryLinks } = this.props
-    let otherString = intl.formatMessage(messages.other)
-    if (otherLinksCount > 1) otherString = intl.formatMessage(messages.others)
+    const othersText = intl.formatMessage(messages.others, {itemCount: otherLinksCount})
+
+    if (!otherLinksCount) return
+
     return (
-      <a onClick={() => handleStoryLinks(story)}>
-        {otherLinksCount} {otherString}
-      </a>
+      <span className={styles.otherLinks} onClick={() => handleStoryLinks(story)}>
+        {othersText}
+      </span>
     )
   }
 
@@ -44,11 +70,9 @@ class StoryInfo extends Component {
   }
 
   render () {
-    const { formatMessage } = this.props.intl
-    let from = formatMessage(messages.from)
     return (
-      <div className={styles.text}>
-        {_capitalize(from)}&nbsp;{this.renderPublisherIcon()}&nbsp;{this.renderPublishers()}
+      <div className={styles.container}>
+        {this.renderPublishers()}
       </div>
     )
   }

@@ -1,7 +1,7 @@
-import React, {Component, Children, PropTypes} from 'react'
-import {ApolloProvider} from 'react-apollo'
-import {Router, RouterContext, browserHistory} from 'react-router'
-import {syncHistoryWithStore} from 'react-router-redux'
+import React, { Component, Children, PropTypes } from 'react'
+import { ApolloProvider } from 'react-apollo'
+import { Router, RouterContext, browserHistory } from 'react-router'
+import { syncHistoryWithStore } from 'react-router-redux'
 import IntlProvider from '../config/IntlProvider'
 
 class SettingsProvider extends Component {

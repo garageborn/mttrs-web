@@ -20,5 +20,6 @@ export const mediaQueries = {
   notSmall: '(min-width: 48.125em)',
   notLarge: '(max-width: 71.25em)',
   medium: '(min-width: 48.125em) and (max-width: 71.25em)',
-  large: '(min-width: 71.25em)'
+  large: '(min-width: 71.25em)',
+  xLarge: '(min-width: 90em)'
 }

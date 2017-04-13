@@ -14,17 +14,14 @@ class StoryContainer extends Component {
   }
 
   render () {
-    const {story, options, isVisited} = this.props
+    const { story, isVisited } = this.props
     return (
-      <div>
-        <Story
-          story={story}
-          options={options}
-          isVisited={isVisited}
-          handleStoryLinks={this.props.handleStoryLinks}
-          handleVisitedStory={this.handleVisitedStory}
-        />
-      </div>
+      <Story
+        story={story}
+        isVisited={isVisited}
+        handleStoryLinks={this.props.handleStoryLinks}
+        handleVisitedStory={this.handleVisitedStory}
+      />
     )
   }
 
@@ -38,9 +35,6 @@ StoryContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
   handleStoryLinks: PropTypes.func.isRequired,
   isVisited: PropTypes.bool.isRequired,
-  options: PropTypes.shape({
-    renderCategory: PropTypes.bool
-  }),
   story: PropTypes.object.isRequired
 }
 

@@ -4,6 +4,7 @@ import { injectIntl, defineMessages } from 'react-intl'
 import TimelineContainer from '../containers/TimelineContainer'
 import withQuery from './Category.gql'
 import Layout from './Layout'
+import Modal from './Modal'
 import { UIActions } from '../actions/index'
 import LogoSocial from '../assets/social.png'
 
@@ -26,10 +27,10 @@ class Category extends Component {
 
   render () {
     const queryVariables = { categorySlug: this.props.slug, type: 'category' }
-    const options = {renderCategory: false}
     return (
       <Layout {...this.helmet()}>
-        <TimelineContainer type='category' queryVariables={queryVariables} options={options} />
+        <TimelineContainer type='category' queryVariables={queryVariables} />
+        <Modal />
       </Layout>
     )
   }

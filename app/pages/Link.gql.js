@@ -7,7 +7,7 @@ const Query = gql`
       title
       image_source_url
       url
-      story { id }
+      story { id summary }
     }
   }
 `

@@ -1,11 +1,18 @@
 .text {
-  font-size: 0.70rem;
-  margin-top: .3rem;
-  color: #999
+  font-size: calc((10 / var(--mttrsBase))rem);
+  margin: calc((7 / var(--mttrsBase))rem) 0 0 calc((10 / var(--mttrsBase))rem);
+  color: #999;
 }
 
 .label {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .03em;
+  &:active, &:hover {
+    text-decoration: underline;
+  }
+}
+
+.isVisited {
+  opacity: 0.5;
 }

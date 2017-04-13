@@ -1,7 +1,13 @@
 import React, { Component, PropTypes } from 'react'
+import { injectIntl, defineMessages } from 'react-intl'
+import _isNull from 'lodash/isNull'
 import PublishersListItem from '../PublishersListItem'
 import PublishersSearch from '../PublishersSearch'
 import styles from './styles.css'
+
+const messages = defineMessages({
+  searchPlaceholder: { id: 'search.placeholder' }
+})
 
 class PublishersList extends Component {
   constructor () {
@@ -55,7 +61,8 @@ class PublishersList extends Component {
   }
 
   renderSearchDisclaimer () {
-    return <p className={styles.disclaimer}>Search for publishers</p>
+    const { intl } = this.props
+    return <p className={styles.disclaimer}>{intl.formatMessage(messages.searchPlaceholder)}</p>
   }
 
   renderPublishersList () {
@@ -67,10 +74,19 @@ class PublishersList extends Component {
     )
   }
 
+  matchDisplayName (publisher, queryMatcher) {
+    if (_isNull(publisher.display_name)) return
+    return publisher.display_name.match(queryMatcher)
+  }
+
   renderPublishers () {
     const { publishers } = this.props
     const queryMatcher = new RegExp(this.state.query, 'i')
-    const filteredPublishers = publishers.filter(publisher => publisher.name.match(queryMatcher))
+    const filteredPublishers = publishers.filter(publisher => {
+      return this.matchDisplayName(publisher, queryMatcher) ||
+        publisher.name.match(queryMatcher) ||
+        publisher.slug.match(queryMatcher)
+    })
     return filteredPublishers.map((publisher) => <PublishersListItem onSelectPublisher={this.deactivateSearch} key={publisher.id} publisher={publisher} />)
   }
 
@@ -83,7 +99,10 @@ class PublishersList extends Component {
 
 PublishersList.propTypes = {
   type: PropTypes.string,
-  publishers: PropTypes.array.isRequired
+  publishers: PropTypes.array.isRequired,
+  intl: PropTypes.shape({
+    formatMessage: PropTypes.func.isRequired
+  }).isRequired
 }
 
-export default PublishersList
+export default injectIntl(PublishersList)

@@ -1,24 +1,21 @@
 import React, { Component, PropTypes } from 'react'
 import className from 'classnames'
-import StoryImage from '../StoryImage'
-import StoryContent from '../StoryContent'
+import StoryMainContent from '../StoryMainContent'
 import StoryMetadata from '../StoryMetadata'
 import StorySummary from '../StorySummary'
 import styles from './styles.css'
 
 class Story extends Component {
   render () {
-    const { story, handleStoryLinks, options } = this.props
+    const { story, handleStoryLinks, isVisited } = this.props
     return (
-      <div key={story.id} className={this.storyContainerClass()}>
-        <div className={styles.story}>
-          <StoryImage story={story} mainLink={this.mainLink} />
-          <StoryContent
-            mainLink={this.mainLink}
-            shouldRenderCategory={options.renderCategory}
-            category={this.category}
-          />
-        </div>
+      <li key={story.id} className={styles.container}>
+        <StoryMainContent
+          story={story}
+          mainLink={this.mainLink}
+          category={this.category}
+          isVisited={isVisited}
+        />
         {this.renderSummary()}
         <StoryMetadata
           story={story}
@@ -26,22 +23,16 @@ class Story extends Component {
           otherLinksCount={this.otherLinksCount}
           totalSocial={story.total_social}
           handleStoryLinks={handleStoryLinks}
+          isVisited={isVisited}
         />
-      </div>
+      </li>
     )
   }
 
   renderSummary () {
-    const {story} = this.props
+    const { story, isVisited } = this.props
     if (!story.summary) return
-    return <StorySummary story={story} />
-  }
-
-  storyContainerClass () {
-    return className({
-      [styles.container]: true,
-      [styles.read]: this.props.isVisited
-    })
+    return <StorySummary story={story} isVisited={isVisited} />
   }
 
   get mainLink () {
@@ -60,9 +51,6 @@ class Story extends Component {
 Story.propTypes = {
   handleStoryLinks: PropTypes.func.isRequired,
   isVisited: PropTypes.bool.isRequired,
-  options: PropTypes.shape({
-    renderCategory: PropTypes.bool
-  }),
   story: PropTypes.object.isRequired
 }
 

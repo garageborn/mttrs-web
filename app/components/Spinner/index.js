@@ -4,7 +4,7 @@ import styles from './styles.css'
 
 const messages = defineMessages({
   spinner: {
-    id: 'spinner.loading',
+    id: 'loading',
     defaultMessage: 'Loading...'
   }
 })

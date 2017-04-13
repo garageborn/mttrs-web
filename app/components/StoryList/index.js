@@ -15,7 +15,9 @@ class StoryList extends Component {
     return (
       <div className={this.getClassNames()}>
         <StoryListHeader date={date} />
-        {stories.map((story) => this.renderStory(story))}
+        <ul>
+          {stories.map((story) => this.renderStory(story))}
+        </ul>
       </div>
     )
   }
@@ -25,7 +27,6 @@ class StoryList extends Component {
       <StoryContainer
         key={story.id}
         story={story}
-        options={this.props.options}
         handleStoryLinks={this.props.handleStoryLinks}
       />
     )
@@ -35,9 +36,6 @@ class StoryList extends Component {
 StoryList.propTypes = {
   date: PropTypes.any.isRequired,
   handleStoryLinks: PropTypes.func.isRequired,
-  options: PropTypes.shape({
-    renderCategory: PropTypes.bool
-  }),
   stories: PropTypes.array.isRequired,
   type: PropTypes.string.isRequired
 }

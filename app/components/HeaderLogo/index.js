@@ -6,7 +6,7 @@ import styles from './styles.css'
 
 const HeaderLogo = () => (
   <div className={styles.logo}>
-    <Link to={rootPath}>
+    <Link to={rootPath} itemProp='url'>
       <Logo />
     </Link>
   </div>

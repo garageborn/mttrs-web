@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-no-bind */
 import React, { PropTypes } from 'react'
-import className from 'classnames'
 import SocialCount from '../../utils/SocialCount'
 import styles from './styles.css'
 
@@ -9,29 +8,25 @@ const StorySocialCount = ({story, otherLinksCount, totalSocial, handleStoryLinks
   let socialCountAlt = `Social Count: ${count}`
 
   let handleStoryLinksModal = () => {
-    if (otherLinksCount >= 1) {
-      return handleStoryLinks(story)
-    }
-  }
-
-  let textStyles = () => {
-    return className({
-      [styles.text]: true,
-      [styles.cursorPointer]: otherLinksCount >= 1
-    })
+    return handleStoryLinks(story)
   }
 
   return (
-    <p className={textStyles()} onClick={() => handleStoryLinksModal()}>
-      <img className={styles.icon} src={require('../../assets/icon-social-count.png')} alt={socialCountAlt} /> {count}
-    </p>
+    <div onClick={() => handleStoryLinksModal()}>
+      <img
+        className={styles.icon}
+        src={require('./assets/image.png')}
+        alt={socialCountAlt}
+      />&nbsp;
+      <span className={styles.text}>{count}</span>
+    </div>
   )
 }
 
 StorySocialCount.propTypes = {
-  story: PropTypes.object.isRequired,
-  otherLinksCount: PropTypes.number.isRequired,
-  handleStoryLinks: PropTypes.func.isRequired,
+  story: PropTypes.object,
+  otherLinksCount: PropTypes.number,
+  handleStoryLinks: PropTypes.func,
   totalSocial: PropTypes.number.isRequired
 }
 

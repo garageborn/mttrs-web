@@ -1,13 +1,12 @@
 import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
+import _isNil from 'lodash/isNil'
 import HeaderContainer from '../containers/HeaderContainer'
-import ModalContainer from '../containers/ModalContainer'
 import MenuContainer from '../containers/MenuContainer'
 import injectSettings from '../config/injectSettings'
 import sentry from '../utils/Sentry'
 import segment from '../utils/Segment'
 import favicons from '../utils/Favicons'
-import _isNil from 'lodash/isNil'
 
 class Layout extends Component {
   componentDidMount () {
@@ -15,13 +14,12 @@ class Layout extends Component {
   }
 
   render () {
-    const { showHeader, showModal, showMenu } = this.props
+    const { showHeader, showMenu } = this.props
     return (
       <div>
         <Helmet {...this.helmet()} />
         <HeaderContainer showHeader={showHeader} />
         {this.props.children}
-        <ModalContainer showModal={showModal} />
         <MenuContainer showMenu={showMenu} />
       </div>
     )
@@ -44,20 +42,19 @@ class Layout extends Component {
       { charset: 'utf-8' },
       { name: 'description', content: this.props.description },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      ...favicons.meta,
-      ...metas
+      ...metas,
+      ...favicons.meta
     ]
   }
 
   get links () {
     return [
-      { rel: 'dns-prefetch', href: '//fonts.googleapis.com' },
       ...favicons.links
     ]
   }
 
   get scripts () {
-    return [...sentry, ...segment]
+    return [...sentry, segment]
   }
 }
 
@@ -72,13 +69,11 @@ Layout.propTypes = {
   children: PropTypes.node,
   metas: PropTypes.array,
   showHeader: PropTypes.bool,
-  showModal: PropTypes.bool,
   showMenu: PropTypes.bool
 }
 
 Layout.defaultProps = {
   showHeader: true,
-  showModal: true,
   showMenu: true
 }
 

@@ -1,40 +1,20 @@
 .container {
-  lost-center: calc((728 / 16)em);
-  margin-bottom: calc((10 / 16)rem);
-}
+  lost-center: calc((728 / var(--mttrsBase))em);
+  margin-bottom: calc((10 / var(--mttrsBase))rem);
+  cursor: pointer;
 
-.triangle {
-  width: 0;
-  height: 0;
-  background: transparent;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-bottom: 8px solid;
-  position: absolute;
-}
-
-.triangleContainer {
-  position: absolute;
-  z-index: 1;
-  margin-left: 0.9375rem;
-}
-
-.outerTriangle {
-  composes: triangle;
-  border-bottom-color: #DDDDDD;
-}
-
-.innerTriangle {
-  composes: triangle;
-  margin-top: 1px;
-  border-bottom-color: #F7F7F8;
+  &:hover {
+    & .buttonText {
+      text-decoration: underline;
+    }
+  }
 }
 
 .box {
   position: relative;
-  margin-top: 8px;
-  padding: 0.9375rem;
+  margin: calc((6 / var(--mttrsBase))rem);
   border-radius: 5px;
+  padding: calc((10 / var(--mttrsBase))rem);
   background-color: #F7F7F8;
   border: 1px solid #DDDDDD;
 }
@@ -51,7 +31,7 @@
 }
 
 .logoContainer {
-  margin: calc((10 / 16)rem) calc((5 / 16)rem) 0 0;
+  margin: calc((10 / var(--mttrsBase))rem) calc((5 / var(--mttrsBase))rem) 0 0;
 }
 
 .headline {
@@ -76,7 +56,6 @@
   left: 0;
   right: 0;
   width: 100%;
-  z-index: 1;
 }
 
 .footerWithGradient {
@@ -106,23 +85,4 @@
 
 .buttonText {
   margin-right: 0.5rem;
-}
-
-.expandButtonTriangle {
-  composes: triangle;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  margin: 7px 3px;
-  position: relative;
-}
-
-.showMoreTriangle {
-  composes: expandButtonTriangle;
-  border-bottom: 0px;
-  border-top: 5px solid #2D2D2B;
-}
-
-.showLessTriangle {
-  composes: expandButtonTriangle;
-  border-bottom: 5px solid #2D2D2B;
 }

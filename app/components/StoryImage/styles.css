@@ -1,9 +1,14 @@
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex: 1;
-  padding: 0 .7rem .7rem 0;
+  cursor: pointer;
+  margin-bottom: calc((6 / var(--mttrsBase))rem);
+  border: calc((4 / var(--mttrsBase))rem) solid transparent;
+  transition: border 250ms cubic-bezier(.07,.4,.81,.91);
+}
+
+.active, .container:hover, .container:active {
+  border: calc((4 / var(--mttrsBase))rem) solid var(--mttrsBackgroundColor);
 }
 
 .link {
@@ -13,6 +18,11 @@
 .image {
   height: 90px;
   width: 120px;
+  cursor: pointer;
+}
+
+.visited {
+  opacity: 0.7;
 }
 
 :global {

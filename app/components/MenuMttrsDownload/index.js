@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import { injectIntl, defineMessages } from 'react-intl'
+import injectSettings from '../../config/injectSettings'
 import Badge from './components/Badge'
 import styles from './styles.css'
 
@@ -7,18 +8,25 @@ const messages = defineMessages({
   slogan: { id: 'mttrs.download.slogan' }
 })
 
-const MenuMttrsDownload = ({ intl }) => (
+const androidUrl = lang => {
+  let baseUrl = 'https://play.google.com/store/apps/details'
+  let query = `?id=garageborn.mttrs&hl=${lang}&referrer=utm_source%3Dweb%26utm_medium%3Dmenu`
+  return `${ baseUrl }${ query }`
+}
+
+const MenuMttrsDownload = ({ intl, settings }) => (
   <div className={styles.container}>
     <p className={styles.slogan}>{intl.formatMessage(messages.slogan)}</p>
-    <Badge url='' type='android' />
-    <Badge url='' type='ios' />
+    <Badge url={androidUrl(settings.language)} type='android' />
   </div>
 )
 
 MenuMttrsDownload.propTypes = {
   intl: PropTypes.shape({
     formatMessage: PropTypes.func.isRequired
-  }).isRequired
+  }).isRequired,
+  settings: PropTypes.object.isRequired
 }
 
-export default injectIntl(MenuMttrsDownload)
+const MenuMttrsDownloadWithIntl = injectIntl(MenuMttrsDownload)
+export default injectSettings(MenuMttrsDownloadWithIntl)

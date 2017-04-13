@@ -37,14 +37,13 @@
   max-width: 80%;
 
   h3 {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: calc((14 / var(--mttrsBase))rem);
+    font-weight: 400;
   }
 }
 
 .publisherName {
-  font-size: 1.3rem;
+  font-size: calc((14 / var(--mttrsBase))rem);
   color: var(--mttrsGray);
   margin: 0 .5em;
   cursor: pointer;

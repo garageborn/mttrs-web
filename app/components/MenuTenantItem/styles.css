@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (--notSmall) {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+
+.image {
+  margin-left: calc((10 / var(--mttrsBase))rem);
+}
+
+.text {
+  font-size: calc((12 / var(--mttrsBase))rem);
+  color: var(--mttrsGray);
+  margin: 0 0 calc((5 / var(--mttrsBase))rem);
+
+  &:hover {
+    color: #FFF;
+  }
+
+  @media (--notSmall) {
+    width: calc((150 / var(--mttrsBase))rem);
+    justify-content: space-between;
+    display: flex;
+  }
+}
+
+.link {
+  composes: text;
+  cursor: pointer;
+}
