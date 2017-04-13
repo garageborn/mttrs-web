@@ -82,7 +82,7 @@ class StorySummary extends Component {
         <div className={this.getBoxStyles()}>
           <div className={styles.headlineContainer}>
             <div className={styles.logoContainer}>
-              <img src={icon} alt='mttrs' />
+              <img src={icon} alt='Matters' />
             </div>
             <div>
               <p className={styles.headline}>{story.headline}</p>
