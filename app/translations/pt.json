@@ -28,7 +28,7 @@
   "lastMonth": "No último mês",
   "dateFormat": "D [de] MMMM",
   "storyPublishers.others": " {itemCount, plural, one {mais #} other {mais #}}",
-  "restrict.content": "somente para assinantes",
+  "restrict.content": "paywall",
   "onboarding.first.title": "Bem-vindo ao",
   "onboarding.first.caption": "Seu tempo é precioso. Leia as notícias que realmente importam no dia a dia.",
   "onboarding.second.title": "Notícias em destaque",
