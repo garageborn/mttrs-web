@@ -41,7 +41,7 @@ class Link extends Component {
         { property: 'og:description', content: link.story.summary || formattedDescription },
         { property: 'og:type', content: 'article' },
         { property: 'og:image', content: link.image_source_url },
-        { property: 'og:site', content: 'Mttrs' },
+        { property: 'og:site', content: 'Matters' },
         { property: 'twitter:card', content: 'summary' },
         { property: 'twitter:site', content: '@mttrs_app' },
         { property: 'twitter:title', content: formattedMessage },
