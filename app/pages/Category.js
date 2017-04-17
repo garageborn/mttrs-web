@@ -61,7 +61,7 @@ class Category extends Component {
         { property: 'og:description', content: formattedDescription },
         { property: 'og:type', content: 'website' },
         { property: 'og:image', content: LogoSocial },
-        { property: 'og:site', content: 'Mttrs' }
+        { property: 'og:site', content: 'Matters' }
       ]
     }
   }
