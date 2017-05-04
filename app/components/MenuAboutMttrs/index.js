@@ -4,14 +4,14 @@ import Icon from './assets/mttrs.inline.svg'
 import styles from './styles.css'
 
 const messages = defineMessages({
-  understand: {
+  about: {
     id: 'mttrs.about.understand'
   }
 })
 
 const MenuAboutMttrs = ({ intl, openOnboarding }) => (
   <div className={styles.container} onClick={openOnboarding} role='button'>
-    <p>{intl.formatMessage(messages.understand)}</p>
+    <p>{intl.formatMessage(messages.about)}&nbsp;</p>
     <Icon />
   </div>
 )

@@ -12,7 +12,7 @@
     content: '';
     height: 1px;
     width: 180px;
-    margin: 30px auto 20px;
+    margin: 20px auto 10px;
     background-color: var(--mttrsGray);
     opacity: 0.5;
   }
