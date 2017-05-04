@@ -25,7 +25,7 @@ const First = ({ intl }) => (
   <Slide>
     <SlideImage source={images} />
     <SlideContent>
-      <Title>{intl.formatMessage(messages.title)}&nbsp; <Logo /></Title>
+      <Title>{intl.formatMessage(messages.title)} &nbsp; <Logo /></Title>
       <Caption>{intl.formatMessage(messages.caption)}</Caption>
     </SlideContent>
   </Slide>
