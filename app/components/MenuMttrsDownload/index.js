@@ -18,7 +18,6 @@ const iosUrl = 'https://itunes.apple.com/us/app/matters-news-summaries/id1166566
 
 const MenuMttrsDownload = ({ intl, settings }) => (
   <div className={styles.container}>
-    <p className={styles.slogan}>{intl.formatMessage(messages.slogan)}</p>
     <Badge url={androidUrl(settings.language)} type='android' />
     <Badge url={iosUrl} type='ios' />
   </div>
