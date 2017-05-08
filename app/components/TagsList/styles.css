@@ -1,0 +1,32 @@
+.container {
+  position: relative;
+  top: calc((60 / var(--mttrsBase))rem);
+  height: calc((65 / var(--mttrsBase))rem);
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overflow-scrolling: touch;
+  background-color: #E5E5E5;
+  &::--webkit-scrollbar {
+    display: none;
+  };
+  @media (--large) {
+    left: calc((240 / var(--mttrsBase))rem);
+    width: calc((100% - calc((240 / var(--mttrsBase))rem)));
+  }
+}
+
+.list {
+  display: flex;
+}
+
+.item {
+  flex-shrink: 0;
+}
+
+.centered {
+  justify-content: 'center'
+}

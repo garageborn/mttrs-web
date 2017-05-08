@@ -1,0 +1,17 @@
+.container {
+  padding: calc((4 / var(--mttrsBase))rem) calc((14 / var(--mttrsBase))rem);
+  border-radius: calc((18 / var(--mttrsBase))rem);
+  margin: calc((12 / var(--mttrsBase))rem);
+  font-weight: 600;
+  color: var(--mttrsGray);
+  line-height: calc((16 / var(--mttrsBase))rem);
+	border: calc((1 / var(--mttrsBase))rem) solid;
+  border-color: transparent;
+  font-size: calc((14 / var(--mttrsBase))rem);
+  flex-shrink: 0
+}
+
+.active {
+  border-color: #CBCBCB;
+  background-color: #FFF;
+}
