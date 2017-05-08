@@ -3,7 +3,7 @@ import gql from 'graphql-tag'
 
 const Query = gql`
   query($categorySlug:String!) {
-    tags(with_recent_stories: true, category_slug:$categorySlug) {
+    tags(with_recent_stories: true, category_slug: $categorySlug, ordered: true) {
       name
       slug
     }

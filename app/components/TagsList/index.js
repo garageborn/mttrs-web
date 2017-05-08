@@ -12,19 +12,13 @@ class TagsList extends Component {
     super()
     this.ref = this.ref.bind(this)
   }
+
   render () {
-    const { categorySlug, tags, intl } = this.props
     return (
       <div ref={this.ref} className={styles.container} style={this.containerStyle}>
         <ul className={styles.list}>
-          <li className={styles.item}>
-            <Tag tag={{ name: intl.formatMessage(messages.highlights), slug: '' }} categorySlug={categorySlug} />
-          </li>
-          {tags.map((tag, idx) => (
-            <li key={`tag_${idx}`} className={styles.item}>
-              <Tag tag={tag} categorySlug={categorySlug} />
-            </li>
-          ))}
+          {this.renderHighlights()}
+          {this.renderTags()}
         </ul>
       </div>
     )
@@ -32,6 +26,24 @@ class TagsList extends Component {
 
   ref (component) {
     return this.tagsList = component
+  }
+
+  renderHighlights () {
+    const { categorySlug, intl } = this.props
+    return (
+      <li className={styles.item}>
+        <Tag tag={{ name: intl.formatMessage(messages.highlights), slug: '' }} categorySlug={categorySlug} />
+      </li>
+    )
+  }
+
+  renderTag (tag, idx) {
+    const { categorySlug, tags } = this.props
+    return tags.map((tag, idx) => (
+      <li key={`tag_${idx}`} className={styles.item}>
+        <Tag tag={tag} categorySlug={categorySlug} />
+      </li>
+    ))
   }
 
   get containerStyle () {

@@ -16,9 +16,7 @@ class TimelineContainer extends Component {
     this.handleScroll = this.handleScroll.bind(this)
     this.handleStoryLinks = this.handleStoryLinks.bind(this)
 
-    this.state = {
-      loadingMore: false
-    }
+    this.state = { loadingMore: false }
   }
 
   componentDidMount () {

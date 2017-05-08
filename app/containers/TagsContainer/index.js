@@ -6,9 +6,7 @@ class TagsContainer extends Component {
   render () {
     const { data, slug } = this.props
     if (data.loading) return null
-    return (
-      <TagsList tags={data.tags} categorySlug={slug} />
-    )
+    return <TagsList tags={data.tags} categorySlug={slug} />
   }
 }
 
