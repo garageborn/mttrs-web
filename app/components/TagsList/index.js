@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import { injectIntl, defineMessages } from 'react-intl'
+import classNames from 'classnames'
 import Tag from '../Tag'
 import styles from './styles.css'
 
@@ -15,7 +16,7 @@ class TagsList extends Component {
 
   render () {
     return (
-      <div ref={this.ref} className={styles.container} style={this.containerStyle}>
+      <div ref={this.ref} className={this.containerStyles}>
         <ul className={styles.list}>
           {this.renderHighlights()}
           {this.renderTags()}
@@ -37,7 +38,7 @@ class TagsList extends Component {
     )
   }
 
-  renderTag (tag, idx) {
+  renderTags (tag, idx) {
     const { categorySlug, tags } = this.props
     return tags.map((tag, idx) => (
       <li key={`tag_${idx}`} className={styles.item}>
@@ -46,13 +47,15 @@ class TagsList extends Component {
     ))
   }
 
-  get containerStyle () {
-    if (!this.tagsList) return null
+  get containerStyles () {
+    if (!this.tagsList) return styles.container
     const menuSize = 240
     const mainSectionWidth = this.tagsList.clientWidth - menuSize
-    if (mainSectionWidth < this.tagsList.scrollWidth) {
-      return { justifyContent: 'center' }
-    }
+
+    return classNames({
+      [styles.container]: true,
+      [styles.center]: mainSectionWidth < this.tagsList.scrollWidth
+    })
   }
 }
 

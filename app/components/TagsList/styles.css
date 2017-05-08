@@ -26,3 +26,7 @@
 .item {
   flex-shrink: 0;
 }
+
+.centered {
+  justify-content: 'center'
+}
