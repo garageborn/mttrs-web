@@ -48,6 +48,7 @@ class TimelineContainer extends Component {
         options={this.props.options}
         type={this.props.type}
         handleStoryLinks={this.handleStoryLinks}
+        activeTag={this.state.activeTag}
       />
     )
   }
