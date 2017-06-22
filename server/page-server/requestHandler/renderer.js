@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import 'isomorphic-fetch'
-import {renderToStringWithData} from 'react-apollo/server'
+import {renderToStringWithData} from 'react-apollo'
 import htmlOptions from './htmlOptions'
 import Html from '../Html'
 

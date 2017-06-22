@@ -34,20 +34,22 @@ const Query = gql`
 `
 
 const infiniteScroll = ({ fetchMore, variables, timeline }) => {
-  const items = timelineToItems(timeline)
-  if (!hasMore(items)) return
+  return new Promise((resolve, reject) => {
+    const items = timelineToItems(timeline)
+    if (!hasMore(items)) return resolve()
 
-  const lastItem = items[items.length - 1]
+    const lastItem = items[items.length - 1]
 
-  return fetchMore({
-    variables: { ...variables, cursor: lastItem.date },
-    updateQuery: (previousResult, { fetchMoreResult }) => {
-      if (!fetchMoreResult.data) return previousResult
+    fetchMore({
+      variables: { ...variables, cursor: lastItem.date },
+      updateQuery: (previousResult, { fetchMoreResult }) => {
+        if (!fetchMoreResult.timeline) return previousResult
 
-      const previousTimeline = timelineToItems(previousResult.timeline)
-      const nextTimeline = fetchMoreResult.data.timeline
-      return { timeline: previousTimeline.concat(nextTimeline) }
-    }
+        const previousTimeline = timelineToItems(previousResult.timeline)
+        const nextTimeline = [fetchMoreResult.timeline]
+        return { timeline: [...previousTimeline, ...nextTimeline] }
+      }
+    }).then(resolve).catch(reject)
   })
 }
 

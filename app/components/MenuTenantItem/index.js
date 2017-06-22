@@ -4,7 +4,10 @@ import image from './assets/image.svg'
 
 let urls = {
   mttrs_br: 'https://mttrs.com.br',
-  mttrs_us: 'https://mtt.rs'
+  mttrs_us: 'https://mtt.rs',
+  mttrs_ar: 'https://ar.mtt.rs',
+  mttrs_cl: 'https://cl.mtt.rs',
+  mttrs_mx: 'https://mx.mtt.rs'
 }
 
 const MenuTenantItem = ({ tenant, currentTenant, children }) => {

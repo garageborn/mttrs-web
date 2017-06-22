@@ -4,17 +4,9 @@ import StoryInfo from '../StoryInfo'
 import SocialCount from '../SocialCount'
 import styles from './styles.css'
 
-const StoryMetadata = ({
-  story,
-  mainLink,
-  otherLinksCount,
-  totalSocial,
-  handleStoryLinks,
-  isVisited
-}) => {
+const StoryMetadata = ({ story, mainLink, otherLinksCount, totalSocial, handleStoryLinks }) => {
   let containerStyles = classNames({
-    [styles.container]: true,
-    [styles.isVisited]: isVisited
+    [styles.container]: true
   })
 
   return (
@@ -40,8 +32,7 @@ StoryMetadata.propTypes = {
   mainLink: PropTypes.object.isRequired,
   otherLinksCount: PropTypes.number.isRequired,
   totalSocial: PropTypes.number.isRequired,
-  handleStoryLinks: PropTypes.func.isRequired,
-  isVisited: PropTypes.bool.isRequired
+  handleStoryLinks: PropTypes.func.isRequired
 }
 
 export default StoryMetadata

@@ -21,8 +21,4 @@
   background-color: var(--mttrsBackgroundColor)
 }
 
-.isVisited {
-  opacity: 0.5;
-}
-
 @mixin lineClampFirefox #FFF, .title;

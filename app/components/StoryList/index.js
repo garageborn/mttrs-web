@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import StoryContainer from '../../containers/StoryContainer'
+import Story from '../Story'
 import StoryListHeader from '../StoryListHeader'
 import styles from './styles.css'
 
@@ -24,7 +24,7 @@ class StoryList extends Component {
 
   renderStory (story) {
     return (
-      <StoryContainer
+      <Story
         key={story.id}
         story={story}
         handleStoryLinks={this.props.handleStoryLinks}

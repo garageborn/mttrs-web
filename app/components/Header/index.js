@@ -22,7 +22,7 @@ class Header extends Component {
 
   get section () {
     const { section, intl } = this.props
-    if (section.type !== 'home') {
+    if (section.type !== 'popular') {
       return section.model.name
     }
     return intl.formatMessage(messages.topStories)
@@ -32,7 +32,7 @@ class Header extends Component {
     const { section } = this.props
     const { mttrsOrange, mttrsGray } = properties
     switch (section.type) {
-      case 'home':
+      case 'popular':
         return mttrsOrange
       case 'publishers':
         return mttrsGray

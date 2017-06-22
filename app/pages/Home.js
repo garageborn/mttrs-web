@@ -14,15 +14,15 @@ const messages = defineMessages({
 
 class Home extends Component {
   componentWillMount () {
-    const section = { type: 'home' }
+    const section = { type: 'popular' }
     this.props.dispatch(UIActions.updateSection(section))
   }
 
   render () {
-    const queryVariables = { type: 'home' }
+    const queryVariables = { type: 'popular' }
     return (
       <Layout {...this.helmet()}>
-        <TimelineContainer type='home' queryVariables={queryVariables} />
+        <TimelineContainer type='popular' queryVariables={queryVariables} />
         <Modal />
       </Layout>
     )

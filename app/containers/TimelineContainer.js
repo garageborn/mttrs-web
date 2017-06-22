@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import { connect } from 'react-redux'
+import _throttle from 'lodash/throttle'
 import withQuery from './TimelineContainer.gql'
 import Timeline from '../components/Timeline'
 import Placeholder from '../components/Placeholder'
@@ -15,7 +16,7 @@ class TimelineContainer extends Component {
     super()
     this.handleScroll = this.handleScroll.bind(this)
     this.handleStoryLinks = this.handleStoryLinks.bind(this)
-
+    this.infiniteScroll = _throttle(this.infiniteScroll.bind(this), 3000, { trailing: false })
     this.state = { loadingMore: false }
   }
 

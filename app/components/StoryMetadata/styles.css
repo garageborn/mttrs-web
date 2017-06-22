@@ -7,7 +7,3 @@
   height: calc((39 / var(--mttrsBase))rem);
   border-top: 1px solid #F1F1F1;
 }
-
-.isVisited {
-  opacity: 0.5;
-}
