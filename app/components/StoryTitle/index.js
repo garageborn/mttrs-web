@@ -5,11 +5,10 @@ import classNames from 'classnames'
 import { linkPath } from '../../utils/RoutesHelper'
 import styles from './styles.css'
 
-const StoryTitle = ({ mainLink, handleMouseOver, active, isVisited }) => {
+const StoryTitle = ({ mainLink, handleMouseOver, active }) => {
   let textClass = classNames({
     [styles.title]: true,
-    [styles.active]: active,
-    [styles.isVisited]: isVisited
+    [styles.active]: active
   })
 
   return (
@@ -28,8 +27,7 @@ const StoryTitle = ({ mainLink, handleMouseOver, active, isVisited }) => {
 StoryTitle.propTypes = {
   mainLink: PropTypes.object.isRequired,
   handleMouseOver: PropTypes.func.isRequired,
-  active: PropTypes.bool.isRequired,
-  isVisited: PropTypes.bool.isRequired
+  active: PropTypes.bool.isRequired
 }
 
 export default StoryTitle

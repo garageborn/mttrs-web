@@ -4,14 +4,13 @@ import classNames from 'classnames'
 import { categoryPath } from '../../utils/RoutesHelper'
 import styles from './styles.css'
 
-const StoryCategory = ({ category, isVisited }) => {
+const StoryCategory = ({ category }) => {
   let style = {
     color: category.color
   }
 
   let labelStyles = classNames({
-    [styles.label]: true,
-    [styles.isVisited]: isVisited
+    [styles.label]: true
   })
 
   return (
@@ -24,8 +23,7 @@ const StoryCategory = ({ category, isVisited }) => {
 }
 
 StoryCategory.propTypes = {
-  category: PropTypes.object.isRequired,
-  isVisited: PropTypes.bool.isRequired
+  category: PropTypes.object.isRequired
 }
 
 export default StoryCategory

@@ -2,10 +2,9 @@ import React, { PropTypes } from 'react'
 import classNames from 'classnames'
 import styles from './styles.css'
 
-const Headline = ({ headline, isVisited }) => {
+const Headline = ({ headline }) => {
   let headlineStyles = classNames({
-    [styles.headline]: true,
-    [styles.isVisited]: isVisited
+    [styles.headline]: true
   })
 
   return (
@@ -16,8 +15,7 @@ const Headline = ({ headline, isVisited }) => {
 }
 
 Headline.propTypes = {
-  headline: PropTypes.string.isRequired,
-  isVisited: PropTypes.bool.isRequired
+  headline: PropTypes.string.isRequired
 }
 
 export default Headline

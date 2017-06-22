@@ -3,10 +3,9 @@ import classNames from 'classnames'
 import icon from './assets/icon.svg'
 import styles from './styles.css'
 
-const Logo = ({ isVisited }) => {
+const Logo = () => {
   let logoStyles = classNames({
-    [styles.container]: true,
-    [styles.isVisited]: isVisited
+    [styles.container]: true
   })
 
   return (
@@ -17,7 +16,7 @@ const Logo = ({ isVisited }) => {
 }
 
 Logo.propTypes = {
-  isVisited: PropTypes.bool.isRequired
+  icon: PropTypes.any
 }
 
 export default Logo

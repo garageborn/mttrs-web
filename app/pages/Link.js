@@ -14,7 +14,6 @@ const messages = defineMessages({
 class Link extends Component {
   componentWillMount () {
     this.createAccess()
-    this.addVisitedStory()
   }
 
   render () {
@@ -60,19 +59,6 @@ class Link extends Component {
       Raven.captureException(error)
       this.redirectTo(this.data.link.url)
     })
-  }
-
-  addVisitedStory () {
-    if (_server_) return
-    const { story } = this.props.data.link
-
-    if (this.hasOpenerAction) {
-      let openerDispatch = window.opener.dispatch
-      let openerStorageActions = window.opener.StorageActions
-      openerDispatch(openerStorageActions.addVisitedStory(story))
-    } else {
-      this.props.dispatch(StorageActions.addVisitedStory(story))
-    }
   }
 
   get hasOpenerAction () {

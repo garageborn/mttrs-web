@@ -2,10 +2,9 @@ import React, { PropTypes } from 'react'
 import classNames from 'classnames'
 import styles from './styles.css'
 
-const Summary = ({ children, isVisited }) => {
+const Summary = ({ children }) => {
   let textStyles = classNames({
-    [styles.text]: true,
-    [styles.isVisited]: isVisited
+    [styles.text]: true
   })
 
   return <div className={textStyles}>{children}</div>
@@ -13,7 +12,6 @@ const Summary = ({ children, isVisited }) => {
 
 Summary.propTypes = {
   children: PropTypes.node.isRequired,
-  isVisited: PropTypes.bool.isRequired
 }
 
 export default Summary
