@@ -1,8 +1,6 @@
 import { HTTPFetchNetworkInterface, createNetworkInterface } from 'apollo-client'
-import _isString from 'lodash/isString'
-import _trim from 'lodash/trim'
 import _mapValues from 'lodash/mapValues'
-import { print } from 'graphql-tag/printer'
+import { print } from 'graphql/language/printer'
 import queryString from 'query-string'
 
 function printRequest (request) {

@@ -9,7 +9,3 @@
     line-height: calc((23 / var(--mttrsBase))rem);
   }
 }
-
-.isVisited {
-  opacity: 0.5;
-}
