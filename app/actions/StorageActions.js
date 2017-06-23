@@ -17,7 +17,6 @@ export function getOnboardingStatus () {
   return (dispatch, getState) => {
     if (_server_) return
     return localForage.getItem('onboardingShown', (error, shown) => {
-      return dispatch(showOnboarding())
 
       if (error) return
       if (shown) return dispatch(onboardingShown())
