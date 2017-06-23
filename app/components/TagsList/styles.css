@@ -10,7 +10,7 @@
   overflow-y: hidden;
   overflow-scrolling: touch;
   background-color: #E5E5E5;
-  &::--webkit-scrollbar {
+  &::-webkit-scrollbar {
     display: none;
   };
   @media (--large) {
