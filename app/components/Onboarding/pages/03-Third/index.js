@@ -16,8 +16,8 @@ const messages = defineMessages({
 })
 
 let images = {
-  small: require('./assets/4.png'),
-  notSmall: require('./assets/4-ns.png')
+  small: require('./assets/3.png'),
+  notSmall: require('./assets/3-ns.png')
 }
 
 const First = ({ intl }) => (
