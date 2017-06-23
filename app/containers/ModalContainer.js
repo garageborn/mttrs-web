@@ -25,7 +25,7 @@ class ModalContainer extends Component {
           onRequestClose={this.closeModal}
         >
           <div>
-          {UIReducer.modal.content}
+           {UIReducer.modal.content}
           </div>
         </Modal>
         {this.renderCloseButton()}
