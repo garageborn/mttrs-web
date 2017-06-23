@@ -24,7 +24,9 @@ class ModalContainer extends Component {
           overlayClassName={this.overlayClassNames}
           onRequestClose={this.closeModal}
         >
-          {UIReducer.modal.content}
+          <div>
+           {UIReducer.modal.content}
+          </div>
         </Modal>
         {this.renderCloseButton()}
       </div>
