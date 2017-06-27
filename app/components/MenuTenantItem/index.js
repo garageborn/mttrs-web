@@ -7,7 +7,8 @@ let urls = {
   mttrs_us: 'https://mtt.rs',
   mttrs_ar: 'https://ar.mtt.rs',
   mttrs_cl: 'https://cl.mtt.rs',
-  mttrs_mx: 'https://mx.mtt.rs'
+  mttrs_mx: 'https://mx.mtt.rs',
+  mttrs_pt: 'https://pt.mtt.rs'
 }
 
 const MenuTenantItem = ({ tenant, currentTenant, children }) => {
