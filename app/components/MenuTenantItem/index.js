@@ -5,10 +5,12 @@ import image from './assets/image.svg'
 let urls = {
   mttrs_br: 'https://mttrs.com.br',
   mttrs_us: 'https://mtt.rs',
-  mttrs_ar: 'https://ar.mtt.rs',
-  mttrs_cl: 'https://cl.mtt.rs',
-  mttrs_mx: 'https://mx.mtt.rs',
-  mttrs_pt: 'https://pt.mtt.rs'
+  mttrs_ar: 'https://argentina.mtt.rs',
+  mttrs_cl: 'https://chile.mtt.rs',
+  mttrs_mx: 'https://mexico.mtt.rs',
+  mttrs_pt: 'https://portugal.mtt.rs',
+  mttrs_us_es: 'https://estadosunidos.mtt.rs',
+  mttrs_au: 'https://australia.mtt.rs'
 }
 
 const MenuTenantItem = ({ tenant, currentTenant, children }) => {
