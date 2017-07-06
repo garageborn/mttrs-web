@@ -4,8 +4,10 @@ import { injectIntl, defineMessages } from 'react-intl'
 import injectSettings from '../../../../config/injectSettings'
 import iosEN from './assets/ios-en.svg'
 import iosPT from './assets/ios-pt.svg'
+import iosES from './assets/ios-es.svg'
 import androidEN from './assets/android-en.png'
 import androidPT from './assets/android-pt.png'
+import androidES from './assets/android-es.png'
 import styles from './styles.css'
 
 const messages = defineMessages({
@@ -14,8 +16,8 @@ const messages = defineMessages({
 })
 
 const badges = {
-  ios: { en: iosEN, pt: iosPT },
-  android: { en: androidEN, pt: androidPT }
+  ios: { en: iosEN, pt: iosPT, es: iosES },
+  android: { en: androidEN, pt: androidPT, es: androidES }
 }
 
 const Badge = ({ intl, url, type, settings }) => {

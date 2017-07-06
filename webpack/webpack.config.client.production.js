@@ -1,7 +1,5 @@
-import path from 'path'
 import webpack from 'webpack'
 import baseConfiguration from './webpack.config.client'
-import CleanPlugin from 'clean-webpack-plugin'
 
 // With `development: false` all CSS will be extracted into a file
 // named '[name]-[contenthash].css' using `extract-text-webpack-plugin`
@@ -12,12 +10,6 @@ const configuration = baseConfiguration({ development: false })
 configuration.devtool = 'source-map'
 
 configuration.plugins = configuration.plugins.concat(
-  // clears the output folder
-  new CleanPlugin(
-    [path.relative(configuration.context, configuration.output.path)],
-    { root: configuration.context }
-  ),
-
   // environment variables
   new webpack.DefinePlugin({
     'process.env': {

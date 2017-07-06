@@ -53,11 +53,8 @@ class Settings {
   }
 
   get language () {
-    switch (this.tenant) {
-      case 'mttrs_us': return 'en'
-      case 'mttrs_br': return 'pt'
-      default: return defaultLanguage
-    }
+    const tenant = TENANTS.find((item) => item.id === this.tenant)
+    return tenant ? tenant.language : defaultLanguage
   }
 
   get attributes () {
