@@ -20,7 +20,6 @@
     "bunyan": "^1.8.9",
     "classnames": "^2.2.5",
     "clean-webpack-plugin": "^0.1.16",
-    "cloudinary-core": "^2.3.0",
     "css-loader": "^0.28.4",
     "css-mqpacker": "^6.0.1",
     "deep-equal": "^1.0.1",

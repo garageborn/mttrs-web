@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import classNames from 'classnames'
-import * as cloudinary from '../../utils/Cloudinary'
 import styles from './styles.css'
 
 class PublisherIcon extends Component {
@@ -26,18 +25,16 @@ class PublisherIcon extends Component {
     )
   }
   get publisherLogo () {
-    const { publisher } = this.props
-    if (!publisher.icon_id) return
-    const options = { secure: true, height: 55, width: 5, radius: 'max' }
-    const uri = cloudinary.id(publisher.icon_id, options)
-    return uri
+    return this.props.publisher.icon.medium
   }
 }
 
 PublisherIcon.propTypes = {
   publisher: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    icon_id: PropTypes.string.isRequired
+    icon: PropTypes.shape({
+      medium: PropTypes.string.isRequired
+    }).isRequired
   }).isRequired,
   size: PropTypes.string.isRequired
 }

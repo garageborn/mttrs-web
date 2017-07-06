@@ -56,7 +56,6 @@ class Category extends Component {
     const { formatMessage } = this.props.intl
 
     if (loading) return {}
-
     const formattedMessage = formatMessage(messages.pageTitle, { name: category.name })
     const formattedDescription = category.name
 
