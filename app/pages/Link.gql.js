@@ -5,7 +5,7 @@ const Query = gql`
   query($slug: String!) {
     link(slug: $slug) {
       title
-      image_source_url
+      image { thumb }
       url
       story { id summary }
     }
