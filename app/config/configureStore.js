@@ -2,7 +2,8 @@ import {createStore, applyMiddleware, compose, combineReducers} from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import {browserHistory} from 'react-router'
 import {routerMiddleware} from 'react-router-redux'
-import {createTracker} from 'redux-segment'
+import ReactGA from 'react-ga'
+import {gaMiddleware} from '../utils/AnalyticsMiddleware'
 import * as reducers from '../reducers/index'
 
 const routeMiddleware = routerMiddleware(browserHistory)
@@ -20,8 +21,9 @@ export default function configureStore (initialState, apolloClient) {
   ]
 
   if (_production_) {
-    const trackMiddleware = createTracker()
-    middlewares.push(applyMiddleware(trackMiddleware))
+    if (typeof window === 'undefined') return null
+    ReactGA.initialize('UA-135591744')
+    middlewares.push(applyMiddleware(gaMiddleware))
   }
 
   if (_development_) {
