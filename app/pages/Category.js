@@ -54,8 +54,7 @@ class Category extends Component {
   helmet () {
     const { category, loading } = this.props.data
     const { formatMessage } = this.props.intl
-
-    if (loading) return {}
+    if (!category || loading) return {}
     const formattedMessage = formatMessage(messages.pageTitle, { name: category.name })
     const formattedDescription = category.name
 
