@@ -20,13 +20,12 @@ export default function configureStore (initialState, apolloClient) {
     applyMiddleware(routeMiddleware)
   ]
 
-  if (_production_) {
-    if (typeof window === 'undefined') return null
+  if (_production_ && typeof window !== 'undefined') {
     ReactGA.initialize('UA-135591744')
     middlewares.push(applyMiddleware(gaMiddleware))
   }
 
-  if (_development_) {
+  if (_production_) {
     const DevTools = require('./DevTools')
     middlewares.push(DevTools.instrument())
   }
