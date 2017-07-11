@@ -17,9 +17,9 @@ dependencies:
 
 deployment:
   production:
-    branch: revert-to-cad9f15
+    branch: master
     commands:
-      - bundle exec cap production deploy branch=revert-to-cad9f15
+      - bundle exec cap production deploy branch=master
 
 test:
   override:
