@@ -52,7 +52,7 @@ class Publisher extends Component {
     const { publisher, loading } = this.props.data
     const { formatMessage } = this.props.intl
 
-    if (loading) return {}
+    if (!publisher || loading) return {}
 
     const formattedMessage = formatMessage(messages.pageTitle, { name: publisher.name })
     const formattedDescription = publisher.name
