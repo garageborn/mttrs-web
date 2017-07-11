@@ -3,7 +3,6 @@ import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import LazyLoad from 'react-lazy-load'
 import classNames from 'classnames'
-import * as cloudinary from '../../utils/Cloudinary'
 import { linkPath } from '../../utils/RoutesHelper'
 import Placeholder from './components/Placeholder'
 import styles from './styles.css'
@@ -16,7 +15,7 @@ class StoryImage extends Component {
   }
 
   componentWillMount () {
-    if (!this.mainLink.image_source_url) this.setState({ status: 'error' })
+    if (!this.mainLink.image.thumb) this.setState({ status: 'error' })
   }
 
   getSource () {
@@ -25,10 +24,7 @@ class StoryImage extends Component {
   }
 
   getImage () {
-    let options = {
-      type: 'fetch', width: 120, height: 90, crop: 'fill', secure: true
-    }
-    return cloudinary.url(this.mainLink.image_source_url, options)
+    return this.mainLink.image.thumb
   }
 
   handleImageError () {

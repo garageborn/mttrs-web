@@ -24,8 +24,14 @@ const Query = gql`
           title
           url
           slug
-          image_source_url
-          publisher { name display_name icon_id slug restrict_content }
+          image { thumb }
+          publisher {
+            name
+            display_name
+            icon { medium }
+            slug
+            restrict_content
+          }
         }
         other_links_count
       }

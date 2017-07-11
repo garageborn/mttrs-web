@@ -53,6 +53,8 @@ class PublishersSectionContainer extends Component {
   get filteredPublishers () {
     const { publishers } = this.props.data
 
+    debugger
+
     if (!this.state.isSearchActive) return publishers
 
     const queryMatcher = new RegExp(this.state.query, 'i')

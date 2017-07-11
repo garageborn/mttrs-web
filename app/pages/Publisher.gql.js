@@ -3,7 +3,7 @@ import gql from 'graphql-tag'
 
 const Query = gql`
   query($slug: String!) {
-    publisher(slug: $slug) { id name slug icon_id }
+    publisher(slug: $slug) { id name slug icon { medium } }
   }
 `
 

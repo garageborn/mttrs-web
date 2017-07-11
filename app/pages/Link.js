@@ -39,12 +39,12 @@ class Link extends Component {
         { property: 'og:title', content: formattedMessage },
         { property: 'og:description', content: link.story.summary || formattedDescription },
         { property: 'og:type', content: 'article' },
-        { property: 'og:image', content: link.image_source_url },
+        { property: 'og:image', content: link.image.thumb },
         { property: 'og:site', content: 'Matters' },
         { property: 'twitter:card', content: 'summary' },
         { property: 'twitter:site', content: '@mttrs_app' },
         { property: 'twitter:title', content: formattedMessage },
-        { property: 'twitter:image', content: link.image_source_url },
+        { property: 'twitter:image', content: link.image.thumb },
         { property: 'twitter:image:alt', content: formattedMessage },
         { property: 'twitter:description', content: link.story.summary || formattedDescription }
       ]

@@ -5,6 +5,7 @@
 
 .image {
   padding: 1px;
+  border-radius: 50px;
 }
 
 .imageSmall {
