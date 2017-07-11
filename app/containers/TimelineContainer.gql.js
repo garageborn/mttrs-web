@@ -1,6 +1,7 @@
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import _isArray from 'lodash/isArray'
+import dpr from '../utils/Dpr'
 
 const defaultVariables = {
   cursor: null,
@@ -11,7 +12,7 @@ const defaultVariables = {
 }
 
 const Query = gql`
-  query($cursor: Int, $timezone: String, $type: String, $limit: Int!, $categorySlug: String, $publisherSlug: String, $tagSlug: String) {
+  query($cursor: Int, $dpr: Int, $timezone: String, $type: String, $limit: Int!, $categorySlug: String, $publisherSlug: String, $tagSlug: String) {
     timeline(cursor: $cursor, timezone: $timezone, type: $type, limit: $limit, category_slug: $categorySlug, publisher_slug: $publisherSlug, tag_slug: $tagSlug) {
       date
       stories {
@@ -24,11 +25,11 @@ const Query = gql`
           title
           url
           slug
-          image { thumb }
+          image(dpr: $dpr) { thumb }
           publisher {
             name
             display_name
-            icon { medium }
+            icon(dpr: $dpr) { medium }
             slug
             restrict_content
           }
@@ -91,7 +92,8 @@ export default function (TimelineContainer) {
           variables,
           items,
           hasMore: hasMore(items),
-          infiniteScroll: infiniteScroll.bind(this, data)
+          infiniteScroll: infiniteScroll.bind(this, data),
+          dpr: dpr
         }
       }
     }
