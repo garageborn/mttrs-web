@@ -25,7 +25,7 @@ export default function configureStore (initialState, apolloClient) {
     middlewares.push(applyMiddleware(gaMiddleware))
   }
 
-  if (_production_) {
+  if (_development_) {
     const DevTools = require('./DevTools')
     middlewares.push(DevTools.instrument())
   }
