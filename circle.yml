@@ -9,7 +9,7 @@ dependencies:
   cache_directories:
     - ~/.yarn-cache
   override:
-    - yarn install
+    - yarn instalgi
     - gem update --system
     - bundle install
   post:
@@ -17,9 +17,9 @@ dependencies:
 
 deployment:
   production:
-    branch: master
+    branch: revert-to-cad9f15
     commands:
-      - bundle exec cap production deploy branch=master
+      - bundle exec cap production deploy branch=revert-to-cad9f15
 
 test:
   override:
