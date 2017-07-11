@@ -5,7 +5,6 @@ import HeaderContainer from '../containers/HeaderContainer'
 import MenuContainer from '../containers/MenuContainer'
 import injectSettings from '../config/injectSettings'
 import sentry from '../utils/Sentry'
-import segment from '../utils/Segment'
 import favicons from '../utils/Favicons'
 
 class Layout extends Component {
@@ -54,7 +53,7 @@ class Layout extends Component {
   }
 
   get scripts () {
-    return [...sentry, segment]
+    return sentry
   }
 }
 

@@ -6,8 +6,7 @@ query {
   categories(with_stories: true, ordered: true) {
     color
     id
-    image_id
-    name 
+    name
     slug
   }
 }
