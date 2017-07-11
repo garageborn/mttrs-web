@@ -2,10 +2,10 @@ import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
 const Query = gql`
-  query($slug: String!) {
+  query($dpr: Int, $slug: String!) {
     link(slug: $slug) {
       title
-      image { thumb }
+      image(dpr: $dpr) { thumb }
       url
       story { id summary }
     }
@@ -23,7 +23,12 @@ const Mutation = gql`
 const withQuery = function (Link) {
   return graphql(Query, {
     options (props) {
-      return { variables: { slug: props.params.slug } }
+      return {
+        variables: {
+          slug: props.params.slug,
+          dpr: typeof window !== 'undefined' ? window.devicePixelRatio : 1
+        }
+      }
     }
   })(Link)
 }

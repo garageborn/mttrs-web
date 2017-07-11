@@ -2,7 +2,7 @@ import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
 const Query = gql`
-  query($id: ID!, $publisherSlug: String) {
+  query($dpr: Int, $id: ID!, $publisherSlug: String) {
     story(id: $id) {
       main_link(publisher_slug: $publisherSlug) {
         id
@@ -14,7 +14,7 @@ const Query = gql`
           name
           display_name
           slug
-          icon { medium }
+          icon(dpr: $dpr) { medium }
           restrict_content
         }
       }
@@ -28,7 +28,7 @@ const Query = gql`
           name
           display_name
           slug
-          icon { medium }
+          icon(dpr: $dpr) { medium }
           restrict_content
         }
       }
@@ -42,7 +42,8 @@ export default function (MenuCategoriesContainer) {
       return {
         variables: {
           id: props.story.id,
-          publisherSlug: props.publisherSlug
+          publisherSlug: props.publisherSlug,
+          dpr: typeof window !== 'undefined' ? window.devicePixelRatio : 1
         }
       }
     }
