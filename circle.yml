@@ -9,7 +9,7 @@ dependencies:
   cache_directories:
     - ~/.yarn-cache
   override:
-    - yarn instalgi
+    - yarn install
     - gem update --system
     - bundle install
   post:
