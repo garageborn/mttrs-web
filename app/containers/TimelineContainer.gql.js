@@ -1,6 +1,7 @@
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import _isArray from 'lodash/isArray'
+import dpr from '../utils/Dpr'
 
 const defaultVariables = {
   cursor: null,
@@ -92,7 +93,7 @@ export default function (TimelineContainer) {
           items,
           hasMore: hasMore(items),
           infiniteScroll: infiniteScroll.bind(this, data),
-          dpr: typeof window !== 'undefined' ? window.devicePixelRatio : 1
+          dpr: dpr
         }
       }
     }

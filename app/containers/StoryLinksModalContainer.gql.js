@@ -1,5 +1,6 @@
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
+import dpr from '../utils/Dpr'
 
 const Query = gql`
   query($dpr: Int, $id: ID!, $publisherSlug: String) {
@@ -43,7 +44,7 @@ export default function (MenuCategoriesContainer) {
         variables: {
           id: props.story.id,
           publisherSlug: props.publisherSlug,
-          dpr: typeof window !== 'undefined' ? window.devicePixelRatio : 1
+          dpr: dpr
         }
       }
     }

@@ -1,5 +1,6 @@
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
+import dpr from '../utils/Dpr'
 
 const Query = gql`
   query($dpr: Int, $slug: String!) {
@@ -26,7 +27,7 @@ const withQuery = function (Link) {
       return {
         variables: {
           slug: props.params.slug,
-          dpr: typeof window !== 'undefined' ? window.devicePixelRatio : 1
+          dpr: dpr
         }
       }
     }
