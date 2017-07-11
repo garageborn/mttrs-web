@@ -9,7 +9,7 @@ set :root, File.expand_path(File.dirname(__FILE__) + '/../')
 set :ssh_options, forward_agent: true, port: 41_858
 set :branch, -> { ENV['branch'] || `git rev-parse --abbrev-ref HEAD`.chomp }
 set :use_sudo, false
-set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets public/system node_modules)
+set :linked_dirs, %w[log tmp/pids tmp/cache tmp/sockets public/system node_modules build/assets build/server]
 
 # rbenv
 set :rbenv_type, :user
