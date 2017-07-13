@@ -55,7 +55,7 @@
     "raven": "^2.1.0",
     "raven-js": "^3.16.0",
     "react": "^15.6.1",
-    "react-apollo": "^1.4.2",
+    "react-apollo": "^1.4.3",
     "react-dom": "^15.6.1",
     "react-ga": "^2.2.0",
     "react-helmet": "^5.1.3",
