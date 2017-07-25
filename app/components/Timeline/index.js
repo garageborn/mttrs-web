@@ -3,12 +3,36 @@ import StoryList from '../StoryList'
 import styles from './styles.css'
 
 class Timeline extends Component {
+  constructor() {
+    super()
+    this.ref = this.ref.bind(this)
+  }
+
+  componentDidMount () {
+    this.measureTimeline()
+  }
+
   render () {
     const { items } = this.props.data
     if (!items || !items.length) return null
 
-    return <div className={styles.container} id='timeline'>{this.renderTimeline()}</div>
+    return <div ref={this.ref} className={styles.container} id='timeline'>{this.renderTimeline()}</div>
   }
+
+  ref (component) {
+    return this.timeline = component;
+  }
+
+  measureTimeline () {
+    if (_server_) return
+    const viewportHeight = window.innerHeight
+    const timelineOffset = this.timeline.offsetHeight
+    const timelineHeight = this.timeline.clientHeight
+    const timelineViewHeight = timelineOffset + timelineHeight
+    if ((viewportHeight - timelineViewHeight) < 0) return
+    return this.props.infiniteScroll()
+  }
+
 
   renderTimeline () {
     return this.props.data.items.map((item) => {
@@ -34,7 +58,8 @@ class Timeline extends Component {
 Timeline.propTypes = {
   data: PropTypes.object.isRequired,
   handleStoryLinks: PropTypes.func.isRequired,
-  type: PropTypes.string
+  type: PropTypes.string,
+  infiniteScroll: PropTypes.func.isRequired
 }
 
 export default Timeline

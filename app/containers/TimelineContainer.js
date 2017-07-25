@@ -50,6 +50,7 @@ class TimelineContainer extends Component {
         type={this.props.type}
         handleStoryLinks={this.handleStoryLinks}
         activeTag={this.state.activeTag}
+        infiniteScroll={this.infiniteScroll}
       />
     )
   }
@@ -66,7 +67,6 @@ class TimelineContainer extends Component {
     const scrollPosition = window.scrollY + window.innerHeight
     const timelineHeight = this.timelineContainer.clientHeight
     const triggerPosition = timelineHeight - infiniteScrollThreshold
-
     if (scrollPosition > triggerPosition) this.infiniteScroll()
   }
 
