@@ -4,9 +4,10 @@ import { IntlProvider, addLocaleData } from 'react-intl'
 import en from 'react-intl/locale-data/en'
 import pt from 'react-intl/locale-data/pt'
 import es from 'react-intl/locale-data/es'
+import es from 'react-intl/locale-data/de'
 import injectSettings from '../config/injectSettings'
 import * as messages from '../translations/i18n'
-addLocaleData([...en, ...pt, ...es])
+addLocaleData([...en, ...pt, ...es, ...de])
 
 class Provider extends Component {
   render () {

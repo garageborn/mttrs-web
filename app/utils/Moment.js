@@ -8,6 +8,9 @@ export default function (timezone, language) {
     case 'es':
       moment.locale('es')
       break
+    case 'es':
+      moment.locale('de')
+      break
     default:
       moment.locale('en')
   }

@@ -5,9 +5,11 @@ import injectSettings from '../../../../config/injectSettings'
 import iosEN from './assets/ios-en.svg'
 import iosPT from './assets/ios-pt.svg'
 import iosES from './assets/ios-es.svg'
+import iosES from './assets/ios-de.svg'
 import androidEN from './assets/android-en.png'
 import androidPT from './assets/android-pt.png'
 import androidES from './assets/android-es.png'
+import androidES from './assets/android-de.png'
 import styles from './styles.css'
 
 const messages = defineMessages({
@@ -16,8 +18,8 @@ const messages = defineMessages({
 })
 
 const badges = {
-  ios: { en: iosEN, pt: iosPT, es: iosES },
-  android: { en: androidEN, pt: androidPT, es: androidES }
+  ios: { en: iosEN, pt: iosPT, es: iosES, de: iosDE },
+  android: { en: androidEN, pt: androidPT, es: androidES, de: androidDE }
 }
 
 const Badge = ({ intl, url, type, settings }) => {
