@@ -1,0 +1,53 @@
+.innerContainer {
+  width: calc((42 / var(--mttrsBase))rem) - (calc((2 / var(--mttrsBase))rem)  * 2);
+  height: (calc((10 / var(--mttrsBase))rem)  / 2) - calc((2 / var(--mttrsBase))rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: calc((35 / var(--mttrsBase))rem) ;
+  width: calc((35 / var(--mttrsBase))rem) ;
+  border-radius: calc((35 / var(--mttrsBase))rem) ;
+  border: calc((2 / var(--mttrsBase))rem) solid;
+  background-color: #FFFFFF;
+  border-color: #E9E9E9;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageContainer {
+  composes: innerContainer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc((31 / var(--mttrsBase))rem);
+  flex: 1;
+  border-top-left-radius: calc((35 / var(--mttrsBase))rem);
+  border-top-right-radius: calc((35 / var(--mttrsBase))rem);
+}
+
+.image {
+  height: 8px;
+  margin-top: 3px;
+}
+
+.textContainer {
+  composes: innerContainer;
+  background-color: #F1F1F1;
+  margin-top: 2px;
+  width: calc((32 / var(--mttrsBase))rem);
+  flex: 1;
+  border-bottom-left-radius: calc((35 / var(--mttrsBase))rem);
+  border-bottom-right-radius: calc((35 / var(--mttrsBase))rem);
+}
+
+.text {
+  margin-right: calc((3 / var(--mttrsBase))rem);
+  font-size: calc((9 / var(--mttrsBase))rem);
+  font-weight: 500;
+}
+
