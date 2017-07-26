@@ -34,7 +34,15 @@ const Query = gql`
             restrict_content
           }
         }
-        other_links_count
+        publishers(limit: 5) {
+          id
+          name
+          display_name
+          icon(dpr: $dpr) { medium }
+          slug
+          restrict_content
+        }
+        links_count
       }
     }
   }

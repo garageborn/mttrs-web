@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  align-items: center;
+  /* margin: calc((10 / var(--mttrsBase))rem) calc((5 / var(--mttrsBase))rem) calc((10 / var(--mttrsBase))rem) calc((10 / var(--mttrsBase))rem); */
+  padding-right: calc((10 / var(--mttrsBase))rem);
+  background-color: #F7F7F8;
+  border-radius: calc((40 / var(--mttrsBase))rem);
+  cursor: pointer;
+}
+
+.lightText {
+  font-size: calc((14 / var(--mttrsBase))rem);
+  color: '#999;
+}
+
+.darkText {
+  font-size: calc((14 / var(--mttrsBase))rem);
+  color: '#666766;
+}
+
+.publisherLogo {
+  width: calc((24 / var(--mttrsBase))rem);
+  height: calc((24 / var(--mttrsBase))rem);
+}
