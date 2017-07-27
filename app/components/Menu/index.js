@@ -7,18 +7,24 @@ import MenuCategoriesContainer from '../../containers/MenuCategoriesContainer'
 import styles from './styles.css'
 
 const Menu = ({ closeMenu, isOpen }) => {
+  let menuUnderlayClasses = className({
+    [styles.menuOpen]: isOpen,
+    [styles.underlay]: true
+  })
+
   let menuClasses = className({
-    [styles.container]: true,
-    [styles.menuOpen]: isOpen
+    [styles.container]: true
   })
 
   return (
-    <div className={menuClasses}>
-      <MenuCategoriesContainer closeMenu={closeMenu} />
-      <div>
-        <MenuTenant />
-        <MenuMttrsDownload />
-        <MenuAboutMttrsContainer />
+    <div className={menuUnderlayClasses}>
+      <div className={menuClasses}>
+        <MenuCategoriesContainer closeMenu={closeMenu} />
+        <div>
+          <MenuTenant />
+          <MenuMttrsDownload />
+          <MenuAboutMttrsContainer />
+        </div>
       </div>
     </div>
   )

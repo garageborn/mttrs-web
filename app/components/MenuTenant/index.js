@@ -7,12 +7,6 @@ import styles from './styles.css'
 const messages = defineMessages({
   source: {
     id: 'mttrs.source'
-  },
-  brasil: {
-    id: 'brasil'
-  },
-  usa: {
-    id: 'usa'
   }
 })
 
@@ -20,11 +14,41 @@ const MenuTenant = ({ settings, intl }) => (
   <div className={styles.container}>
     <p className={styles.title}>{intl.formatMessage(messages.source)}</p>
     <ul className={styles.list}>
+      <MenuTenantItem tenant='mttrs_ar' currentTenant={settings.tenant}>
+        Argentina - Español
+      </MenuTenantItem>
+      <MenuTenantItem tenant='mttrs_au' currentTenant={settings.tenant}>
+        Australia - English
+      </MenuTenantItem>
       <MenuTenantItem tenant='mttrs_br' currentTenant={settings.tenant}>
-        {intl.formatMessage(messages.brasil)}
+        Brasil - Português
+      </MenuTenantItem>
+      <MenuTenantItem tenant='mttrs_cl' currentTenant={settings.tenant}>
+        Chile - Español
+      </MenuTenantItem>
+      <MenuTenantItem tenant='mttrs_ca' currentTenant={settings.tenant}>
+        Canada - Enslish
+      </MenuTenantItem>
+      <MenuTenantItem tenant='mttrs_de' currentTenant={settings.tenant}>
+        Deutschland - Deutsch
+      </MenuTenantItem>
+      <MenuTenantItem tenant='mttrs_es' currentTenant={settings.tenant}>
+        España - Español
+      </MenuTenantItem>
+      <MenuTenantItem tenant='mttrs_mx' currentTenant={settings.tenant}>
+        México - Español
+      </MenuTenantItem>
+      <MenuTenantItem tenant='mttrs_pt' currentTenant={settings.tenant}>
+        Portugal - Português
+      </MenuTenantItem>
+      <MenuTenantItem tenant='mttrs_uk' currentTenant={settings.tenant}>
+        United Kingdom - English
       </MenuTenantItem>
       <MenuTenantItem tenant='mttrs_us' currentTenant={settings.tenant}>
-        {intl.formatMessage(messages.usa)}
+        USA - English
+      </MenuTenantItem>
+      <MenuTenantItem tenant='mttrs_us_es' currentTenant={settings.tenant}>
+        USA - Español
       </MenuTenantItem>
     </ul>
   </div>
