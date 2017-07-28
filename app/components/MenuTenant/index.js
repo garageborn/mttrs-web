@@ -27,7 +27,7 @@ const MenuTenant = ({ settings, intl }) => (
         Chile - Español
       </MenuTenantItem>
       <MenuTenantItem tenant='mttrs_ca' currentTenant={settings.tenant}>
-        Canada - Enslish
+        Canada - English
       </MenuTenantItem>
       <MenuTenantItem tenant='mttrs_de' currentTenant={settings.tenant}>
         Deutschland - Deutsch
